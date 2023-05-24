@@ -1,0 +1,8 @@
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.csproj.AssemblyReference.cache
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.Form1.resources
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.Properties.Resources.resources
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.csproj.GenerateResource.cache
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.AssemblyInfoInputs.cache
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.AssemblyInfo.cs
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\Projeto\BDInterface\BDInterface\obj\Debug\net472\BDInterface.csproj.CoreCompileInputs.cache
