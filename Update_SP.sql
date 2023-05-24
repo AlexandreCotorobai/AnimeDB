@@ -98,7 +98,7 @@ GO
 --     @VoiceActor = 'Yuki Kaji',
 --     @Anime = 'Created Anime';
 
-
+-- Preciso Checkar se o type de Staff é Voice Actor
 CREATE PROCEDURE UpdateCharacter
     @CharacterID INT,
     @UserID INT,
