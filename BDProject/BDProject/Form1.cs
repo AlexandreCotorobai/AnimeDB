@@ -1,14 +1,27 @@
+<<<<<<< Updated upstream:BDProject/BDProject/Form1.cs
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+=======
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+>>>>>>> Stashed changes:BDInterface/BDInterface/Form1.cs
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+<<<<<<< Updated upstream:BDProject/BDProject/Form1.cs
 namespace BDProject
+=======
+namespace BDInterface
+>>>>>>> Stashed changes:BDInterface/BDInterface/Form1.cs
 {
     public partial class Form1 : Form
     {
