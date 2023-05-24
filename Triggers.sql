@@ -36,7 +36,7 @@ GO
 
 CREATE TRIGGER AddSeason
     ON Anime
-    AFTER INSERT
+    AFTER INSERT, UPDATE
     AS
     BEGIN
         UPDATE Anime
