@@ -82,3 +82,106 @@ BEGIN
     END
 END;
 GO
+
+
+
+
+
+
+
+-- EXEC UpdateCharacter
+--     @CharacterID = 1,
+--     @UserID = 3,
+--     @Name = 'New Character Name',
+--     @Description = 'Updated character description',
+--     @Image = 'image.jpg',
+--     @VoiceActor = 'Yuki Kaji',
+--     @Anime = 'Created Anime';
+
+
+CREATE PROCEDURE UpdateCharacter
+    @CharacterID INT,
+    @UserID INT,
+    @Name VARCHAR(100) = NULL,
+    @Description VARCHAR(MAX) = NULL,
+    @Image VARCHAR(100) = NULL,
+    @VoiceActor VARCHAR(100) = NULL,
+    @Anime VARCHAR(100) = NULL
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+        DECLARE @VoiceActorID INT
+        DECLARE @AnimeID INT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+        IF @IsAdmin = 1
+        BEGIN
+            -- Check if the Character exists in the Characters table
+            -- This may be redundant depending on the implementation of the front-end
+            IF NOT EXISTS (SELECT 1 FROM Characters WHERE ID = @CharacterID)
+            BEGIN
+                PRINT 'Character does not exist. Rolling back transaction.'
+                ROLLBACK;
+                RETURN;
+            END;
+
+            -- Check if the provided VoiceActor exists in the Staff table
+            IF NOT EXISTS (SELECT 1 FROM Staff WHERE Name = @VoiceActor)
+            BEGIN
+                PRINT 'VoiceActor does not exist. Rolling back transaction.'
+                ROLLBACK;
+                RETURN;
+            END;
+
+            -- Check if the provided Anime exists in the Anime table
+            IF NOT EXISTS (SELECT 1 FROM Anime WHERE Name = @Anime)
+            BEGIN
+                PRINT 'Anime does not exist. Rolling back transaction.'
+                ROLLBACK;
+                RETURN;
+            END;
+
+            -- Get the Anime ID corresponding to the provided Anime name
+            SELECT @AnimeID = ID FROM Anime WHERE Name = @Anime;
+
+            PRINT 'Anime ID' + CAST(@AnimeID as varchar(10));
+            PRINT 'Character ID' + CAST(@CharacterID as varchar(10));
+
+            -- -- Check if the provided Anime exists in the ApearsIn table
+            -- IF NOT EXISTS (SELECT 1 FROM Apears_In WHERE FK_AnimeID = @AnimeID)
+            -- BEGIN
+            --     PRINT 'Anime does not exist in the Apears_In table. Rolling back transaction.'
+            --     ROLLBACK;
+            --     RETURN;
+            -- END;
+
+            -- Get the VoiceActor ID corresponding to the provided VoiceActor name
+            SELECT @VoiceActorID = ID FROM Staff WHERE Name = @VoiceActor;
+
+            -- Update Apears_In table based on the provided Character ID
+            UPDATE Apears_In
+            SET
+                FK_AnimeID = @AnimeID
+            WHERE FK_CharacterID = @CharacterID;
+
+            -- Update Character table based on the provided Character ID
+            UPDATE Characters
+            SET
+                Name = ISNULL(@Name, Name),
+                Description = ISNULL(@Description, Description),
+                Image = ISNULL(@Image, Image),
+                FK_Voice_actor = @VoiceActorID
+                -- FK_AnimeID = @AnimeID
+            WHERE ID = @CharacterID;
+
+            PRINT 'Character updated successfully.'
+        END
+        ELSE
+        BEGIN
+            PRINT 'Access denied. User is not an admin.'
+        END
+    END;
+GO
+
