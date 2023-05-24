@@ -1,15 +1,21 @@
 <<<<<<< Updated upstream:BDProject/BDProject/Form1.cs
+<<<<<<< Updated upstream:BDProject/BDProject/Form1.cs
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 =======
+=======
+>>>>>>> Stashed changes:BDInterface/BDInterface/Form1.cs
 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+<<<<<<< Updated upstream:BDProject/BDProject/Form1.cs
+>>>>>>> Stashed changes:BDInterface/BDInterface/Form1.cs
+=======
 >>>>>>> Stashed changes:BDInterface/BDInterface/Form1.cs
 using System.Drawing;
 using System.Linq;
@@ -18,8 +24,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 <<<<<<< Updated upstream:BDProject/BDProject/Form1.cs
+<<<<<<< Updated upstream:BDProject/BDProject/Form1.cs
 namespace BDProject
 =======
+=======
+>>>>>>> Stashed changes:BDInterface/BDInterface/Form1.cs
 namespace BDInterface
 >>>>>>> Stashed changes:BDInterface/BDInterface/Form1.cs
 {
