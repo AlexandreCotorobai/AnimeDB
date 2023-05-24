@@ -185,3 +185,48 @@ CREATE PROCEDURE UpdateCharacter
     END;
 GO
 
+
+
+CREATE PROCEDURE UpdateStudio
+    @StudioID INT,
+    @UserID INT,
+    @Name VARCHAR(100) = NULL,
+    @Description VARCHAR(MAX) = NULL,
+    @Image VARCHAR(100) = NULL,
+    @Alt_Name VARCHAR(100) = NULL,
+    @Established_at DATE = NULL
+AS
+BEGIN
+    DECLARE @IsAdmin BIT
+
+    -- Check if the user is an admin
+    SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+    IF @IsAdmin = 1
+    BEGIN
+        -- Check if the provided Studio name already exists in the Studios table
+        IF EXISTS (SELECT 1 FROM Studio WHERE Name = @Name AND ID <> @StudioID)
+        BEGIN
+            PRINT 'Studio name already exists. Rolling back transaction.'
+            ROLLBACK;
+            RETURN;
+        END;
+
+        -- Update Studios table based on the provided Studio ID
+        UPDATE Studio
+        SET
+            Name = ISNULL(@Name, Name),
+            Description = ISNULL(@Description, Description),
+            Image = ISNULL(@Image, Image),
+            Alt_Name = ISNULL(@Alt_Name, Alt_Name),
+            Established_at = ISNULL(@Established_at, Established_at)
+        WHERE ID = @StudioID;
+
+        PRINT 'Studio updated successfully.'
+    END
+    ELSE
+    BEGIN
+        PRINT 'Access denied. User is not an admin.'
+    END
+END;
+GO

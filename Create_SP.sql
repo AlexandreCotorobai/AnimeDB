@@ -138,3 +138,47 @@ BEGIN
     END
 END;
 GO
+
+
+
+CREATE PROCEDURE CreateStudio
+    @UserID INT,
+    @Name VARCHAR(100),
+    @Alt_Name VARCHAR(100),
+    @Description VARCHAR(MAX),
+    @Image VARCHAR(100),
+    @Established_At DATE
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+        DECLARE @StudioID INT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+        IF @IsAdmin = 1
+        BEGIN
+            -- Check if the provided Studio name already exists in the Studios table
+            IF EXISTS (SELECT 1 FROM Studio WHERE Name = @Name)
+            BEGIN
+                PRINT 'Studio name already exists. Rolling back transaction.'
+                ROLLBACK;
+                RETURN;
+            END;
+
+            -- Calculate the index for the new entry
+            SELECT @StudioID = ISNULL(MAX(ID), 0) + 1 FROM Studio;
+
+            -- Insert new entry into Studios table
+            INSERT INTO Studio (ID, Name, Alt_Name, Description, Image, Established_At)
+            VALUES (@StudioID, @Name, @Alt_Name, @Description, @Image, @Established_At);
+
+            PRINT 'Studio created successfully.'
+        END
+        ELSE
+        BEGIN
+            PRINT 'Access denied. User is not an admin.'
+        END
+    END;
+    GO
+
