@@ -180,5 +180,77 @@ CREATE PROCEDURE CreateStudio
             PRINT 'Access denied. User is not an admin.'
         END
     END;
-    GO
+GO
+
+
+CREATE PROCEDURE CreateStaff
+    @UserID INT,
+    @Name VARCHAR(100),
+    @Type VARCHAR(50),
+    @Birthday DATE,
+    @Image VARCHAR(100)
+AS
+BEGIN
+    DECLARE @IsAdmin BIT
+    DECLARE @StaffID INT
+
+    -- Check if the user is an admin
+    SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+    IF @IsAdmin = 1
+    BEGIN
+        -- Check if the provided name already exists in the Staff table
+        IF EXISTS (SELECT 1 FROM Staff WHERE Name = @Name)
+        BEGIN
+            PRINT 'Staff name already exists. Rolling back transaction.'
+            ROLLBACK;
+            RETURN;
+        END;
+
+        -- Get the next available Staff ID
+        SELECT @StaffID = ISNULL(MAX(ID), 0) + 1 FROM Staff;
+
+        -- Insert the new entry into the Staff table
+        INSERT INTO Staff (ID, Name, Type, Birthday, Image)
+        VALUES (@StaffID, @Name, @Type, @Birthday, @Image);
+
+        PRINT 'Staff created successfully.'
+    END
+    ELSE
+    BEGIN
+        PRINT 'Access denied. User is not an admin.'
+    END
+END;
+GO
+
+
+CREATE PROCEDURE CreateUser
+    @Name VARCHAR(100),
+    @Location VARCHAR(100),
+    @Sex VARCHAR(10),
+    @Birthday DATE,
+    @IsAdmin BIT,
+    @Image VARCHAR(100)
+AS
+BEGIN
+
+    DECLARE @UserID INT
+
+    -- Check if the provided Name already exists in the Users table
+    IF EXISTS (SELECT 1 FROM Users WHERE Name = @Name)
+    BEGIN
+        PRINT 'User with the provided name already exists.';
+        RETURN;
+    END;
+
+    -- Get the next available Staff ID
+        SELECT @UserID = ISNULL(MAX(ID), 0) + 1 FROM Users;
+
+    -- Insert a new record into the Users table
+    INSERT INTO Users (ID, Image, Name, Sex, Created_date, Birthday, Location, Is_admin)
+    VALUES (@UserID, @Image, @Name, @Sex, GETDATE(), @Birthday, @Location, @IsAdmin);
+
+    PRINT 'User created successfully.';
+END;
+GO
 

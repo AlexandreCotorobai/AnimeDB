@@ -230,3 +230,70 @@ BEGIN
     END
 END;
 GO
+
+
+CREATE PROCEDURE UpdateStaff
+    @StaffID INT,
+    @UserID INT,
+    @Name VARCHAR(100) = NULL,
+    @Type VARCHAR(50) = NULL,
+    @Birthday DATE = NULL,
+    @Image VARCHAR(100) = NULL
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+        IF @IsAdmin = 1
+        BEGIN
+            -- Check if the provided Staff name already exists in the Staff table
+            IF EXISTS (SELECT 1 FROM Staff WHERE Name = @Name AND ID <> @StaffID)
+            BEGIN
+                PRINT 'Staff name already exists. Rolling back transaction.'
+                ROLLBACK;
+                RETURN;
+            END;
+
+            -- Update Staff table based on the provided Staff ID
+            UPDATE Staff
+            SET
+                Name = ISNULL(@Name, Name),
+                [Type] = ISNULL(@Type, [Type]),
+                Birthday = ISNULL(@Birthday, Birthday),
+                Image = ISNULL(@Image, Image)
+            WHERE ID = @StaffID;
+
+            PRINT 'Staff updated successfully.'
+        END
+        ELSE
+        BEGIN
+            PRINT 'Access denied. User is not an admin.'
+        END
+    END;
+GO
+
+
+CREATE PROCEDURE UpdateUser
+    @UserID INT,
+    @Name VARCHAR(100) = NULL,
+    @Location VARCHAR(100) = NULL,
+    @Birthday DATE = NULL,
+    @Image VARCHAR(100) = NULL,
+    @Sex VARCHAR(10) = NULL
+    AS
+    BEGIN
+        -- Update Users table based on the provided User ID
+        UPDATE Users
+        SET
+            Name = ISNULL(@Name, Name),
+            Location = ISNULL(@Location, Location),
+            Birthday = ISNULL(@Birthday, Birthday),
+            Image = ISNULL(@Image, Image),
+            Sex = ISNULL(@Sex, Sex)
+        WHERE ID = @UserID;
+
+        PRINT 'User updated successfully.'
+    END;
+GO
