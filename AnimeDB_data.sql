@@ -101,7 +101,10 @@ INSERT INTO Related_animes (FK_AnimeID, FK_AnimeID2, Relation)
 VALUES
 (2, 4, 'Sequel'),
 (4, 5, 'Sequel'),
-(5, 6, 'Sequel');
+(5, 6, 'Sequel'),
+(4, 2, 'Prequel'),
+(5, 4, 'Prequel'),
+(6, 5, 'Prequel');
 
 GO
 
