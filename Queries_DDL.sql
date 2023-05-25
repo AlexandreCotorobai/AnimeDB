@@ -54,8 +54,7 @@ CREATE TABLE Users (
   Created_date DATE,
   Birthday DATE,
   Location VARCHAR(255),
-  Is_admin INT,
-  Hashed_password VARCHAR(255)
+  Is_admin INT
 )
 
 GO

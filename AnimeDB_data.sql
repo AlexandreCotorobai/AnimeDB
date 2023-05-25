@@ -2,11 +2,11 @@ USE AnimeDB
 
 GO
 
-INSERT INTO Users (ID, Image, Name, Sex, Created_date, Birthday, Location, Is_admin, Hashed_password)
+INSERT INTO Users (ID, Image, Name, Sex, Created_date, Birthday, Location, Is_admin)
 VALUES
-(1, 'user1.jpg', 'John Doe', 'M', '2022-01-15', '1990-05-10', 'New York', 0, 'hashedpass1'),
-(2, 'user2.jpg', 'Jane Smith', 'F', '2022-03-20', '1995-09-22', 'London', 0, 'hashedpass2'),
-(3, 'user3.jpg', 'Alex Johnson', 'M', '2022-06-05', '1985-12-02', 'Tokyo', 1, 'hashedpass3');
+(1, 'user1.jpg', 'John Doe', 'M', '2022-01-15', '1990-05-10', 'New York', 0),
+(2, 'user2.jpg', 'Jane Smith', 'F', '2022-03-20', '1995-09-22', 'London', 0),
+(3, 'user3.jpg', 'Alex Johnson', 'M', '2022-06-05', '1985-12-02', 'Tokyo', 1);
 
 GO
 

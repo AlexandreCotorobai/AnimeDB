@@ -231,26 +231,26 @@ CREATE PROCEDURE CreateUser
     @Birthday DATE,
     @IsAdmin BIT,
     @Image VARCHAR(100)
-AS
-BEGIN
-
-    DECLARE @UserID INT
-
-    -- Check if the provided Name already exists in the Users table
-    IF EXISTS (SELECT 1 FROM Users WHERE Name = @Name)
+    AS
     BEGIN
-        PRINT 'User with the provided name already exists.';
-        RETURN;
+
+        DECLARE @UserID INT
+
+        -- Check if the provided Name already exists in the Users table
+        IF EXISTS (SELECT 1 FROM Users WHERE Name = @Name)
+        BEGIN
+            PRINT 'User with the provided name already exists.';
+            RETURN;
+        END;
+
+        -- Get the next available Staff ID
+            SELECT @UserID = ISNULL(MAX(ID), 0) + 1 FROM Users;
+
+        -- Insert a new record into the Users table
+        INSERT INTO Users (ID, Image, Name, Sex, Created_date, Birthday, Location, Is_admin)
+        VALUES (@UserID, @Image, @Name, @Sex, GETDATE(), @Birthday, @Location, @IsAdmin);
+
+        PRINT 'User created successfully.';
     END;
-
-    -- Get the next available Staff ID
-        SELECT @UserID = ISNULL(MAX(ID), 0) + 1 FROM Users;
-
-    -- Insert a new record into the Users table
-    INSERT INTO Users (ID, Image, Name, Sex, Created_date, Birthday, Location, Is_admin)
-    VALUES (@UserID, @Image, @Name, @Sex, GETDATE(), @Birthday, @Location, @IsAdmin);
-
-    PRINT 'User created successfully.';
-END;
 GO
 
