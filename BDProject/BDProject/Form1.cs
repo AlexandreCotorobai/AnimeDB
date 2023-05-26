@@ -49,10 +49,198 @@ namespace BDProject
         // general catch all function to fill dropdowns
         private void StartUpComponents()
         {
+            updateGenres();
+            updateUsers();
+            updateAnimes();
+            updateVA();
+            updateStudio();
+            updateStaffType();
+        }
+
+        private Dictionary<String, int> genreDictionary = new Dictionary<String, int>();
+
+        private void updateGenres()
+        {
+            genreDictionary.Clear();
+            AnimeDetailsSelectGenre.Items.Clear();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Genre", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    genreDictionary.Add(reader[1].ToString(), int.Parse(reader[0].ToString()));
+                    AnimeDetailsSelectGenre.Items.Add(reader[1].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private Dictionary<String, int> userDict = new Dictionary<String, int>();
+
+        private void updateUsers()
+        {
+            userDict.Clear();
+            AnimeDetailsUpdateAs.Items.Clear();
+            AnimeCreateAsSelect.Items.Clear();
+            AnimeDetailsCommentAs.Items.Clear();
+            StudioDetailsUpdateAs.Items.Clear();
+            StudioCreateAs.Items.Clear();
+            StaffDetailsUpdateAs.Items.Clear();
+            StaffCreateAs.Items.Clear();
+            CharacterUpdateAs.Items.Clear();
+            CharacterCreateAs.Items.Clear();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT ID, Name FROM Users", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    userDict.Add(reader[1].ToString(), int.Parse(reader[0].ToString()));
+                    AnimeDetailsUpdateAs.Items.Add(reader[1].ToString());
+                    AnimeCreateAsSelect.Items.Add(reader[1].ToString());
+                    AnimeDetailsCommentAs.Items.Add(reader[1].ToString());
+                    StudioDetailsUpdateAs.Items.Add(reader[1].ToString());
+                    StudioCreateAs.Items.Add(reader[1].ToString());
+                    StaffDetailsUpdateAs.Items.Add(reader[1].ToString());
+                    StaffCreateAs.Items.Add(reader[1].ToString());
+                    CharacterUpdateAs.Items.Add(reader[1].ToString());
+                    CharacterCreateAs.Items.Add(reader[1].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
 
         }
 
+        Dictionary<String, int> animeDict = new Dictionary<String, int>();
+        private void updateAnimes()
+        {
+            animeDict.Clear();
+            AnimeDetailsSelAnimeRel.Items.Clear();
+            CharacterFilterFromAnime.Items.Clear();
+            CharacterDetailsAnime.Items.Clear();
+            CharacterCreateAnime.Items.Clear();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT ID, Name FROM Anime", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    animeDict.Add(reader[1].ToString(), int.Parse(reader[0].ToString()));
+                    AnimeDetailsSelAnimeRel.Items.Add(reader[1].ToString());
+                    CharacterFilterFromAnime.Items.Add(reader[1].ToString());
+                    CharacterDetailsAnime.Items.Add(reader[1].ToString());
+                    CharacterCreateAnime.Items.Add(reader[1].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+
+        private Dictionary<String, int> vaDict = new Dictionary<String, int>();
+
+        private void updateVA()
+        {
+            vaDict.Clear();
+            // CharacterFilterVoicedby, CharacterDetailsVA, CharacterCreateVA
+            CharacterFilterVoicedby.Items.Clear();
+            CharacterDetailsVA.Items.Clear();
+            CharacterCreateVA.Items.Clear();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT ID, Name FROM Staff WHERE Type = 'Voice Actor'", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    vaDict.Add(reader[1].ToString(), int.Parse(reader[0].ToString()));
+                    CharacterFilterVoicedby.Items.Add(reader[1].ToString());
+                    CharacterDetailsVA.Items.Add(reader[1].ToString());
+                    CharacterCreateVA.Items.Add(reader[1].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private Dictionary<String, int> studioDict = new Dictionary<String, int>();
+
+        private void updateStudio()
+        {
+            studioDict.Clear();
+            AnimeDetailsStudio.Items.Clear();
+            AnimeCreateStudio.Items.Clear();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT ID, Name FROM Studio", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    studioDict.Add(reader[1].ToString(), int.Parse(reader[0].ToString()));
+                    AnimeDetailsStudio.Items.Add(reader[1].ToString());
+                    AnimeCreateStudio.Items.Add(reader[1].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            if(conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void updateStaffType()
+        {
+            StaffFilterType.Items.Add("Voice Actor");
+            StaffFilterType.Items.Add("Director");
+            StaffFilterType.Items.Add("Producer");
+            StaffFilterType.Items.Add("Animator");
+            StaffFilterType.Items.Add("Musician");
+            StaffFilterType.Items.Add("Writer");
+            StaffFilterType.Items.Add("Other");
+        }
         // Anime
 
         // Anime List

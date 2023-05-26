@@ -23,7 +23,7 @@ CREATE PROCEDURE GetAnimeGenres
     AS
     BEGIN
         -- Retrieve the genres associated with the given AnimeID
-        SELECT g.Name AS Genre
+        SELECT g.Name, g.ID AS Genre
         FROM Is_Genre AS ig
         INNER JOIN Genre AS g ON ig.FK_GenreID = g.ID
         WHERE ig.FK_AnimeID = @AnimeID;
