@@ -3517,11 +3517,11 @@
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.AnimeTab);
-            this.Controls.Add(this.UsersTab);
             this.Controls.Add(this.StaffTab);
             this.Controls.Add(this.StudioTab);
             this.Controls.Add(this.CharactersTab);
+            this.Controls.Add(this.AnimeTab);
+            this.Controls.Add(this.UsersTab);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

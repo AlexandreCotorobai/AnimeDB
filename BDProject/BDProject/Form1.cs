@@ -233,13 +233,14 @@ namespace BDProject
 
         private void updateStaffType()
         {
-            StaffFilterType.Items.Add("Voice Actor");
-            StaffFilterType.Items.Add("Director");
-            StaffFilterType.Items.Add("Producer");
-            StaffFilterType.Items.Add("Animator");
-            StaffFilterType.Items.Add("Musician");
-            StaffFilterType.Items.Add("Writer");
-            StaffFilterType.Items.Add("Other");
+            String[] staffTypeList = { "Voice Actor", "Director", "Producer", "Animator", "Musician", "Writer", "Other" };
+             
+            for (int i = 0; i < staffTypeList.Length; i++)
+            {
+                StaffCreateType.Items.Add(staffTypeList[i]);
+                StaffDetailsType.Items.Add(staffTypeList[i]);
+                StaffCreateType.Items.Add(staffTypeList[i]);
+            }
         }
         // Anime
 
