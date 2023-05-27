@@ -26,7 +26,7 @@ CREATE DATABASE AnimeDB
 GO
 
 USE AnimeDB
-
+   
 GO
 
 CREATE TABLE Anime (
