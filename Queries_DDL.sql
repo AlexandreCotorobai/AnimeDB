@@ -31,7 +31,6 @@ GO
 
 CREATE TABLE Anime (
   ID INT PRIMARY KEY,
-  Image VARCHAR(255),
   Name VARCHAR(255),
   Alt_name VARCHAR(255),
   Synopsis TEXT,
@@ -48,7 +47,6 @@ GO
 
 CREATE TABLE Users (
   ID INT PRIMARY KEY,
-  Image VARCHAR(255),
   Name VARCHAR(255),
   Sex CHAR(1),
   Created_date DATE,
@@ -100,7 +98,6 @@ GO
 
 CREATE TABLE Studio (
   ID INT PRIMARY KEY,
-  Image VARCHAR(255),
   Name VARCHAR(255),
   Alt_Name VARCHAR(255),
   Description TEXT,
@@ -115,7 +112,6 @@ GO
 
 CREATE TABLE Staff (
   ID INT PRIMARY KEY,
-  Image VARCHAR(255),
   Type VARCHAR(255),
   Name VARCHAR(255),
   Birthday DATE
@@ -125,7 +121,6 @@ GO
 
 CREATE TABLE Characters (
   ID INT PRIMARY KEY,
-  Image VARCHAR(255),
   Name VARCHAR(255),
   Description TEXT,
   FK_Voice_actor INT,

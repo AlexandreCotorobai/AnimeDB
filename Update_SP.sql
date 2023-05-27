@@ -38,48 +38,32 @@ CREATE PROCEDURE UpdateAnime
     @FinishedDate date = NULL,
     @Episodes int = NULL,
     @Synopsis varchar(max) = NULL,
-    @Studio varchar(100) = NULL
+    @StudioID int
 AS
 BEGIN
     DECLARE @IsAdmin bit
-    DECLARE @StudioID int
 
     -- Check if the user is an admin
     SELECT @IsAdmin = dbo.IsAdmin(@UserID)
 
-    IF @IsAdmin = 1
+    IF @IsAdmin != 1
     BEGIN
-        -- Check if the provided Studio name exists in the Studios table
-        IF NOT EXISTS (SELECT 1 FROM Studio WHERE Name = @Studio)
-        BEGIN
-            PRINT 'Studio does not exist. Rolling back transaction.'
-            ROLLBACK;
-            RETURN;
-        END;
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+    END;
 
-        -- Get the Studio ID corresponding to the provided Studio name
-        SELECT @StudioID = ID FROM Studio WHERE Name = @Studio;
+    -- Update Anime table based on the provided Anime ID
+    UPDATE Anime
+    SET
+        Name = ISNULL(@Name, Name),
+        Alt_Name = ISNULL(@Alt_Name, Alt_Name),
+        Aired_date = ISNULL(@AiredDate, Aired_date),
+        Finished_date = ISNULL(@FinishedDate, Finished_date),
+        Episodes = ISNULL(@Episodes, Episodes),
+        Synopsis = ISNULL(@Synopsis, Synopsis),
+        FK_Studio_ID = @StudioID
+    WHERE ID = @AnimeID;
+    PRINT 'Anime updated successfully.'
 
-        -- Update Anime table based on the provided Anime ID
-        UPDATE Anime
-        SET
-            Name = ISNULL(@Name, Name),
-            Alt_Name = ISNULL(@Alt_Name, Alt_Name),
-            Aired_date = ISNULL(@AiredDate, Aired_date),
-            Finished_date = ISNULL(@FinishedDate, Finished_date),
-            Episodes = ISNULL(@Episodes, Episodes),
-            Synopsis = ISNULL(@Synopsis, Synopsis),
-            FK_Studio_ID = @StudioID
-        WHERE ID = @AnimeID;
-
-        PRINT 'Anime updated successfully.'
-    END
-    ELSE
-    BEGIN
-        PRINT 'Access denied. User is not an admin.'
-        ROLLBACK;
-        RETURN; -- SE DER ERRO EM ALGUM LUGAR TLVZ SEJA DAQUI, FAVOR CHAMAR MK
-    END
 END;
 GO
 
@@ -94,7 +78,6 @@ GO
 --     @UserID = 3,
 --     @Name = 'New Character Name',
 --     @Description = 'Updated character description',
---     @Image = 'image.jpg',
 --     @VoiceActor = 'Yuki Kaji',
 --     @Anime = 'Created Anime';
 
@@ -104,7 +87,6 @@ CREATE PROCEDURE UpdateCharacter
     @UserID INT,
     @Name VARCHAR(100) = NULL,
     @Description VARCHAR(MAX) = NULL,
-    @Image VARCHAR(100) = NULL,
     @VoiceActor VARCHAR(100) = NULL,
     @Anime VARCHAR(100) = NULL
     AS
@@ -171,7 +153,6 @@ CREATE PROCEDURE UpdateCharacter
             SET
                 Name = ISNULL(@Name, Name),
                 Description = ISNULL(@Description, Description),
-                Image = ISNULL(@Image, Image),
                 FK_Voice_actor = @VoiceActorID
                 -- FK_AnimeID = @AnimeID
             WHERE ID = @CharacterID;
@@ -192,7 +173,6 @@ CREATE PROCEDURE UpdateStudio
     @UserID INT,
     @Name VARCHAR(100) = NULL,
     @Description VARCHAR(MAX) = NULL,
-    @Image VARCHAR(100) = NULL,
     @Alt_Name VARCHAR(100) = NULL,
     @Established_at DATE = NULL
 AS
@@ -217,7 +197,6 @@ BEGIN
         SET
             Name = ISNULL(@Name, Name),
             Description = ISNULL(@Description, Description),
-            Image = ISNULL(@Image, Image),
             Alt_Name = ISNULL(@Alt_Name, Alt_Name),
             Established_at = ISNULL(@Established_at, Established_at)
         WHERE ID = @StudioID;
@@ -237,8 +216,7 @@ CREATE PROCEDURE UpdateStaff
     @UserID INT,
     @Name VARCHAR(100) = NULL,
     @Type VARCHAR(50) = NULL,
-    @Birthday DATE = NULL,
-    @Image VARCHAR(100) = NULL
+    @Birthday DATE = NULL
     AS
     BEGIN
         DECLARE @IsAdmin BIT
@@ -261,8 +239,7 @@ CREATE PROCEDURE UpdateStaff
             SET
                 Name = ISNULL(@Name, Name),
                 [Type] = ISNULL(@Type, [Type]),
-                Birthday = ISNULL(@Birthday, Birthday),
-                Image = ISNULL(@Image, Image)
+                Birthday = ISNULL(@Birthday, Birthday)
             WHERE ID = @StaffID;
 
             PRINT 'Staff updated successfully.'
@@ -280,7 +257,6 @@ CREATE PROCEDURE UpdateUser
     @Name VARCHAR(100) = NULL,
     @Location VARCHAR(100) = NULL,
     @Birthday DATE = NULL,
-    @Image VARCHAR(100) = NULL,
     @Sex VARCHAR(10) = NULL
     AS
     BEGIN
@@ -290,10 +266,169 @@ CREATE PROCEDURE UpdateUser
             Name = ISNULL(@Name, Name),
             Location = ISNULL(@Location, Location),
             Birthday = ISNULL(@Birthday, Birthday),
-            Image = ISNULL(@Image, Image),
             Sex = ISNULL(@Sex, Sex)
         WHERE ID = @UserID;
 
         PRINT 'User updated successfully.'
     END;
 GO
+
+CREATE PROCEDURE AddAnimeGenre
+    @AnimeID INT,
+    @UserID INT,
+    @GenreID INT
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+        IF @IsAdmin != 1
+        BEGIN
+            RAISERROR ('Access denied. User is not an admin.', 11,1);
+            RETURN;
+        END
+        
+        -- Check if the provided Anime ID and Genre ID already exists in the Anime_Genres table
+        IF EXISTS (SELECT 1 FROM Is_Genre WHERE FK_AnimeID = @AnimeID AND FK_GenreID = @GenresID)
+        BEGIN
+            PRINT 'Anime and Genre already exist. Rolling back transaction.'
+            ROLLBACK;
+            RETURN;
+        END;
+        
+        -- Insert Anime_Genres table based on the provided Anime ID and Genre ID
+        INSERT INTO Is_Genre (FK_AnimeID, FK_GenreID)
+        VALUES (@AnimeID, @GenresID);
+        PRINT 'Anime_Genres updated successfully.'
+    END;
+GO
+
+CREATE PROCEDURE RemoveAnimeGenre
+    @AnimeID INT,
+    @UserID INT,
+    @GenreID INT
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+        IF @IsAdmin != 1
+        BEGIN
+            RAISERROR ('Access denied. User is not an admin.', 11,1);
+            RETURN;
+        END
+        
+        -- Delete Anime_Genres table based on the provided Anime ID and Genre ID
+        DELETE FROM Is_Genre
+        WHERE FK_AnimeID = @AnimeID AND FK_GenreID = @GenreID;
+        PRINT 'Anime_Genres updated successfully.'
+    END;
+GO
+
+CREATE PROCEDURE AddAnimeRelation
+    @AnimeID INT,
+    @UserID INT,
+    @RelatedAnimeID INT,
+    @RelationType VARCHAR(50)
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+        
+        IF @IsAdmin != 1
+        BEGIN
+            RAISERROR ('Access denied. User is not an admin.', 11,1);
+            RETURN;
+        END
+
+		IF @AnimeID = @RelatedAnimeID
+        BEGIN
+            RAISERROR('Anime and Related Anime are the same. Rolling back transaction.', 11,1);
+            RETURN;
+        END;
+
+        -- Check if the provided Anime ID and Related Anime ID already exists in the Anime_Relations table
+
+        IF EXISTS (SELECT 1 FROM Related_animes WHERE FK_AnimeID = @AnimeID AND FK_AnimeID2 = @RelatedAnimeID)
+        BEGIN
+            RAISERROR ( 'Anime and Related Anime already exist. Rolling back transaction.', 11,1)
+            RETURN;
+        END;
+
+        -- Insert Anime_Relations table based on the provided Anime ID and Related Anime ID
+        INSERT INTO Related_animes (FK_AnimeID, FK_AnimeID2, Relation)
+        VALUES (@AnimeID, @RelatedAnimeID, @RelationType);
+        PRINT 'Anime_Relations updated successfully.'
+    END;
+GO
+
+CREATE PROCEDURE RemoveAnimeRelation
+    @AnimeID INT,
+    @UserID INT,
+    @RelatedAnimeID INT
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+        IF @IsAdmin != 1
+        BEGIN
+            RAISERROR ('Access denied. User is not an admin.', 11,1);
+            RETURN;
+        END
+        
+        -- Delete Anime_Relations table based on the provided Anime ID and Related Anime ID
+        DELETE FROM Related_animes
+        WHERE FK_AnimeID = @AnimeID AND FK_AnimeID2 = @RelatedAnimeID;
+        PRINT 'Anime_Relations updated successfully.'
+    END;
+GO
+
+CREATE PROCEDURE CreateComment
+    @UserID INT,
+    @AnimeID INT,
+    @Comment VARCHAR(MAX)
+    AS
+    BEGIN
+        DECLARE @CommentID INT
+
+        -- Calculate the new CommentID
+        SELECT @CommentID = ISNULL(MAX(CommentID), 0) + 1 FROM Comment;
+
+        -- Insert the new comment into the Comment table
+        INSERT INTO Comment (CommentID, FK_AnimeID, FK_UserID, Comment)
+        VALUES (@CommentID, @AnimeID, @UserID, @Comment);
+
+        PRINT 'Comment created successfully.';
+    END;
+GO
+
+CREATE PROCEDURE RemoveComment
+    @UserID INT,
+    @CommentID INT
+    AS
+    BEGIN
+        DECLARE @IsAdmin BIT
+
+        -- Check if the user is an admin
+        SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+        IF @IsAdmin != 1
+        BEGIN
+            RAISERROR ('Access denied. User is not an admin.', 11,1);
+            RETURN;
+        END
+        
+        -- Delete Comment table based on the provided Comment ID
+        DELETE FROM Comment
+        WHERE CommentID = @CommentID;
+        PRINT 'Comment deleted successfully.'
+    END;

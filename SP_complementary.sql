@@ -23,7 +23,7 @@ CREATE PROCEDURE GetAnimeGenres
     AS
     BEGIN
         -- Retrieve the genres associated with the given AnimeID
-        SELECT g.Name, g.ID AS Genre
+        SELECT g.Name, g.ID
         FROM Is_Genre AS ig
         INNER JOIN Genre AS g ON ig.FK_GenreID = g.ID
         WHERE ig.FK_AnimeID = @AnimeID;
@@ -31,6 +31,18 @@ CREATE PROCEDURE GetAnimeGenres
     END;
 GO
 
+CREATE PROCEDURE GetComments
+    @AnimeID INT
+    AS
+    BEGIN
+        -- Retrieve the comments associated with the given AnimeID
+        SELECT c.CommentID, c.Comment, u.Name
+        FROM Comment AS c
+        INNER JOIN Users AS u ON c.FK_UserID = u.ID
+        WHERE c.FK_AnimeID = @AnimeID;
+
+    END;
+GO
 
 CREATE PROCEDURE GetRelatedAnimes
     @AnimeID INT
