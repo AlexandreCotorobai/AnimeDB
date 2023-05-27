@@ -50,6 +50,7 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.StaffDetailsType = new System.Windows.Forms.ComboBox();
             this.StaffDetailsBirthday = new System.Windows.Forms.DateTimePicker();
             this.label168 = new System.Windows.Forms.Label();
             this.label169 = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             this.label175 = new System.Windows.Forms.Label();
             this.StaffDetailsImage = new System.Windows.Forms.PictureBox();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.StaffCreateType = new System.Windows.Forms.ComboBox();
             this.label69 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
             this.StaffCreateBirthday = new System.Windows.Forms.DateTimePicker();
@@ -78,6 +80,20 @@
             this.StaffCreateName = new System.Windows.Forms.TextBox();
             this.StaffCreateImageURL = new System.Windows.Forms.TextBox();
             this.StudioTab = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.StudioFilterBefore = new System.Windows.Forms.DateTimePicker();
+            this.StudioFilterAfter = new System.Windows.Forms.DateTimePicker();
+            this.label45 = new System.Windows.Forms.Label();
+            this.StudioFilterClear = new System.Windows.Forms.Button();
+            this.label47 = new System.Windows.Forms.Label();
+            this.StudioFilterName = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.StudiosList = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.StudioDetailsEstablishedAt = new System.Windows.Forms.DateTimePicker();
             this.label50 = new System.Windows.Forms.Label();
@@ -112,20 +128,6 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.StudioCreateAltName = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.StudioFilterBefore = new System.Windows.Forms.DateTimePicker();
-            this.StudioFilterAfter = new System.Windows.Forms.DateTimePicker();
-            this.label45 = new System.Windows.Forms.Label();
-            this.StudioFilterClear = new System.Windows.Forms.Button();
-            this.label47 = new System.Windows.Forms.Label();
-            this.StudioFilterName = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.StudiosList = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CharactersTab = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.label105 = new System.Windows.Forms.Label();
@@ -195,7 +197,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.animeListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AnimeImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AnimeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AnimeScore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AnimeEps = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -203,10 +204,11 @@
             this.AnimeFinishDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AnimeStudio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AnimeDetails = new System.Windows.Forms.TabPage();
+            this.AnimeUpdateStatus = new System.Windows.Forms.Label();
             this.AnimeDetailsGenres = new System.Windows.Forms.ListView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AnimeRemoveRelBtn = new System.Windows.Forms.Button();
+            this.AnimeAddRelationBtn = new System.Windows.Forms.Button();
+            this.AnimeDetailsRelation = new System.Windows.Forms.TextBox();
             this.label74 = new System.Windows.Forms.Label();
             this.AnimeDetailsSelAnimeRel = new System.Windows.Forms.ComboBox();
             this.label73 = new System.Windows.Forms.Label();
@@ -215,8 +217,8 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.animeDetailsRemoveGenre = new System.Windows.Forms.Button();
+            this.animeDetailsAddGenre = new System.Windows.Forms.Button();
             this.label71 = new System.Windows.Forms.Label();
             this.AnimeDetailsSelectGenre = new System.Windows.Forms.ComboBox();
             this.label70 = new System.Windows.Forms.Label();
@@ -244,14 +246,11 @@
             this.AnimeDetailsID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.AnimeCreate = new System.Windows.Forms.TabPage();
+            this.AnimeCreateStatus = new System.Windows.Forms.Label();
             this.AnimeCreateStudio = new System.Windows.Forms.ComboBox();
             this.AnimeCreateEp = new System.Windows.Forms.NumericUpDown();
             this.AnimeCreateFinishDate = new System.Windows.Forms.DateTimePicker();
             this.AnimeCreateAirDate = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
-            this.AnimeCreatePreviewImg = new System.Windows.Forms.PictureBox();
-            this.AnimeCreateImageUrl = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.AnimeCreateSynopsis = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -349,8 +348,10 @@
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.AnimeListImage = new System.Windows.Forms.ImageList(this.components);
-            this.StaffDetailsType = new System.Windows.Forms.ComboBox();
-            this.StaffCreateType = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.AnimeCommentsRemoveAs = new System.Windows.Forms.ComboBox();
+            this.RemoveCommentBtn = new System.Windows.Forms.Button();
+            this.AnimeDetailsCommentStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.StaffTab.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -359,11 +360,11 @@
             this.tabPage16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StaffCreateImagePreview)).BeginInit();
             this.StudioTab.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudioDetailsImagePrev)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudioCreateImgPreview)).BeginInit();
-            this.tabPage1.SuspendLayout();
             this.CharactersTab.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -380,7 +381,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AnimeDetailsEpisodes)).BeginInit();
             this.AnimeCreate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AnimeCreateEp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AnimeCreatePreviewImg)).BeginInit();
             this.AnimeComments.SuspendLayout();
             this.UsersTab.SuspendLayout();
             this.UserListTab.SuspendLayout();
@@ -606,6 +606,14 @@
             this.tabPage15.Text = "Details";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // StaffDetailsType
+            // 
+            this.StaffDetailsType.FormattingEnabled = true;
+            this.StaffDetailsType.Location = new System.Drawing.Point(196, 140);
+            this.StaffDetailsType.Name = "StaffDetailsType";
+            this.StaffDetailsType.Size = new System.Drawing.Size(216, 21);
+            this.StaffDetailsType.TabIndex = 61;
+            // 
             // StaffDetailsBirthday
             // 
             this.StaffDetailsBirthday.CustomFormat = "dd/MM";
@@ -754,6 +762,14 @@
             this.tabPage16.Text = "Create";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
+            // StaffCreateType
+            // 
+            this.StaffCreateType.FormattingEnabled = true;
+            this.StaffCreateType.Location = new System.Drawing.Point(197, 92);
+            this.StaffCreateType.Name = "StaffCreateType";
+            this.StaffCreateType.Size = new System.Drawing.Size(216, 21);
+            this.StaffCreateType.TabIndex = 75;
+            // 
             // label69
             // 
             this.label69.AutoSize = true;
@@ -873,6 +889,129 @@
             this.StudioTab.Size = new System.Drawing.Size(1152, 456);
             this.StudioTab.TabIndex = 13;
             this.StudioTab.Visible = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.StudioFilterBefore);
+            this.tabPage1.Controls.Add(this.StudioFilterAfter);
+            this.tabPage1.Controls.Add(this.label45);
+            this.tabPage1.Controls.Add(this.StudioFilterClear);
+            this.tabPage1.Controls.Add(this.label47);
+            this.tabPage1.Controls.Add(this.StudioFilterName);
+            this.tabPage1.Controls.Add(this.label48);
+            this.tabPage1.Controls.Add(this.StudiosList);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "List";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // StudioFilterBefore
+            // 
+            this.StudioFilterBefore.Location = new System.Drawing.Point(912, 236);
+            this.StudioFilterBefore.Name = "StudioFilterBefore";
+            this.StudioFilterBefore.Size = new System.Drawing.Size(213, 20);
+            this.StudioFilterBefore.TabIndex = 19;
+            // 
+            // StudioFilterAfter
+            // 
+            this.StudioFilterAfter.Location = new System.Drawing.Point(912, 171);
+            this.StudioFilterAfter.Name = "StudioFilterAfter";
+            this.StudioFilterAfter.Size = new System.Drawing.Size(216, 20);
+            this.StudioFilterAfter.TabIndex = 18;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label45.Location = new System.Drawing.Point(912, 136);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(133, 20);
+            this.label45.TabIndex = 17;
+            this.label45.Text = "Established During";
+            // 
+            // StudioFilterClear
+            // 
+            this.StudioFilterClear.Location = new System.Drawing.Point(909, 341);
+            this.StudioFilterClear.Name = "StudioFilterClear";
+            this.StudioFilterClear.Size = new System.Drawing.Size(215, 50);
+            this.StudioFilterClear.TabIndex = 16;
+            this.StudioFilterClear.Text = "Clear Filter";
+            this.StudioFilterClear.UseVisualStyleBackColor = true;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label47.Location = new System.Drawing.Point(1002, 13);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(42, 20);
+            this.label47.TabIndex = 7;
+            this.label47.Text = "Filter";
+            // 
+            // StudioFilterName
+            // 
+            this.StudioFilterName.Location = new System.Drawing.Point(912, 61);
+            this.StudioFilterName.Name = "StudioFilterName";
+            this.StudioFilterName.Size = new System.Drawing.Size(216, 20);
+            this.StudioFilterName.TabIndex = 6;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label48.Location = new System.Drawing.Point(917, 41);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(49, 20);
+            this.label48.TabIndex = 5;
+            this.label48.Text = "Name";
+            // 
+            // StudiosList
+            // 
+            this.StudiosList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.StudiosList.HideSelection = false;
+            this.StudiosList.Location = new System.Drawing.Point(5, 5);
+            this.StudiosList.Name = "StudiosList";
+            this.StudiosList.Size = new System.Drawing.Size(823, 422);
+            this.StudiosList.TabIndex = 0;
+            this.StudiosList.UseCompatibleStateImageBehavior = false;
+            this.StudiosList.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "";
+            this.columnHeader4.Width = 0;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Image";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 150;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Name";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 300;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Alt Name";
+            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader7.Width = 250;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Established At";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 250;
             // 
             // tabPage2
             // 
@@ -1204,129 +1343,6 @@
             this.StudioCreateAltName.Name = "StudioCreateAltName";
             this.StudioCreateAltName.Size = new System.Drawing.Size(216, 20);
             this.StudioCreateAltName.TabIndex = 74;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.StudioFilterBefore);
-            this.tabPage1.Controls.Add(this.StudioFilterAfter);
-            this.tabPage1.Controls.Add(this.label45);
-            this.tabPage1.Controls.Add(this.StudioFilterClear);
-            this.tabPage1.Controls.Add(this.label47);
-            this.tabPage1.Controls.Add(this.StudioFilterName);
-            this.tabPage1.Controls.Add(this.label48);
-            this.tabPage1.Controls.Add(this.StudiosList);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1144, 430);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "List";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // StudioFilterBefore
-            // 
-            this.StudioFilterBefore.Location = new System.Drawing.Point(912, 236);
-            this.StudioFilterBefore.Name = "StudioFilterBefore";
-            this.StudioFilterBefore.Size = new System.Drawing.Size(213, 20);
-            this.StudioFilterBefore.TabIndex = 19;
-            // 
-            // StudioFilterAfter
-            // 
-            this.StudioFilterAfter.Location = new System.Drawing.Point(912, 171);
-            this.StudioFilterAfter.Name = "StudioFilterAfter";
-            this.StudioFilterAfter.Size = new System.Drawing.Size(216, 20);
-            this.StudioFilterAfter.TabIndex = 18;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label45.Location = new System.Drawing.Point(912, 136);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(133, 20);
-            this.label45.TabIndex = 17;
-            this.label45.Text = "Established During";
-            // 
-            // StudioFilterClear
-            // 
-            this.StudioFilterClear.Location = new System.Drawing.Point(909, 341);
-            this.StudioFilterClear.Name = "StudioFilterClear";
-            this.StudioFilterClear.Size = new System.Drawing.Size(215, 50);
-            this.StudioFilterClear.TabIndex = 16;
-            this.StudioFilterClear.Text = "Clear Filter";
-            this.StudioFilterClear.UseVisualStyleBackColor = true;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label47.Location = new System.Drawing.Point(1002, 13);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(42, 20);
-            this.label47.TabIndex = 7;
-            this.label47.Text = "Filter";
-            // 
-            // StudioFilterName
-            // 
-            this.StudioFilterName.Location = new System.Drawing.Point(912, 61);
-            this.StudioFilterName.Name = "StudioFilterName";
-            this.StudioFilterName.Size = new System.Drawing.Size(216, 20);
-            this.StudioFilterName.TabIndex = 6;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label48.Location = new System.Drawing.Point(917, 41);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(49, 20);
-            this.label48.TabIndex = 5;
-            this.label48.Text = "Name";
-            // 
-            // StudiosList
-            // 
-            this.StudiosList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.StudiosList.HideSelection = false;
-            this.StudiosList.Location = new System.Drawing.Point(5, 5);
-            this.StudiosList.Name = "StudiosList";
-            this.StudiosList.Size = new System.Drawing.Size(823, 422);
-            this.StudiosList.TabIndex = 0;
-            this.StudiosList.UseCompatibleStateImageBehavior = false;
-            this.StudiosList.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "";
-            this.columnHeader4.Width = 0;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Image";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 150;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Name";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 300;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Alt Name";
-            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 250;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Established At";
-            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader8.Width = 250;
             // 
             // CharactersTab
             // 
@@ -1999,7 +2015,6 @@
             // 
             this.animeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.AnimeImage,
             this.AnimeName,
             this.AnimeScore,
             this.AnimeEps,
@@ -2021,12 +2036,6 @@
             // 
             this.columnHeader1.Text = "";
             this.columnHeader1.Width = 0;
-            // 
-            // AnimeImage
-            // 
-            this.AnimeImage.Text = "Image";
-            this.AnimeImage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.AnimeImage.Width = 150;
             // 
             // AnimeName
             // 
@@ -2066,17 +2075,18 @@
             // 
             // AnimeDetails
             // 
+            this.AnimeDetails.Controls.Add(this.AnimeUpdateStatus);
             this.AnimeDetails.Controls.Add(this.AnimeDetailsGenres);
-            this.AnimeDetails.Controls.Add(this.button4);
-            this.AnimeDetails.Controls.Add(this.button3);
-            this.AnimeDetails.Controls.Add(this.textBox1);
+            this.AnimeDetails.Controls.Add(this.AnimeRemoveRelBtn);
+            this.AnimeDetails.Controls.Add(this.AnimeAddRelationBtn);
+            this.AnimeDetails.Controls.Add(this.AnimeDetailsRelation);
             this.AnimeDetails.Controls.Add(this.label74);
             this.AnimeDetails.Controls.Add(this.AnimeDetailsSelAnimeRel);
             this.AnimeDetails.Controls.Add(this.label73);
             this.AnimeDetails.Controls.Add(this.label72);
             this.AnimeDetails.Controls.Add(this.AnimeDetailsRelated);
-            this.AnimeDetails.Controls.Add(this.button2);
-            this.AnimeDetails.Controls.Add(this.button1);
+            this.AnimeDetails.Controls.Add(this.animeDetailsRemoveGenre);
+            this.AnimeDetails.Controls.Add(this.animeDetailsAddGenre);
             this.AnimeDetails.Controls.Add(this.label71);
             this.AnimeDetails.Controls.Add(this.AnimeDetailsSelectGenre);
             this.AnimeDetails.Controls.Add(this.label70);
@@ -2111,6 +2121,16 @@
             this.AnimeDetails.Text = "Details";
             this.AnimeDetails.UseVisualStyleBackColor = true;
             // 
+            // AnimeUpdateStatus
+            // 
+            this.AnimeUpdateStatus.AutoSize = true;
+            this.AnimeUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.AnimeUpdateStatus.Location = new System.Drawing.Point(877, 118);
+            this.AnimeUpdateStatus.Name = "AnimeUpdateStatus";
+            this.AnimeUpdateStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AnimeUpdateStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeUpdateStatus.TabIndex = 49;
+            // 
             // AnimeDetailsGenres
             // 
             this.AnimeDetailsGenres.HideSelection = false;
@@ -2123,30 +2143,33 @@
             this.AnimeDetailsGenres.View = System.Windows.Forms.View.List;
             this.AnimeDetailsGenres.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsGenres_SelectedIndexChanged);
             // 
-            // button4
+            // AnimeRemoveRelBtn
             // 
-            this.button4.Location = new System.Drawing.Point(712, 368);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 37);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Remove Relation";
-            this.button4.UseVisualStyleBackColor = true;
+            this.AnimeRemoveRelBtn.Location = new System.Drawing.Point(712, 368);
+            this.AnimeRemoveRelBtn.Name = "AnimeRemoveRelBtn";
+            this.AnimeRemoveRelBtn.Size = new System.Drawing.Size(175, 37);
+            this.AnimeRemoveRelBtn.TabIndex = 47;
+            this.AnimeRemoveRelBtn.Text = "Remove Relation";
+            this.AnimeRemoveRelBtn.UseVisualStyleBackColor = true;
+            this.AnimeRemoveRelBtn.Click += new System.EventHandler(this.AnimeRemoveRelBtn_Click);
             // 
-            // button3
+            // AnimeAddRelationBtn
             // 
-            this.button3.Location = new System.Drawing.Point(912, 368);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 37);
-            this.button3.TabIndex = 46;
-            this.button3.Text = "Add Relation";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AnimeAddRelationBtn.Location = new System.Drawing.Point(912, 368);
+            this.AnimeAddRelationBtn.Name = "AnimeAddRelationBtn";
+            this.AnimeAddRelationBtn.Size = new System.Drawing.Size(175, 37);
+            this.AnimeAddRelationBtn.TabIndex = 46;
+            this.AnimeAddRelationBtn.Text = "Add Relation";
+            this.AnimeAddRelationBtn.UseVisualStyleBackColor = true;
+            this.AnimeAddRelationBtn.Click += new System.EventHandler(this.AnimeAddRelationBtn_Click);
             // 
-            // textBox1
+            // AnimeDetailsRelation
             // 
-            this.textBox1.Location = new System.Drawing.Point(912, 305);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 45;
+            this.AnimeDetailsRelation.Location = new System.Drawing.Point(912, 305);
+            this.AnimeDetailsRelation.Name = "AnimeDetailsRelation";
+            this.AnimeDetailsRelation.Size = new System.Drawing.Size(175, 20);
+            this.AnimeDetailsRelation.TabIndex = 45;
+            this.AnimeDetailsRelation.TextChanged += new System.EventHandler(this.AnimeDetailsRelation_TextChanged);
             // 
             // label74
             // 
@@ -2165,6 +2188,7 @@
             this.AnimeDetailsSelAnimeRel.Name = "AnimeDetailsSelAnimeRel";
             this.AnimeDetailsSelAnimeRel.Size = new System.Drawing.Size(170, 21);
             this.AnimeDetailsSelAnimeRel.TabIndex = 43;
+            this.AnimeDetailsSelAnimeRel.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsSelAnimeRel_SelectedIndexChanged);
             // 
             // label73
             // 
@@ -2192,6 +2216,7 @@
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader16});
+            this.AnimeDetailsRelated.FullRowSelect = true;
             this.AnimeDetailsRelated.HideSelection = false;
             this.AnimeDetailsRelated.Location = new System.Drawing.Point(253, 180);
             this.AnimeDetailsRelated.Name = "AnimeDetailsRelated";
@@ -2199,6 +2224,7 @@
             this.AnimeDetailsRelated.TabIndex = 40;
             this.AnimeDetailsRelated.UseCompatibleStateImageBehavior = false;
             this.AnimeDetailsRelated.View = System.Windows.Forms.View.Details;
+            this.AnimeDetailsRelated.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.AnimeDetailsRelated_ItemSelectionChanged);
             // 
             // columnHeader14
             // 
@@ -2217,23 +2243,25 @@
             this.columnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader16.Width = 285;
             // 
-            // button2
+            // animeDetailsRemoveGenre
             // 
-            this.button2.Location = new System.Drawing.Point(712, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 37);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "Remove Genre";
-            this.button2.UseVisualStyleBackColor = true;
+            this.animeDetailsRemoveGenre.Location = new System.Drawing.Point(712, 101);
+            this.animeDetailsRemoveGenre.Name = "animeDetailsRemoveGenre";
+            this.animeDetailsRemoveGenre.Size = new System.Drawing.Size(122, 37);
+            this.animeDetailsRemoveGenre.TabIndex = 39;
+            this.animeDetailsRemoveGenre.Text = "Remove Genre";
+            this.animeDetailsRemoveGenre.UseVisualStyleBackColor = true;
+            this.animeDetailsRemoveGenre.Click += new System.EventHandler(this.animeDetailsRemoveGenre_Click);
             // 
-            // button1
+            // animeDetailsAddGenre
             // 
-            this.button1.Location = new System.Drawing.Point(712, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 37);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Add Genre";
-            this.button1.UseVisualStyleBackColor = true;
+            this.animeDetailsAddGenre.Location = new System.Drawing.Point(712, 56);
+            this.animeDetailsAddGenre.Name = "animeDetailsAddGenre";
+            this.animeDetailsAddGenre.Size = new System.Drawing.Size(122, 37);
+            this.animeDetailsAddGenre.TabIndex = 38;
+            this.animeDetailsAddGenre.Text = "Add Genre";
+            this.animeDetailsAddGenre.UseVisualStyleBackColor = true;
+            this.animeDetailsAddGenre.Click += new System.EventHandler(this.animeDetailsAddGenre_Click);
             // 
             // label71
             // 
@@ -2252,6 +2280,7 @@
             this.AnimeDetailsSelectGenre.Name = "AnimeDetailsSelectGenre";
             this.AnimeDetailsSelectGenre.Size = new System.Drawing.Size(121, 21);
             this.AnimeDetailsSelectGenre.TabIndex = 36;
+            this.AnimeDetailsSelectGenre.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsSelectGenre_SelectedIndexChanged);
             // 
             // label70
             // 
@@ -2270,6 +2299,7 @@
             this.AnimeDetailsStudio.Name = "AnimeDetailsStudio";
             this.AnimeDetailsStudio.Size = new System.Drawing.Size(212, 21);
             this.AnimeDetailsStudio.TabIndex = 33;
+            this.AnimeDetailsStudio.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsStudio_SelectedIndexChanged);
             // 
             // AnimeDetailsEpisodes
             // 
@@ -2277,6 +2307,7 @@
             this.AnimeDetailsEpisodes.Name = "AnimeDetailsEpisodes";
             this.AnimeDetailsEpisodes.Size = new System.Drawing.Size(58, 20);
             this.AnimeDetailsEpisodes.TabIndex = 32;
+            this.AnimeDetailsEpisodes.ValueChanged += new System.EventHandler(this.AnimeDetailsEpisodes_ValueChanged);
             // 
             // AnimeDetailsFinishedDate
             // 
@@ -2284,6 +2315,7 @@
             this.AnimeDetailsFinishedDate.Name = "AnimeDetailsFinishedDate";
             this.AnimeDetailsFinishedDate.Size = new System.Drawing.Size(216, 20);
             this.AnimeDetailsFinishedDate.TabIndex = 31;
+            this.AnimeDetailsFinishedDate.ValueChanged += new System.EventHandler(this.AnimeDetailsFinishedDate_ValueChanged);
             // 
             // AnimeDetailsAirDate
             // 
@@ -2291,6 +2323,7 @@
             this.AnimeDetailsAirDate.Name = "AnimeDetailsAirDate";
             this.AnimeDetailsAirDate.Size = new System.Drawing.Size(216, 20);
             this.AnimeDetailsAirDate.TabIndex = 13;
+            this.AnimeDetailsAirDate.ValueChanged += new System.EventHandler(this.AnimeDetailsAirDate_ValueChanged);
             // 
             // AnimeDetailsUpdateButton
             // 
@@ -2300,6 +2333,7 @@
             this.AnimeDetailsUpdateButton.TabIndex = 30;
             this.AnimeDetailsUpdateButton.Text = "Update Information";
             this.AnimeDetailsUpdateButton.UseVisualStyleBackColor = true;
+            this.AnimeDetailsUpdateButton.Click += new System.EventHandler(this.AnimeDetailsUpdateButton_Click);
             // 
             // label14
             // 
@@ -2318,6 +2352,7 @@
             this.AnimeDetailsUpdateAs.Name = "AnimeDetailsUpdateAs";
             this.AnimeDetailsUpdateAs.Size = new System.Drawing.Size(212, 21);
             this.AnimeDetailsUpdateAs.TabIndex = 28;
+            this.AnimeDetailsUpdateAs.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsUpdateAs_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -2402,6 +2437,7 @@
             this.AnimeDetailsSynopsis.Name = "AnimeDetailsSynopsis";
             this.AnimeDetailsSynopsis.Size = new System.Drawing.Size(236, 244);
             this.AnimeDetailsSynopsis.TabIndex = 8;
+            this.AnimeDetailsSynopsis.TextChanged += new System.EventHandler(this.AnimeDetailsSynopsis_TextChanged);
             // 
             // label4
             // 
@@ -2419,6 +2455,7 @@
             this.AnimeDetailsAltName.Name = "AnimeDetailsAltName";
             this.AnimeDetailsAltName.Size = new System.Drawing.Size(216, 20);
             this.AnimeDetailsAltName.TabIndex = 6;
+            this.AnimeDetailsAltName.TextChanged += new System.EventHandler(this.AnimeDetailsAltName_TextChanged);
             // 
             // label3
             // 
@@ -2436,6 +2473,7 @@
             this.AnimeDetailsName.Name = "AnimeDetailsName";
             this.AnimeDetailsName.Size = new System.Drawing.Size(216, 20);
             this.AnimeDetailsName.TabIndex = 4;
+            this.AnimeDetailsName.TextChanged += new System.EventHandler(this.AnimeDetailsName_TextChanged);
             // 
             // label2
             // 
@@ -2467,14 +2505,11 @@
             // 
             // AnimeCreate
             // 
+            this.AnimeCreate.Controls.Add(this.AnimeCreateStatus);
             this.AnimeCreate.Controls.Add(this.AnimeCreateStudio);
             this.AnimeCreate.Controls.Add(this.AnimeCreateEp);
             this.AnimeCreate.Controls.Add(this.AnimeCreateFinishDate);
             this.AnimeCreate.Controls.Add(this.AnimeCreateAirDate);
-            this.AnimeCreate.Controls.Add(this.label24);
-            this.AnimeCreate.Controls.Add(this.AnimeCreatePreviewImg);
-            this.AnimeCreate.Controls.Add(this.AnimeCreateImageUrl);
-            this.AnimeCreate.Controls.Add(this.label22);
             this.AnimeCreate.Controls.Add(this.AnimeCreateSynopsis);
             this.AnimeCreate.Controls.Add(this.label30);
             this.AnimeCreate.Controls.Add(this.label27);
@@ -2495,6 +2530,15 @@
             this.AnimeCreate.Text = "Create";
             this.AnimeCreate.UseVisualStyleBackColor = true;
             // 
+            // AnimeCreateStatus
+            // 
+            this.AnimeCreateStatus.AutoSize = true;
+            this.AnimeCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.AnimeCreateStatus.Location = new System.Drawing.Point(870, 381);
+            this.AnimeCreateStatus.Name = "AnimeCreateStatus";
+            this.AnimeCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeCreateStatus.TabIndex = 60;
+            // 
             // AnimeCreateStudio
             // 
             this.AnimeCreateStudio.FormattingEnabled = true;
@@ -2502,6 +2546,7 @@
             this.AnimeCreateStudio.Name = "AnimeCreateStudio";
             this.AnimeCreateStudio.Size = new System.Drawing.Size(216, 21);
             this.AnimeCreateStudio.TabIndex = 59;
+            this.AnimeCreateStudio.SelectedIndexChanged += new System.EventHandler(this.AnimeCreateStudio_SelectedIndexChanged);
             // 
             // AnimeCreateEp
             // 
@@ -2509,6 +2554,7 @@
             this.AnimeCreateEp.Name = "AnimeCreateEp";
             this.AnimeCreateEp.Size = new System.Drawing.Size(215, 20);
             this.AnimeCreateEp.TabIndex = 58;
+            this.AnimeCreateEp.ValueChanged += new System.EventHandler(this.AnimeCreateEp_ValueChanged);
             // 
             // AnimeCreateFinishDate
             // 
@@ -2516,6 +2562,7 @@
             this.AnimeCreateFinishDate.Name = "AnimeCreateFinishDate";
             this.AnimeCreateFinishDate.Size = new System.Drawing.Size(216, 20);
             this.AnimeCreateFinishDate.TabIndex = 57;
+            this.AnimeCreateFinishDate.ValueChanged += new System.EventHandler(this.AnimeCreateFinishDate_ValueChanged);
             // 
             // AnimeCreateAirDate
             // 
@@ -2523,41 +2570,7 @@
             this.AnimeCreateAirDate.Name = "AnimeCreateAirDate";
             this.AnimeCreateAirDate.Size = new System.Drawing.Size(216, 20);
             this.AnimeCreateAirDate.TabIndex = 56;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label24.Location = new System.Drawing.Point(872, 98);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(106, 20);
-            this.label24.TabIndex = 55;
-            this.label24.Text = "Image Preview";
-            // 
-            // AnimeCreatePreviewImg
-            // 
-            this.AnimeCreatePreviewImg.Location = new System.Drawing.Point(872, 118);
-            this.AnimeCreatePreviewImg.Name = "AnimeCreatePreviewImg";
-            this.AnimeCreatePreviewImg.Size = new System.Drawing.Size(215, 175);
-            this.AnimeCreatePreviewImg.TabIndex = 54;
-            this.AnimeCreatePreviewImg.TabStop = false;
-            // 
-            // AnimeCreateImageUrl
-            // 
-            this.AnimeCreateImageUrl.Location = new System.Drawing.Point(872, 58);
-            this.AnimeCreateImageUrl.Name = "AnimeCreateImageUrl";
-            this.AnimeCreateImageUrl.Size = new System.Drawing.Size(216, 20);
-            this.AnimeCreateImageUrl.TabIndex = 53;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label22.Location = new System.Drawing.Point(872, 38);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 20);
-            this.label22.TabIndex = 52;
-            this.label22.Text = "Image URL";
+            this.AnimeCreateAirDate.ValueChanged += new System.EventHandler(this.AnimeCreateAirDate_ValueChanged);
             // 
             // AnimeCreateSynopsis
             // 
@@ -2566,6 +2579,7 @@
             this.AnimeCreateSynopsis.Name = "AnimeCreateSynopsis";
             this.AnimeCreateSynopsis.Size = new System.Drawing.Size(735, 233);
             this.AnimeCreateSynopsis.TabIndex = 51;
+            this.AnimeCreateSynopsis.TextChanged += new System.EventHandler(this.AnimeCreateSynopsis_TextChanged);
             // 
             // label30
             // 
@@ -2581,7 +2595,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label27.Location = new System.Drawing.Point(872, 315);
+            this.label27.Location = new System.Drawing.Point(874, 282);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(70, 20);
             this.label27.TabIndex = 49;
@@ -2590,10 +2604,11 @@
             // AnimeCreateAsSelect
             // 
             this.AnimeCreateAsSelect.FormattingEnabled = true;
-            this.AnimeCreateAsSelect.Location = new System.Drawing.Point(872, 335);
+            this.AnimeCreateAsSelect.Location = new System.Drawing.Point(874, 302);
             this.AnimeCreateAsSelect.Name = "AnimeCreateAsSelect";
             this.AnimeCreateAsSelect.Size = new System.Drawing.Size(216, 21);
             this.AnimeCreateAsSelect.TabIndex = 48;
+            this.AnimeCreateAsSelect.SelectedIndexChanged += new System.EventHandler(this.AnimeCreateAsSelect_SelectedIndexChanged);
             // 
             // label28
             // 
@@ -2611,6 +2626,7 @@
             this.AnimeCreateName.Name = "AnimeCreateName";
             this.AnimeCreateName.Size = new System.Drawing.Size(216, 20);
             this.AnimeCreateName.TabIndex = 45;
+            this.AnimeCreateName.TextChanged += new System.EventHandler(this.AnimeCreateName_TextChanged);
             // 
             // label29
             // 
@@ -2624,12 +2640,13 @@
             // 
             // AnimeCreateButton
             // 
-            this.AnimeCreateButton.Location = new System.Drawing.Point(872, 374);
+            this.AnimeCreateButton.Location = new System.Drawing.Point(874, 341);
             this.AnimeCreateButton.Name = "AnimeCreateButton";
             this.AnimeCreateButton.Size = new System.Drawing.Size(215, 37);
             this.AnimeCreateButton.TabIndex = 43;
             this.AnimeCreateButton.Text = "Create Entry";
             this.AnimeCreateButton.UseVisualStyleBackColor = true;
+            this.AnimeCreateButton.Click += new System.EventHandler(this.AnimeCreateButton_Click);
             // 
             // label21
             // 
@@ -2667,6 +2684,7 @@
             this.AnimeCreateAltName.Name = "AnimeCreateAltName";
             this.AnimeCreateAltName.Size = new System.Drawing.Size(216, 20);
             this.AnimeCreateAltName.TabIndex = 32;
+            this.AnimeCreateAltName.TextChanged += new System.EventHandler(this.AnimeCreateAltName_TextChanged);
             // 
             // label26
             // 
@@ -2680,6 +2698,10 @@
             // 
             // AnimeComments
             // 
+            this.AnimeComments.Controls.Add(this.AnimeDetailsCommentStatus);
+            this.AnimeComments.Controls.Add(this.label22);
+            this.AnimeComments.Controls.Add(this.AnimeCommentsRemoveAs);
+            this.AnimeComments.Controls.Add(this.RemoveCommentBtn);
             this.AnimeComments.Controls.Add(this.label13);
             this.AnimeComments.Controls.Add(this.AnimeDetailsCommentAs);
             this.AnimeComments.Controls.Add(this.AnimeDetailsAddComment);
@@ -2698,7 +2720,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label13.Location = new System.Drawing.Point(901, 327);
+            this.label13.Location = new System.Drawing.Point(953, 310);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 20);
             this.label13.TabIndex = 34;
@@ -2707,19 +2729,21 @@
             // AnimeDetailsCommentAs
             // 
             this.AnimeDetailsCommentAs.FormattingEnabled = true;
-            this.AnimeDetailsCommentAs.Location = new System.Drawing.Point(901, 351);
+            this.AnimeDetailsCommentAs.Location = new System.Drawing.Point(952, 333);
             this.AnimeDetailsCommentAs.Name = "AnimeDetailsCommentAs";
-            this.AnimeDetailsCommentAs.Size = new System.Drawing.Size(212, 21);
+            this.AnimeDetailsCommentAs.Size = new System.Drawing.Size(161, 21);
             this.AnimeDetailsCommentAs.TabIndex = 33;
+            this.AnimeDetailsCommentAs.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsCommentAs_SelectedIndexChanged);
             // 
             // AnimeDetailsAddComment
             // 
-            this.AnimeDetailsAddComment.Location = new System.Drawing.Point(901, 377);
+            this.AnimeDetailsAddComment.Location = new System.Drawing.Point(952, 359);
             this.AnimeDetailsAddComment.Name = "AnimeDetailsAddComment";
-            this.AnimeDetailsAddComment.Size = new System.Drawing.Size(212, 47);
+            this.AnimeDetailsAddComment.Size = new System.Drawing.Size(161, 47);
             this.AnimeDetailsAddComment.TabIndex = 32;
             this.AnimeDetailsAddComment.Text = "Comment";
             this.AnimeDetailsAddComment.UseVisualStyleBackColor = true;
+            this.AnimeDetailsAddComment.Click += new System.EventHandler(this.AnimeDetailsAddComment_Click);
             // 
             // label12
             // 
@@ -2738,6 +2762,7 @@
             this.AnimeDetailsCommentTxt.Name = "AnimeDetailsCommentTxt";
             this.AnimeDetailsCommentTxt.Size = new System.Drawing.Size(344, 264);
             this.AnimeDetailsCommentTxt.TabIndex = 30;
+            this.AnimeDetailsCommentTxt.TextChanged += new System.EventHandler(this.AnimeDetailsCommentTxt_TextChanged);
             // 
             // label11
             // 
@@ -2755,13 +2780,16 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader11});
+            this.AnimeDetailsComments.FullRowSelect = true;
             this.AnimeDetailsComments.HideSelection = false;
             this.AnimeDetailsComments.Location = new System.Drawing.Point(6, 30);
+            this.AnimeDetailsComments.MultiSelect = false;
             this.AnimeDetailsComments.Name = "AnimeDetailsComments";
             this.AnimeDetailsComments.Size = new System.Drawing.Size(757, 376);
             this.AnimeDetailsComments.TabIndex = 28;
             this.AnimeDetailsComments.UseCompatibleStateImageBehavior = false;
             this.AnimeDetailsComments.View = System.Windows.Forms.View.Details;
+            this.AnimeDetailsComments.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.AnimeDetailsComments_ItemSelectionChanged);
             // 
             // columnHeader2
             // 
@@ -3493,21 +3521,43 @@
             this.AnimeListImage.ImageSize = new System.Drawing.Size(16, 16);
             this.AnimeListImage.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // StaffDetailsType
+            // label22
             // 
-            this.StaffDetailsType.FormattingEnabled = true;
-            this.StaffDetailsType.Location = new System.Drawing.Point(196, 140);
-            this.StaffDetailsType.Name = "StaffDetailsType";
-            this.StaffDetailsType.Size = new System.Drawing.Size(216, 21);
-            this.StaffDetailsType.TabIndex = 61;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label22.Location = new System.Drawing.Point(786, 310);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(152, 20);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Remove Comment As";
             // 
-            // StaffCreateType
+            // AnimeCommentsRemoveAs
             // 
-            this.StaffCreateType.FormattingEnabled = true;
-            this.StaffCreateType.Location = new System.Drawing.Point(197, 92);
-            this.StaffCreateType.Name = "StaffCreateType";
-            this.StaffCreateType.Size = new System.Drawing.Size(216, 21);
-            this.StaffCreateType.TabIndex = 75;
+            this.AnimeCommentsRemoveAs.FormattingEnabled = true;
+            this.AnimeCommentsRemoveAs.Location = new System.Drawing.Point(785, 333);
+            this.AnimeCommentsRemoveAs.Name = "AnimeCommentsRemoveAs";
+            this.AnimeCommentsRemoveAs.Size = new System.Drawing.Size(161, 21);
+            this.AnimeCommentsRemoveAs.TabIndex = 36;
+            this.AnimeCommentsRemoveAs.SelectedIndexChanged += new System.EventHandler(this.AnimeCommentsRemoveAs_SelectedIndexChanged);
+            // 
+            // RemoveCommentBtn
+            // 
+            this.RemoveCommentBtn.Location = new System.Drawing.Point(785, 359);
+            this.RemoveCommentBtn.Name = "RemoveCommentBtn";
+            this.RemoveCommentBtn.Size = new System.Drawing.Size(161, 47);
+            this.RemoveCommentBtn.TabIndex = 35;
+            this.RemoveCommentBtn.Text = "RemoveComment";
+            this.RemoveCommentBtn.UseVisualStyleBackColor = true;
+            this.RemoveCommentBtn.Click += new System.EventHandler(this.RemoveCommentBtn_Click);
+            // 
+            // AnimeDetailsCommentStatus
+            // 
+            this.AnimeDetailsCommentStatus.AutoSize = true;
+            this.AnimeDetailsCommentStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.AnimeDetailsCommentStatus.Location = new System.Drawing.Point(786, 407);
+            this.AnimeDetailsCommentStatus.Name = "AnimeDetailsCommentStatus";
+            this.AnimeDetailsCommentStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeDetailsCommentStatus.TabIndex = 38;
             // 
             // Form1
             // 
@@ -3517,11 +3567,11 @@
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.AnimeTab);
+            this.Controls.Add(this.UsersTab);
             this.Controls.Add(this.StaffTab);
             this.Controls.Add(this.StudioTab);
             this.Controls.Add(this.CharactersTab);
-            this.Controls.Add(this.AnimeTab);
-            this.Controls.Add(this.UsersTab);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -3535,14 +3585,14 @@
             this.tabPage16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StaffCreateImagePreview)).EndInit();
             this.StudioTab.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudioDetailsImagePrev)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudioCreateImgPreview)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.CharactersTab.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
@@ -3565,7 +3615,6 @@
             this.AnimeCreate.ResumeLayout(false);
             this.AnimeCreate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AnimeCreateEp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AnimeCreatePreviewImg)).EndInit();
             this.AnimeComments.ResumeLayout(false);
             this.AnimeComments.PerformLayout();
             this.UsersTab.ResumeLayout(false);
@@ -3748,7 +3797,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListView animeListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader AnimeImage;
         private System.Windows.Forms.ColumnHeader AnimeName;
         private System.Windows.Forms.ColumnHeader AnimeScore;
         private System.Windows.Forms.ColumnHeader AnimeEps;
@@ -3784,10 +3832,6 @@
         private System.Windows.Forms.NumericUpDown AnimeCreateEp;
         private System.Windows.Forms.DateTimePicker AnimeCreateFinishDate;
         private System.Windows.Forms.DateTimePicker AnimeCreateAirDate;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.PictureBox AnimeCreatePreviewImg;
-        private System.Windows.Forms.TextBox AnimeCreateImageUrl;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox AnimeCreateSynopsis;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label27;
@@ -3877,8 +3921,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown AnimeListPage;
         private System.Windows.Forms.ImageList AnimeListImage;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button animeDetailsRemoveGenre;
+        private System.Windows.Forms.Button animeDetailsAddGenre;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.ComboBox AnimeDetailsSelectGenre;
         private System.Windows.Forms.Label label70;
@@ -3893,9 +3937,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button AnimeRemoveRelBtn;
+        private System.Windows.Forms.Button AnimeAddRelationBtn;
+        private System.Windows.Forms.TextBox AnimeDetailsRelation;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.ComboBox AnimeDetailsSelAnimeRel;
         private System.Windows.Forms.Label label73;
@@ -3907,6 +3951,12 @@
         private System.Windows.Forms.ListView AnimeDetailsGenres;
         private System.Windows.Forms.ComboBox StaffDetailsType;
         private System.Windows.Forms.ComboBox StaffCreateType;
+        private System.Windows.Forms.Label AnimeUpdateStatus;
+        private System.Windows.Forms.Label AnimeCreateStatus;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox AnimeCommentsRemoveAs;
+        private System.Windows.Forms.Button RemoveCommentBtn;
+        private System.Windows.Forms.Label AnimeDetailsCommentStatus;
     }
 }
 

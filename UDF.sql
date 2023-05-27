@@ -17,7 +17,7 @@ BEGIN
     DECLARE @IsAdmin bit
 
     SELECT @IsAdmin = Is_admin
-    FROM [User]
+    FROM [Users]
     WHERE ID = @UserID
 
     RETURN @IsAdmin
