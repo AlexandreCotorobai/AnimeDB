@@ -19,8 +19,8 @@ BEGIN
     DELETE FROM Worked_on
     WHERE FK_AnimeID = @AnimeID;
 
-    -- Delete rows from Apears_In table
-    DELETE FROM Apears_In
+    -- Delete rows from Appears_in table
+    DELETE FROM Appears_in
     WHERE FK_AnimeID = @AnimeID;
 
     -- Delete rows from Is_genre table
@@ -39,8 +39,8 @@ CREATE PROCEDURE RemoveCharacter
     @CharacterID INT
 AS
 BEGIN
-    -- Delete rows from Apears_In table
-    DELETE FROM Apears_In
+    -- Delete rows from Appears_in table
+    DELETE FROM Appears_in
     WHERE FK_CharacterID = @CharacterID;
 
     -- Delete the character from the Characters table

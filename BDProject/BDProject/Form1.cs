@@ -144,8 +144,7 @@ namespace BDProject
             animeDict.Clear();
             AnimeDetailsSelAnimeRel.Items.Clear();
             CharacterFilterFromAnime.Items.Clear();
-            CharacterDetailsAnime.Items.Clear();
-            CharacterCreateAnime.Items.Clear();
+            CharDetailsAddAnimeAppearsIn.Items.Clear();
             try
             {
                 conn.Open();
@@ -156,8 +155,7 @@ namespace BDProject
                     animeDict.Add(reader[1].ToString(), int.Parse(reader[0].ToString()));
                     AnimeDetailsSelAnimeRel.Items.Add(reader[1].ToString());
                     CharacterFilterFromAnime.Items.Add(reader[1].ToString());
-                    CharacterDetailsAnime.Items.Add(reader[1].ToString());
-                    CharacterCreateAnime.Items.Add(reader[1].ToString());
+                    CharDetailsAddAnimeAppearsIn.Items.Add(reader[1].ToString());
                 }
             }
             catch (Exception ex)
@@ -304,6 +302,8 @@ namespace BDProject
             StaffTab.Visible = false;
             UsersTab.Visible = false;
 
+            AnimeListPage.Value = 1;
+            FilterAnimeOffset = 1;
             resetAnimeVars();
             requestAnimeList();
         }
@@ -337,11 +337,16 @@ namespace BDProject
         private void AnimeListPage_ValueChanged(object sender, EventArgs e)
         {
             FilterAnimeOffset = (int)AnimeListPage.Value;
+            animeListView.Items.Clear();
+            requestAnimeList();
         }
 
         private void ClearFilterButton_Click(object sender, EventArgs e)
         {
             resetAnimeVars();
+            animeListView.Items.Clear();
+            requestAnimeList();
+
         }
 
         private void animeListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -365,18 +370,17 @@ namespace BDProject
             // set day to today 
             AnimeFilterAfterDate.Value = DateTime.Now;
             AnimeFilterBeforeDate.Value = DateTime.Now;
-
             // reset vars
             FilterAnimeSearch = null;
             FilterAnimeScore = 0.0f;
             FilterAnimeStartDate = DefaultDate;
             FilterAnimeEndDate = DefaultDate;
-            FilterAnimeOffset = 0;
+
         }
 
         private void requestAnimeList()
         {
-            String command = $"EXEC FilterAnime @Name = {(FilterAnimeSearch == null ? "NULL" : "'" + FilterAnimeSearch + "'")}, @MinScore = {(FilterAnimeScore == 0.0 ? "NULL" : FilterAnimeScore.ToString())}, @MinDate = {(FilterAnimeStartDate == DefaultDate ? "NULL" : "'" + FilterAnimeStartDate.ToString("yyyy-MM-dd") + "'")}, @MaxDate = {(FilterAnimeEndDate == DefaultDate ? "NULL" : "'" + FilterAnimeEndDate.ToString("yyyy-MM-dd") + "'")}, @Offset = {FilterAnimeOffset * 20}";
+            String command = $"EXEC FilterAnime @Name = {(FilterAnimeSearch == null ? "NULL" : "'" + FilterAnimeSearch + "'")}, @MinScore = {(FilterAnimeScore == 0.0 ? "NULL" : FilterAnimeScore.ToString())}, @MinDate = {(FilterAnimeStartDate == DefaultDate ? "NULL" : "'" + FilterAnimeStartDate.ToString("yyyy-MM-dd") + "'")}, @MaxDate = {(FilterAnimeEndDate == DefaultDate ? "NULL" : "'" + FilterAnimeEndDate.ToString("yyyy-MM-dd") + "'")}, @Offset = {(FilterAnimeOffset-1) * 20}";
             if (debug)
             {
                 Console.WriteLine("DEBUG: Executing Command -> " + command);
@@ -451,9 +455,8 @@ namespace BDProject
             {
                 conn.Open();
                 // get anime details
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Anime WHERE ID = " + SelectedAnimeID, conn);
+                SqlCommand cmd = new SqlCommand("EXEC GetAnime @AnimeID = " + SelectedAnimeID, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
-                int studioID = -1;
                 while (reader.Read())
                 {
                     AnimeDetailsID.Text = reader["ID"].ToString();
@@ -465,19 +468,9 @@ namespace BDProject
                     AnimeDetailsFinishedDate.Text = reader["Finished_Date"].ToString();
                     AnimeDetailsEpisodes.Text = reader["Episodes"].ToString();
                     AnimeDetailsSeason.Text = reader["Season"].ToString();
-                    studioID = int.Parse(reader["FK_Studio_ID"].ToString());
+                    AnimeDetailsStudio.Text = reader["StudioName"].ToString();
                 }
 
-                reader.Close();
-
-                // get studio name
-                cmd = new SqlCommand("SELECT Name FROM Studio WHERE ID = " + studioID, conn);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    AnimeDetailsStudio.Text = reader["Name"].ToString();
-                }
-                
                 reader.Close();
                 //get genres id
                 requestSingleAnimeGenres();
@@ -518,6 +511,8 @@ namespace BDProject
             if (AnimeTab.SelectedIndex == 0)
             {
                 animeListView.Items.Clear();
+                AnimeListPage.Value = 1;
+                FilterAnimeOffset = 1;
                 resetAnimeVars();
                 requestAnimeList();
             }
@@ -1119,16 +1114,466 @@ namespace BDProject
 
         // Characters
 
+        private int SelectedCharacterID = -1;
+        private int lastSearchedCharacterID = -1;
+        private int FilterCharAnimeID = -1;
+        private String FilterCharName = null;
+        private int FilterCharVoiceActorID = -1;
+        private int FilterCharOffset = 0;
+        
+        // character details
+        private String characterName = null;
+        private String characterDescription = null;
+        private int characterVAID = -1;
+        private int characterRemoveAnimeID = -1;
+        private int characterAddAnimeID = -1;
+        private int characterUpdateAs = -1;
 
+        // character create
+        private String characterCreateName = null;
+        private String characterCreateDescription = null;
+        private int characterCreateVAID = -1;
+        private int characterCreateAs = -1;
         private void CharactersBtn_Click(object sender, EventArgs e)
         {
+            CharactersList.Items.Clear();
             AnimeTab.Visible = false;
             CharactersTab.Visible = true;
             StudioTab.Visible = false;
             StaffTab.Visible = false;
             UsersTab.Visible = false;
 
+            CharacterListPage.Value = 1;
+            FilterCharOffset = 1;
+            resetCharVar();
+            requestCharList();
         }
+        private void CharactersTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CharactersTab.SelectedIndex == 0)
+            {
+                CharactersList.Items.Clear();
+                CharacterListPage.Value = 1;
+                FilterCharOffset = 1;
+                resetCharVar();
+                requestCharList();
+            } else if (CharactersTab.SelectedIndex == 1)
+            {
+                requestSingleChar();
+            } else if (CharactersTab.SelectedIndex == 2)
+            {
+                resetCharCreate();
+            } 
+        }
+        private void resetCharCreate()
+        {
+            CharacterCreateName.Text = "";
+            CharacterCreateDescription.Text = "";
+            CharacterCreateVA.SelectedIndex = 0;
+            CharacterCreateAs.SelectedIndex = 0;
+        }
+        private void resetCharVar()
+        {
+            // reset fields
+            CharacterNameFilter.Text = "";
+            CharacterFilterFromAnime.SelectedIndex = 0;
+            CharacterFilterVoicedby.SelectedIndex = 0;
+            // reset vars
+            FilterCharAnimeID = -1;
+            FilterCharName = null;
+            FilterCharVoiceActorID = -1;
+
+        }
+        
+        private void requestCharList()
+        {
+            String command = $"EXEC FilterCharacter @AnimeID = {(FilterCharAnimeID == -1 ? "NULL" : FilterCharAnimeID.ToString())}, @Name = {(FilterCharName == null ? "NULL" : "'" + FilterCharName + "'")}, @VAID = {(FilterCharVoiceActorID == -1 ? "NULL" : FilterCharVoiceActorID.ToString())}, @Offset = {(FilterCharOffset-1) * 20}";
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character List Command -> " + command);
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    CharactersList.Items.Add(reader["ID"].ToString());
+                    CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add(reader["Name"].ToString());
+                    CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add(reader["AnimeName"].ToString());
+                    CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add(reader["VA"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void CharactersList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (!e.IsSelected)
+            {
+                SelectedCharacterID = -1;
+                return;
+            }
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Selected Character ID -> " + e.Item.Text);
+            }
+            SelectedCharacterID = int.Parse(e.Item.Text);
+        }
+
+        private void CharacterNameFilter_TextChanged(object sender, EventArgs e)
+        {
+            FilterCharName = CharacterNameFilter.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Filter Name -> " + FilterCharName);
+            }
+        }
+
+        private void CharacterFilterFromAnime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterCharAnimeID = animeDict[CharacterFilterFromAnime.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Filter Anime ID -> " + FilterCharAnimeID);
+            }
+        }
+
+        private void CharacterFilterVoicedby_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterCharVoiceActorID = vaDict[CharacterFilterVoicedby.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Filter VA ID -> " + FilterCharVoiceActorID);
+            }
+        }
+
+        private void CharacterClearFilterBtn_Click(object sender, EventArgs e)
+        {
+            resetCharVar();
+            CharactersList.Items.Clear();
+            requestCharList();
+        }
+
+        private void CharacterApplyFilterBtn_Click(object sender, EventArgs e)
+        {
+            CharactersList.Items.Clear();
+            requestCharList();
+        }
+
+        private void CharacterListPage_ValueChanged(object sender, EventArgs e)
+        {
+            FilterCharOffset = (int)CharacterListPage.Value;
+            CharactersList.Items.Clear();
+            requestCharList();
+        }
+
+        private void resetCharDetails()
+        {
+            CharDetailsAppearsInlst.Items.Clear();
+            CharacterDetailsDescription.Text = "";
+            CharacterDetailsID.Text = "";
+            CharacterDetailsName.Text = "";
+            CharacterDetailsVA.Text = "";
+        }
+
+        private void getAnimeAppearsIn()
+        {
+            SqlCommand cmd = new SqlCommand($"EXEC GetCharacterAnimes @CharacterID = {SelectedCharacterID}", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["AnimeName"].ToString());
+                item.Tag = reader["AnimeID"].ToString();
+                CharDetailsAppearsInlst.Items.Add(item);
+            }
+            reader.Close();
+        }
+        private void requestSingleChar()
+        {
+            if (SelectedCharacterID == -1 || SelectedCharacterID == lastSearchedCharacterID)
+            {
+                return;
+            }
+            
+            resetCharDetails();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC GetCharacter @CharacterID = {SelectedCharacterID}", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    CharacterDetailsID.Text = reader["ID"].ToString();
+                    CharacterDetailsName.Text = reader["Name"].ToString();
+                    CharacterDetailsDescription.Text = reader["Description"].ToString();
+                    CharacterDetailsVA.Text = reader["VA"].ToString();
+                }
+
+                // get anime appears in
+                reader.Close();
+                getAnimeAppearsIn();
+
+                lastSearchedCharacterID = SelectedCharacterID;
+            }
+            
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void CharacterDetailsDescription_TextChanged(object sender, EventArgs e)
+        {
+            characterDescription = CharacterDetailsDescription.Text;
+            if(debug)
+            {
+                Console.WriteLine("DEBUG: Character Description -> " + characterDescription);
+            }
+        }
+
+        private void CharacterDetailsName_TextChanged(object sender, EventArgs e)
+        {
+            characterName = CharacterDetailsName.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Name -> " + characterName);
+            }
+
+        }
+
+        private void CharacterDetailsVA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            characterVAID = vaDict[CharacterDetailsVA.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character VA -> " + characterVAID);
+            }
+
+        }
+
+        private void CharacterUpdateAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            characterUpdateAs = userDict[CharacterUpdateAs.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Update As -> " + characterUpdateAs);
+            }
+        }
+
+        private void CharDetailsAppearsInlst_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (!e.IsSelected)
+            {
+                characterRemoveAnimeID = -1;
+                return;
+            }
+
+            characterRemoveAnimeID = int.Parse(e.Item.Tag.ToString());
+            
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Remove Anime ID -> " + characterRemoveAnimeID);
+            }
+        }
+
+        private void CharDetailsAddAnimeAppearsIn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CharDetailsAddAnimeAppearsIn.SelectedIndex == -1)
+            {
+                characterAddAnimeID = -1;
+                return;
+            }
+
+            characterAddAnimeID = animeDict[CharDetailsAddAnimeAppearsIn.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Add Anime ID -> " + characterAddAnimeID);
+            }
+        }
+
+        private void CharacterUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (characterUpdateAs == -1 || SelectedCharacterID == -1)
+            {
+                CharDetailStatus.Text = "Please select a user to update as";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC UpdateCharacter @CharacterID = {SelectedCharacterID}, @Name = '{characterName}', @Description = '{characterDescription}', @VoiceActor = {characterVAID}, @UserID = {characterUpdateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Update Character Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                CharDetailStatus.Text = "Character Updated";
+            }
+            catch (Exception ex)
+            {
+                CharDetailStatus.Text = "Error Updating Character";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void CharDetailsAddAppearsInBtn_Click(object sender, EventArgs e)
+        {
+           if (characterAddAnimeID == -1 || SelectedCharacterID == -1 || characterUpdateAs == -1)
+            {
+                CharDetailStatus.Text = "Please select an anime to add and a User to update as";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC AddCharacterAppearsIn @CharacterID = {SelectedCharacterID}, @AnimeID = {characterAddAnimeID}, @UserID = {characterUpdateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Add Character Anime Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                CharDetailStatus.Text = "Anime Added";
+                CharDetailsAppearsInlst.Items.Clear();
+                getAnimeAppearsIn();
+            }
+            catch (Exception ex)
+            {
+                CharDetailStatus.Text = "Error Adding Anime";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void CharDetailsRemoveAppearsInBtn_Click(object sender, EventArgs e)
+        {
+            if (characterRemoveAnimeID == -1 || SelectedCharacterID == -1 || characterUpdateAs == -1)
+            {
+                CharDetailStatus.Text = "Please select an anime to remove and a User to update as";
+                return;
+            }
+
+            try
+            { 
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC RemoveCharacterAppearsIn @CharacterID = {SelectedCharacterID}, @AnimeID = {characterRemoveAnimeID}, @UserID = {characterUpdateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Remove Character Anime Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                CharDetailStatus.Text = "Anime Removed";
+                CharDetailsAppearsInlst.Items.Clear();
+                getAnimeAppearsIn();
+            }
+            catch (Exception ex)
+            {
+                CharDetailStatus.Text = "Error Removing Anime";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void CharacterCreateName_TextChanged(object sender, EventArgs e)
+        {
+            characterCreateName = CharacterCreateName.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Create Name -> " + characterCreateName);
+            }
+        }
+
+        private void CharacterCreateDescription_TextChanged(object sender, EventArgs e)
+        {
+            characterCreateDescription = CharacterCreateDescription.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Create Description -> " + characterCreateDescription);
+            }
+        }
+
+        private void CharacterCreateVA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            characterCreateVAID = vaDict[CharacterCreateVA.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Create VA -> " + characterCreateVAID);
+            }
+        }
+
+
+        private void CharacterCreateAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            characterCreateAs = userDict[CharacterCreateAs.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Create As -> " + characterCreateAs);
+            }
+        }
+
+        private void CharacterCreateEntry_Click(object sender, EventArgs e)
+        {
+            if (characterCreateName == "" || characterCreateDescription == "" || characterCreateVAID == -1 || characterCreateAs == -1)
+            {
+                CharCreateStatus.Text = "Please fill out all fields and choose a user to create";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC CreateCharacter @Name = '{characterCreateName}', @Description = '{characterCreateDescription}', @VoiceActor = {characterCreateVAID}, @UserID = {characterCreateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Create Character Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                CharCreateStatus.Text = "Character Created";
+                resetCharCreate();
+            }
+            catch (Exception ex)
+            {
+                CharCreateStatus.Text = "Error Creating Character";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+        // --------------------------------------------------------------------------------------------------- //
 
         // Studios
         private void StudiosBtn_Click(object sender, EventArgs e)
@@ -1159,5 +1604,7 @@ namespace BDProject
             StaffTab.Visible = false;
             UsersTab.Visible = true;
         }
+
+
     }
 }

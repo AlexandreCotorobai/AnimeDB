@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.UserBtn = new System.Windows.Forms.Button();
             this.StaffBtn = new System.Windows.Forms.Button();
@@ -140,45 +139,31 @@
             this.label116 = new System.Windows.Forms.Label();
             this.CharactersList = new System.Windows.Forms.ListView();
             this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader54 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.CharacterDetailsID = new System.Windows.Forms.TextBox();
             this.CharacterDetailsVA = new System.Windows.Forms.ComboBox();
-            this.CharacterDetailsAnime = new System.Windows.Forms.ComboBox();
             this.label106 = new System.Windows.Forms.Label();
             this.CharacterUpdateAs = new System.Windows.Forms.ComboBox();
-            this.CharacterDetailAnimeImg = new System.Windows.Forms.PictureBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.CharacterDetailsVAImage = new System.Windows.Forms.PictureBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.CharacterDetailsDescription = new System.Windows.Forms.TextBox();
-            this.CharacterDetailsImageUrl = new System.Windows.Forms.TextBox();
-            this.label152 = new System.Windows.Forms.Label();
-            this.label153 = new System.Windows.Forms.Label();
-            this.button18 = new System.Windows.Forms.Button();
+            this.CharacterUpdateBtn = new System.Windows.Forms.Button();
             this.CharacterDetailsName = new System.Windows.Forms.TextBox();
             this.label157 = new System.Windows.Forms.Label();
             this.label158 = new System.Windows.Forms.Label();
-            this.CharacterDetailsCharImage = new System.Windows.Forms.PictureBox();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.label43 = new System.Windows.Forms.Label();
             this.CharacterCreateAs = new System.Windows.Forms.ComboBox();
             this.CharacterCreateVA = new System.Windows.Forms.ComboBox();
-            this.CharacterCreateAnime = new System.Windows.Forms.ComboBox();
             this.label159 = new System.Windows.Forms.Label();
-            this.label160 = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
             this.CharacterCreateDescription = new System.Windows.Forms.TextBox();
             this.CharacterCreateName = new System.Windows.Forms.TextBox();
             this.label163 = new System.Windows.Forms.Label();
-            this.label164 = new System.Windows.Forms.Label();
-            this.CharacterCreateImagePreview = new System.Windows.Forms.PictureBox();
-            this.CharacterCreateImageUrl = new System.Windows.Forms.TextBox();
-            this.label165 = new System.Windows.Forms.Label();
             this.CharacterCreateEntry = new System.Windows.Forms.Button();
             this.AnimeTab = new System.Windows.Forms.TabControl();
             this.AnimeList = new System.Windows.Forms.TabPage();
@@ -347,11 +332,20 @@
             this.button12 = new System.Windows.Forms.Button();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.AnimeListImage = new System.Windows.Forms.ImageList(this.components);
             this.label22 = new System.Windows.Forms.Label();
             this.AnimeCommentsRemoveAs = new System.Windows.Forms.ComboBox();
             this.RemoveCommentBtn = new System.Windows.Forms.Button();
             this.AnimeDetailsCommentStatus = new System.Windows.Forms.Label();
+            this.CharacterApplyFilterBtn = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.CharacterListPage = new System.Windows.Forms.NumericUpDown();
+            this.CharDetailsAppearsInlst = new System.Windows.Forms.ListView();
+            this.CharDetailsRemoveAppearsInBtn = new System.Windows.Forms.Button();
+            this.CharDetailsAddAppearsInBtn = new System.Windows.Forms.Button();
+            this.label75 = new System.Windows.Forms.Label();
+            this.CharDetailsAddAnimeAppearsIn = new System.Windows.Forms.ComboBox();
+            this.CharDetailStatus = new System.Windows.Forms.Label();
+            this.CharCreateStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.StaffTab.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -368,11 +362,7 @@
             this.CharactersTab.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterDetailAnimeImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterDetailsVAImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterDetailsCharImage)).BeginInit();
             this.tabPage13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterCreateImagePreview)).BeginInit();
             this.AnimeTab.SuspendLayout();
             this.AnimeList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AnimeListPage)).BeginInit();
@@ -389,6 +379,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserDetailsImage)).BeginInit();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserCreateImagePreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterListPage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -435,7 +426,7 @@
             // 
             // CharactersBtn
             // 
-            this.CharactersBtn.Location = new System.Drawing.Point(72, 3);
+            this.CharactersBtn.Location = new System.Drawing.Point(73, 3);
             this.CharactersBtn.Name = "CharactersBtn";
             this.CharactersBtn.Size = new System.Drawing.Size(64, 20);
             this.CharactersBtn.TabIndex = 1;
@@ -455,9 +446,9 @@
             // 
             // StaffTab
             // 
-            this.StaffTab.Controls.Add(this.tabPage14);
             this.StaffTab.Controls.Add(this.tabPage15);
             this.StaffTab.Controls.Add(this.tabPage16);
+            this.StaffTab.Controls.Add(this.tabPage14);
             this.StaffTab.Location = new System.Drawing.Point(7, 59);
             this.StaffTab.Name = "StaffTab";
             this.StaffTab.SelectedIndex = 0;
@@ -1355,9 +1346,13 @@
             this.CharactersTab.Size = new System.Drawing.Size(1152, 456);
             this.CharactersTab.TabIndex = 12;
             this.CharactersTab.Visible = false;
+            this.CharactersTab.SelectedIndexChanged += new System.EventHandler(this.CharactersTab_SelectedIndexChanged);
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.label24);
+            this.tabPage7.Controls.Add(this.CharacterListPage);
+            this.tabPage7.Controls.Add(this.CharacterApplyFilterBtn);
             this.tabPage7.Controls.Add(this.label105);
             this.tabPage7.Controls.Add(this.CharacterFilterVoicedby);
             this.tabPage7.Controls.Add(this.label97);
@@ -1379,7 +1374,7 @@
             // 
             this.label105.AutoSize = true;
             this.label105.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label105.Location = new System.Drawing.Point(915, 191);
+            this.label105.Location = new System.Drawing.Point(916, 194);
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(74, 20);
             this.label105.TabIndex = 20;
@@ -1388,16 +1383,17 @@
             // CharacterFilterVoicedby
             // 
             this.CharacterFilterVoicedby.FormattingEnabled = true;
-            this.CharacterFilterVoicedby.Location = new System.Drawing.Point(909, 211);
+            this.CharacterFilterVoicedby.Location = new System.Drawing.Point(910, 214);
             this.CharacterFilterVoicedby.Name = "CharacterFilterVoicedby";
             this.CharacterFilterVoicedby.Size = new System.Drawing.Size(216, 21);
             this.CharacterFilterVoicedby.TabIndex = 19;
+            this.CharacterFilterVoicedby.SelectedIndexChanged += new System.EventHandler(this.CharacterFilterVoicedby_SelectedIndexChanged);
             // 
             // label97
             // 
             this.label97.AutoSize = true;
             this.label97.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label97.Location = new System.Drawing.Point(915, 106);
+            this.label97.Location = new System.Drawing.Point(916, 109);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(90, 20);
             this.label97.TabIndex = 18;
@@ -1406,25 +1402,27 @@
             // CharacterFilterFromAnime
             // 
             this.CharacterFilterFromAnime.FormattingEnabled = true;
-            this.CharacterFilterFromAnime.Location = new System.Drawing.Point(909, 126);
+            this.CharacterFilterFromAnime.Location = new System.Drawing.Point(910, 129);
             this.CharacterFilterFromAnime.Name = "CharacterFilterFromAnime";
             this.CharacterFilterFromAnime.Size = new System.Drawing.Size(216, 21);
             this.CharacterFilterFromAnime.TabIndex = 17;
+            this.CharacterFilterFromAnime.SelectedIndexChanged += new System.EventHandler(this.CharacterFilterFromAnime_SelectedIndexChanged);
             // 
             // CharacterClearFilterBtn
             // 
-            this.CharacterClearFilterBtn.Location = new System.Drawing.Point(909, 341);
+            this.CharacterClearFilterBtn.Location = new System.Drawing.Point(1028, 261);
             this.CharacterClearFilterBtn.Name = "CharacterClearFilterBtn";
-            this.CharacterClearFilterBtn.Size = new System.Drawing.Size(215, 50);
+            this.CharacterClearFilterBtn.Size = new System.Drawing.Size(97, 50);
             this.CharacterClearFilterBtn.TabIndex = 16;
             this.CharacterClearFilterBtn.Text = "Clear Filter";
             this.CharacterClearFilterBtn.UseVisualStyleBackColor = true;
+            this.CharacterClearFilterBtn.Click += new System.EventHandler(this.CharacterClearFilterBtn_Click);
             // 
             // label115
             // 
             this.label115.AutoSize = true;
             this.label115.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label115.Location = new System.Drawing.Point(999, 10);
+            this.label115.Location = new System.Drawing.Point(997, 16);
             this.label115.Name = "label115";
             this.label115.Size = new System.Drawing.Size(42, 20);
             this.label115.TabIndex = 7;
@@ -1432,16 +1430,17 @@
             // 
             // CharacterNameFilter
             // 
-            this.CharacterNameFilter.Location = new System.Drawing.Point(909, 61);
+            this.CharacterNameFilter.Location = new System.Drawing.Point(910, 64);
             this.CharacterNameFilter.Name = "CharacterNameFilter";
             this.CharacterNameFilter.Size = new System.Drawing.Size(216, 20);
             this.CharacterNameFilter.TabIndex = 6;
+            this.CharacterNameFilter.TextChanged += new System.EventHandler(this.CharacterNameFilter_TextChanged);
             // 
             // label116
             // 
             this.label116.AutoSize = true;
             this.label116.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label116.Location = new System.Drawing.Point(915, 38);
+            this.label116.Location = new System.Drawing.Point(913, 44);
             this.label116.Name = "label116";
             this.label116.Size = new System.Drawing.Size(49, 20);
             this.label116.TabIndex = 5;
@@ -1451,28 +1450,24 @@
             // 
             this.CharactersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader53,
-            this.columnHeader54,
             this.columnHeader55,
             this.columnHeader56,
             this.columnHeader57});
+            this.CharactersList.FullRowSelect = true;
             this.CharactersList.HideSelection = false;
-            this.CharactersList.Location = new System.Drawing.Point(5, 5);
+            this.CharactersList.Location = new System.Drawing.Point(6, 8);
+            this.CharactersList.MultiSelect = false;
             this.CharactersList.Name = "CharactersList";
-            this.CharactersList.Size = new System.Drawing.Size(872, 422);
+            this.CharactersList.Size = new System.Drawing.Size(872, 396);
             this.CharactersList.TabIndex = 0;
             this.CharactersList.UseCompatibleStateImageBehavior = false;
             this.CharactersList.View = System.Windows.Forms.View.Details;
+            this.CharactersList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.CharactersList_ItemSelectionChanged);
             // 
             // columnHeader53
             // 
             this.columnHeader53.Text = "";
             this.columnHeader53.Width = 0;
-            // 
-            // columnHeader54
-            // 
-            this.columnHeader54.Text = "Image";
-            this.columnHeader54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader54.Width = 150;
             // 
             // columnHeader55
             // 
@@ -1494,25 +1489,24 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.CharDetailStatus);
+            this.tabPage8.Controls.Add(this.CharDetailsAppearsInlst);
+            this.tabPage8.Controls.Add(this.CharDetailsRemoveAppearsInBtn);
+            this.tabPage8.Controls.Add(this.CharDetailsAddAppearsInBtn);
+            this.tabPage8.Controls.Add(this.label75);
+            this.tabPage8.Controls.Add(this.CharDetailsAddAnimeAppearsIn);
             this.tabPage8.Controls.Add(this.CharacterDetailsID);
             this.tabPage8.Controls.Add(this.CharacterDetailsVA);
-            this.tabPage8.Controls.Add(this.CharacterDetailsAnime);
             this.tabPage8.Controls.Add(this.label106);
             this.tabPage8.Controls.Add(this.CharacterUpdateAs);
-            this.tabPage8.Controls.Add(this.CharacterDetailAnimeImg);
             this.tabPage8.Controls.Add(this.label44);
-            this.tabPage8.Controls.Add(this.CharacterDetailsVAImage);
             this.tabPage8.Controls.Add(this.label42);
             this.tabPage8.Controls.Add(this.label41);
             this.tabPage8.Controls.Add(this.CharacterDetailsDescription);
-            this.tabPage8.Controls.Add(this.CharacterDetailsImageUrl);
-            this.tabPage8.Controls.Add(this.label152);
-            this.tabPage8.Controls.Add(this.label153);
-            this.tabPage8.Controls.Add(this.button18);
+            this.tabPage8.Controls.Add(this.CharacterUpdateBtn);
             this.tabPage8.Controls.Add(this.CharacterDetailsName);
             this.tabPage8.Controls.Add(this.label157);
             this.tabPage8.Controls.Add(this.label158);
-            this.tabPage8.Controls.Add(this.CharacterDetailsCharImage);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
@@ -1523,7 +1517,7 @@
             // 
             // CharacterDetailsID
             // 
-            this.CharacterDetailsID.Location = new System.Drawing.Point(196, 26);
+            this.CharacterDetailsID.Location = new System.Drawing.Point(15, 50);
             this.CharacterDetailsID.Name = "CharacterDetailsID";
             this.CharacterDetailsID.ReadOnly = true;
             this.CharacterDetailsID.Size = new System.Drawing.Size(59, 20);
@@ -1532,24 +1526,17 @@
             // CharacterDetailsVA
             // 
             this.CharacterDetailsVA.FormattingEnabled = true;
-            this.CharacterDetailsVA.Location = new System.Drawing.Point(201, 289);
+            this.CharacterDetailsVA.Location = new System.Drawing.Point(367, 53);
             this.CharacterDetailsVA.Name = "CharacterDetailsVA";
             this.CharacterDetailsVA.Size = new System.Drawing.Size(223, 21);
             this.CharacterDetailsVA.TabIndex = 54;
-            // 
-            // CharacterDetailsAnime
-            // 
-            this.CharacterDetailsAnime.FormattingEnabled = true;
-            this.CharacterDetailsAnime.Location = new System.Drawing.Point(592, 36);
-            this.CharacterDetailsAnime.Name = "CharacterDetailsAnime";
-            this.CharacterDetailsAnime.Size = new System.Drawing.Size(223, 21);
-            this.CharacterDetailsAnime.TabIndex = 53;
+            this.CharacterDetailsVA.SelectedIndexChanged += new System.EventHandler(this.CharacterDetailsVA_SelectedIndexChanged);
             // 
             // label106
             // 
             this.label106.AutoSize = true;
             this.label106.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label106.Location = new System.Drawing.Point(897, 145);
+            this.label106.Location = new System.Drawing.Point(628, 30);
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(76, 20);
             this.label106.TabIndex = 52;
@@ -1558,52 +1545,37 @@
             // CharacterUpdateAs
             // 
             this.CharacterUpdateAs.FormattingEnabled = true;
-            this.CharacterUpdateAs.Location = new System.Drawing.Point(897, 165);
+            this.CharacterUpdateAs.Location = new System.Drawing.Point(628, 50);
             this.CharacterUpdateAs.Name = "CharacterUpdateAs";
             this.CharacterUpdateAs.Size = new System.Drawing.Size(212, 21);
             this.CharacterUpdateAs.TabIndex = 51;
-            // 
-            // CharacterDetailAnimeImg
-            // 
-            this.CharacterDetailAnimeImg.Location = new System.Drawing.Point(592, 70);
-            this.CharacterDetailAnimeImg.Name = "CharacterDetailAnimeImg";
-            this.CharacterDetailAnimeImg.Size = new System.Drawing.Size(165, 202);
-            this.CharacterDetailAnimeImg.TabIndex = 49;
-            this.CharacterDetailAnimeImg.TabStop = false;
+            this.CharacterUpdateAs.SelectedIndexChanged += new System.EventHandler(this.CharacterUpdateAs_SelectedIndexChanged);
             // 
             // label44
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label44.Location = new System.Drawing.Point(201, 269);
+            this.label44.Location = new System.Drawing.Point(369, 30);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(85, 20);
             this.label44.TabIndex = 47;
             this.label44.Text = "Voice Actor";
             // 
-            // CharacterDetailsVAImage
-            // 
-            this.CharacterDetailsVAImage.Location = new System.Drawing.Point(12, 252);
-            this.CharacterDetailsVAImage.Name = "CharacterDetailsVAImage";
-            this.CharacterDetailsVAImage.Size = new System.Drawing.Size(165, 174);
-            this.CharacterDetailsVAImage.TabIndex = 45;
-            this.CharacterDetailsVAImage.TabStop = false;
-            // 
             // label42
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label42.Location = new System.Drawing.Point(592, 11);
+            this.label42.Location = new System.Drawing.Point(17, 225);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(52, 20);
+            this.label42.Size = new System.Drawing.Size(80, 20);
             this.label42.TabIndex = 43;
-            this.label42.Text = "Anime";
+            this.label42.Text = "Appears in";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label41.Location = new System.Drawing.Point(201, 53);
+            this.label41.Location = new System.Drawing.Point(20, 77);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(85, 20);
             this.label41.TabIndex = 42;
@@ -1611,60 +1583,36 @@
             // 
             // CharacterDetailsDescription
             // 
-            this.CharacterDetailsDescription.Location = new System.Drawing.Point(196, 73);
+            this.CharacterDetailsDescription.Location = new System.Drawing.Point(15, 97);
             this.CharacterDetailsDescription.Multiline = true;
             this.CharacterDetailsDescription.Name = "CharacterDetailsDescription";
             this.CharacterDetailsDescription.Size = new System.Drawing.Size(332, 116);
             this.CharacterDetailsDescription.TabIndex = 41;
+            this.CharacterDetailsDescription.TextChanged += new System.EventHandler(this.CharacterDetailsDescription_TextChanged);
             // 
-            // CharacterDetailsImageUrl
+            // CharacterUpdateBtn
             // 
-            this.CharacterDetailsImageUrl.Location = new System.Drawing.Point(196, 207);
-            this.CharacterDetailsImageUrl.Name = "CharacterDetailsImageUrl";
-            this.CharacterDetailsImageUrl.Size = new System.Drawing.Size(337, 20);
-            this.CharacterDetailsImageUrl.TabIndex = 40;
-            // 
-            // label152
-            // 
-            this.label152.AutoSize = true;
-            this.label152.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label152.Location = new System.Drawing.Point(196, 191);
-            this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(81, 20);
-            this.label152.TabIndex = 39;
-            this.label152.Text = "Image URL";
-            // 
-            // label153
-            // 
-            this.label153.AutoSize = true;
-            this.label153.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label153.Location = new System.Drawing.Point(15, 8);
-            this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(106, 20);
-            this.label153.TabIndex = 38;
-            this.label153.Text = "Image Preview";
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(897, 208);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(212, 37);
-            this.button18.TabIndex = 30;
-            this.button18.Text = "Update Information";
-            this.button18.UseVisualStyleBackColor = true;
+            this.CharacterUpdateBtn.Location = new System.Drawing.Point(628, 93);
+            this.CharacterUpdateBtn.Name = "CharacterUpdateBtn";
+            this.CharacterUpdateBtn.Size = new System.Drawing.Size(212, 37);
+            this.CharacterUpdateBtn.TabIndex = 30;
+            this.CharacterUpdateBtn.Text = "Update Information";
+            this.CharacterUpdateBtn.UseVisualStyleBackColor = true;
+            this.CharacterUpdateBtn.Click += new System.EventHandler(this.CharacterUpdateBtn_Click);
             // 
             // CharacterDetailsName
             // 
-            this.CharacterDetailsName.Location = new System.Drawing.Point(309, 27);
+            this.CharacterDetailsName.Location = new System.Drawing.Point(128, 51);
             this.CharacterDetailsName.Name = "CharacterDetailsName";
             this.CharacterDetailsName.Size = new System.Drawing.Size(216, 20);
             this.CharacterDetailsName.TabIndex = 4;
+            this.CharacterDetailsName.TextChanged += new System.EventHandler(this.CharacterDetailsName_TextChanged);
             // 
             // label157
             // 
             this.label157.AutoSize = true;
             this.label157.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label157.Location = new System.Drawing.Point(317, 9);
+            this.label157.Location = new System.Drawing.Point(133, 27);
             this.label157.Name = "label157";
             this.label157.Size = new System.Drawing.Size(49, 20);
             this.label157.TabIndex = 3;
@@ -1674,36 +1622,23 @@
             // 
             this.label158.AutoSize = true;
             this.label158.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label158.Location = new System.Drawing.Point(206, 9);
+            this.label158.Location = new System.Drawing.Point(20, 27);
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(24, 20);
             this.label158.TabIndex = 1;
             this.label158.Text = "ID";
             // 
-            // CharacterDetailsCharImage
-            // 
-            this.CharacterDetailsCharImage.Location = new System.Drawing.Point(12, 26);
-            this.CharacterDetailsCharImage.Name = "CharacterDetailsCharImage";
-            this.CharacterDetailsCharImage.Size = new System.Drawing.Size(165, 202);
-            this.CharacterDetailsCharImage.TabIndex = 0;
-            this.CharacterDetailsCharImage.TabStop = false;
-            // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.CharCreateStatus);
             this.tabPage13.Controls.Add(this.label43);
             this.tabPage13.Controls.Add(this.CharacterCreateAs);
             this.tabPage13.Controls.Add(this.CharacterCreateVA);
-            this.tabPage13.Controls.Add(this.CharacterCreateAnime);
             this.tabPage13.Controls.Add(this.label159);
-            this.tabPage13.Controls.Add(this.label160);
             this.tabPage13.Controls.Add(this.label113);
             this.tabPage13.Controls.Add(this.CharacterCreateDescription);
             this.tabPage13.Controls.Add(this.CharacterCreateName);
             this.tabPage13.Controls.Add(this.label163);
-            this.tabPage13.Controls.Add(this.label164);
-            this.tabPage13.Controls.Add(this.CharacterCreateImagePreview);
-            this.tabPage13.Controls.Add(this.CharacterCreateImageUrl);
-            this.tabPage13.Controls.Add(this.label165);
             this.tabPage13.Controls.Add(this.CharacterCreateEntry);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
@@ -1716,7 +1651,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label43.Location = new System.Drawing.Point(610, 159);
+            this.label43.Location = new System.Drawing.Point(881, 23);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(70, 20);
             this.label43.TabIndex = 65;
@@ -1725,46 +1660,30 @@
             // CharacterCreateAs
             // 
             this.CharacterCreateAs.FormattingEnabled = true;
-            this.CharacterCreateAs.Location = new System.Drawing.Point(610, 179);
+            this.CharacterCreateAs.Location = new System.Drawing.Point(881, 43);
             this.CharacterCreateAs.Name = "CharacterCreateAs";
             this.CharacterCreateAs.Size = new System.Drawing.Size(223, 21);
             this.CharacterCreateAs.TabIndex = 64;
+            this.CharacterCreateAs.SelectedIndexChanged += new System.EventHandler(this.CharacterCreateAs_SelectedIndexChanged);
             // 
             // CharacterCreateVA
             // 
             this.CharacterCreateVA.FormattingEnabled = true;
-            this.CharacterCreateVA.Location = new System.Drawing.Point(610, 116);
+            this.CharacterCreateVA.Location = new System.Drawing.Point(394, 51);
             this.CharacterCreateVA.Name = "CharacterCreateVA";
             this.CharacterCreateVA.Size = new System.Drawing.Size(223, 21);
             this.CharacterCreateVA.TabIndex = 63;
-            // 
-            // CharacterCreateAnime
-            // 
-            this.CharacterCreateAnime.FormattingEnabled = true;
-            this.CharacterCreateAnime.Location = new System.Drawing.Point(610, 53);
-            this.CharacterCreateAnime.Name = "CharacterCreateAnime";
-            this.CharacterCreateAnime.Size = new System.Drawing.Size(223, 21);
-            this.CharacterCreateAnime.TabIndex = 62;
+            this.CharacterCreateVA.SelectedIndexChanged += new System.EventHandler(this.CharacterCreateVA_SelectedIndexChanged);
             // 
             // label159
             // 
             this.label159.AutoSize = true;
             this.label159.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label159.Location = new System.Drawing.Point(610, 96);
+            this.label159.Location = new System.Drawing.Point(394, 31);
             this.label159.Name = "label159";
             this.label159.Size = new System.Drawing.Size(85, 20);
             this.label159.TabIndex = 61;
             this.label159.Text = "Voice Actor";
-            // 
-            // label160
-            // 
-            this.label160.AutoSize = true;
-            this.label160.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label160.Location = new System.Drawing.Point(610, 28);
-            this.label160.Name = "label160";
-            this.label160.Size = new System.Drawing.Size(52, 20);
-            this.label160.TabIndex = 60;
-            this.label160.Text = "Anime";
             // 
             // label113
             // 
@@ -1781,8 +1700,9 @@
             this.CharacterCreateDescription.Location = new System.Drawing.Point(48, 112);
             this.CharacterCreateDescription.Multiline = true;
             this.CharacterCreateDescription.Name = "CharacterCreateDescription";
-            this.CharacterCreateDescription.Size = new System.Drawing.Size(213, 267);
+            this.CharacterCreateDescription.Size = new System.Drawing.Size(569, 267);
             this.CharacterCreateDescription.TabIndex = 58;
+            this.CharacterCreateDescription.TextChanged += new System.EventHandler(this.CharacterCreateDescription_TextChanged);
             // 
             // CharacterCreateName
             // 
@@ -1790,6 +1710,7 @@
             this.CharacterCreateName.Name = "CharacterCreateName";
             this.CharacterCreateName.Size = new System.Drawing.Size(216, 20);
             this.CharacterCreateName.TabIndex = 57;
+            this.CharacterCreateName.TextChanged += new System.EventHandler(this.CharacterCreateName_TextChanged);
             // 
             // label163
             // 
@@ -1801,49 +1722,15 @@
             this.label163.TabIndex = 56;
             this.label163.Text = "Name";
             // 
-            // label164
-            // 
-            this.label164.AutoSize = true;
-            this.label164.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label164.Location = new System.Drawing.Point(325, 93);
-            this.label164.Name = "label164";
-            this.label164.Size = new System.Drawing.Size(106, 20);
-            this.label164.TabIndex = 55;
-            this.label164.Text = "Image Preview";
-            // 
-            // CharacterCreateImagePreview
-            // 
-            this.CharacterCreateImagePreview.Location = new System.Drawing.Point(325, 113);
-            this.CharacterCreateImagePreview.Name = "CharacterCreateImagePreview";
-            this.CharacterCreateImagePreview.Size = new System.Drawing.Size(215, 265);
-            this.CharacterCreateImagePreview.TabIndex = 54;
-            this.CharacterCreateImagePreview.TabStop = false;
-            // 
-            // CharacterCreateImageUrl
-            // 
-            this.CharacterCreateImageUrl.Location = new System.Drawing.Point(325, 53);
-            this.CharacterCreateImageUrl.Name = "CharacterCreateImageUrl";
-            this.CharacterCreateImageUrl.Size = new System.Drawing.Size(216, 20);
-            this.CharacterCreateImageUrl.TabIndex = 53;
-            // 
-            // label165
-            // 
-            this.label165.AutoSize = true;
-            this.label165.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label165.Location = new System.Drawing.Point(325, 33);
-            this.label165.Name = "label165";
-            this.label165.Size = new System.Drawing.Size(81, 20);
-            this.label165.TabIndex = 52;
-            this.label165.Text = "Image URL";
-            // 
             // CharacterCreateEntry
             // 
-            this.CharacterCreateEntry.Location = new System.Drawing.Point(610, 221);
+            this.CharacterCreateEntry.Location = new System.Drawing.Point(881, 71);
             this.CharacterCreateEntry.Name = "CharacterCreateEntry";
             this.CharacterCreateEntry.Size = new System.Drawing.Size(223, 37);
             this.CharacterCreateEntry.TabIndex = 43;
             this.CharacterCreateEntry.Text = "Create Entry";
             this.CharacterCreateEntry.UseVisualStyleBackColor = true;
+            this.CharacterCreateEntry.Click += new System.EventHandler(this.CharacterCreateEntry_Click);
             // 
             // AnimeTab
             // 
@@ -1903,7 +1790,7 @@
             // 
             // AnimeApplyFilterbtn
             // 
-            this.AnimeApplyFilterbtn.Location = new System.Drawing.Point(913, 341);
+            this.AnimeApplyFilterbtn.Location = new System.Drawing.Point(913, 289);
             this.AnimeApplyFilterbtn.Name = "AnimeApplyFilterbtn";
             this.AnimeApplyFilterbtn.Size = new System.Drawing.Size(99, 50);
             this.AnimeApplyFilterbtn.TabIndex = 18;
@@ -1927,7 +1814,7 @@
             // 
             // ClearFilterButton
             // 
-            this.ClearFilterButton.Location = new System.Drawing.Point(1018, 341);
+            this.ClearFilterButton.Location = new System.Drawing.Point(1018, 289);
             this.ClearFilterButton.Name = "ClearFilterButton";
             this.ClearFilterButton.Size = new System.Drawing.Size(95, 50);
             this.ClearFilterButton.TabIndex = 16;
@@ -3515,12 +3402,6 @@
             this.label68.TabIndex = 17;
             this.label68.Text = "Connection Status:";
             // 
-            // AnimeListImage
-            // 
-            this.AnimeListImage.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.AnimeListImage.ImageSize = new System.Drawing.Size(16, 16);
-            this.AnimeListImage.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -3546,7 +3427,7 @@
             this.RemoveCommentBtn.Name = "RemoveCommentBtn";
             this.RemoveCommentBtn.Size = new System.Drawing.Size(161, 47);
             this.RemoveCommentBtn.TabIndex = 35;
-            this.RemoveCommentBtn.Text = "RemoveComment";
+            this.RemoveCommentBtn.Text = "Remove Comment";
             this.RemoveCommentBtn.UseVisualStyleBackColor = true;
             this.RemoveCommentBtn.Click += new System.EventHandler(this.RemoveCommentBtn_Click);
             // 
@@ -3559,19 +3440,126 @@
             this.AnimeDetailsCommentStatus.Size = new System.Drawing.Size(0, 20);
             this.AnimeDetailsCommentStatus.TabIndex = 38;
             // 
+            // CharacterApplyFilterBtn
+            // 
+            this.CharacterApplyFilterBtn.Location = new System.Drawing.Point(913, 261);
+            this.CharacterApplyFilterBtn.Name = "CharacterApplyFilterBtn";
+            this.CharacterApplyFilterBtn.Size = new System.Drawing.Size(97, 50);
+            this.CharacterApplyFilterBtn.TabIndex = 21;
+            this.CharacterApplyFilterBtn.Text = "Apply Filter";
+            this.CharacterApplyFilterBtn.UseVisualStyleBackColor = true;
+            this.CharacterApplyFilterBtn.Click += new System.EventHandler(this.CharacterApplyFilterBtn_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label24.Location = new System.Drawing.Point(711, 407);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(41, 20);
+            this.label24.TabIndex = 23;
+            this.label24.Text = "Page";
+            // 
+            // CharacterListPage
+            // 
+            this.CharacterListPage.Location = new System.Drawing.Point(758, 407);
+            this.CharacterListPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CharacterListPage.Name = "CharacterListPage";
+            this.CharacterListPage.Size = new System.Drawing.Size(120, 20);
+            this.CharacterListPage.TabIndex = 22;
+            this.CharacterListPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CharacterListPage.ValueChanged += new System.EventHandler(this.CharacterListPage_ValueChanged);
+            // 
+            // CharDetailsAppearsInlst
+            // 
+            this.CharDetailsAppearsInlst.HideSelection = false;
+            this.CharDetailsAppearsInlst.Location = new System.Drawing.Point(15, 248);
+            this.CharDetailsAppearsInlst.MultiSelect = false;
+            this.CharDetailsAppearsInlst.Name = "CharDetailsAppearsInlst";
+            this.CharDetailsAppearsInlst.Size = new System.Drawing.Size(488, 175);
+            this.CharDetailsAppearsInlst.TabIndex = 61;
+            this.CharDetailsAppearsInlst.UseCompatibleStateImageBehavior = false;
+            this.CharDetailsAppearsInlst.View = System.Windows.Forms.View.List;
+            this.CharDetailsAppearsInlst.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.CharDetailsAppearsInlst_ItemSelectionChanged);
+            // 
+            // CharDetailsRemoveAppearsInBtn
+            // 
+            this.CharDetailsRemoveAppearsInBtn.Location = new System.Drawing.Point(514, 341);
+            this.CharDetailsRemoveAppearsInBtn.Name = "CharDetailsRemoveAppearsInBtn";
+            this.CharDetailsRemoveAppearsInBtn.Size = new System.Drawing.Size(147, 37);
+            this.CharDetailsRemoveAppearsInBtn.TabIndex = 60;
+            this.CharDetailsRemoveAppearsInBtn.Text = "Remove Appears In";
+            this.CharDetailsRemoveAppearsInBtn.UseVisualStyleBackColor = true;
+            this.CharDetailsRemoveAppearsInBtn.Click += new System.EventHandler(this.CharDetailsRemoveAppearsInBtn_Click);
+            // 
+            // CharDetailsAddAppearsInBtn
+            // 
+            this.CharDetailsAddAppearsInBtn.Location = new System.Drawing.Point(514, 296);
+            this.CharDetailsAddAppearsInBtn.Name = "CharDetailsAddAppearsInBtn";
+            this.CharDetailsAddAppearsInBtn.Size = new System.Drawing.Size(147, 37);
+            this.CharDetailsAddAppearsInBtn.TabIndex = 59;
+            this.CharDetailsAddAppearsInBtn.Text = "Add Appears In";
+            this.CharDetailsAddAppearsInBtn.UseVisualStyleBackColor = true;
+            this.CharDetailsAddAppearsInBtn.Click += new System.EventHandler(this.CharDetailsAddAppearsInBtn_Click);
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label75.Location = new System.Drawing.Point(516, 246);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(130, 20);
+            this.label75.TabIndex = 58;
+            this.label75.Text = "Select New Anime";
+            // 
+            // CharDetailsAddAnimeAppearsIn
+            // 
+            this.CharDetailsAddAnimeAppearsIn.FormattingEnabled = true;
+            this.CharDetailsAddAnimeAppearsIn.Location = new System.Drawing.Point(514, 269);
+            this.CharDetailsAddAnimeAppearsIn.Name = "CharDetailsAddAnimeAppearsIn";
+            this.CharDetailsAddAnimeAppearsIn.Size = new System.Drawing.Size(147, 21);
+            this.CharDetailsAddAnimeAppearsIn.TabIndex = 57;
+            this.CharDetailsAddAnimeAppearsIn.SelectedIndexChanged += new System.EventHandler(this.CharDetailsAddAnimeAppearsIn_SelectedIndexChanged);
+            // 
+            // CharDetailStatus
+            // 
+            this.CharDetailStatus.AutoSize = true;
+            this.CharDetailStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CharDetailStatus.Location = new System.Drawing.Point(630, 141);
+            this.CharDetailStatus.Name = "CharDetailStatus";
+            this.CharDetailStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharDetailStatus.TabIndex = 62;
+            // 
+            // CharCreateStatus
+            // 
+            this.CharCreateStatus.AutoSize = true;
+            this.CharCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CharCreateStatus.Location = new System.Drawing.Point(877, 116);
+            this.CharCreateStatus.Name = "CharCreateStatus";
+            this.CharCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharCreateStatus.TabIndex = 66;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 523);
+            this.ClientSize = new System.Drawing.Size(1161, 520);
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.CharactersTab);
             this.Controls.Add(this.AnimeTab);
             this.Controls.Add(this.UsersTab);
             this.Controls.Add(this.StaffTab);
             this.Controls.Add(this.StudioTab);
-            this.Controls.Add(this.CharactersTab);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -3598,12 +3586,8 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterDetailAnimeImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterDetailsVAImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterDetailsCharImage)).EndInit();
             this.tabPage13.ResumeLayout(false);
             this.tabPage13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterCreateImagePreview)).EndInit();
             this.AnimeTab.ResumeLayout(false);
             this.AnimeList.ResumeLayout(false);
             this.AnimeList.PerformLayout();
@@ -3627,6 +3611,7 @@
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserCreateImagePreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterListPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3743,45 +3728,31 @@
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.ListView CharactersList;
         private System.Windows.Forms.ColumnHeader columnHeader53;
-        private System.Windows.Forms.ColumnHeader columnHeader54;
         private System.Windows.Forms.ColumnHeader columnHeader55;
         private System.Windows.Forms.ColumnHeader columnHeader56;
         private System.Windows.Forms.ColumnHeader columnHeader57;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TextBox CharacterDetailsID;
         private System.Windows.Forms.ComboBox CharacterDetailsVA;
-        private System.Windows.Forms.ComboBox CharacterDetailsAnime;
         private System.Windows.Forms.Label label106;
         private System.Windows.Forms.ComboBox CharacterUpdateAs;
-        private System.Windows.Forms.PictureBox CharacterDetailAnimeImg;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.PictureBox CharacterDetailsVAImage;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox CharacterDetailsDescription;
-        private System.Windows.Forms.TextBox CharacterDetailsImageUrl;
-        private System.Windows.Forms.Label label152;
-        private System.Windows.Forms.Label label153;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button CharacterUpdateBtn;
         private System.Windows.Forms.TextBox CharacterDetailsName;
         private System.Windows.Forms.Label label157;
         private System.Windows.Forms.Label label158;
-        private System.Windows.Forms.PictureBox CharacterDetailsCharImage;
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.ComboBox CharacterCreateAs;
         private System.Windows.Forms.ComboBox CharacterCreateVA;
-        private System.Windows.Forms.ComboBox CharacterCreateAnime;
         private System.Windows.Forms.Label label159;
-        private System.Windows.Forms.Label label160;
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.TextBox CharacterCreateDescription;
         private System.Windows.Forms.TextBox CharacterCreateName;
         private System.Windows.Forms.Label label163;
-        private System.Windows.Forms.Label label164;
-        private System.Windows.Forms.PictureBox CharacterCreateImagePreview;
-        private System.Windows.Forms.TextBox CharacterCreateImageUrl;
-        private System.Windows.Forms.Label label165;
         private System.Windows.Forms.Button CharacterCreateEntry;
         private System.Windows.Forms.TabControl AnimeTab;
         private System.Windows.Forms.TabPage AnimeList;
@@ -3920,7 +3891,6 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown AnimeListPage;
-        private System.Windows.Forms.ImageList AnimeListImage;
         private System.Windows.Forms.Button animeDetailsRemoveGenre;
         private System.Windows.Forms.Button animeDetailsAddGenre;
         private System.Windows.Forms.Label label71;
@@ -3957,6 +3927,16 @@
         private System.Windows.Forms.ComboBox AnimeCommentsRemoveAs;
         private System.Windows.Forms.Button RemoveCommentBtn;
         private System.Windows.Forms.Label AnimeDetailsCommentStatus;
+        private System.Windows.Forms.Button CharacterApplyFilterBtn;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.NumericUpDown CharacterListPage;
+        private System.Windows.Forms.ListView CharDetailsAppearsInlst;
+        private System.Windows.Forms.Button CharDetailsRemoveAppearsInBtn;
+        private System.Windows.Forms.Button CharDetailsAddAppearsInBtn;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.ComboBox CharDetailsAddAnimeAppearsIn;
+        private System.Windows.Forms.Label CharDetailStatus;
+        private System.Windows.Forms.Label CharCreateStatus;
     }
 }
 
