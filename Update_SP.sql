@@ -51,6 +51,15 @@ BEGIN
         RAISERROR ('Access denied. User is not an admin.', 11,1);
     END;
 
+    -- check if name already exists
+    IF EXISTS (SELECT 1
+    FROM Anime
+    WHERE Name = @Name AND ID <> @AnimeID)
+    BEGIN
+        RAISERROR ('Anime name already exists. Rolling back transaction.', 11,1);
+        RETURN;
+    END;
+
     -- Update Anime table based on the provided Anime ID
     UPDATE Anime
     SET
@@ -101,8 +110,18 @@ BEGIN
         RAISERROR ('Access denied. User is not an admin.', 11,1);
         RETURN;
     END
-
+    -- check if name already exists
+    IF EXISTS (SELECT 1
+    FROM Characters
+    WHERE Name = @Name AND ID <> @CharacterID)
+        BEGIN
+        RAISERROR ('Character name already exists. Rolling back transaction.', 11,1);
+        RETURN;
+    END;
+    
     -- Update Character table based on the provided Character ID
+
+
     UPDATE Characters
             SET
                 Name = ISNULL(@Name, Name),
