@@ -1862,6 +1862,7 @@ namespace BDProject
             {
                 conn.Close();
             }
+            updateVA();
         }
 
         private void resetStaffCreate()
@@ -1939,6 +1940,7 @@ namespace BDProject
             {
                 conn.Close();
             }
+            updateVA();
         }
 
         // --------------------------------------------------------------------------------------------------- //
