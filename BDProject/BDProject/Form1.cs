@@ -244,7 +244,7 @@ namespace BDProject
             {
                 StaffCreateType.Items.Add(staffTypeList[i]);
                 StaffDetailsType.Items.Add(staffTypeList[i]);
-                StaffCreateType.Items.Add(staffTypeList[i]);
+                StaffFilterType.Items.Add(staffTypeList[i]);
             }
         }
         // Anime
@@ -921,6 +921,7 @@ namespace BDProject
                 SqlCommand cmd = new SqlCommand(command, conn);
                 cmd.ExecuteNonQuery();
                 AnimeCreateStatus.Text = "Anime Created";
+                resetAnimeCreate();
             }
             catch (SqlException ex)
             {
@@ -1585,7 +1586,29 @@ namespace BDProject
             UsersTab.Visible = false;
         }
 
+
+        // --------------------------------------------------------------------------------------------------- //
+
         // Staff
+
+        private int staffOffset = 1;
+        private String staffFilterName = null;
+        private String staffFilterRole = null;
+
+        // staff details
+        private int selectedStaffID = -1;
+        private int lastSelectedStaffID = -1;
+        private String staffDetailsName = null;
+        private String staffDetailsType = null;
+        private DateTime staffDetailsDOB;
+        private int staffDetailsUpdateAs = -1;
+
+        // staff create
+        private String staffCreateName = null;
+        private String staffCreateType = null;
+        private DateTime staffCreateDOB;
+        private int staffCreateAs = -1;
+
         private void StaffBtn_Click(object sender, EventArgs e)
         {
             AnimeTab.Visible = false;
@@ -1593,8 +1616,332 @@ namespace BDProject
             StudioTab.Visible = false;
             StaffTab.Visible = true;
             UsersTab.Visible = false;
+            StaffListPage.Value = 1;
+            staffOffset = 1;
+            resetStaffVar();
+            StaffList.Items.Clear();
+            requestStaffList();
         }
 
+        private void resetStaffVar()
+        {
+            staffFilterName = null;
+            staffFilterRole = null;
+
+            StaffTabFilterName.Text = "";
+            StaffFilterType.SelectedIndex = 0;
+        }
+
+        private void StaffTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (StaffTab.SelectedIndex == 0)
+            {
+                StaffListPage.Value = 1;
+                staffOffset = 1;
+                resetStaffVar();
+                StaffList.Items.Clear();
+                requestStaffList();
+            }
+            else if (StaffTab.SelectedIndex == 1)
+            {
+                requestSingleStaff();
+            }
+            else if (StaffTab.SelectedIndex == 2)
+            {
+                resetStaffCreate();
+            }
+
+        }
+
+        private void resetStaffDetails()
+        {
+            StaffDetailsID.Text = "";
+            StaffDetailsName.Text = "";
+            StaffDetailsType.SelectedIndex = 0;
+            StaffDetailsBirthday.Text = "";
+        }
+
+        private void requestSingleStaff()
+        {
+            if (selectedStaffID == -1 || selectedStaffID == lastSelectedStaffID)
+            {
+                return;
+            }
+
+            resetStaffDetails();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"Select * From Staff Where ID = {selectedStaffID}", conn);
+                
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Single Staff Query -> " + cmd.CommandText);
+                }
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    StaffDetailsID.Text = reader["ID"].ToString();
+                    StaffDetailsName.Text = reader["Name"].ToString();
+                    StaffDetailsType.Text = reader["Type"].ToString();
+                    StaffDetailsBirthday.Text = reader["Birthday"].ToString();
+                }
+
+                lastSelectedStaffID = selectedStaffID;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+               
+        private void requestStaffList()
+        {
+            String command = $"EXEC FilterStaff @Offset = {(staffOffset - 1) * 20}, @Name = {(staffFilterName == null ? "NULL" : "'" + staffFilterName + "'")}, @Type = {(staffFilterRole == null ? "NULL" : "'" + staffFilterRole + "'")}";
+            try
+            {
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Staff List Query -> " + command);
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    StaffList.Items.Add(reader["ID"].ToString());
+                    StaffList.Items[StaffList.Items.Count - 1].SubItems.Add(reader["Name"].ToString());
+                    StaffList.Items[StaffList.Items.Count - 1].SubItems.Add(reader["Type"].ToString());
+                    if (reader["Birthday"].ToString() == "")
+                    {
+                        StaffList.Items[StaffList.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                    else
+                    {
+                        StaffList.Items[StaffList.Items.Count - 1].SubItems.Add(((DateTime)reader["Birthday"]).ToString("yyyy-MM-dd"));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void StaffTabFilterName_TextChanged(object sender, EventArgs e)
+        {
+            staffFilterName = StaffTabFilterName.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Filter Name -> " + staffFilterName);
+            }
+        }
+
+        private void StaffFilterType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            staffFilterRole = StaffFilterType.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Filter Role -> " + staffFilterRole);
+            }
+        }
+
+        private void StaffApplyFilterBtn_Click(object sender, EventArgs e)
+        {
+            StaffList.Items.Clear();
+            requestStaffList();
+        }
+
+        private void StaffClearFilter_Click(object sender, EventArgs e)
+        {
+            resetStaffVar();
+            StaffList.Items.Clear();
+            requestStaffList();
+        }
+
+        private void StaffListPage_ValueChanged(object sender, EventArgs e)
+        {
+            staffOffset = (int)StaffListPage.Value;
+            StaffList.Items.Clear();
+            requestStaffList();
+        }
+
+        private void StaffList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (!e.IsSelected)
+            {
+                return;
+            }
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff List Selected -> " + e.Item.Text);
+            }
+            selectedStaffID = int.Parse(e.Item.Text);
+        }
+
+        private void StaffDetailsBirthday_ValueChanged(object sender, EventArgs e)
+        {
+            staffDetailsDOB = StaffDetailsBirthday.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Details DOB -> " + staffDetailsDOB.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void StaffDetailsType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            staffDetailsType = StaffDetailsType.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Details Type -> " + staffDetailsType);
+            }
+        }
+
+        private void StaffDetailsName_TextChanged(object sender, EventArgs e)
+        {
+            staffDetailsName = StaffDetailsName.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Details Name -> " + staffDetailsName);
+            }
+        }
+
+        private void StaffDetailsUpdateAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            staffDetailsUpdateAs = userDict[StaffDetailsUpdateAs.Text];
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Details Update As -> " + staffDetailsUpdateAs);
+            }
+        }
+
+        private void StaffDetailsUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (staffDetailsUpdateAs == -1 || selectedStaffID == -1)
+            {
+                return;
+            }
+            
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC UpdateStaff @StaffID = {selectedStaffID}, @Name = '{staffDetailsName}', @Type = '{staffDetailsType}', @Birthday = '{staffDetailsDOB.ToString("yyyy-MM-dd")}', @UserID = {staffDetailsUpdateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Staff Update Query -> " + cmd.CommandText);
+                }
+
+                cmd.ExecuteNonQuery();
+                StaffUpdateStatus.Text = "Updated Successfully";
+            }
+            catch (Exception ex)
+            {
+                StaffUpdateStatus.Text = "Update Failed";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void resetStaffCreate()
+        {
+            StaffCreateName.Text = "";
+            StaffCreateType.SelectedIndex = 0;
+            StaffCreateBirthday.Value = DateTime.Now;
+            StaffCreateAs.SelectedIndex = 0;
+        }
+
+        private void StaffCreateName_TextChanged(object sender, EventArgs e)
+        {
+            staffCreateName = StaffCreateName.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Create Name -> " + staffCreateName);
+            }
+        }
+
+        private void StaffCreateType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            staffCreateType = StaffCreateType.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Create Type -> " + staffCreateType);
+            }
+        }
+
+        private void StaffCreateBirthday_ValueChanged(object sender, EventArgs e)
+        {
+            staffCreateDOB = StaffCreateBirthday.Value;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Create DOB -> " + staffCreateDOB.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void StaffCreateAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            staffCreateAs = userDict[StaffCreateAs.Text];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Create As -> " + staffCreateAs);
+            }
+        }
+
+        private void StaffCreateBtn_Click(object sender, EventArgs e)
+        {
+            if (staffCreateAs == -1 || staffCreateName == "" || staffCreateType == "" || staffCreateDOB == null)
+            {
+                StaffCreateStatus.Text = "Please fill all fields";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC CreateStaff @Name = '{staffCreateName}', @Type = '{staffCreateType}', @Birthday = '{staffCreateDOB.ToString("yyyy-MM-dd")}', @UserID = {staffCreateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Staff Create Query -> " + cmd.CommandText);
+                }
+
+                cmd.ExecuteNonQuery();
+                StaffCreateStatus.Text = "Created Successfully";
+                resetStaffCreate();
+            }
+            catch (Exception ex)
+            {
+                StaffCreateStatus.Text = "Create Failed";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        // --------------------------------------------------------------------------------------------------- //
         // Users
         private void UserBtn_Click(object sender, EventArgs e)
         {

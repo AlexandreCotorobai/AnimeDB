@@ -118,7 +118,7 @@ BEGIN
         RAISERROR ('Character name already exists. Rolling back transaction.', 11,1);
         RETURN;
     END;
-    
+
     -- Update Character table based on the provided Character ID
 
 
@@ -194,32 +194,33 @@ BEGIN
     -- Check if the user is an admin
     SELECT @IsAdmin = dbo.IsAdmin(@UserID)
 
-    IF @IsAdmin = 1
+    IF @IsAdmin != 1
         BEGIN
-        -- Check if the provided Staff name already exists in the Staff table
-        IF EXISTS (SELECT 1
-        FROM Staff
-        WHERE Name = @Name AND ID <> @StaffID)
-            BEGIN
-            PRINT 'Staff name already exists. Rolling back transaction.'
-            ROLLBACK;
-            RETURN;
-        END;
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+        RETURN;
+    END
 
-        -- Update Staff table based on the provided Staff ID
-        UPDATE Staff
+
+    -- Check if the provided Staff name already exists in the Staff table
+    IF EXISTS (SELECT 1
+    FROM Staff
+    WHERE Name = @Name AND ID <> @StaffID)
+            BEGIN
+        RAISERROR ('Staff name already exists. Rolling back transaction.', 11,1);
+        ROLLBACK;
+        RETURN;
+    END;
+
+    -- Update Staff table based on the provided Staff ID
+    UPDATE Staff
             SET
                 Name = ISNULL(@Name, Name),
                 [Type] = ISNULL(@Type, [Type]),
                 Birthday = ISNULL(@Birthday, Birthday)
             WHERE ID = @StaffID;
 
-        PRINT 'Staff updated successfully.'
-    END
-        ELSE
-        BEGIN
-        PRINT 'Access denied. User is not an admin.'
-    END
+    PRINT 'Staff updated successfully.'
+
 END;
 GO
 

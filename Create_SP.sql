@@ -163,34 +163,32 @@ BEGIN
     -- Check if the user is an admin
     SELECT @IsAdmin = dbo.IsAdmin(@UserID)
 
-    IF @IsAdmin = 1
+    IF @IsAdmin != 1
     BEGIN
-        -- Check if the provided name already exists in the Staff table
-        IF EXISTS (SELECT 1
-        FROM Staff
-        WHERE Name = @Name)
+        RAISERROR('Access denied. User is not an admin.',11,1)
+        RETURN;
+    END;
+    -- Check if the provided name already exists in the Staff table
+    IF EXISTS (SELECT 1
+    FROM Staff
+    WHERE Name = @Name)
         BEGIN
-            PRINT 'Staff name already exists. Rolling back transaction.'
-            ROLLBACK;
-            RETURN;
-        END;
+        PRINT 'Staff name already exists. Rolling back transaction.'
+        ROLLBACK;
+        RETURN;
+    END;
 
-        -- Get the next available Staff ID
-        SELECT @StaffID = ISNULL(MAX(ID), 0) + 1
-        FROM Staff;
+    -- Get the next available Staff ID
+    SELECT @StaffID = ISNULL(MAX(ID), 0) + 1
+    FROM Staff;
 
-        -- Insert the new entry into the Staff table
-        INSERT INTO Staff
-            (ID, Name, Type, Birthday)
-        VALUES
-            (@StaffID, @Name, @Type, @Birthday);
+    -- Insert the new entry into the Staff table
+    INSERT INTO Staff
+        (ID, Name, Type, Birthday)
+    VALUES
+        (@StaffID, @Name, @Type, @Birthday);
 
-        PRINT 'Staff created successfully.'
-    END
-    ELSE
-    BEGIN
-        PRINT 'Access denied. User is not an admin.'
-    END
+    PRINT 'Staff created successfully.'
 END;
 GO
 

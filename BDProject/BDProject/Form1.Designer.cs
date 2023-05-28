@@ -36,6 +36,9 @@
             this.AnimeBtn = new System.Windows.Forms.Button();
             this.StaffTab = new System.Windows.Forms.TabControl();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.label76 = new System.Windows.Forms.Label();
+            this.StaffListPage = new System.Windows.Forms.NumericUpDown();
+            this.StaffApplyFilterBtn = new System.Windows.Forms.Button();
             this.StaffFilterType = new System.Windows.Forms.ComboBox();
             this.label63 = new System.Windows.Forms.Label();
             this.StaffClearFilter = new System.Windows.Forms.Button();
@@ -44,7 +47,6 @@
             this.label167 = new System.Windows.Forms.Label();
             this.StaffList = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -56,28 +58,20 @@
             this.StaffDetailsID = new System.Windows.Forms.TextBox();
             this.label170 = new System.Windows.Forms.Label();
             this.StaffDetailsUpdateAs = new System.Windows.Forms.ComboBox();
-            this.StaffDetailsImageURL = new System.Windows.Forms.TextBox();
-            this.label172 = new System.Windows.Forms.Label();
-            this.label173 = new System.Windows.Forms.Label();
             this.StaffDetailsUpdateBtn = new System.Windows.Forms.Button();
             this.StaffDetailsName = new System.Windows.Forms.TextBox();
             this.label174 = new System.Windows.Forms.Label();
             this.label175 = new System.Windows.Forms.Label();
-            this.StaffDetailsImage = new System.Windows.Forms.PictureBox();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.StaffCreateType = new System.Windows.Forms.ComboBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
             this.StaffCreateBirthday = new System.Windows.Forms.DateTimePicker();
             this.StaffCreateAs = new System.Windows.Forms.ComboBox();
             this.label64 = new System.Windows.Forms.Label();
             this.label179 = new System.Windows.Forms.Label();
             this.StaffCreateBtn = new System.Windows.Forms.Button();
             this.label65 = new System.Windows.Forms.Label();
-            this.StaffCreateImagePreview = new System.Windows.Forms.PictureBox();
             this.label67 = new System.Windows.Forms.Label();
             this.StaffCreateName = new System.Windows.Forms.TextBox();
-            this.StaffCreateImageURL = new System.Windows.Forms.TextBox();
             this.StudioTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.StudioFilterBefore = new System.Windows.Forms.DateTimePicker();
@@ -129,6 +123,9 @@
             this.StudioCreateAltName = new System.Windows.Forms.TextBox();
             this.CharactersTab = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label24 = new System.Windows.Forms.Label();
+            this.CharacterListPage = new System.Windows.Forms.NumericUpDown();
+            this.CharacterApplyFilterBtn = new System.Windows.Forms.Button();
             this.label105 = new System.Windows.Forms.Label();
             this.CharacterFilterVoicedby = new System.Windows.Forms.ComboBox();
             this.label97 = new System.Windows.Forms.Label();
@@ -143,6 +140,12 @@
             this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.CharDetailStatus = new System.Windows.Forms.Label();
+            this.CharDetailsAppearsInlst = new System.Windows.Forms.ListView();
+            this.CharDetailsRemoveAppearsInBtn = new System.Windows.Forms.Button();
+            this.CharDetailsAddAppearsInBtn = new System.Windows.Forms.Button();
+            this.label75 = new System.Windows.Forms.Label();
+            this.CharDetailsAddAnimeAppearsIn = new System.Windows.Forms.ComboBox();
             this.CharacterDetailsID = new System.Windows.Forms.TextBox();
             this.CharacterDetailsVA = new System.Windows.Forms.ComboBox();
             this.label106 = new System.Windows.Forms.Label();
@@ -156,6 +159,7 @@
             this.label157 = new System.Windows.Forms.Label();
             this.label158 = new System.Windows.Forms.Label();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.CharCreateStatus = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.CharacterCreateAs = new System.Windows.Forms.ComboBox();
             this.CharacterCreateVA = new System.Windows.Forms.ComboBox();
@@ -250,6 +254,10 @@
             this.AnimeCreateAltName = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.AnimeComments = new System.Windows.Forms.TabPage();
+            this.AnimeDetailsCommentStatus = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.AnimeCommentsRemoveAs = new System.Windows.Forms.ComboBox();
+            this.RemoveCommentBtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.AnimeDetailsCommentAs = new System.Windows.Forms.ComboBox();
             this.AnimeDetailsAddComment = new System.Windows.Forms.Button();
@@ -332,27 +340,14 @@
             this.button12 = new System.Windows.Forms.Button();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.AnimeCommentsRemoveAs = new System.Windows.Forms.ComboBox();
-            this.RemoveCommentBtn = new System.Windows.Forms.Button();
-            this.AnimeDetailsCommentStatus = new System.Windows.Forms.Label();
-            this.CharacterApplyFilterBtn = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.CharacterListPage = new System.Windows.Forms.NumericUpDown();
-            this.CharDetailsAppearsInlst = new System.Windows.Forms.ListView();
-            this.CharDetailsRemoveAppearsInBtn = new System.Windows.Forms.Button();
-            this.CharDetailsAddAppearsInBtn = new System.Windows.Forms.Button();
-            this.label75 = new System.Windows.Forms.Label();
-            this.CharDetailsAddAnimeAppearsIn = new System.Windows.Forms.ComboBox();
-            this.CharDetailStatus = new System.Windows.Forms.Label();
-            this.CharCreateStatus = new System.Windows.Forms.Label();
+            this.StaffUpdateStatus = new System.Windows.Forms.Label();
+            this.StaffCreateStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.StaffTab.SuspendLayout();
             this.tabPage14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffListPage)).BeginInit();
             this.tabPage15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffDetailsImage)).BeginInit();
             this.tabPage16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffCreateImagePreview)).BeginInit();
             this.StudioTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -361,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.StudioCreateImgPreview)).BeginInit();
             this.CharactersTab.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterListPage)).BeginInit();
             this.tabPage8.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.AnimeTab.SuspendLayout();
@@ -379,7 +375,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserDetailsImage)).BeginInit();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserCreateImagePreview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterListPage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -446,18 +441,23 @@
             // 
             // StaffTab
             // 
+            this.StaffTab.Controls.Add(this.tabPage14);
             this.StaffTab.Controls.Add(this.tabPage15);
             this.StaffTab.Controls.Add(this.tabPage16);
-            this.StaffTab.Controls.Add(this.tabPage14);
+            this.StaffTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.StaffTab.Location = new System.Drawing.Point(7, 59);
             this.StaffTab.Name = "StaffTab";
             this.StaffTab.SelectedIndex = 0;
             this.StaffTab.Size = new System.Drawing.Size(1152, 456);
             this.StaffTab.TabIndex = 14;
             this.StaffTab.Visible = false;
+            this.StaffTab.SelectedIndexChanged += new System.EventHandler(this.StaffTab_SelectedIndexChanged);
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.label76);
+            this.tabPage14.Controls.Add(this.StaffListPage);
+            this.tabPage14.Controls.Add(this.StaffApplyFilterBtn);
             this.tabPage14.Controls.Add(this.StaffFilterType);
             this.tabPage14.Controls.Add(this.label63);
             this.tabPage14.Controls.Add(this.StaffClearFilter);
@@ -473,19 +473,58 @@
             this.tabPage14.Text = "List";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label76.Location = new System.Drawing.Point(700, 400);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(41, 20);
+            this.label76.TabIndex = 25;
+            this.label76.Text = "Page";
+            // 
+            // StaffListPage
+            // 
+            this.StaffListPage.Location = new System.Drawing.Point(758, 400);
+            this.StaffListPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.StaffListPage.Name = "StaffListPage";
+            this.StaffListPage.Size = new System.Drawing.Size(120, 20);
+            this.StaffListPage.TabIndex = 24;
+            this.StaffListPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.StaffListPage.ValueChanged += new System.EventHandler(this.StaffListPage_ValueChanged);
+            // 
+            // StaffApplyFilterBtn
+            // 
+            this.StaffApplyFilterBtn.Location = new System.Drawing.Point(901, 228);
+            this.StaffApplyFilterBtn.Name = "StaffApplyFilterBtn";
+            this.StaffApplyFilterBtn.Size = new System.Drawing.Size(98, 50);
+            this.StaffApplyFilterBtn.TabIndex = 19;
+            this.StaffApplyFilterBtn.Text = "Apply Filter";
+            this.StaffApplyFilterBtn.UseVisualStyleBackColor = true;
+            this.StaffApplyFilterBtn.Click += new System.EventHandler(this.StaffApplyFilterBtn_Click);
+            // 
             // StaffFilterType
             // 
             this.StaffFilterType.FormattingEnabled = true;
-            this.StaffFilterType.Location = new System.Drawing.Point(912, 156);
+            this.StaffFilterType.Location = new System.Drawing.Point(901, 160);
             this.StaffFilterType.Name = "StaffFilterType";
             this.StaffFilterType.Size = new System.Drawing.Size(213, 21);
             this.StaffFilterType.TabIndex = 18;
+            this.StaffFilterType.SelectedIndexChanged += new System.EventHandler(this.StaffFilterType_SelectedIndexChanged);
             // 
             // label63
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label63.Location = new System.Drawing.Point(920, 125);
+            this.label63.Location = new System.Drawing.Point(909, 129);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(40, 20);
             this.label63.TabIndex = 17;
@@ -493,18 +532,19 @@
             // 
             // StaffClearFilter
             // 
-            this.StaffClearFilter.Location = new System.Drawing.Point(909, 341);
+            this.StaffClearFilter.Location = new System.Drawing.Point(1016, 228);
             this.StaffClearFilter.Name = "StaffClearFilter";
-            this.StaffClearFilter.Size = new System.Drawing.Size(215, 50);
+            this.StaffClearFilter.Size = new System.Drawing.Size(100, 50);
             this.StaffClearFilter.TabIndex = 16;
             this.StaffClearFilter.Text = "Clear Filter";
             this.StaffClearFilter.UseVisualStyleBackColor = true;
+            this.StaffClearFilter.Click += new System.EventHandler(this.StaffClearFilter_Click);
             // 
             // label166
             // 
             this.label166.AutoSize = true;
             this.label166.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label166.Location = new System.Drawing.Point(1005, 16);
+            this.label166.Location = new System.Drawing.Point(994, 20);
             this.label166.Name = "label166";
             this.label166.Size = new System.Drawing.Size(42, 20);
             this.label166.TabIndex = 7;
@@ -512,16 +552,17 @@
             // 
             // StaffTabFilterName
             // 
-            this.StaffTabFilterName.Location = new System.Drawing.Point(909, 61);
+            this.StaffTabFilterName.Location = new System.Drawing.Point(901, 72);
             this.StaffTabFilterName.Name = "StaffTabFilterName";
             this.StaffTabFilterName.Size = new System.Drawing.Size(218, 20);
             this.StaffTabFilterName.TabIndex = 6;
+            this.StaffTabFilterName.TextChanged += new System.EventHandler(this.StaffTabFilterName_TextChanged);
             // 
             // label167
             // 
             this.label167.AutoSize = true;
             this.label167.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label167.Location = new System.Drawing.Point(920, 43);
+            this.label167.Location = new System.Drawing.Point(909, 47);
             this.label167.Name = "label167";
             this.label167.Size = new System.Drawing.Size(49, 20);
             this.label167.TabIndex = 5;
@@ -531,28 +572,24 @@
             // 
             this.StaffList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
-            this.columnHeader10,
             this.columnHeader12,
             this.columnHeader13,
             this.columnHeader58});
+            this.StaffList.FullRowSelect = true;
             this.StaffList.HideSelection = false;
             this.StaffList.Location = new System.Drawing.Point(5, 5);
+            this.StaffList.MultiSelect = false;
             this.StaffList.Name = "StaffList";
-            this.StaffList.Size = new System.Drawing.Size(823, 422);
+            this.StaffList.Size = new System.Drawing.Size(872, 389);
             this.StaffList.TabIndex = 0;
             this.StaffList.UseCompatibleStateImageBehavior = false;
             this.StaffList.View = System.Windows.Forms.View.Details;
+            this.StaffList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.StaffList_ItemSelectionChanged);
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "";
             this.columnHeader9.Width = 0;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Image";
-            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader10.Width = 150;
             // 
             // columnHeader12
             // 
@@ -574,6 +611,7 @@
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.StaffUpdateStatus);
             this.tabPage15.Controls.Add(this.StaffDetailsType);
             this.tabPage15.Controls.Add(this.StaffDetailsBirthday);
             this.tabPage15.Controls.Add(this.label168);
@@ -581,14 +619,10 @@
             this.tabPage15.Controls.Add(this.StaffDetailsID);
             this.tabPage15.Controls.Add(this.label170);
             this.tabPage15.Controls.Add(this.StaffDetailsUpdateAs);
-            this.tabPage15.Controls.Add(this.StaffDetailsImageURL);
-            this.tabPage15.Controls.Add(this.label172);
-            this.tabPage15.Controls.Add(this.label173);
             this.tabPage15.Controls.Add(this.StaffDetailsUpdateBtn);
             this.tabPage15.Controls.Add(this.StaffDetailsName);
             this.tabPage15.Controls.Add(this.label174);
             this.tabPage15.Controls.Add(this.label175);
-            this.tabPage15.Controls.Add(this.StaffDetailsImage);
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
@@ -600,25 +634,27 @@
             // StaffDetailsType
             // 
             this.StaffDetailsType.FormattingEnabled = true;
-            this.StaffDetailsType.Location = new System.Drawing.Point(196, 140);
+            this.StaffDetailsType.Location = new System.Drawing.Point(276, 33);
             this.StaffDetailsType.Name = "StaffDetailsType";
             this.StaffDetailsType.Size = new System.Drawing.Size(216, 21);
             this.StaffDetailsType.TabIndex = 61;
+            this.StaffDetailsType.SelectedIndexChanged += new System.EventHandler(this.StaffDetailsType_SelectedIndexChanged);
             // 
             // StaffDetailsBirthday
             // 
             this.StaffDetailsBirthday.CustomFormat = "dd/MM";
-            this.StaffDetailsBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StaffDetailsBirthday.Location = new System.Drawing.Point(196, 184);
+            this.StaffDetailsBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StaffDetailsBirthday.Location = new System.Drawing.Point(276, 80);
             this.StaffDetailsBirthday.Name = "StaffDetailsBirthday";
             this.StaffDetailsBirthday.Size = new System.Drawing.Size(216, 20);
             this.StaffDetailsBirthday.TabIndex = 59;
+            this.StaffDetailsBirthday.ValueChanged += new System.EventHandler(this.StaffDetailsBirthday_ValueChanged);
             // 
             // label168
             // 
             this.label168.AutoSize = true;
             this.label168.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label168.Location = new System.Drawing.Point(199, 164);
+            this.label168.Location = new System.Drawing.Point(279, 60);
             this.label168.Name = "label168";
             this.label168.Size = new System.Drawing.Size(64, 20);
             this.label168.TabIndex = 58;
@@ -628,7 +664,7 @@
             // 
             this.label169.AutoSize = true;
             this.label169.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label169.Location = new System.Drawing.Point(201, 116);
+            this.label169.Location = new System.Drawing.Point(281, 9);
             this.label169.Name = "label169";
             this.label169.Size = new System.Drawing.Size(40, 20);
             this.label169.TabIndex = 56;
@@ -636,7 +672,7 @@
             // 
             // StaffDetailsID
             // 
-            this.StaffDetailsID.Location = new System.Drawing.Point(196, 30);
+            this.StaffDetailsID.Location = new System.Drawing.Point(12, 29);
             this.StaffDetailsID.Name = "StaffDetailsID";
             this.StaffDetailsID.ReadOnly = true;
             this.StaffDetailsID.Size = new System.Drawing.Size(59, 20);
@@ -659,33 +695,7 @@
             this.StaffDetailsUpdateAs.Name = "StaffDetailsUpdateAs";
             this.StaffDetailsUpdateAs.Size = new System.Drawing.Size(212, 21);
             this.StaffDetailsUpdateAs.TabIndex = 51;
-            // 
-            // StaffDetailsImageURL
-            // 
-            this.StaffDetailsImageURL.Location = new System.Drawing.Point(12, 266);
-            this.StaffDetailsImageURL.Name = "StaffDetailsImageURL";
-            this.StaffDetailsImageURL.Size = new System.Drawing.Size(337, 20);
-            this.StaffDetailsImageURL.TabIndex = 40;
-            // 
-            // label172
-            // 
-            this.label172.AutoSize = true;
-            this.label172.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label172.Location = new System.Drawing.Point(17, 246);
-            this.label172.Name = "label172";
-            this.label172.Size = new System.Drawing.Size(81, 20);
-            this.label172.TabIndex = 39;
-            this.label172.Text = "Image URL";
-            // 
-            // label173
-            // 
-            this.label173.AutoSize = true;
-            this.label173.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label173.Location = new System.Drawing.Point(17, 6);
-            this.label173.Name = "label173";
-            this.label173.Size = new System.Drawing.Size(106, 20);
-            this.label173.TabIndex = 38;
-            this.label173.Text = "Image Preview";
+            this.StaffDetailsUpdateAs.SelectedIndexChanged += new System.EventHandler(this.StaffDetailsUpdateAs_SelectedIndexChanged);
             // 
             // StaffDetailsUpdateBtn
             // 
@@ -695,19 +705,21 @@
             this.StaffDetailsUpdateBtn.TabIndex = 30;
             this.StaffDetailsUpdateBtn.Text = "Update Information";
             this.StaffDetailsUpdateBtn.UseVisualStyleBackColor = true;
+            this.StaffDetailsUpdateBtn.Click += new System.EventHandler(this.StaffDetailsUpdateBtn_Click);
             // 
             // StaffDetailsName
             // 
-            this.StaffDetailsName.Location = new System.Drawing.Point(196, 81);
+            this.StaffDetailsName.Location = new System.Drawing.Point(12, 80);
             this.StaffDetailsName.Name = "StaffDetailsName";
             this.StaffDetailsName.Size = new System.Drawing.Size(216, 20);
             this.StaffDetailsName.TabIndex = 4;
+            this.StaffDetailsName.TextChanged += new System.EventHandler(this.StaffDetailsName_TextChanged);
             // 
             // label174
             // 
             this.label174.AutoSize = true;
             this.label174.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label174.Location = new System.Drawing.Point(199, 63);
+            this.label174.Location = new System.Drawing.Point(15, 62);
             this.label174.Name = "label174";
             this.label174.Size = new System.Drawing.Size(49, 20);
             this.label174.TabIndex = 3;
@@ -717,35 +729,24 @@
             // 
             this.label175.AutoSize = true;
             this.label175.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label175.Location = new System.Drawing.Point(207, 13);
+            this.label175.Location = new System.Drawing.Point(23, 12);
             this.label175.Name = "label175";
             this.label175.Size = new System.Drawing.Size(24, 20);
             this.label175.TabIndex = 1;
             this.label175.Text = "ID";
             // 
-            // StaffDetailsImage
-            // 
-            this.StaffDetailsImage.Location = new System.Drawing.Point(12, 26);
-            this.StaffDetailsImage.Name = "StaffDetailsImage";
-            this.StaffDetailsImage.Size = new System.Drawing.Size(165, 202);
-            this.StaffDetailsImage.TabIndex = 0;
-            this.StaffDetailsImage.TabStop = false;
-            // 
             // tabPage16
             // 
+            this.tabPage16.Controls.Add(this.StaffCreateStatus);
             this.tabPage16.Controls.Add(this.StaffCreateType);
-            this.tabPage16.Controls.Add(this.label69);
-            this.tabPage16.Controls.Add(this.label66);
             this.tabPage16.Controls.Add(this.StaffCreateBirthday);
             this.tabPage16.Controls.Add(this.StaffCreateAs);
             this.tabPage16.Controls.Add(this.label64);
             this.tabPage16.Controls.Add(this.label179);
             this.tabPage16.Controls.Add(this.StaffCreateBtn);
             this.tabPage16.Controls.Add(this.label65);
-            this.tabPage16.Controls.Add(this.StaffCreateImagePreview);
             this.tabPage16.Controls.Add(this.label67);
             this.tabPage16.Controls.Add(this.StaffCreateName);
-            this.tabPage16.Controls.Add(this.StaffCreateImageURL);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Size = new System.Drawing.Size(1144, 430);
@@ -756,53 +757,36 @@
             // StaffCreateType
             // 
             this.StaffCreateType.FormattingEnabled = true;
-            this.StaffCreateType.Location = new System.Drawing.Point(197, 92);
+            this.StaffCreateType.Location = new System.Drawing.Point(28, 91);
             this.StaffCreateType.Name = "StaffCreateType";
             this.StaffCreateType.Size = new System.Drawing.Size(216, 21);
             this.StaffCreateType.TabIndex = 75;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label69.Location = new System.Drawing.Point(16, 246);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(81, 20);
-            this.label69.TabIndex = 74;
-            this.label69.Text = "Image URL";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label66.Location = new System.Drawing.Point(16, 6);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(106, 20);
-            this.label66.TabIndex = 73;
-            this.label66.Text = "Image Preview";
+            this.StaffCreateType.SelectedIndexChanged += new System.EventHandler(this.StaffCreateType_SelectedIndexChanged);
             // 
             // StaffCreateBirthday
             // 
             this.StaffCreateBirthday.CustomFormat = "dd/MM";
-            this.StaffCreateBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StaffCreateBirthday.Location = new System.Drawing.Point(197, 151);
+            this.StaffCreateBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StaffCreateBirthday.Location = new System.Drawing.Point(28, 150);
             this.StaffCreateBirthday.Name = "StaffCreateBirthday";
             this.StaffCreateBirthday.Size = new System.Drawing.Size(216, 20);
             this.StaffCreateBirthday.TabIndex = 72;
+            this.StaffCreateBirthday.ValueChanged += new System.EventHandler(this.StaffCreateBirthday_ValueChanged);
             // 
             // StaffCreateAs
             // 
             this.StaffCreateAs.FormattingEnabled = true;
-            this.StaffCreateAs.Location = new System.Drawing.Point(459, 29);
+            this.StaffCreateAs.Location = new System.Drawing.Point(291, 35);
             this.StaffCreateAs.Name = "StaffCreateAs";
             this.StaffCreateAs.Size = new System.Drawing.Size(212, 21);
             this.StaffCreateAs.TabIndex = 70;
+            this.StaffCreateAs.SelectedIndexChanged += new System.EventHandler(this.StaffCreateAs_SelectedIndexChanged);
             // 
             // label64
             // 
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label64.Location = new System.Drawing.Point(200, 131);
+            this.label64.Location = new System.Drawing.Point(31, 130);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(64, 20);
             this.label64.TabIndex = 71;
@@ -812,7 +796,7 @@
             // 
             this.label179.AutoSize = true;
             this.label179.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label179.Location = new System.Drawing.Point(459, 13);
+            this.label179.Location = new System.Drawing.Point(291, 12);
             this.label179.Name = "label179";
             this.label179.Size = new System.Drawing.Size(72, 20);
             this.label179.TabIndex = 71;
@@ -820,36 +804,29 @@
             // 
             // StaffCreateBtn
             // 
-            this.StaffCreateBtn.Location = new System.Drawing.Point(459, 74);
+            this.StaffCreateBtn.Location = new System.Drawing.Point(291, 73);
             this.StaffCreateBtn.Name = "StaffCreateBtn";
             this.StaffCreateBtn.Size = new System.Drawing.Size(212, 37);
             this.StaffCreateBtn.TabIndex = 64;
             this.StaffCreateBtn.Text = "Create Entry";
             this.StaffCreateBtn.UseVisualStyleBackColor = true;
+            this.StaffCreateBtn.Click += new System.EventHandler(this.StaffCreateBtn_Click);
             // 
             // label65
             // 
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label65.Location = new System.Drawing.Point(201, 63);
+            this.label65.Location = new System.Drawing.Point(32, 62);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(40, 20);
             this.label65.TabIndex = 69;
             this.label65.Text = "Type";
             // 
-            // StaffCreateImagePreview
-            // 
-            this.StaffCreateImagePreview.Location = new System.Drawing.Point(16, 26);
-            this.StaffCreateImagePreview.Name = "StaffCreateImagePreview";
-            this.StaffCreateImagePreview.Size = new System.Drawing.Size(165, 202);
-            this.StaffCreateImagePreview.TabIndex = 60;
-            this.StaffCreateImagePreview.TabStop = false;
-            // 
             // label67
             // 
             this.label67.AutoSize = true;
             this.label67.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label67.Location = new System.Drawing.Point(197, 13);
+            this.label67.Location = new System.Drawing.Point(28, 12);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(49, 20);
             this.label67.TabIndex = 62;
@@ -857,17 +834,11 @@
             // 
             // StaffCreateName
             // 
-            this.StaffCreateName.Location = new System.Drawing.Point(195, 30);
+            this.StaffCreateName.Location = new System.Drawing.Point(28, 35);
             this.StaffCreateName.Name = "StaffCreateName";
             this.StaffCreateName.Size = new System.Drawing.Size(216, 20);
             this.StaffCreateName.TabIndex = 63;
-            // 
-            // StaffCreateImageURL
-            // 
-            this.StaffCreateImageURL.Location = new System.Drawing.Point(16, 266);
-            this.StaffCreateImageURL.Name = "StaffCreateImageURL";
-            this.StaffCreateImageURL.Size = new System.Drawing.Size(337, 20);
-            this.StaffCreateImageURL.TabIndex = 65;
+            this.StaffCreateName.TextChanged += new System.EventHandler(this.StaffCreateName_TextChanged);
             // 
             // StudioTab
             // 
@@ -1370,6 +1341,44 @@
             this.tabPage7.Text = "List";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label24.Location = new System.Drawing.Point(711, 407);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(41, 20);
+            this.label24.TabIndex = 23;
+            this.label24.Text = "Page";
+            // 
+            // CharacterListPage
+            // 
+            this.CharacterListPage.Location = new System.Drawing.Point(758, 407);
+            this.CharacterListPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CharacterListPage.Name = "CharacterListPage";
+            this.CharacterListPage.Size = new System.Drawing.Size(120, 20);
+            this.CharacterListPage.TabIndex = 22;
+            this.CharacterListPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CharacterListPage.ValueChanged += new System.EventHandler(this.CharacterListPage_ValueChanged);
+            // 
+            // CharacterApplyFilterBtn
+            // 
+            this.CharacterApplyFilterBtn.Location = new System.Drawing.Point(913, 261);
+            this.CharacterApplyFilterBtn.Name = "CharacterApplyFilterBtn";
+            this.CharacterApplyFilterBtn.Size = new System.Drawing.Size(97, 50);
+            this.CharacterApplyFilterBtn.TabIndex = 21;
+            this.CharacterApplyFilterBtn.Text = "Apply Filter";
+            this.CharacterApplyFilterBtn.UseVisualStyleBackColor = true;
+            this.CharacterApplyFilterBtn.Click += new System.EventHandler(this.CharacterApplyFilterBtn_Click);
+            // 
             // label105
             // 
             this.label105.AutoSize = true;
@@ -1515,6 +1524,66 @@
             this.tabPage8.Text = "Details";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // CharDetailStatus
+            // 
+            this.CharDetailStatus.AutoSize = true;
+            this.CharDetailStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CharDetailStatus.Location = new System.Drawing.Point(630, 141);
+            this.CharDetailStatus.Name = "CharDetailStatus";
+            this.CharDetailStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharDetailStatus.TabIndex = 62;
+            // 
+            // CharDetailsAppearsInlst
+            // 
+            this.CharDetailsAppearsInlst.HideSelection = false;
+            this.CharDetailsAppearsInlst.Location = new System.Drawing.Point(15, 248);
+            this.CharDetailsAppearsInlst.MultiSelect = false;
+            this.CharDetailsAppearsInlst.Name = "CharDetailsAppearsInlst";
+            this.CharDetailsAppearsInlst.Size = new System.Drawing.Size(488, 175);
+            this.CharDetailsAppearsInlst.TabIndex = 61;
+            this.CharDetailsAppearsInlst.UseCompatibleStateImageBehavior = false;
+            this.CharDetailsAppearsInlst.View = System.Windows.Forms.View.List;
+            this.CharDetailsAppearsInlst.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.CharDetailsAppearsInlst_ItemSelectionChanged);
+            // 
+            // CharDetailsRemoveAppearsInBtn
+            // 
+            this.CharDetailsRemoveAppearsInBtn.Location = new System.Drawing.Point(514, 341);
+            this.CharDetailsRemoveAppearsInBtn.Name = "CharDetailsRemoveAppearsInBtn";
+            this.CharDetailsRemoveAppearsInBtn.Size = new System.Drawing.Size(147, 37);
+            this.CharDetailsRemoveAppearsInBtn.TabIndex = 60;
+            this.CharDetailsRemoveAppearsInBtn.Text = "Remove Appears In";
+            this.CharDetailsRemoveAppearsInBtn.UseVisualStyleBackColor = true;
+            this.CharDetailsRemoveAppearsInBtn.Click += new System.EventHandler(this.CharDetailsRemoveAppearsInBtn_Click);
+            // 
+            // CharDetailsAddAppearsInBtn
+            // 
+            this.CharDetailsAddAppearsInBtn.Location = new System.Drawing.Point(514, 296);
+            this.CharDetailsAddAppearsInBtn.Name = "CharDetailsAddAppearsInBtn";
+            this.CharDetailsAddAppearsInBtn.Size = new System.Drawing.Size(147, 37);
+            this.CharDetailsAddAppearsInBtn.TabIndex = 59;
+            this.CharDetailsAddAppearsInBtn.Text = "Add Appears In";
+            this.CharDetailsAddAppearsInBtn.UseVisualStyleBackColor = true;
+            this.CharDetailsAddAppearsInBtn.Click += new System.EventHandler(this.CharDetailsAddAppearsInBtn_Click);
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label75.Location = new System.Drawing.Point(516, 246);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(130, 20);
+            this.label75.TabIndex = 58;
+            this.label75.Text = "Select New Anime";
+            // 
+            // CharDetailsAddAnimeAppearsIn
+            // 
+            this.CharDetailsAddAnimeAppearsIn.FormattingEnabled = true;
+            this.CharDetailsAddAnimeAppearsIn.Location = new System.Drawing.Point(514, 269);
+            this.CharDetailsAddAnimeAppearsIn.Name = "CharDetailsAddAnimeAppearsIn";
+            this.CharDetailsAddAnimeAppearsIn.Size = new System.Drawing.Size(147, 21);
+            this.CharDetailsAddAnimeAppearsIn.TabIndex = 57;
+            this.CharDetailsAddAnimeAppearsIn.SelectedIndexChanged += new System.EventHandler(this.CharDetailsAddAnimeAppearsIn_SelectedIndexChanged);
+            // 
             // CharacterDetailsID
             // 
             this.CharacterDetailsID.Location = new System.Drawing.Point(15, 50);
@@ -1646,6 +1715,15 @@
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "Create";
             this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // CharCreateStatus
+            // 
+            this.CharCreateStatus.AutoSize = true;
+            this.CharCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CharCreateStatus.Location = new System.Drawing.Point(877, 116);
+            this.CharCreateStatus.Name = "CharCreateStatus";
+            this.CharCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharCreateStatus.TabIndex = 66;
             // 
             // label43
             // 
@@ -1783,9 +1861,19 @@
             // AnimeListPage
             // 
             this.AnimeListPage.Location = new System.Drawing.Point(757, 397);
+            this.AnimeListPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.AnimeListPage.Name = "AnimeListPage";
             this.AnimeListPage.Size = new System.Drawing.Size(120, 20);
             this.AnimeListPage.TabIndex = 20;
+            this.AnimeListPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.AnimeListPage.ValueChanged += new System.EventHandler(this.AnimeListPage_ValueChanged);
             // 
             // AnimeApplyFilterbtn
@@ -2603,6 +2691,44 @@
             this.AnimeComments.Text = "Comments";
             this.AnimeComments.UseVisualStyleBackColor = true;
             // 
+            // AnimeDetailsCommentStatus
+            // 
+            this.AnimeDetailsCommentStatus.AutoSize = true;
+            this.AnimeDetailsCommentStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.AnimeDetailsCommentStatus.Location = new System.Drawing.Point(786, 407);
+            this.AnimeDetailsCommentStatus.Name = "AnimeDetailsCommentStatus";
+            this.AnimeDetailsCommentStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeDetailsCommentStatus.TabIndex = 38;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label22.Location = new System.Drawing.Point(786, 310);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(152, 20);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Remove Comment As";
+            // 
+            // AnimeCommentsRemoveAs
+            // 
+            this.AnimeCommentsRemoveAs.FormattingEnabled = true;
+            this.AnimeCommentsRemoveAs.Location = new System.Drawing.Point(785, 333);
+            this.AnimeCommentsRemoveAs.Name = "AnimeCommentsRemoveAs";
+            this.AnimeCommentsRemoveAs.Size = new System.Drawing.Size(161, 21);
+            this.AnimeCommentsRemoveAs.TabIndex = 36;
+            this.AnimeCommentsRemoveAs.SelectedIndexChanged += new System.EventHandler(this.AnimeCommentsRemoveAs_SelectedIndexChanged);
+            // 
+            // RemoveCommentBtn
+            // 
+            this.RemoveCommentBtn.Location = new System.Drawing.Point(785, 359);
+            this.RemoveCommentBtn.Name = "RemoveCommentBtn";
+            this.RemoveCommentBtn.Size = new System.Drawing.Size(161, 47);
+            this.RemoveCommentBtn.TabIndex = 35;
+            this.RemoveCommentBtn.Text = "Remove Comment";
+            this.RemoveCommentBtn.UseVisualStyleBackColor = true;
+            this.RemoveCommentBtn.Click += new System.EventHandler(this.RemoveCommentBtn_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -3402,150 +3528,23 @@
             this.label68.TabIndex = 17;
             this.label68.Text = "Connection Status:";
             // 
-            // label22
+            // StaffUpdateStatus
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label22.Location = new System.Drawing.Point(786, 310);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(152, 20);
-            this.label22.TabIndex = 37;
-            this.label22.Text = "Remove Comment As";
+            this.StaffUpdateStatus.AutoSize = true;
+            this.StaffUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.StaffUpdateStatus.Location = new System.Drawing.Point(512, 116);
+            this.StaffUpdateStatus.Name = "StaffUpdateStatus";
+            this.StaffUpdateStatus.Size = new System.Drawing.Size(0, 20);
+            this.StaffUpdateStatus.TabIndex = 62;
             // 
-            // AnimeCommentsRemoveAs
+            // StaffCreateStatus
             // 
-            this.AnimeCommentsRemoveAs.FormattingEnabled = true;
-            this.AnimeCommentsRemoveAs.Location = new System.Drawing.Point(785, 333);
-            this.AnimeCommentsRemoveAs.Name = "AnimeCommentsRemoveAs";
-            this.AnimeCommentsRemoveAs.Size = new System.Drawing.Size(161, 21);
-            this.AnimeCommentsRemoveAs.TabIndex = 36;
-            this.AnimeCommentsRemoveAs.SelectedIndexChanged += new System.EventHandler(this.AnimeCommentsRemoveAs_SelectedIndexChanged);
-            // 
-            // RemoveCommentBtn
-            // 
-            this.RemoveCommentBtn.Location = new System.Drawing.Point(785, 359);
-            this.RemoveCommentBtn.Name = "RemoveCommentBtn";
-            this.RemoveCommentBtn.Size = new System.Drawing.Size(161, 47);
-            this.RemoveCommentBtn.TabIndex = 35;
-            this.RemoveCommentBtn.Text = "Remove Comment";
-            this.RemoveCommentBtn.UseVisualStyleBackColor = true;
-            this.RemoveCommentBtn.Click += new System.EventHandler(this.RemoveCommentBtn_Click);
-            // 
-            // AnimeDetailsCommentStatus
-            // 
-            this.AnimeDetailsCommentStatus.AutoSize = true;
-            this.AnimeDetailsCommentStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.AnimeDetailsCommentStatus.Location = new System.Drawing.Point(786, 407);
-            this.AnimeDetailsCommentStatus.Name = "AnimeDetailsCommentStatus";
-            this.AnimeDetailsCommentStatus.Size = new System.Drawing.Size(0, 20);
-            this.AnimeDetailsCommentStatus.TabIndex = 38;
-            // 
-            // CharacterApplyFilterBtn
-            // 
-            this.CharacterApplyFilterBtn.Location = new System.Drawing.Point(913, 261);
-            this.CharacterApplyFilterBtn.Name = "CharacterApplyFilterBtn";
-            this.CharacterApplyFilterBtn.Size = new System.Drawing.Size(97, 50);
-            this.CharacterApplyFilterBtn.TabIndex = 21;
-            this.CharacterApplyFilterBtn.Text = "Apply Filter";
-            this.CharacterApplyFilterBtn.UseVisualStyleBackColor = true;
-            this.CharacterApplyFilterBtn.Click += new System.EventHandler(this.CharacterApplyFilterBtn_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label24.Location = new System.Drawing.Point(711, 407);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 20);
-            this.label24.TabIndex = 23;
-            this.label24.Text = "Page";
-            // 
-            // CharacterListPage
-            // 
-            this.CharacterListPage.Location = new System.Drawing.Point(758, 407);
-            this.CharacterListPage.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.CharacterListPage.Name = "CharacterListPage";
-            this.CharacterListPage.Size = new System.Drawing.Size(120, 20);
-            this.CharacterListPage.TabIndex = 22;
-            this.CharacterListPage.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.CharacterListPage.ValueChanged += new System.EventHandler(this.CharacterListPage_ValueChanged);
-            // 
-            // CharDetailsAppearsInlst
-            // 
-            this.CharDetailsAppearsInlst.HideSelection = false;
-            this.CharDetailsAppearsInlst.Location = new System.Drawing.Point(15, 248);
-            this.CharDetailsAppearsInlst.MultiSelect = false;
-            this.CharDetailsAppearsInlst.Name = "CharDetailsAppearsInlst";
-            this.CharDetailsAppearsInlst.Size = new System.Drawing.Size(488, 175);
-            this.CharDetailsAppearsInlst.TabIndex = 61;
-            this.CharDetailsAppearsInlst.UseCompatibleStateImageBehavior = false;
-            this.CharDetailsAppearsInlst.View = System.Windows.Forms.View.List;
-            this.CharDetailsAppearsInlst.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.CharDetailsAppearsInlst_ItemSelectionChanged);
-            // 
-            // CharDetailsRemoveAppearsInBtn
-            // 
-            this.CharDetailsRemoveAppearsInBtn.Location = new System.Drawing.Point(514, 341);
-            this.CharDetailsRemoveAppearsInBtn.Name = "CharDetailsRemoveAppearsInBtn";
-            this.CharDetailsRemoveAppearsInBtn.Size = new System.Drawing.Size(147, 37);
-            this.CharDetailsRemoveAppearsInBtn.TabIndex = 60;
-            this.CharDetailsRemoveAppearsInBtn.Text = "Remove Appears In";
-            this.CharDetailsRemoveAppearsInBtn.UseVisualStyleBackColor = true;
-            this.CharDetailsRemoveAppearsInBtn.Click += new System.EventHandler(this.CharDetailsRemoveAppearsInBtn_Click);
-            // 
-            // CharDetailsAddAppearsInBtn
-            // 
-            this.CharDetailsAddAppearsInBtn.Location = new System.Drawing.Point(514, 296);
-            this.CharDetailsAddAppearsInBtn.Name = "CharDetailsAddAppearsInBtn";
-            this.CharDetailsAddAppearsInBtn.Size = new System.Drawing.Size(147, 37);
-            this.CharDetailsAddAppearsInBtn.TabIndex = 59;
-            this.CharDetailsAddAppearsInBtn.Text = "Add Appears In";
-            this.CharDetailsAddAppearsInBtn.UseVisualStyleBackColor = true;
-            this.CharDetailsAddAppearsInBtn.Click += new System.EventHandler(this.CharDetailsAddAppearsInBtn_Click);
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label75.Location = new System.Drawing.Point(516, 246);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(130, 20);
-            this.label75.TabIndex = 58;
-            this.label75.Text = "Select New Anime";
-            // 
-            // CharDetailsAddAnimeAppearsIn
-            // 
-            this.CharDetailsAddAnimeAppearsIn.FormattingEnabled = true;
-            this.CharDetailsAddAnimeAppearsIn.Location = new System.Drawing.Point(514, 269);
-            this.CharDetailsAddAnimeAppearsIn.Name = "CharDetailsAddAnimeAppearsIn";
-            this.CharDetailsAddAnimeAppearsIn.Size = new System.Drawing.Size(147, 21);
-            this.CharDetailsAddAnimeAppearsIn.TabIndex = 57;
-            this.CharDetailsAddAnimeAppearsIn.SelectedIndexChanged += new System.EventHandler(this.CharDetailsAddAnimeAppearsIn_SelectedIndexChanged);
-            // 
-            // CharDetailStatus
-            // 
-            this.CharDetailStatus.AutoSize = true;
-            this.CharDetailStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CharDetailStatus.Location = new System.Drawing.Point(630, 141);
-            this.CharDetailStatus.Name = "CharDetailStatus";
-            this.CharDetailStatus.Size = new System.Drawing.Size(0, 20);
-            this.CharDetailStatus.TabIndex = 62;
-            // 
-            // CharCreateStatus
-            // 
-            this.CharCreateStatus.AutoSize = true;
-            this.CharCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CharCreateStatus.Location = new System.Drawing.Point(877, 116);
-            this.CharCreateStatus.Name = "CharCreateStatus";
-            this.CharCreateStatus.Size = new System.Drawing.Size(0, 20);
-            this.CharCreateStatus.TabIndex = 66;
+            this.StaffCreateStatus.AutoSize = true;
+            this.StaffCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.StaffCreateStatus.Location = new System.Drawing.Point(291, 116);
+            this.StaffCreateStatus.Name = "StaffCreateStatus";
+            this.StaffCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.StaffCreateStatus.TabIndex = 76;
             // 
             // Form1
             // 
@@ -3555,23 +3554,22 @@
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.StaffTab);
+            this.Controls.Add(this.StudioTab);
             this.Controls.Add(this.CharactersTab);
             this.Controls.Add(this.AnimeTab);
             this.Controls.Add(this.UsersTab);
-            this.Controls.Add(this.StaffTab);
-            this.Controls.Add(this.StudioTab);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.StaffTab.ResumeLayout(false);
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffListPage)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffDetailsImage)).EndInit();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffCreateImagePreview)).EndInit();
             this.StudioTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -3584,6 +3582,7 @@
             this.CharactersTab.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterListPage)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.tabPage13.ResumeLayout(false);
@@ -3611,7 +3610,6 @@
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserCreateImagePreview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterListPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3635,7 +3633,6 @@
         private System.Windows.Forms.Label label167;
         private System.Windows.Forms.ListView StaffList;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader58;
@@ -3646,27 +3643,19 @@
         private System.Windows.Forms.TextBox StaffDetailsID;
         private System.Windows.Forms.Label label170;
         private System.Windows.Forms.ComboBox StaffDetailsUpdateAs;
-        private System.Windows.Forms.TextBox StaffDetailsImageURL;
-        private System.Windows.Forms.Label label172;
-        private System.Windows.Forms.Label label173;
         private System.Windows.Forms.Button StaffDetailsUpdateBtn;
         private System.Windows.Forms.TextBox StaffDetailsName;
         private System.Windows.Forms.Label label174;
         private System.Windows.Forms.Label label175;
-        private System.Windows.Forms.PictureBox StaffDetailsImage;
         private System.Windows.Forms.TabPage tabPage16;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.DateTimePicker StaffCreateBirthday;
         private System.Windows.Forms.ComboBox StaffCreateAs;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label179;
         private System.Windows.Forms.Button StaffCreateBtn;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.PictureBox StaffCreateImagePreview;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.TextBox StaffCreateName;
-        private System.Windows.Forms.TextBox StaffCreateImageURL;
         private System.Windows.Forms.TabControl StudioTab;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DateTimePicker StudioFilterBefore;
@@ -3937,6 +3926,11 @@
         private System.Windows.Forms.ComboBox CharDetailsAddAnimeAppearsIn;
         private System.Windows.Forms.Label CharDetailStatus;
         private System.Windows.Forms.Label CharCreateStatus;
+        private System.Windows.Forms.Button StaffApplyFilterBtn;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.NumericUpDown StaffListPage;
+        private System.Windows.Forms.Label StaffUpdateStatus;
+        private System.Windows.Forms.Label StaffCreateStatus;
     }
 }
 
