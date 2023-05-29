@@ -51,6 +51,7 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.StaffUpdateStatus = new System.Windows.Forms.Label();
             this.StaffDetailsType = new System.Windows.Forms.ComboBox();
             this.StaffDetailsBirthday = new System.Windows.Forms.DateTimePicker();
             this.label168 = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             this.label174 = new System.Windows.Forms.Label();
             this.label175 = new System.Windows.Forms.Label();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.StaffCreateStatus = new System.Windows.Forms.Label();
             this.StaffCreateType = new System.Windows.Forms.ComboBox();
             this.StaffCreateBirthday = new System.Windows.Forms.DateTimePicker();
             this.StaffCreateAs = new System.Windows.Forms.ComboBox();
@@ -74,6 +76,9 @@
             this.StaffCreateName = new System.Windows.Forms.TextBox();
             this.StudioTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label69 = new System.Windows.Forms.Label();
+            this.StudioPage = new System.Windows.Forms.NumericUpDown();
+            this.StudioApplyFilterBtn = new System.Windows.Forms.Button();
             this.StudioFilterBefore = new System.Windows.Forms.DateTimePicker();
             this.StudioFilterAfter = new System.Windows.Forms.DateTimePicker();
             this.label45 = new System.Windows.Forms.Label();
@@ -83,11 +88,11 @@
             this.label48 = new System.Windows.Forms.Label();
             this.StudiosList = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.UpdateStudioStatus = new System.Windows.Forms.Label();
             this.StudioDetailsEstablishedAt = new System.Windows.Forms.DateTimePicker();
             this.label50 = new System.Windows.Forms.Label();
             this.StudioDetailsAltName = new System.Windows.Forms.TextBox();
@@ -97,24 +102,16 @@
             this.StudioDetailsUpdateAs = new System.Windows.Forms.ComboBox();
             this.label52 = new System.Windows.Forms.Label();
             this.StudioDetailsDescription = new System.Windows.Forms.TextBox();
-            this.StudioDetailsImageUrl = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
             this.StudioDetailsUpdateBtn = new System.Windows.Forms.Button();
             this.StudioDetailsName = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.StudioDetailsImagePrev = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.StudioCreateImageUrl = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
             this.StudioCreateName = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
             this.StudioCreateAs = new System.Windows.Forms.ComboBox();
-            this.label61 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.StudioCreateEstablishedAt = new System.Windows.Forms.DateTimePicker();
-            this.StudioCreateImgPreview = new System.Windows.Forms.PictureBox();
             this.StudioCreateDescription = new System.Windows.Forms.TextBox();
             this.StudioCreateBtn = new System.Windows.Forms.Button();
             this.label62 = new System.Windows.Forms.Label();
@@ -270,6 +267,9 @@
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UsersTab = new System.Windows.Forms.TabControl();
             this.UserListTab = new System.Windows.Forms.TabPage();
+            this.label66 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.label93 = new System.Windows.Forms.Label();
             this.UserBirthdayFilter = new System.Windows.Forms.DateTimePicker();
             this.UserFemaleFilter = new System.Windows.Forms.CheckBox();
@@ -340,8 +340,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.StaffUpdateStatus = new System.Windows.Forms.Label();
-            this.StaffCreateStatus = new System.Windows.Forms.Label();
+            this.CreateStudioStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.StaffTab.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -350,10 +349,9 @@
             this.tabPage16.SuspendLayout();
             this.StudioTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StudioPage)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudioDetailsImagePrev)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudioCreateImgPreview)).BeginInit();
             this.CharactersTab.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterListPage)).BeginInit();
@@ -370,6 +368,7 @@
             this.AnimeComments.SuspendLayout();
             this.UsersTab.SuspendLayout();
             this.UserListTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.UserDetailsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserDetailsAnimeRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserDetailsImage)).BeginInit();
@@ -631,6 +630,15 @@
             this.tabPage15.Text = "Details";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // StaffUpdateStatus
+            // 
+            this.StaffUpdateStatus.AutoSize = true;
+            this.StaffUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.StaffUpdateStatus.Location = new System.Drawing.Point(512, 116);
+            this.StaffUpdateStatus.Name = "StaffUpdateStatus";
+            this.StaffUpdateStatus.Size = new System.Drawing.Size(0, 20);
+            this.StaffUpdateStatus.TabIndex = 62;
+            // 
             // StaffDetailsType
             // 
             this.StaffDetailsType.FormattingEnabled = true;
@@ -754,6 +762,15 @@
             this.tabPage16.Text = "Create";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
+            // StaffCreateStatus
+            // 
+            this.StaffCreateStatus.AutoSize = true;
+            this.StaffCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.StaffCreateStatus.Location = new System.Drawing.Point(291, 116);
+            this.StaffCreateStatus.Name = "StaffCreateStatus";
+            this.StaffCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.StaffCreateStatus.TabIndex = 76;
+            // 
             // StaffCreateType
             // 
             this.StaffCreateType.FormattingEnabled = true;
@@ -851,9 +868,13 @@
             this.StudioTab.Size = new System.Drawing.Size(1152, 456);
             this.StudioTab.TabIndex = 13;
             this.StudioTab.Visible = false;
+            this.StudioTab.SelectedIndexChanged += new System.EventHandler(this.StudioTab_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label69);
+            this.tabPage1.Controls.Add(this.StudioPage);
+            this.tabPage1.Controls.Add(this.StudioApplyFilterBtn);
             this.tabPage1.Controls.Add(this.StudioFilterBefore);
             this.tabPage1.Controls.Add(this.StudioFilterAfter);
             this.tabPage1.Controls.Add(this.label45);
@@ -870,25 +891,65 @@
             this.tabPage1.Text = "List";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label69.Location = new System.Drawing.Point(710, 403);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(41, 20);
+            this.label69.TabIndex = 25;
+            this.label69.Text = "Page";
+            // 
+            // StudioPage
+            // 
+            this.StudioPage.Location = new System.Drawing.Point(757, 403);
+            this.StudioPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.StudioPage.Name = "StudioPage";
+            this.StudioPage.Size = new System.Drawing.Size(120, 20);
+            this.StudioPage.TabIndex = 24;
+            this.StudioPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.StudioPage.ValueChanged += new System.EventHandler(this.StudioPage_ValueChanged);
+            // 
+            // StudioApplyFilterBtn
+            // 
+            this.StudioApplyFilterBtn.Location = new System.Drawing.Point(904, 254);
+            this.StudioApplyFilterBtn.Name = "StudioApplyFilterBtn";
+            this.StudioApplyFilterBtn.Size = new System.Drawing.Size(106, 50);
+            this.StudioApplyFilterBtn.TabIndex = 20;
+            this.StudioApplyFilterBtn.Text = "Apply Filter";
+            this.StudioApplyFilterBtn.UseVisualStyleBackColor = true;
+            this.StudioApplyFilterBtn.Click += new System.EventHandler(this.StudioApplyFilterBtn_Click);
+            // 
             // StudioFilterBefore
             // 
-            this.StudioFilterBefore.Location = new System.Drawing.Point(912, 236);
+            this.StudioFilterBefore.Location = new System.Drawing.Point(911, 205);
             this.StudioFilterBefore.Name = "StudioFilterBefore";
             this.StudioFilterBefore.Size = new System.Drawing.Size(213, 20);
             this.StudioFilterBefore.TabIndex = 19;
+            this.StudioFilterBefore.ValueChanged += new System.EventHandler(this.StudioFilterBefore_ValueChanged);
             // 
             // StudioFilterAfter
             // 
-            this.StudioFilterAfter.Location = new System.Drawing.Point(912, 171);
+            this.StudioFilterAfter.Location = new System.Drawing.Point(911, 140);
             this.StudioFilterAfter.Name = "StudioFilterAfter";
             this.StudioFilterAfter.Size = new System.Drawing.Size(216, 20);
             this.StudioFilterAfter.TabIndex = 18;
+            this.StudioFilterAfter.ValueChanged += new System.EventHandler(this.StudioFilterAfter_ValueChanged);
             // 
             // label45
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label45.Location = new System.Drawing.Point(912, 136);
+            this.label45.Location = new System.Drawing.Point(911, 105);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(133, 20);
             this.label45.TabIndex = 17;
@@ -896,12 +957,13 @@
             // 
             // StudioFilterClear
             // 
-            this.StudioFilterClear.Location = new System.Drawing.Point(909, 341);
+            this.StudioFilterClear.Location = new System.Drawing.Point(1018, 254);
             this.StudioFilterClear.Name = "StudioFilterClear";
-            this.StudioFilterClear.Size = new System.Drawing.Size(215, 50);
+            this.StudioFilterClear.Size = new System.Drawing.Size(106, 50);
             this.StudioFilterClear.TabIndex = 16;
             this.StudioFilterClear.Text = "Clear Filter";
             this.StudioFilterClear.UseVisualStyleBackColor = true;
+            this.StudioFilterClear.Click += new System.EventHandler(this.StudioFilterClear_Click);
             // 
             // label47
             // 
@@ -919,6 +981,7 @@
             this.StudioFilterName.Name = "StudioFilterName";
             this.StudioFilterName.Size = new System.Drawing.Size(216, 20);
             this.StudioFilterName.TabIndex = 6;
+            this.StudioFilterName.TextChanged += new System.EventHandler(this.StudioFilterName_TextChanged);
             // 
             // label48
             // 
@@ -934,28 +997,24 @@
             // 
             this.StudiosList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
-            this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
+            this.StudiosList.FullRowSelect = true;
             this.StudiosList.HideSelection = false;
             this.StudiosList.Location = new System.Drawing.Point(5, 5);
+            this.StudiosList.MultiSelect = false;
             this.StudiosList.Name = "StudiosList";
-            this.StudiosList.Size = new System.Drawing.Size(823, 422);
+            this.StudiosList.Size = new System.Drawing.Size(873, 392);
             this.StudiosList.TabIndex = 0;
             this.StudiosList.UseCompatibleStateImageBehavior = false;
             this.StudiosList.View = System.Windows.Forms.View.Details;
+            this.StudiosList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.StudiosList_ItemSelectionChanged);
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "";
             this.columnHeader4.Width = 0;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Image";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 150;
             // 
             // columnHeader6
             // 
@@ -977,6 +1036,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.UpdateStudioStatus);
             this.tabPage2.Controls.Add(this.StudioDetailsEstablishedAt);
             this.tabPage2.Controls.Add(this.label50);
             this.tabPage2.Controls.Add(this.StudioDetailsAltName);
@@ -986,14 +1046,10 @@
             this.tabPage2.Controls.Add(this.StudioDetailsUpdateAs);
             this.tabPage2.Controls.Add(this.label52);
             this.tabPage2.Controls.Add(this.StudioDetailsDescription);
-            this.tabPage2.Controls.Add(this.StudioDetailsImageUrl);
-            this.tabPage2.Controls.Add(this.label53);
-            this.tabPage2.Controls.Add(this.label54);
             this.tabPage2.Controls.Add(this.StudioDetailsUpdateBtn);
             this.tabPage2.Controls.Add(this.StudioDetailsName);
             this.tabPage2.Controls.Add(this.label55);
             this.tabPage2.Controls.Add(this.label56);
-            this.tabPage2.Controls.Add(this.StudioDetailsImagePrev);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -1002,18 +1058,28 @@
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // UpdateStudioStatus
+            // 
+            this.UpdateStudioStatus.AutoSize = true;
+            this.UpdateStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.UpdateStudioStatus.Location = new System.Drawing.Point(893, 109);
+            this.UpdateStudioStatus.Name = "UpdateStudioStatus";
+            this.UpdateStudioStatus.Size = new System.Drawing.Size(0, 20);
+            this.UpdateStudioStatus.TabIndex = 60;
+            // 
             // StudioDetailsEstablishedAt
             // 
-            this.StudioDetailsEstablishedAt.Location = new System.Drawing.Point(544, 78);
+            this.StudioDetailsEstablishedAt.Location = new System.Drawing.Point(396, 78);
             this.StudioDetailsEstablishedAt.Name = "StudioDetailsEstablishedAt";
             this.StudioDetailsEstablishedAt.Size = new System.Drawing.Size(213, 20);
             this.StudioDetailsEstablishedAt.TabIndex = 59;
+            this.StudioDetailsEstablishedAt.ValueChanged += new System.EventHandler(this.StudioDetailsEstablishedAt_ValueChanged);
             // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label50.Location = new System.Drawing.Point(544, 55);
+            this.label50.Location = new System.Drawing.Point(396, 55);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(103, 20);
             this.label50.TabIndex = 58;
@@ -1021,16 +1087,17 @@
             // 
             // StudioDetailsAltName
             // 
-            this.StudioDetailsAltName.Location = new System.Drawing.Point(542, 26);
+            this.StudioDetailsAltName.Location = new System.Drawing.Point(396, 30);
             this.StudioDetailsAltName.Name = "StudioDetailsAltName";
             this.StudioDetailsAltName.Size = new System.Drawing.Size(216, 20);
             this.StudioDetailsAltName.TabIndex = 57;
+            this.StudioDetailsAltName.TextChanged += new System.EventHandler(this.StudioDetailsAltName_TextChanged);
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label46.Location = new System.Drawing.Point(549, 10);
+            this.label46.Location = new System.Drawing.Point(401, 10);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(72, 20);
             this.label46.TabIndex = 56;
@@ -1038,7 +1105,7 @@
             // 
             // StudioDetailsID
             // 
-            this.StudioDetailsID.Location = new System.Drawing.Point(199, 26);
+            this.StudioDetailsID.Location = new System.Drawing.Point(48, 30);
             this.StudioDetailsID.Name = "StudioDetailsID";
             this.StudioDetailsID.ReadOnly = true;
             this.StudioDetailsID.Size = new System.Drawing.Size(59, 20);
@@ -1057,16 +1124,17 @@
             // StudioDetailsUpdateAs
             // 
             this.StudioDetailsUpdateAs.FormattingEnabled = true;
-            this.StudioDetailsUpdateAs.Location = new System.Drawing.Point(897, 25);
+            this.StudioDetailsUpdateAs.Location = new System.Drawing.Point(897, 31);
             this.StudioDetailsUpdateAs.Name = "StudioDetailsUpdateAs";
             this.StudioDetailsUpdateAs.Size = new System.Drawing.Size(212, 21);
             this.StudioDetailsUpdateAs.TabIndex = 51;
+            this.StudioDetailsUpdateAs.SelectedIndexChanged += new System.EventHandler(this.StudioDetailsUpdateAs_SelectedIndexChanged);
             // 
             // label52
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label52.Location = new System.Drawing.Point(204, 55);
+            this.label52.Location = new System.Drawing.Point(56, 55);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(85, 20);
             this.label52.TabIndex = 42;
@@ -1074,38 +1142,12 @@
             // 
             // StudioDetailsDescription
             // 
-            this.StudioDetailsDescription.Location = new System.Drawing.Point(196, 73);
+            this.StudioDetailsDescription.Location = new System.Drawing.Point(45, 77);
             this.StudioDetailsDescription.Multiline = true;
             this.StudioDetailsDescription.Name = "StudioDetailsDescription";
             this.StudioDetailsDescription.Size = new System.Drawing.Size(332, 116);
             this.StudioDetailsDescription.TabIndex = 41;
-            // 
-            // StudioDetailsImageUrl
-            // 
-            this.StudioDetailsImageUrl.Location = new System.Drawing.Point(12, 266);
-            this.StudioDetailsImageUrl.Name = "StudioDetailsImageUrl";
-            this.StudioDetailsImageUrl.Size = new System.Drawing.Size(337, 20);
-            this.StudioDetailsImageUrl.TabIndex = 40;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label53.Location = new System.Drawing.Point(15, 244);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(81, 20);
-            this.label53.TabIndex = 39;
-            this.label53.Text = "Image URL";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label54.Location = new System.Drawing.Point(17, 10);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(106, 20);
-            this.label54.TabIndex = 38;
-            this.label54.Text = "Image Preview";
+            this.StudioDetailsDescription.TextChanged += new System.EventHandler(this.StudioDetailsDescription_TextChanged);
             // 
             // StudioDetailsUpdateBtn
             // 
@@ -1115,19 +1157,21 @@
             this.StudioDetailsUpdateBtn.TabIndex = 30;
             this.StudioDetailsUpdateBtn.Text = "Update Information";
             this.StudioDetailsUpdateBtn.UseVisualStyleBackColor = true;
+            this.StudioDetailsUpdateBtn.Click += new System.EventHandler(this.StudioDetailsUpdateBtn_Click);
             // 
             // StudioDetailsName
             // 
-            this.StudioDetailsName.Location = new System.Drawing.Point(309, 27);
+            this.StudioDetailsName.Location = new System.Drawing.Point(161, 30);
             this.StudioDetailsName.Name = "StudioDetailsName";
             this.StudioDetailsName.Size = new System.Drawing.Size(216, 20);
             this.StudioDetailsName.TabIndex = 4;
+            this.StudioDetailsName.TextChanged += new System.EventHandler(this.StudioDetailsName_TextChanged);
             // 
             // label55
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label55.Location = new System.Drawing.Point(317, 10);
+            this.label55.Location = new System.Drawing.Point(169, 10);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(49, 20);
             this.label55.TabIndex = 3;
@@ -1137,31 +1181,20 @@
             // 
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label56.Location = new System.Drawing.Point(212, 10);
+            this.label56.Location = new System.Drawing.Point(56, 10);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(24, 20);
             this.label56.TabIndex = 1;
             this.label56.Text = "ID";
             // 
-            // StudioDetailsImagePrev
-            // 
-            this.StudioDetailsImagePrev.Location = new System.Drawing.Point(12, 26);
-            this.StudioDetailsImagePrev.Name = "StudioDetailsImagePrev";
-            this.StudioDetailsImagePrev.Size = new System.Drawing.Size(165, 202);
-            this.StudioDetailsImagePrev.TabIndex = 0;
-            this.StudioDetailsImagePrev.TabStop = false;
-            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.StudioCreateImageUrl);
+            this.tabPage3.Controls.Add(this.CreateStudioStatus);
             this.tabPage3.Controls.Add(this.label59);
             this.tabPage3.Controls.Add(this.StudioCreateName);
-            this.tabPage3.Controls.Add(this.label60);
             this.tabPage3.Controls.Add(this.StudioCreateAs);
-            this.tabPage3.Controls.Add(this.label61);
             this.tabPage3.Controls.Add(this.label58);
             this.tabPage3.Controls.Add(this.StudioCreateEstablishedAt);
-            this.tabPage3.Controls.Add(this.StudioCreateImgPreview);
             this.tabPage3.Controls.Add(this.StudioCreateDescription);
             this.tabPage3.Controls.Add(this.StudioCreateBtn);
             this.tabPage3.Controls.Add(this.label62);
@@ -1175,18 +1208,11 @@
             this.tabPage3.Text = "Create";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // StudioCreateImageUrl
-            // 
-            this.StudioCreateImageUrl.Location = new System.Drawing.Point(24, 299);
-            this.StudioCreateImageUrl.Name = "StudioCreateImageUrl";
-            this.StudioCreateImageUrl.Size = new System.Drawing.Size(325, 20);
-            this.StudioCreateImageUrl.TabIndex = 77;
-            // 
             // label59
             // 
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label59.Location = new System.Drawing.Point(207, 91);
+            this.label59.Location = new System.Drawing.Point(20, 82);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(85, 20);
             this.label59.TabIndex = 69;
@@ -1194,20 +1220,11 @@
             // 
             // StudioCreateName
             // 
-            this.StudioCreateName.Location = new System.Drawing.Point(209, 62);
+            this.StudioCreateName.Location = new System.Drawing.Point(22, 53);
             this.StudioCreateName.Name = "StudioCreateName";
             this.StudioCreateName.Size = new System.Drawing.Size(325, 20);
             this.StudioCreateName.TabIndex = 63;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label60.Location = new System.Drawing.Point(24, 279);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(81, 20);
-            this.label60.TabIndex = 66;
-            this.label60.Text = "Image URL";
+            this.StudioCreateName.TextChanged += new System.EventHandler(this.StudioCreateName_TextChanged);
             // 
             // StudioCreateAs
             // 
@@ -1216,16 +1233,7 @@
             this.StudioCreateAs.Name = "StudioCreateAs";
             this.StudioCreateAs.Size = new System.Drawing.Size(212, 21);
             this.StudioCreateAs.TabIndex = 70;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label61.Location = new System.Drawing.Point(24, 36);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(106, 20);
-            this.label61.TabIndex = 65;
-            this.label61.Text = "Image Preview";
+            this.StudioCreateAs.SelectedIndexChanged += new System.EventHandler(this.StudioCreateAs_SelectedIndexChanged);
             // 
             // label58
             // 
@@ -1239,26 +1247,20 @@
             // 
             // StudioCreateEstablishedAt
             // 
-            this.StudioCreateEstablishedAt.Location = new System.Drawing.Point(551, 111);
+            this.StudioCreateEstablishedAt.Location = new System.Drawing.Point(364, 102);
             this.StudioCreateEstablishedAt.Name = "StudioCreateEstablishedAt";
             this.StudioCreateEstablishedAt.Size = new System.Drawing.Size(213, 20);
             this.StudioCreateEstablishedAt.TabIndex = 76;
-            // 
-            // StudioCreateImgPreview
-            // 
-            this.StudioCreateImgPreview.Location = new System.Drawing.Point(21, 58);
-            this.StudioCreateImgPreview.Name = "StudioCreateImgPreview";
-            this.StudioCreateImgPreview.Size = new System.Drawing.Size(165, 202);
-            this.StudioCreateImgPreview.TabIndex = 60;
-            this.StudioCreateImgPreview.TabStop = false;
+            this.StudioCreateEstablishedAt.ValueChanged += new System.EventHandler(this.StudioCreateEstablishedAt_ValueChanged);
             // 
             // StudioCreateDescription
             // 
-            this.StudioCreateDescription.Location = new System.Drawing.Point(207, 111);
+            this.StudioCreateDescription.Location = new System.Drawing.Point(20, 102);
             this.StudioCreateDescription.Multiline = true;
             this.StudioCreateDescription.Name = "StudioCreateDescription";
             this.StudioCreateDescription.Size = new System.Drawing.Size(332, 116);
             this.StudioCreateDescription.TabIndex = 68;
+            this.StudioCreateDescription.TextChanged += new System.EventHandler(this.StudioCreateDescription_TextChanged);
             // 
             // StudioCreateBtn
             // 
@@ -1268,12 +1270,13 @@
             this.StudioCreateBtn.TabIndex = 64;
             this.StudioCreateBtn.Text = "Create Entry";
             this.StudioCreateBtn.UseVisualStyleBackColor = true;
+            this.StudioCreateBtn.Click += new System.EventHandler(this.StudioCreateBtn_Click);
             // 
             // label62
             // 
             this.label62.AutoSize = true;
             this.label62.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label62.Location = new System.Drawing.Point(207, 42);
+            this.label62.Location = new System.Drawing.Point(20, 29);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(49, 20);
             this.label62.TabIndex = 62;
@@ -1283,7 +1286,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label51.Location = new System.Drawing.Point(554, 91);
+            this.label51.Location = new System.Drawing.Point(367, 82);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(103, 20);
             this.label51.TabIndex = 75;
@@ -1293,7 +1296,7 @@
             // 
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label57.Location = new System.Drawing.Point(554, 42);
+            this.label57.Location = new System.Drawing.Point(367, 29);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(72, 20);
             this.label57.TabIndex = 73;
@@ -1301,10 +1304,11 @@
             // 
             // StudioCreateAltName
             // 
-            this.StudioCreateAltName.Location = new System.Drawing.Point(551, 61);
+            this.StudioCreateAltName.Location = new System.Drawing.Point(364, 52);
             this.StudioCreateAltName.Name = "StudioCreateAltName";
             this.StudioCreateAltName.Size = new System.Drawing.Size(216, 20);
             this.StudioCreateAltName.TabIndex = 74;
+            this.StudioCreateAltName.TextChanged += new System.EventHandler(this.StudioCreateAltName_TextChanged);
             // 
             // CharactersTab
             // 
@@ -2835,6 +2839,9 @@
             // 
             // UserListTab
             // 
+            this.UserListTab.Controls.Add(this.label66);
+            this.UserListTab.Controls.Add(this.numericUpDown1);
+            this.UserListTab.Controls.Add(this.button1);
             this.UserListTab.Controls.Add(this.label93);
             this.UserListTab.Controls.Add(this.UserBirthdayFilter);
             this.UserListTab.Controls.Add(this.UserFemaleFilter);
@@ -2857,11 +2864,47 @@
             this.UserListTab.Text = "List";
             this.UserListTab.UseVisualStyleBackColor = true;
             // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label66.Location = new System.Drawing.Point(710, 407);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(41, 20);
+            this.label66.TabIndex = 25;
+            this.label66.Text = "Page";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(757, 407);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 24;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(905, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 50);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Clear Filter";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // label93
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label93.Location = new System.Drawing.Point(912, 153);
+            this.label93.Location = new System.Drawing.Point(912, 141);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(87, 20);
             this.label93.TabIndex = 20;
@@ -2871,7 +2914,7 @@
             // 
             this.UserBirthdayFilter.CustomFormat = "dd/MM";
             this.UserBirthdayFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.UserBirthdayFilter.Location = new System.Drawing.Point(909, 171);
+            this.UserBirthdayFilter.Location = new System.Drawing.Point(909, 159);
             this.UserBirthdayFilter.Name = "UserBirthdayFilter";
             this.UserBirthdayFilter.Size = new System.Drawing.Size(216, 20);
             this.UserBirthdayFilter.TabIndex = 19;
@@ -2898,9 +2941,9 @@
             // 
             // UserClearFilter
             // 
-            this.UserClearFilter.Location = new System.Drawing.Point(909, 341);
+            this.UserClearFilter.Location = new System.Drawing.Point(1018, 310);
             this.UserClearFilter.Name = "UserClearFilter";
-            this.UserClearFilter.Size = new System.Drawing.Size(215, 50);
+            this.UserClearFilter.Size = new System.Drawing.Size(108, 50);
             this.UserClearFilter.TabIndex = 16;
             this.UserClearFilter.Text = "Clear Filter";
             this.UserClearFilter.UseVisualStyleBackColor = true;
@@ -2909,7 +2952,7 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label91.Location = new System.Drawing.Point(912, 211);
+            this.label91.Location = new System.Drawing.Point(912, 199);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(98, 20);
             this.label91.TabIndex = 15;
@@ -2917,7 +2960,7 @@
             // 
             // UserCreatedAfterFilter
             // 
-            this.UserCreatedAfterFilter.Location = new System.Drawing.Point(909, 228);
+            this.UserCreatedAfterFilter.Location = new System.Drawing.Point(909, 216);
             this.UserCreatedAfterFilter.Name = "UserCreatedAfterFilter";
             this.UserCreatedAfterFilter.Size = new System.Drawing.Size(216, 20);
             this.UserCreatedAfterFilter.TabIndex = 14;
@@ -2926,7 +2969,7 @@
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label92.Location = new System.Drawing.Point(912, 272);
+            this.label92.Location = new System.Drawing.Point(912, 260);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(109, 20);
             this.label92.TabIndex = 13;
@@ -2934,7 +2977,7 @@
             // 
             // UserCreatedBeforeFilter
             // 
-            this.UserCreatedBeforeFilter.Location = new System.Drawing.Point(909, 289);
+            this.UserCreatedBeforeFilter.Location = new System.Drawing.Point(909, 277);
             this.UserCreatedBeforeFilter.Name = "UserCreatedBeforeFilter";
             this.UserCreatedBeforeFilter.Size = new System.Drawing.Size(216, 20);
             this.UserCreatedBeforeFilter.TabIndex = 12;
@@ -2991,7 +3034,7 @@
             this.UserList.HideSelection = false;
             this.UserList.Location = new System.Drawing.Point(5, 5);
             this.UserList.Name = "UserList";
-            this.UserList.Size = new System.Drawing.Size(872, 422);
+            this.UserList.Size = new System.Drawing.Size(872, 399);
             this.UserList.TabIndex = 0;
             this.UserList.UseCompatibleStateImageBehavior = false;
             this.UserList.View = System.Windows.Forms.View.Details;
@@ -3528,23 +3571,14 @@
             this.label68.TabIndex = 17;
             this.label68.Text = "Connection Status:";
             // 
-            // StaffUpdateStatus
+            // CreateStudioStatus
             // 
-            this.StaffUpdateStatus.AutoSize = true;
-            this.StaffUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.StaffUpdateStatus.Location = new System.Drawing.Point(512, 116);
-            this.StaffUpdateStatus.Name = "StaffUpdateStatus";
-            this.StaffUpdateStatus.Size = new System.Drawing.Size(0, 20);
-            this.StaffUpdateStatus.TabIndex = 62;
-            // 
-            // StaffCreateStatus
-            // 
-            this.StaffCreateStatus.AutoSize = true;
-            this.StaffCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.StaffCreateStatus.Location = new System.Drawing.Point(291, 116);
-            this.StaffCreateStatus.Name = "StaffCreateStatus";
-            this.StaffCreateStatus.Size = new System.Drawing.Size(0, 20);
-            this.StaffCreateStatus.TabIndex = 76;
+            this.CreateStudioStatus.AutoSize = true;
+            this.CreateStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CreateStudioStatus.Location = new System.Drawing.Point(897, 149);
+            this.CreateStudioStatus.Name = "CreateStudioStatus";
+            this.CreateStudioStatus.Size = new System.Drawing.Size(0, 20);
+            this.CreateStudioStatus.TabIndex = 77;
             // 
             // Form1
             // 
@@ -3554,11 +3588,11 @@
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.StaffTab);
             this.Controls.Add(this.StudioTab);
             this.Controls.Add(this.CharactersTab);
             this.Controls.Add(this.AnimeTab);
             this.Controls.Add(this.UsersTab);
+            this.Controls.Add(this.StaffTab);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -3573,12 +3607,11 @@
             this.StudioTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StudioPage)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudioDetailsImagePrev)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StudioCreateImgPreview)).EndInit();
             this.CharactersTab.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
@@ -3603,6 +3636,7 @@
             this.UsersTab.ResumeLayout(false);
             this.UserListTab.ResumeLayout(false);
             this.UserListTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.UserDetailsTab.ResumeLayout(false);
             this.UserDetailsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserDetailsAnimeRating)).EndInit();
@@ -3667,7 +3701,6 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.ListView StudiosList;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
@@ -3681,24 +3714,16 @@
         private System.Windows.Forms.ComboBox StudioDetailsUpdateAs;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TextBox StudioDetailsDescription;
-        private System.Windows.Forms.TextBox StudioDetailsImageUrl;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Button StudioDetailsUpdateBtn;
         private System.Windows.Forms.TextBox StudioDetailsName;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.PictureBox StudioDetailsImagePrev;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox StudioCreateImageUrl;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.TextBox StudioCreateName;
-        private System.Windows.Forms.Label label60;
         private System.Windows.Forms.ComboBox StudioCreateAs;
-        private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.DateTimePicker StudioCreateEstablishedAt;
-        private System.Windows.Forms.PictureBox StudioCreateImgPreview;
         private System.Windows.Forms.TextBox StudioCreateDescription;
         private System.Windows.Forms.Button StudioCreateBtn;
         private System.Windows.Forms.Label label62;
@@ -3931,6 +3956,14 @@
         private System.Windows.Forms.NumericUpDown StaffListPage;
         private System.Windows.Forms.Label StaffUpdateStatus;
         private System.Windows.Forms.Label StaffCreateStatus;
+        private System.Windows.Forms.Button StudioApplyFilterBtn;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.NumericUpDown StudioPage;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label UpdateStudioStatus;
+        private System.Windows.Forms.Label CreateStudioStatus;
     }
 }
 

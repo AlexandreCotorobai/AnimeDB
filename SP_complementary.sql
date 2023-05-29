@@ -104,3 +104,4 @@ BEGIN
     JOIN Staff S ON C.FK_Voice_actor = S.ID
     WHERE C.ID = @CharacterID;
 END;
+GO

@@ -152,18 +152,21 @@ BEGIN
 
     IF @IsAdmin = 1
     BEGIN
-        -- Check if the provided Studio name already exists in the Studios table
-        IF EXISTS (SELECT 1
-        FROM Studio
-        WHERE Name = @Name AND ID <> @StudioID)
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+        RETURN;
+    END;
+    -- Check if the provided Studio name already exists in the Studios table
+    IF EXISTS (SELECT 1
+    FROM Studio
+    WHERE Name = @Name AND ID <> @StudioID)
         BEGIN
-            PRINT 'Studio name already exists. Rolling back transaction.'
-            ROLLBACK;
-            RETURN;
-        END;
+        PRINT 'Studio name already exists. Rolling back transaction.'
+        ROLLBACK;
+        RETURN;
+    END;
 
-        -- Update Studios table based on the provided Studio ID
-        UPDATE Studio
+    -- Update Studios table based on the provided Studio ID
+    UPDATE Studio
         SET
             Name = ISNULL(@Name, Name),
             Description = ISNULL(@Description, Description),
@@ -171,12 +174,7 @@ BEGIN
             Established_at = ISNULL(@Established_at, Established_at)
         WHERE ID = @StudioID;
 
-        PRINT 'Studio updated successfully.'
-    END
-    ELSE
-    BEGIN
-        PRINT 'Access denied. User is not an admin.'
-    END
+    PRINT 'Studio updated successfully.'
 END;
 GO
 

@@ -118,34 +118,34 @@ BEGIN
     -- Check if the user is an admin
     SELECT @IsAdmin = dbo.IsAdmin(@UserID)
 
-    IF @IsAdmin = 1
-        BEGIN
-        -- Check if the provided Studio name already exists in the Studios table
-        IF EXISTS (SELECT 1
-        FROM Studio
-        WHERE Name = @Name)
+    IF @IsAdmin != 1
+    BEGIN
+        RAISERROR('Access denied. User is not an admin.',11,1)
+        RETURN;
+    END;
+
+    -- Check if the provided Studio name already exists in the Studios table
+    IF EXISTS (SELECT 1
+    FROM Studio
+    WHERE Name = @Name)
             BEGIN
-            PRINT 'Studio name already exists. Rolling back transaction.'
-            ROLLBACK;
-            RETURN;
-        END;
+        PRINT 'Studio name already exists. Rolling back transaction.'
+        ROLLBACK;
+        RETURN;
+    END;
 
-        -- Calculate the index for the new entry
-        SELECT @StudioID = ISNULL(MAX(ID), 0) + 1
-        FROM Studio;
+    -- Calculate the index for the new entry
+    SELECT @StudioID = ISNULL(MAX(ID), 0) + 1
+    FROM Studio;
 
-        -- Insert new entry into Studios table
-        INSERT INTO Studio
-            (ID, Name, Alt_Name, Description, Established_At)
-        VALUES
-            (@StudioID, @Name, @Alt_Name, @Description, @Established_At);
+    -- Insert new entry into Studios table
+    INSERT INTO Studio
+        (ID, Name, Alt_Name, Description, Established_At)
+    VALUES
+        (@StudioID, @Name, @Alt_Name, @Description, @Established_At);
 
-        PRINT 'Studio created successfully.'
-    END
-        ELSE
-        BEGIN
-        PRINT 'Access denied. User is not an admin.'
-    END
+    PRINT 'Studio created successfully.'
+
 END;
 GO
 

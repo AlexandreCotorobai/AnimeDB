@@ -726,6 +726,7 @@ namespace BDProject
             {
                 conn.Close();
             }
+            updateAnimes();
         }
         private void animeDetailsRemoveGenre_Click(object sender, EventArgs e)
         {   
@@ -933,7 +934,7 @@ namespace BDProject
             {
                 conn.Close();
             }
-            
+            updateAnimes();
         }
         private void resetAnimeCreate()
         {
@@ -1577,6 +1578,108 @@ namespace BDProject
         // --------------------------------------------------------------------------------------------------- //
 
         // Studios
+        //filtervars
+        private String studioFilterName = null;
+        private DateTime studioFilterEstablishedAfter;
+        private DateTime studioFilterEstablishedBefore;
+        private int studioFilterOffset = 1;
+
+        private int selectedStudioID = -1;
+        private int lastSelectedStudioID = -1;
+
+        private String studioDetailsName = null;
+        private String studioDetailsDescription = null;
+        private String studioDetailsAltName = null;
+        private DateTime studioDetailsEstablished;
+        private int studioUpdateAs = -1;
+
+        private String studioCreateName = null;
+        private String studioCreateDescription = null;
+        private String studioCreateAltName = null;
+        private DateTime studioCreateEstablished;
+        private int studioCreateAs = -1;
+
+        private void StudioTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (StudioTab.SelectedIndex == 0)
+            {
+                StudiosList.Items.Clear();
+                studioFilterOffset = 1;
+                StudioPage.Value = 1;
+                resetStudioVars();
+                requestStudioList();
+            } else if (StudioTab.SelectedIndex == 1)
+            {
+                requestSingleStudio();
+            }
+            else if (StudioTab.SelectedIndex == 2)
+            {
+                resetStudioCreate();
+            }
+        }
+        
+        private void resetStudioCreate()
+        {
+            StudioCreateName.Text = "";
+            StudioCreateDescription.Text = "";
+            StudioCreateAltName.Text = "";
+            StudioCreateEstablishedAt.Text = "";
+            StudioCreateAs.SelectedIndex = 0;
+            studioCreateEstablished = DefaultDate;
+            studioCreateAs = -1;
+    }
+        private void resetStudioDetails()
+        {
+            StudioDetailsID.Text = "";
+            StudioDetailsName.Text = "";
+            StudioDetailsDescription.Text = "";
+            StudioDetailsAltName.Text = "";
+            StudioDetailsEstablishedAt.Text = "";
+        }
+
+        private void requestSingleStudio()
+        {
+            if (selectedStudioID == -1 || selectedStudioID == lastSelectedStudioID)
+            {
+                return;
+            }
+
+            resetStudioDetails();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"Select * From Studio Where ID = {selectedStudioID}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Single Studio Query -> " + cmd.CommandText);
+                }
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    StudioDetailsID.Text = reader["ID"].ToString();
+                    StudioDetailsName.Text = reader["Name"].ToString();
+                    StudioDetailsDescription.Text = reader["Description"].ToString();
+                    StudioDetailsAltName.Text = reader["Alt_Name"].ToString();
+                    StudioDetailsEstablishedAt.Text = reader["Established_At"].ToString();
+                    Console.WriteLine(reader["Established_At"].ToString());
+                }
+
+                lastSelectedStudioID = selectedStudioID;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
         private void StudiosBtn_Click(object sender, EventArgs e)
         {
             AnimeTab.Visible = false;
@@ -1584,9 +1687,306 @@ namespace BDProject
             StudioTab.Visible = true;
             StaffTab.Visible = false;
             UsersTab.Visible = false;
+            StudiosList.Items.Clear();
+            studioFilterOffset = 1;
+            resetStudioVars();
+            requestStudioList();
         }
 
+        private void resetStudioVars()
+        {
+            StudioFilterName.Text = null;
+            StudioFilterAfter.Value = DateTime.Now;
+            StudioFilterBefore.Value = DateTime.Now;
+            Console.WriteLine(StudioFilterBefore.Text);
+            studioFilterEstablishedAfter = DefaultDate;
+            studioFilterEstablishedBefore = DefaultDate;
+        }
 
+        private void requestStudioList()
+        {
+            String command = $"EXEC FilterStudio @Name = {(studioFilterName == null ? "NULL" : "'" + studioFilterName + "'")}, @EstablishedAfter = {(studioFilterEstablishedAfter == DefaultDate ? "NULL" : "'" + studioFilterEstablishedAfter.ToString("yyyy-MM-dd") + "'")}, @EstablishedBefore = {(studioFilterEstablishedBefore == DefaultDate ? "NULL" : "'" + studioFilterEstablishedBefore.ToString("yyyy-MM-dd") + "'")}, @Offset = {(studioFilterOffset-1)*20}";
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio List Query -> " + command);
+            }
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    StudiosList.Items.Add(reader["ID"].ToString());
+                    if (reader["Name"].ToString() != "")
+                    {
+                        StudiosList.Items[StudiosList.Items.Count - 1].SubItems.Add(reader["Name"].ToString());
+                    }
+                    else
+                    {
+                        StudiosList.Items[StudiosList.Items.Count - 1].SubItems.Add("N/A");
+                    }
+
+                    if (reader["Alt_Name"].ToString() != "")
+                    {
+                        StudiosList.Items[StudiosList.Items.Count - 1].SubItems.Add(reader["Alt_Name"].ToString());
+                    }
+                    else
+                    {
+                        StudiosList.Items[StudiosList.Items.Count - 1].SubItems.Add("N/A");
+                    }
+
+                    if (reader["Established_At"].ToString() != "")
+                    {
+                        StudiosList.Items[StudiosList.Items.Count - 1].SubItems.Add(((DateTime)reader["Established_At"]).ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        StudiosList.Items[StudiosList.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void StudioFilterName_TextChanged(object sender, EventArgs e)
+        {
+            studioFilterName = StudioFilterName.Text;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Filter Name -> " + studioFilterName);
+            }
+        }
+
+        private void StudioFilterAfter_ValueChanged(object sender, EventArgs e)
+        {
+            studioFilterEstablishedAfter = StudioFilterAfter.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Filter After -> " + studioFilterEstablishedAfter.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void StudioFilterBefore_ValueChanged(object sender, EventArgs e)
+        {
+            studioFilterEstablishedBefore = StudioFilterBefore.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Filter Before -> " + studioFilterEstablishedBefore.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void StudioFilterClear_Click(object sender, EventArgs e)
+        {
+            resetStudioVars();
+            StudiosList.Items.Clear();
+            requestStudioList();
+        }
+
+        private void StudioPage_ValueChanged(object sender, EventArgs e)
+        {
+            studioFilterOffset = (int)StudioPage.Value;
+            StudiosList.Items.Clear();
+            requestStudioList();
+        }
+
+        private void StudioDetailsName_TextChanged(object sender, EventArgs e)
+        {
+            studioDetailsName = StudioDetailsName.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Details Name -> " + studioDetailsName);
+            }
+        }
+
+        private void StudioDetailsDescription_TextChanged(object sender, EventArgs e)
+        {
+            studioDetailsDescription = StudioDetailsDescription.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Details Description -> " + studioDetailsDescription);
+            }
+        }
+
+        private void StudioDetailsAltName_TextChanged(object sender, EventArgs e)
+        {
+            studioDetailsAltName = StudioDetailsAltName.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Details Alt Name -> " + studioDetailsAltName);
+            }
+        }
+
+        private void StudioDetailsEstablishedAt_ValueChanged(object sender, EventArgs e)
+        {
+            studioDetailsEstablished = StudioDetailsEstablishedAt.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Details Established At -> " + studioDetailsEstablished.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void StudioDetailsUpdateAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            studioUpdateAs = userDict[StudioDetailsUpdateAs.SelectedItem.ToString()];
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Details Update As -> " + studioUpdateAs);
+            }
+        }
+
+        private void StudioDetailsUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (studioUpdateAs == -1 || selectedStudioID == -1)
+            {
+                UpdateStudioStatus.Text = "Please select a studio and an user to update as.";
+                return;
+            }
+        
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC UpdateStudio @StudioID = {selectedStudioID}, @Name = {(studioDetailsName == null ? "NULL" : "'" + studioDetailsName + "'")}, @Description = {(studioDetailsDescription == null ? "NULL" : "'" + studioDetailsDescription + "'")}, @Alt_Name = {(studioDetailsAltName == null ? "NULL" : "'" + studioDetailsAltName + "'")}, @Established_at = {(studioDetailsEstablished == DefaultDate ? "NULL" : "'" + studioDetailsEstablished.ToString("yyyy-MM-dd") + "'")}, @UserID = {studioUpdateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Update Character Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                CharDetailStatus.Text = "Studio Updated Successfully!";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                CharDetailStatus.Text = "Studio Update Failed!";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            updateStudio();
+
+            
+        }
+        private void StudioApplyFilterBtn_Click(object sender, EventArgs e)
+        {
+            StudiosList.Items.Clear();
+            requestStudioList();
+        }
+
+        private void StudiosList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (!e.IsSelected)
+            {
+                return;
+            }
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Selected -> " + e.Item.Text);
+            }
+
+            selectedStudioID = int.Parse(e.Item.Text);
+
+        }
+        private void StudioCreateName_TextChanged(object sender, EventArgs e)
+        {
+            studioCreateName = StudioCreateName.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Create Name -> " + studioCreateName);
+            }
+        }
+
+        private void StudioCreateDescription_TextChanged(object sender, EventArgs e)
+        {
+            studioCreateDescription = StudioCreateDescription.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Create Description -> " + studioCreateDescription);
+            }
+
+        }
+
+        private void StudioCreateAltName_TextChanged(object sender, EventArgs e)
+        {
+            studioCreateAltName = StudioCreateAltName.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Create Alt Name -> " + studioCreateAltName);
+            }
+        }
+
+        private void StudioCreateEstablishedAt_ValueChanged(object sender, EventArgs e)
+        {
+            studioCreateEstablished = StudioCreateEstablishedAt.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Create Established At -> " + studioCreateEstablished.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void StudioCreateAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(StudioCreateAs.SelectedItem.ToString());
+            studioCreateAs = userDict[StudioCreateAs.SelectedItem.ToString()];
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Studio Create As -> " + studioCreateAs);
+            }
+        }
+
+        private void StudioCreateBtn_Click(object sender, EventArgs e)
+        {
+            if (studioCreateAs == -1 || studioCreateName == null)
+            {
+                CreateStudioStatus.Text = "Please select a user and a name for the studio.";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC CreateStudio @Name = '{studioCreateName}', @Description = {(studioCreateDescription == null ? "NULL" : "'" + studioCreateDescription + "'")}, @Alt_Name = {(studioCreateAltName == null ? "NULL" : "'" + studioCreateAltName + "'")}, @Established_at = {(studioCreateEstablished == DefaultDate ? "NULL" : "'" + studioCreateEstablished.ToString("yyyy-MM-dd") + "'")}, @UserID = {studioCreateAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Create Studio Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                CreateStudioStatus.Text = "Studio Created Successfully!";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                CreateStudioStatus.Text = "Studio Creation Failed!";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            updateStudio();
+        }
         // --------------------------------------------------------------------------------------------------- //
 
         // Staff
@@ -1691,6 +2091,7 @@ namespace BDProject
                 }
 
                 lastSelectedStaffID = selectedStaffID;
+                reader.Close();
             }
             catch (Exception ex)
             {
@@ -1945,6 +2346,8 @@ namespace BDProject
 
         // --------------------------------------------------------------------------------------------------- //
         // Users
+
+        
         private void UserBtn_Click(object sender, EventArgs e)
         {
             AnimeTab.Visible = false;

@@ -50,14 +50,14 @@ GO
 
 CREATE PROCEDURE FilterStudio
     @Name varchar(50) = NULL,
-    @EstablishedBefore datetime = NULL,
-    @EstablishedAfter datetime = NULL,
+    @EstablishedBefore date = NULL,
+    @EstablishedAfter date = NULL,
     @Offset int = 0
     AS
     BEGIN
         SELECT *
         FROM (
-            SELECT s.*
+            SELECT s.ID, s.Name, s.Alt_Name, s.Established_At
             FROM Studio AS s
             WHERE (@Name IS NULL OR s.Name LIKE '%' + @Name + '%')
                 AND (@EstablishedBefore IS NULL OR s.Established_at < @EstablishedBefore)
