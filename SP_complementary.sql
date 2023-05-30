@@ -1,23 +1,3 @@
-CREATE PROCEDURE CreateComment
-    @UserID INT,
-    @AnimeID INT,
-    @Comment VARCHAR(MAX)
-    AS
-    BEGIN
-        DECLARE @CommentID INT
-
-        -- Calculate the new CommentID
-        SELECT @CommentID = ISNULL(MAX(CommentID), 0) + 1 FROM Comment;
-
-        -- Insert the new comment into the Comment table
-        INSERT INTO Comment (CommentID, FK_AnimeID, FK_UserID, Comment)
-        VALUES (@CommentID, @AnimeID, @UserID, @Comment);
-
-        PRINT 'Comment created successfully.';
-    END;
-GO
-
-
 CREATE PROCEDURE GetAnimeGenres
     @AnimeID INT
     AS
@@ -104,4 +84,24 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE GetAnime
+    @AnimeID INT
+AS
+BEGIN
+    SELECT A.ID, A.Name, A.Alt_Name, A.Synopsis, A.Score, A.Aired_date, A.Finished_date, A.Episodes, A.Season, S.Name AS StudioName
+    FROM Anime A
+    JOIN Studio S ON A.FK_Studio_ID = S.ID
+    WHERE A.ID = @AnimeID;
+END;
+GO
 
+CREATE PROCEDURE GetCharacter
+    @CharacterID INT
+AS
+BEGIN
+    SELECT C.ID, C.Name, C.Description, S.Name AS VA, S.ID AS VAID
+    FROM Characters C
+    JOIN Staff S ON C.FK_Voice_actor = S.ID
+    WHERE C.ID = @CharacterID;
+END;
+GO

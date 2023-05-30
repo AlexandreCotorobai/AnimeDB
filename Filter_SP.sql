@@ -25,21 +25,21 @@ GO
 -- Confia no ROW NUMBER, Its cool
 CREATE PROCEDURE FilterCharacter
     @Name varchar(50) = NULL,
-    @Anime varchar(50) = NULL,
-    @Voice varchar(50) = NULL,
+    @AnimeID int = NULL,
+    @VAID int = NULL,
     @Offset int = 0
     AS
     BEGIN
         SELECT *
         FROM (
-            SELECT c.*, a.Name AS AnimeName , ROW_NUMBER() OVER (PARTITION BY c.ID ORDER BY c.ID) AS RowNum
+            SELECT c.ID as ID, c.Name as Name, a.Name AS AnimeName, s.Name as VA , ROW_NUMBER() OVER (PARTITION BY c.ID ORDER BY c.ID) AS RowNum
             FROM Characters AS c
-            INNER JOIN Apears_in AS ai ON c.ID = ai.FK_CharacterID
-            INNER JOIN Anime AS a ON ai.FK_AnimeID = a.ID
+            LEFT JOIN Apears_in AS ai ON c.ID = ai.FK_CharacterID
+            LEFT JOIN Anime AS a ON ai.FK_AnimeID = a.ID
             INNER JOIN Staff AS s ON c.FK_Voice_actor = s.ID
             WHERE (@Name IS NULL OR c.Name LIKE '%' + @Name + '%')
-                AND (@Anime IS NULL OR a.Name LIKE '%' + @Anime + '%')
-                AND (@Voice IS NULL OR s.Name LIKE '%' + @Voice + '%')
+                AND (@AnimeID IS NULL OR ai.FK_AnimeID = @AnimeID)
+                AND (@VAID IS NULL OR c.FK_Voice_actor = @VAID)
             
         ) AS Subquery
         WHERE RowNum = 1
@@ -50,14 +50,14 @@ GO
 
 CREATE PROCEDURE FilterStudio
     @Name varchar(50) = NULL,
-    @EstablishedBefore datetime = NULL,
-    @EstablishedAfter datetime = NULL,
+    @EstablishedBefore date = NULL,
+    @EstablishedAfter date = NULL,
     @Offset int = 0
     AS
     BEGIN
         SELECT *
         FROM (
-            SELECT s.*
+            SELECT s.ID, s.Name, s.Alt_Name, s.Established_At
             FROM Studio AS s
             WHERE (@Name IS NULL OR s.Name LIKE '%' + @Name + '%')
                 AND (@EstablishedBefore IS NULL OR s.Established_at < @EstablishedBefore)
