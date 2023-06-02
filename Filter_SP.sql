@@ -8,7 +8,7 @@ CREATE PROCEDURE FilterAnime
     BEGIN
         SELECT *
         FROM (
-        SELECT a.ID, a.Name + ' / ' + a.Alt_Name as Name, a.Score, a.Episodes, a.Aired_date, a.Finished_date, s.Name AS StudioName
+        SELECT a.ID, a.Name as Name, a.Score, a.Episodes, a.Aired_date, a.Finished_date, s.Name AS StudioName
             FROM Anime AS a
             LEFT JOIN Studio AS s ON a.FK_Studio_ID = s.ID
             WHERE (@Name IS NULL OR a.Name LIKE '%' + @Name + '%')

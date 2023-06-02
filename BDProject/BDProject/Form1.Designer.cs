@@ -358,6 +358,13 @@
             this.CreateUserBtn = new System.Windows.Forms.Button();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.UserFriendsList = new System.Windows.Forms.ListBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.UserAddFriend = new System.Windows.Forms.Button();
+            this.UserSelectNewFriend = new System.Windows.Forms.ComboBox();
+            this.UserRemoveFriend = new System.Windows.Forms.Button();
+            this.UserFriendStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.StaffTab.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -3314,6 +3321,13 @@
             // 
             // UserDetailsTab
             // 
+            this.UserDetailsTab.Controls.Add(this.UserFriendStatus);
+            this.UserDetailsTab.Controls.Add(this.UserRemoveFriend);
+            this.UserDetailsTab.Controls.Add(this.label81);
+            this.UserDetailsTab.Controls.Add(this.UserAddFriend);
+            this.UserDetailsTab.Controls.Add(this.UserSelectNewFriend);
+            this.UserDetailsTab.Controls.Add(this.label60);
+            this.UserDetailsTab.Controls.Add(this.UserFriendsList);
             this.UserDetailsTab.Controls.Add(this.UserUpdateStatus);
             this.UserDetailsTab.Controls.Add(this.RatingStatus);
             this.UserDetailsTab.Controls.Add(this.RemoveWatchedBtn);
@@ -3366,7 +3380,7 @@
             // 
             this.RatingStatus.AutoSize = true;
             this.RatingStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.RatingStatus.Location = new System.Drawing.Point(520, 391);
+            this.RatingStatus.Location = new System.Drawing.Point(234, 400);
             this.RatingStatus.Name = "RatingStatus";
             this.RatingStatus.Size = new System.Drawing.Size(0, 20);
             this.RatingStatus.TabIndex = 58;
@@ -3385,7 +3399,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label54.Location = new System.Drawing.Point(234, 327);
+            this.label54.Location = new System.Drawing.Point(234, 299);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(131, 20);
             this.label54.TabIndex = 56;
@@ -3393,7 +3407,7 @@
             // 
             // UserDetailsAddScoreBtn
             // 
-            this.UserDetailsAddScoreBtn.Location = new System.Drawing.Point(347, 377);
+            this.UserDetailsAddScoreBtn.Location = new System.Drawing.Point(347, 349);
             this.UserDetailsAddScoreBtn.Name = "UserDetailsAddScoreBtn";
             this.UserDetailsAddScoreBtn.Size = new System.Drawing.Size(148, 37);
             this.UserDetailsAddScoreBtn.TabIndex = 55;
@@ -3404,7 +3418,7 @@
             // UserSelectNewAnimeRating
             // 
             this.UserSelectNewAnimeRating.FormattingEnabled = true;
-            this.UserSelectNewAnimeRating.Location = new System.Drawing.Point(234, 350);
+            this.UserSelectNewAnimeRating.Location = new System.Drawing.Point(234, 322);
             this.UserSelectNewAnimeRating.Name = "UserSelectNewAnimeRating";
             this.UserSelectNewAnimeRating.Size = new System.Drawing.Size(261, 21);
             this.UserSelectNewAnimeRating.TabIndex = 54;
@@ -3414,7 +3428,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label53.Location = new System.Drawing.Point(234, 374);
+            this.label53.Location = new System.Drawing.Point(234, 346);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(85, 20);
             this.label53.TabIndex = 53;
@@ -3423,7 +3437,7 @@
             // addRating
             // 
             this.addRating.DecimalPlaces = 1;
-            this.addRating.Location = new System.Drawing.Point(234, 394);
+            this.addRating.Location = new System.Drawing.Point(234, 366);
             this.addRating.Maximum = new decimal(new int[] {
             10,
             0,
@@ -3827,6 +3841,73 @@
             this.label68.TabIndex = 17;
             this.label68.Text = "Connection Status:";
             // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label60.Location = new System.Drawing.Point(536, 169);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(82, 20);
+            this.label60.TabIndex = 61;
+            this.label60.Text = "Friends List";
+            // 
+            // UserFriendsList
+            // 
+            this.UserFriendsList.FormattingEnabled = true;
+            this.UserFriendsList.Location = new System.Drawing.Point(536, 189);
+            this.UserFriendsList.Name = "UserFriendsList";
+            this.UserFriendsList.Size = new System.Drawing.Size(205, 225);
+            this.UserFriendsList.TabIndex = 60;
+            this.UserFriendsList.SelectedIndexChanged += new System.EventHandler(this.UserFriendsList_SelectedIndexChanged);
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label81.Location = new System.Drawing.Point(747, 188);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(82, 20);
+            this.label81.TabIndex = 64;
+            this.label81.Text = "Add Friend";
+            // 
+            // UserAddFriend
+            // 
+            this.UserAddFriend.Location = new System.Drawing.Point(747, 238);
+            this.UserAddFriend.Name = "UserAddFriend";
+            this.UserAddFriend.Size = new System.Drawing.Size(260, 37);
+            this.UserAddFriend.TabIndex = 63;
+            this.UserAddFriend.Text = "Add Friend";
+            this.UserAddFriend.UseVisualStyleBackColor = true;
+            this.UserAddFriend.Click += new System.EventHandler(this.UserAddFriend_Click);
+            // 
+            // UserSelectNewFriend
+            // 
+            this.UserSelectNewFriend.FormattingEnabled = true;
+            this.UserSelectNewFriend.Location = new System.Drawing.Point(747, 211);
+            this.UserSelectNewFriend.Name = "UserSelectNewFriend";
+            this.UserSelectNewFriend.Size = new System.Drawing.Size(261, 21);
+            this.UserSelectNewFriend.TabIndex = 62;
+            this.UserSelectNewFriend.SelectedIndexChanged += new System.EventHandler(this.UserSelectNewFriend_SelectedIndexChanged);
+            // 
+            // UserRemoveFriend
+            // 
+            this.UserRemoveFriend.Location = new System.Drawing.Point(748, 292);
+            this.UserRemoveFriend.Name = "UserRemoveFriend";
+            this.UserRemoveFriend.Size = new System.Drawing.Size(260, 37);
+            this.UserRemoveFriend.TabIndex = 65;
+            this.UserRemoveFriend.Text = "Remove Friend";
+            this.UserRemoveFriend.UseVisualStyleBackColor = true;
+            this.UserRemoveFriend.Click += new System.EventHandler(this.UserRemoveFriend_Click);
+            // 
+            // UserFriendStatus
+            // 
+            this.UserFriendStatus.AutoSize = true;
+            this.UserFriendStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.UserFriendStatus.Location = new System.Drawing.Point(747, 346);
+            this.UserFriendStatus.Name = "UserFriendStatus";
+            this.UserFriendStatus.Size = new System.Drawing.Size(0, 20);
+            this.UserFriendStatus.TabIndex = 66;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4227,6 +4308,13 @@
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.ComboBox UserRemoveAs;
         private System.Windows.Forms.Button UserRemoveBtn;
+        private System.Windows.Forms.Label UserFriendStatus;
+        private System.Windows.Forms.Button UserRemoveFriend;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Button UserAddFriend;
+        private System.Windows.Forms.ComboBox UserSelectNewFriend;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.ListBox UserFriendsList;
     }
 }
 

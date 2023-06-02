@@ -110,6 +110,7 @@ namespace BDProject
             AnimeRemoveAs.Items.Clear();
             CharRemoveAs.Items.Clear();
             RemoveStudioAs.Items.Clear();
+            UserSelectNewFriend.Items.Clear();
             try
             {
                 conn.Open();
@@ -133,6 +134,7 @@ namespace BDProject
                     AnimeRemoveAs.Items.Add(reader[1].ToString());
                     CharRemoveAs.Items.Add(reader[1].ToString());
                     RemoveStudioAs.Items.Add(reader[1].ToString());
+                    UserSelectNewFriend.Items.Add(reader[1].ToString());
                 }
             }
             catch (Exception ex)
@@ -1309,7 +1311,14 @@ namespace BDProject
                 {
                     CharactersList.Items.Add(reader["ID"].ToString());
                     CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add(reader["Name"].ToString());
-                    CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add(reader["AnimeName"].ToString());
+                    if (reader["AnimeName"].ToString() == "")
+                    {
+                        CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                    else
+                    {
+                        CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add(reader["AnimeName"].ToString());
+                    }
                     CharactersList.Items[CharactersList.Items.Count - 1].SubItems.Add(reader["VA"].ToString());
                 }
             }
@@ -2567,6 +2576,9 @@ namespace BDProject
         private float userDetailsExistingRating = -1;
         private float userDetailsNewRating = -1;
 
+        private int selectedFriend = -1;
+        private int selectedNewFriend = -1;
+
         private String userCreateUsername = "";
         private String userCreateSex = "";
         private DateTime userCreateDOB;
@@ -2818,6 +2830,8 @@ namespace BDProject
                 
                 getWatchedAnime();
 
+               
+                getFriends();
                 lastSelectedUser = selectedUser;
             }
 
@@ -2842,6 +2856,7 @@ namespace BDProject
             {
                 UserDetailsAnimeList.Items.Add(new ScoreItem { ID = (int)reader["AnimeID"], Score = reader["Given_score"].ToString(), DisplayName = reader["AnimeName"].ToString() });
             }
+            reader.Close();
         }
         private void resetUserDetails()
         {
@@ -3251,6 +3266,125 @@ namespace BDProject
                 Console.WriteLine("DEBUG: User Remove As -> " + UserRemoveAsID);
             }
         }
+        private void getFriends()
+        {
+            SqlCommand sqlCommand = new SqlCommand($"EXEC GetFriends @UserID = {selectedUser}", conn);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            UserFriendsList.Items.Clear();
+
+            while (reader.Read())
+            {
+                UserFriendsList.Items.Add(new User { ID = (int)reader["FriendID"], Name = reader["FriendName"].ToString() });
+            }   
+            reader.Close();
+        }
+
+        private void UserFriendsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (UserFriendsList.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            selectedFriend = userDict[UserFriendsList.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Selected Friend -> " + selectedFriend);
+            }
+        }
+
+        private void UserRemoveFriend_Click(object sender, EventArgs e)
+        {
+            if (selectedFriend == -1 || selectedUser == -1)
+            {
+                UserFriendStatus.Text = "Please select a user and a friend to remove";
+                return;
+            }
+
+            String command = $"DELETE FROM Is_Friend WHERE UserID1 = {selectedUser} AND UserID2 = {selectedFriend}";
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Remove Friend Command -> " + command);
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand sqlCmd = new SqlCommand(command, conn);
+                sqlCmd.ExecuteNonQuery();
+                UserFriendStatus.Text = "Friend removed successfully";
+                getFriends();
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                UserFriendStatus.Text = "Error removing friend";
+            }       
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+        }
+
+        private void UserAddFriend_Click(object sender, EventArgs e)
+        {
+            if (selectedNewFriend == -1 || selectedUser == -1 && selectedNewFriend != selectedUser) 
+            {
+                UserFriendStatus.Text = "Please select a user and a friend to add";
+                return;
+            }
+
+            String command = $"INSERT INTO Is_friend (UserID1, UserID2) VALUES ({selectedUser}, {selectedNewFriend})";
+            String command2 = $"INSERT INTO Is_friend (UserID1, UserID2) VALUES ({selectedNewFriend}, {selectedUser})";
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Add Friend Command -> " + command);
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand sqlCmd = new SqlCommand(command, conn);
+                sqlCmd.ExecuteNonQuery();
+                
+                sqlCmd = new SqlCommand(command2, conn);
+                sqlCmd.ExecuteNonQuery();
+
+                UserFriendStatus.Text = "Friend added successfully";
+                getFriends();
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                UserFriendStatus.Text = "Error adding friend";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+        }
+
+        private void UserSelectNewFriend_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (UserSelectNewFriend.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            selectedNewFriend = userDict[UserSelectNewFriend.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Selected New Friend -> " + selectedNewFriend);
+            }
+        }
     }
 }
 
@@ -3263,5 +3397,16 @@ public class ScoreItem
     public override string ToString()
     {
         return DisplayName;
+    }
+}
+
+public class User
+{
+    public int ID { get; set; }
+    public String Name { get; set; }
+
+    public override string ToString()
+    {
+        return Name;
     }
 }
