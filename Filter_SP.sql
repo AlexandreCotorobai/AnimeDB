@@ -10,7 +10,7 @@ CREATE PROCEDURE FilterAnime
         FROM (
         SELECT a.ID, a.Name + ' / ' + a.Alt_Name as Name, a.Score, a.Episodes, a.Aired_date, a.Finished_date, s.Name AS StudioName
             FROM Anime AS a
-            JOIN Studio AS s ON a.FK_Studio_ID = s.ID
+            LEFT JOIN Studio AS s ON a.FK_Studio_ID = s.ID
             WHERE (@Name IS NULL OR a.Name LIKE '%' + @Name + '%')
                 AND (@MinScore IS NULL OR a.Score >= @MinScore)
                 AND (@MinDate IS NULL OR a.Aired_date >= @MinDate)
@@ -36,7 +36,7 @@ CREATE PROCEDURE FilterCharacter
             FROM Characters AS c
             LEFT JOIN Apears_in AS ai ON c.ID = ai.FK_CharacterID
             LEFT JOIN Anime AS a ON ai.FK_AnimeID = a.ID
-            INNER JOIN Staff AS s ON c.FK_Voice_actor = s.ID
+            LEFT JOIN Staff AS s ON c.FK_Voice_actor = s.ID
             WHERE (@Name IS NULL OR c.Name LIKE '%' + @Name + '%')
                 AND (@AnimeID IS NULL OR ai.FK_AnimeID = @AnimeID)
                 AND (@VAID IS NULL OR c.FK_Voice_actor = @VAID)
@@ -97,11 +97,11 @@ CREATE PROCEDURE FilterUser
     BEGIN
         SELECT *
         FROM (
-            SELECT u.*
+            SELECT u.ID, u.Name, u.Sex, u.Created_Date, u.Birthday
             FROM Users AS u
             WHERE (@Name IS NULL OR u.Name LIKE '%' + @Name + '%')
                 AND (@Sex IS NULL OR u.Sex = @Sex)
-                AND (@Birthday IS NULL OR u.Birthday = @Birthday)
+                AND (@Birthday IS NULL OR MONTH(u.Birthday) = MONTH(@Birthday) AND DAY(u.Birthday) = DAY(@Birthday))
                 AND (@CreatedAfter IS NULL OR u.Created_date > @CreatedAfter)
                 AND (@CreatedBefore IS NULL OR u.Created_date < @CreatedBefore)
         ) AS Subquery

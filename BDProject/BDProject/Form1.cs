@@ -17,7 +17,7 @@ namespace BDProject
 {
     public partial class Form1 : Form
     {
-        private DateTime DefaultDate = new DateTime(1753, 1, 1);
+        private DateTime DefaultDate;
         private bool debug = true;
         private SqlConnection conn;
         public Form1()
@@ -41,7 +41,7 @@ namespace BDProject
                 ConnectionStatus.Text = "Not Connected (Error in Console)";
                 if (debug)
                 {
-                Console.WriteLine("Error: " + e.Message);
+                    Console.WriteLine("Error: " + e.Message);
                 }
             }
 
@@ -105,7 +105,11 @@ namespace BDProject
             CharacterUpdateAs.Items.Clear();
             CharacterCreateAs.Items.Clear();
             AnimeCommentsRemoveAs.Items.Clear();
-
+            UserRemoveAs.Items.Clear();
+            StaffRemoveAs.Items.Clear();
+            AnimeRemoveAs.Items.Clear();
+            CharRemoveAs.Items.Clear();
+            RemoveStudioAs.Items.Clear();
             try
             {
                 conn.Open();
@@ -124,6 +128,11 @@ namespace BDProject
                     CharacterUpdateAs.Items.Add(reader[1].ToString());
                     CharacterCreateAs.Items.Add(reader[1].ToString());
                     AnimeCommentsRemoveAs.Items.Add(reader[1].ToString());
+                    UserRemoveAs.Items.Add(reader[1].ToString());
+                    StaffRemoveAs.Items.Add(reader[1].ToString());
+                    AnimeRemoveAs.Items.Add(reader[1].ToString());
+                    CharRemoveAs.Items.Add(reader[1].ToString());
+                    RemoveStudioAs.Items.Add(reader[1].ToString());
                 }
             }
             catch (Exception ex)
@@ -145,6 +154,7 @@ namespace BDProject
             AnimeDetailsSelAnimeRel.Items.Clear();
             CharacterFilterFromAnime.Items.Clear();
             CharDetailsAddAnimeAppearsIn.Items.Clear();
+            UserSelectNewAnimeRating.Items.Clear();
             try
             {
                 conn.Open();
@@ -156,6 +166,7 @@ namespace BDProject
                     AnimeDetailsSelAnimeRel.Items.Add(reader[1].ToString());
                     CharacterFilterFromAnime.Items.Add(reader[1].ToString());
                     CharDetailsAddAnimeAppearsIn.Items.Add(reader[1].ToString());
+                    UserSelectNewAnimeRating.Items.Add(reader[1].ToString());
                 }
             }
             catch (Exception ex)
@@ -229,8 +240,8 @@ namespace BDProject
             {
                 Console.WriteLine(ex.Message);
             }
-            
-            if(conn.State == ConnectionState.Open)
+
+            if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
             }
@@ -239,7 +250,7 @@ namespace BDProject
         private void updateStaffType()
         {
             String[] staffTypeList = { "Voice Actor", "Director", "Producer", "Animator", "Musician", "Writer", "Other" };
-             
+
             for (int i = 0; i < staffTypeList.Length; i++)
             {
                 StaffCreateType.Items.Add(staffTypeList[i]);
@@ -250,6 +261,54 @@ namespace BDProject
         // Anime
 
         // Anime List
+        private int AnimeRemoveAsID = -1;
+        private void AnimeRemoveAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AnimeRemoveAsID = userDict[AnimeRemoveAs.SelectedItem.ToString()];
+
+            if (debug)
+            {
+                Console.WriteLine("Anime Remove As ID: " + AnimeRemoveAsID);
+            }
+        }
+
+        private void AnimeRemoveBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectedAnimeID == -1 || AnimeRemoveAsID == -1)
+            {
+                AnimeRemoveStatus.Text = "Please select an anime and a user to remove it as";
+                return;
+            }
+
+            String command = $"EXEC RemoveAnime @AnimeID = {SelectedAnimeID}, @UserID = {AnimeRemoveAsID}";
+            if (debug)
+            {
+                Console.WriteLine(command);
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+                cmd.ExecuteNonQuery();
+                AnimeRemoveStatus.Text = "Anime Removed";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                AnimeRemoveStatus.Text = "Error Removing Anime";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            updateAnimes();
+            AnimeRemoveAsID = -1;
+            animeListView.Items.Clear();
+            requestAnimeList();
+        }
 
         private int SelectedAnimeID = -1;
         private int lastSearchedAnimeID = -1;
@@ -291,7 +350,7 @@ namespace BDProject
         private String animeCommentText;
         private int animeCommentUserID;
         private int animeCommentRemoveAs;
-        private int lastSearchedAnimeIDComments;
+        private int lastSearchedAnimeIDComments = -1;
 
         private void AnimeBtn_Click(object sender, EventArgs e)
         {
@@ -356,7 +415,7 @@ namespace BDProject
                 return;
             }
             if (debug)
-            { 
+            {
                 Console.WriteLine("DEBUG: Selected Anime ID -> " + e.Item.Text);
             }
             SelectedAnimeID = int.Parse(e.Item.Text);
@@ -380,7 +439,7 @@ namespace BDProject
 
         private void requestAnimeList()
         {
-            String command = $"EXEC FilterAnime @Name = {(FilterAnimeSearch == null ? "NULL" : "'" + FilterAnimeSearch + "'")}, @MinScore = {(FilterAnimeScore == 0.0 ? "NULL" : FilterAnimeScore.ToString())}, @MinDate = {(FilterAnimeStartDate == DefaultDate ? "NULL" : "'" + FilterAnimeStartDate.ToString("yyyy-MM-dd") + "'")}, @MaxDate = {(FilterAnimeEndDate == DefaultDate ? "NULL" : "'" + FilterAnimeEndDate.ToString("yyyy-MM-dd") + "'")}, @Offset = {(FilterAnimeOffset-1) * 20}";
+            String command = $"EXEC FilterAnime @Name = {(FilterAnimeSearch == null ? "NULL" : "'" + FilterAnimeSearch + "'")}, @MinScore = {(FilterAnimeScore == 0.0 ? "NULL" : FilterAnimeScore.ToString())}, @MinDate = {(FilterAnimeStartDate == DefaultDate ? "NULL" : "'" + FilterAnimeStartDate.ToString("yyyy-MM-dd") + "'")}, @MaxDate = {(FilterAnimeEndDate == DefaultDate ? "NULL" : "'" + FilterAnimeEndDate.ToString("yyyy-MM-dd") + "'")}, @Offset = {(FilterAnimeOffset - 1) * 20}";
             if (debug)
             {
                 Console.WriteLine("DEBUG: Executing Command -> " + command);
@@ -476,7 +535,7 @@ namespace BDProject
                 requestSingleAnimeGenres();
                 // get related anime
                 requestSingleAnimeRelations();
-                
+
             }
             catch (Exception ex)
             {
@@ -521,7 +580,7 @@ namespace BDProject
                 requestSingleAnime();
             }
             else if (AnimeTab.SelectedIndex == 2)
-            { 
+            {
                 resetAnimeCreate();
             }
             else if (AnimeTab.SelectedIndex == 3)
@@ -535,7 +594,7 @@ namespace BDProject
             animeName = AnimeDetailsName.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Name -> " + animeName);
+                Console.WriteLine("DEBUG: Anime Name -> " + animeName);
             }
 
         }
@@ -545,7 +604,7 @@ namespace BDProject
             animeEpisodes = (int)AnimeDetailsEpisodes.Value;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Episodes -> " + animeEpisodes);
+                Console.WriteLine("DEBUG: Anime Episodes -> " + animeEpisodes);
             }
         }
 
@@ -554,7 +613,7 @@ namespace BDProject
             animeAltName = AnimeDetailsAltName.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Alt Name -> " + animeAltName);
+                Console.WriteLine("DEBUG: Anime Alt Name -> " + animeAltName);
             }
         }
 
@@ -563,7 +622,7 @@ namespace BDProject
             animeStudioID = studioDict[AnimeDetailsStudio.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Studio ID -> " + animeStudioID);
+                Console.WriteLine("DEBUG: Anime Studio ID -> " + animeStudioID);
             }
         }
 
@@ -573,7 +632,7 @@ namespace BDProject
             animeStartDate = AnimeDetailsAirDate.Value;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Air Date -> " + animeStartDate);
+                Console.WriteLine("DEBUG: Anime Air Date -> " + animeStartDate);
             }
         }
 
@@ -582,7 +641,7 @@ namespace BDProject
             animeEndDate = AnimeDetailsFinishedDate.Value;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Finished Date -> " + animeEndDate);
+                Console.WriteLine("DEBUG: Anime Finished Date -> " + animeEndDate);
             }
         }
 
@@ -591,7 +650,7 @@ namespace BDProject
             animeAddGenre = genreDictionary[AnimeDetailsSelectGenre.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Genre ID -> " + animeAddGenre);
+                Console.WriteLine("DEBUG: Anime Genre ID -> " + animeAddGenre);
             }
         }
 
@@ -605,7 +664,7 @@ namespace BDProject
             animeRemoveGenre = int.Parse(AnimeDetailsGenres.SelectedItems[0].Tag.ToString());
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Remove Genre -> " + animeRemoveGenre);
+                Console.WriteLine("DEBUG: Anime Remove Genre -> " + animeRemoveGenre);
             }
         }
 
@@ -614,7 +673,7 @@ namespace BDProject
             animeUpdateAs = userDict[AnimeDetailsUpdateAs.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Update As -> " + animeUpdateAs);
+                Console.WriteLine("DEBUG: Anime Update As -> " + animeUpdateAs);
             }
         }
 
@@ -623,7 +682,7 @@ namespace BDProject
             animeSynopsis = AnimeDetailsSynopsis.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Synopsis -> " + animeSynopsis);
+                Console.WriteLine("DEBUG: Anime Synopsis -> " + animeSynopsis);
             }
         }
         private void AnimeDetailsSelAnimeRel_SelectedIndexChanged(object sender, EventArgs e)
@@ -631,7 +690,7 @@ namespace BDProject
             animeAddRelatedAnime = animeDict[AnimeDetailsSelAnimeRel.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Related Anime -> " + animeAddRelatedAnime);
+                Console.WriteLine("DEBUG: Anime Related Anime -> " + animeAddRelatedAnime);
             }
         }
 
@@ -640,7 +699,7 @@ namespace BDProject
             animeAddRelation = AnimeDetailsRelation.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Relation -> " + animeAddRelation);
+                Console.WriteLine("DEBUG: Anime Relation -> " + animeAddRelation);
             }
         }
 
@@ -653,7 +712,7 @@ namespace BDProject
             animeRelatedAnime = int.Parse(e.Item.SubItems[0].Text);
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Related Anime -> " + animeRelatedAnime);
+                Console.WriteLine("DEBUG: Anime Related Anime -> " + animeRelatedAnime);
             }
         }
 
@@ -661,8 +720,8 @@ namespace BDProject
         {
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Add Genre -> " + animeAddGenre);
-            Console.WriteLine("DEBUG: Anime ID -> " + SelectedAnimeID);
+                Console.WriteLine("DEBUG: Anime Add Genre -> " + animeAddGenre);
+                Console.WriteLine("DEBUG: Anime ID -> " + SelectedAnimeID);
             }
             if (animeAddGenre == 0 || SelectedAnimeID == -1 || animeUpdateAs == 0)
             {
@@ -673,7 +732,7 @@ namespace BDProject
             String command = "EXEC AddAnimeGenre @AnimeID = " + SelectedAnimeID + ", @GenreID = " + animeAddGenre + ", @UserID = " + animeUpdateAs;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Add Genre Command -> " + command);
+                Console.WriteLine("DEBUG: Anime Add Genre Command -> " + command);
             }
 
             try
@@ -707,7 +766,7 @@ namespace BDProject
             String command = "EXEC UpdateAnime @AnimeID = " + SelectedAnimeID + ", @UserID = " + animeUpdateAs + ", @Name = '" + animeName + "', @Alt_Name = '" + animeAltName + "', @Synopsis = '" + animeSynopsis + "', @Episodes = " + animeEpisodes + ", @AiredDate = '" + animeStartDate.ToString("yyyy-MM-dd") + "', @FinishedDate = '" + animeEndDate.ToString("yyyy-MM-dd") + "', @StudioID = " + animeStudioID;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Update Command -> " + command);
+                Console.WriteLine("DEBUG: Anime Update Command -> " + command);
             }
             try
             {
@@ -721,7 +780,7 @@ namespace BDProject
                 AnimeUpdateStatus.Text = "Error Updating Anime";
                 Console.WriteLine("SQL Error: " + ex.Message);
             }
-            
+
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -729,7 +788,7 @@ namespace BDProject
             updateAnimes();
         }
         private void animeDetailsRemoveGenre_Click(object sender, EventArgs e)
-        {   
+        {
             if (animeRemoveGenre == 0 || SelectedAnimeID == -1 || animeUpdateAs == 0)
             {
                 AnimeUpdateStatus.Text = "Please Select an User and a Genre";
@@ -739,7 +798,7 @@ namespace BDProject
             String command = "EXEC RemoveAnimeGenre @AnimeID = " + SelectedAnimeID + ", @GenreID = " + animeRemoveGenre + ", @UserID = " + animeUpdateAs;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Remove Genre Command -> " + command);
+                Console.WriteLine("DEBUG: Anime Remove Genre Command -> " + command);
             }
             try
             {
@@ -764,7 +823,7 @@ namespace BDProject
 
         private void AnimeRemoveRelBtn_Click(object sender, EventArgs e)
         {
-            if ( SelectedAnimeID == -1 || animeRelatedAnime == 0 || animeUpdateAs == 0)
+            if (SelectedAnimeID == -1 || animeRelatedAnime == 0 || animeUpdateAs == 0)
             {
                 AnimeUpdateStatus.Text = "Please Select an User and a Related Anime";
                 return;
@@ -773,7 +832,7 @@ namespace BDProject
             String command = "EXEC RemoveAnimeRelation @AnimeID = " + SelectedAnimeID + ", @RelatedAnimeID = " + animeRelatedAnime + ", @UserID = " + animeUpdateAs;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Remove Relation Command -> " + command);
+                Console.WriteLine("DEBUG: Anime Remove Relation Command -> " + command);
             }
             try
             {
@@ -798,7 +857,7 @@ namespace BDProject
 
         private void AnimeAddRelationBtn_Click(object sender, EventArgs e)
         {
-            if ( SelectedAnimeID == -1 || animeUpdateAs == 0 || animeAddRelation == "")
+            if (SelectedAnimeID == -1 || animeUpdateAs == 0 || animeAddRelation == "")
             {
                 AnimeUpdateStatus.Text = "Please Select an User, a Related Anime and a Relation";
                 return;
@@ -807,7 +866,7 @@ namespace BDProject
             String command = "EXEC AddAnimeRelation @AnimeID = " + SelectedAnimeID + ", @RelatedAnimeID = " + animeAddRelatedAnime + ", @RelationType = '" + animeAddRelation + "', @UserID = " + animeUpdateAs;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Add Relation Command -> " + command);
+                Console.WriteLine("DEBUG: Anime Add Relation Command -> " + command);
             }
             try
             {
@@ -835,7 +894,7 @@ namespace BDProject
             animeCreateName = AnimeCreateName.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create Name -> " + animeCreateName);
+                Console.WriteLine("DEBUG: Anime Create Name -> " + animeCreateName);
             }
         }
 
@@ -844,7 +903,7 @@ namespace BDProject
             animeCreateAltName = AnimeCreateAltName.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create Alt Name -> " + animeCreateAltName);
+                Console.WriteLine("DEBUG: Anime Create Alt Name -> " + animeCreateAltName);
             }
         }
 
@@ -853,7 +912,7 @@ namespace BDProject
             animeCreateStudioID = studioDict[AnimeDetailsStudio.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create Studio ID -> " + animeCreateStudioID);
+                Console.WriteLine("DEBUG: Anime Create Studio ID -> " + animeCreateStudioID);
             }
         }
 
@@ -862,7 +921,7 @@ namespace BDProject
             animeCreateEpisodes = (int)AnimeCreateEp.Value;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create Episodes -> " + animeCreateEpisodes);
+                Console.WriteLine("DEBUG: Anime Create Episodes -> " + animeCreateEpisodes);
             }
         }
 
@@ -871,7 +930,7 @@ namespace BDProject
             animeCreateSynopsis = AnimeCreateSynopsis.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create Synopsis -> " + animeCreateSynopsis);
+                Console.WriteLine("DEBUG: Anime Create Synopsis -> " + animeCreateSynopsis);
             }
         }
 
@@ -880,7 +939,7 @@ namespace BDProject
             animeCreateEndDate = AnimeCreateFinishDate.Value;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create End Date -> " + animeCreateEndDate);
+                Console.WriteLine("DEBUG: Anime Create End Date -> " + animeCreateEndDate);
             }
         }
 
@@ -889,7 +948,7 @@ namespace BDProject
             animeCreateStartDate = AnimeCreateAirDate.Value;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create Start Date -> " + animeCreateStartDate);
+                Console.WriteLine("DEBUG: Anime Create Start Date -> " + animeCreateStartDate);
             }
         }
 
@@ -898,7 +957,7 @@ namespace BDProject
             animeCreateAs = userDict[AnimeCreateAsSelect.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create As -> " + animeCreateAs);
+                Console.WriteLine("DEBUG: Anime Create As -> " + animeCreateAs);
             }
         }
 
@@ -909,12 +968,12 @@ namespace BDProject
             {
                 AnimeCreateStatus.Text = "Please Fill All Fields";
                 return;
-            }   
+            }
 
             String command = "EXEC CreateAnime @Name = '" + animeCreateName + "', @Alt_Name = '" + animeCreateAltName + "', @StudioID = " + animeCreateStudioID + ", @Episodes = " + animeCreateEpisodes + ", @Synopsis = '" + animeCreateSynopsis + "', @FinishedDate = '" + animeCreateEndDate.ToString("yyyy-MM-dd") + "', @AiredDate = '" + animeCreateStartDate.ToString("yyyy-MM-dd") + "', @UserID = " + animeCreateAs;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Create Command -> " + command);
+                Console.WriteLine("DEBUG: Anime Create Command -> " + command);
             }
             try
             {
@@ -980,7 +1039,7 @@ namespace BDProject
         }
         private void requestAnimeComments()
         {
-            if (SelectedAnimeID == -1)
+            if (SelectedAnimeID == -1 || lastSearchedAnimeIDComments == SelectedAnimeID)
             {
                 return;
             }
@@ -991,7 +1050,7 @@ namespace BDProject
                 conn.Open();
                 updateCommentList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("SQL Error: " + ex.Message);
             }
@@ -1008,7 +1067,7 @@ namespace BDProject
             animeCommentText = AnimeDetailsCommentTxt.Text;
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Comment Text -> " + animeCommentText);
+                Console.WriteLine("DEBUG: Anime Comment Text -> " + animeCommentText);
             }
         }
 
@@ -1017,7 +1076,7 @@ namespace BDProject
             animeCommentUserID = userDict[AnimeDetailsCommentAs.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Comment User ID -> " + animeCommentUserID);
+                Console.WriteLine("DEBUG: Anime Comment User ID -> " + animeCommentUserID);
             }
         }
 
@@ -1062,7 +1121,7 @@ namespace BDProject
             animeCommentRemoveAs = userDict[AnimeCommentsRemoveAs.SelectedItem.ToString()];
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Comment Remove As -> " + animeCommentRemoveAs);
+                Console.WriteLine("DEBUG: Anime Comment Remove As -> " + animeCommentRemoveAs);
             }
         }
         private void AnimeDetailsComments_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -1075,7 +1134,7 @@ namespace BDProject
             animeCommentAnimeID = int.Parse(e.Item.Text);
             if (debug)
             {
-            Console.WriteLine("DEBUG: Anime Comment Anime ID -> " + animeCommentAnimeID);
+                Console.WriteLine("DEBUG: Anime Comment Anime ID -> " + animeCommentAnimeID);
             }
 
         }
@@ -1115,14 +1174,59 @@ namespace BDProject
         // --------------------------------------------------------------------------------------------------- //
 
         // Characters
+        private int CharacterRemoveAs = -1;
 
+        private void CharRemoveAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CharacterRemoveAs = userDict[CharRemoveAs.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Remove As -> " + CharacterRemoveAs);
+            }
+        }
+
+        private void CharRemoveBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectedCharacterID == -1 || CharacterRemoveAs == -1)
+            {
+                CharRemoveStatus.Text = "Please Fill All Fields";
+                return;
+            }
+
+            String command = "EXEC RemoveCharacter @CharacterID = " + SelectedCharacterID + ", @UserID = " + CharacterRemoveAs;
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Character Remove Command -> " + command);
+            }
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(command, conn);
+                cmd.ExecuteNonQuery();
+                CharRemoveStatus.Text = "Character Removed";
+            }
+            catch (Exception ex)
+            {
+                CharRemoveStatus.Text = "Error Removing Character";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            CharactersList.Items.Clear();
+            requestCharList();
+            CharacterRemoveAs = -1;
+        }
         private int SelectedCharacterID = -1;
         private int lastSearchedCharacterID = -1;
         private int FilterCharAnimeID = -1;
         private String FilterCharName = null;
         private int FilterCharVoiceActorID = -1;
         private int FilterCharOffset = 0;
-        
+
         // character details
         private String characterName = null;
         private String characterDescription = null;
@@ -1165,7 +1269,7 @@ namespace BDProject
             } else if (CharactersTab.SelectedIndex == 2)
             {
                 resetCharCreate();
-            } 
+            }
         }
         private void resetCharCreate()
         {
@@ -1173,6 +1277,7 @@ namespace BDProject
             CharacterCreateDescription.Text = "";
             CharacterCreateVA.SelectedIndex = 0;
             CharacterCreateAs.SelectedIndex = 0;
+            CharCreateStatus.Text = "";
         }
         private void resetCharVar()
         {
@@ -1186,10 +1291,10 @@ namespace BDProject
             FilterCharVoiceActorID = -1;
 
         }
-        
+
         private void requestCharList()
         {
-            String command = $"EXEC FilterCharacter @AnimeID = {(FilterCharAnimeID == -1 ? "NULL" : FilterCharAnimeID.ToString())}, @Name = {(FilterCharName == null ? "NULL" : "'" + FilterCharName + "'")}, @VAID = {(FilterCharVoiceActorID == -1 ? "NULL" : FilterCharVoiceActorID.ToString())}, @Offset = {(FilterCharOffset-1) * 20}";
+            String command = $"EXEC FilterCharacter @AnimeID = {(FilterCharAnimeID == -1 ? "NULL" : FilterCharAnimeID.ToString())}, @Name = {(FilterCharName == null ? "NULL" : "'" + FilterCharName + "'")}, @VAID = {(FilterCharVoiceActorID == -1 ? "NULL" : FilterCharVoiceActorID.ToString())}, @Offset = {(FilterCharOffset - 1) * 20}";
             if (debug)
             {
                 Console.WriteLine("DEBUG: Character List Command -> " + command);
@@ -1307,7 +1412,7 @@ namespace BDProject
             {
                 return;
             }
-            
+
             resetCharDetails();
 
             try
@@ -1329,7 +1434,7 @@ namespace BDProject
 
                 lastSearchedCharacterID = SelectedCharacterID;
             }
-            
+
             catch (Exception ex)
             {
                 Console.WriteLine("SQL Error: " + ex.Message);
@@ -1344,7 +1449,7 @@ namespace BDProject
         private void CharacterDetailsDescription_TextChanged(object sender, EventArgs e)
         {
             characterDescription = CharacterDetailsDescription.Text;
-            if(debug)
+            if (debug)
             {
                 Console.WriteLine("DEBUG: Character Description -> " + characterDescription);
             }
@@ -1388,7 +1493,7 @@ namespace BDProject
             }
 
             characterRemoveAnimeID = int.Parse(e.Item.Tag.ToString());
-            
+
             if (debug)
             {
                 Console.WriteLine("DEBUG: Character Remove Anime ID -> " + characterRemoveAnimeID);
@@ -1443,7 +1548,7 @@ namespace BDProject
 
         private void CharDetailsAddAppearsInBtn_Click(object sender, EventArgs e)
         {
-           if (characterAddAnimeID == -1 || SelectedCharacterID == -1 || characterUpdateAs == -1)
+            if (characterAddAnimeID == -1 || SelectedCharacterID == -1 || characterUpdateAs == -1)
             {
                 CharDetailStatus.Text = "Please select an anime to add and a User to update as";
                 return;
@@ -1483,7 +1588,7 @@ namespace BDProject
             }
 
             try
-            { 
+            {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand($"EXEC RemoveCharacterAppearsIn @CharacterID = {SelectedCharacterID}, @AnimeID = {characterRemoveAnimeID}, @UserID = {characterUpdateAs}", conn);
                 if (debug)
@@ -1578,6 +1683,52 @@ namespace BDProject
         // --------------------------------------------------------------------------------------------------- //
 
         // Studios
+        private int StudionRemoveAs = -1;
+        private void RemoveStudioAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StudionRemoveAs = userDict[RemoveStudioAs.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Remove Studio As -> " + StudionRemoveAs);
+            }
+        }
+
+        private void RemoveStudioBtn_Click(object sender, EventArgs e)
+        {
+            if (selectedStudioID == -1 || StudionRemoveAs == -1)
+            {
+                RemoveStudioStatus.Text = "Please select a studio to remove and a user to remove as";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC RemoveStudio @StudioID = {selectedStudioID}, @UserID = {StudionRemoveAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Remove Studio Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                RemoveStudioStatus.Text = "Studio Removed";
+                StudiosList.Items.Clear();
+            }
+            catch (Exception ex)
+            {
+                RemoveStudioStatus.Text = "Error Removing Studio";
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            updateStudio();
+            resetStudioVars();
+            requestStudioList();
+            StudionRemoveAs = -1;
+        }
         //filtervars
         private String studioFilterName = null;
         private DateTime studioFilterEstablishedAfter;
@@ -1617,7 +1768,7 @@ namespace BDProject
                 resetStudioCreate();
             }
         }
-        
+
         private void resetStudioCreate()
         {
             StudioCreateName.Text = "";
@@ -1627,7 +1778,7 @@ namespace BDProject
             StudioCreateAs.SelectedIndex = 0;
             studioCreateEstablished = DefaultDate;
             studioCreateAs = -1;
-    }
+        }
         private void resetStudioDetails()
         {
             StudioDetailsID.Text = "";
@@ -1705,7 +1856,7 @@ namespace BDProject
 
         private void requestStudioList()
         {
-            String command = $"EXEC FilterStudio @Name = {(studioFilterName == null ? "NULL" : "'" + studioFilterName + "'")}, @EstablishedAfter = {(studioFilterEstablishedAfter == DefaultDate ? "NULL" : "'" + studioFilterEstablishedAfter.ToString("yyyy-MM-dd") + "'")}, @EstablishedBefore = {(studioFilterEstablishedBefore == DefaultDate ? "NULL" : "'" + studioFilterEstablishedBefore.ToString("yyyy-MM-dd") + "'")}, @Offset = {(studioFilterOffset-1)*20}";
+            String command = $"EXEC FilterStudio @Name = {(studioFilterName == null ? "NULL" : "'" + studioFilterName + "'")}, @EstablishedAfter = {(studioFilterEstablishedAfter == DefaultDate ? "NULL" : "'" + studioFilterEstablishedAfter.ToString("yyyy-MM-dd") + "'")}, @EstablishedBefore = {(studioFilterEstablishedBefore == DefaultDate ? "NULL" : "'" + studioFilterEstablishedBefore.ToString("yyyy-MM-dd") + "'")}, @Offset = {(studioFilterOffset - 1) * 20}";
             if (debug)
             {
                 Console.WriteLine("DEBUG: Studio List Query -> " + command);
@@ -1857,7 +2008,7 @@ namespace BDProject
                 UpdateStudioStatus.Text = "Please select a studio and an user to update as.";
                 return;
             }
-        
+
             try
             {
                 conn.Open();
@@ -1881,7 +2032,7 @@ namespace BDProject
             }
             updateStudio();
 
-            
+
         }
         private void StudioApplyFilterBtn_Click(object sender, EventArgs e)
         {
@@ -1990,6 +2141,52 @@ namespace BDProject
         // --------------------------------------------------------------------------------------------------- //
 
         // Staff
+        private int userRemoveEntityAs = -1;
+        private void StaffRemoveAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            userRemoveEntityAs = userDict[StaffRemoveAs.SelectedItem.ToString()];
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Staff Remove As -> " + userRemoveEntityAs);
+            }
+        }
+
+        private void RemoveStaff_Click(object sender, EventArgs e)
+        {
+            if (userRemoveEntityAs == -1 || selectedStaffID == -1)
+            {
+                RemoveStaffStatus.Text = "Please select a staff and an user to remove as.";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"EXEC RemoveStaff @StaffID = {selectedStaffID}, @UserID = {userRemoveEntityAs}", conn);
+                if (debug)
+                {
+                    Console.WriteLine("DEBUG: Remove Staff Query -> " + cmd.CommandText);
+                }
+                cmd.ExecuteNonQuery();
+                RemoveStaffStatus.Text = "Staff Removed Successfully!";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                RemoveStaffStatus.Text = "Staff Removal Failed!";
+            }
+            
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            updateVA();
+            StaffList.Items.Clear();
+            requestStaffList();
+            userRemoveEntityAs = -1;
+        }
 
         private int staffOffset = 1;
         private String staffFilterName = null;
@@ -2059,6 +2256,7 @@ namespace BDProject
             StaffDetailsName.Text = "";
             StaffDetailsType.SelectedIndex = 0;
             StaffDetailsBirthday.Text = "";
+            StaffUpdateStatus.Text = "";
         }
 
         private void requestSingleStaff()
@@ -2074,7 +2272,7 @@ namespace BDProject
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand($"Select * From Staff Where ID = {selectedStaffID}", conn);
-                
+
                 if (debug)
                 {
                     Console.WriteLine("DEBUG: Single Staff Query -> " + cmd.CommandText);
@@ -2103,7 +2301,7 @@ namespace BDProject
                 conn.Close();
             }
         }
-               
+
         private void requestStaffList()
         {
             String command = $"EXEC FilterStaff @Offset = {(staffOffset - 1) * 20}, @Name = {(staffFilterName == null ? "NULL" : "'" + staffFilterName + "'")}, @Type = {(staffFilterRole == null ? "NULL" : "'" + staffFilterRole + "'")}";
@@ -2240,7 +2438,7 @@ namespace BDProject
             {
                 return;
             }
-            
+
             try
             {
                 conn.Open();
@@ -2272,6 +2470,7 @@ namespace BDProject
             StaffCreateType.SelectedIndex = 0;
             StaffCreateBirthday.Value = DateTime.Now;
             StaffCreateAs.SelectedIndex = 0;
+            StaffCreateStatus.Text = "";
         }
 
         private void StaffCreateName_TextChanged(object sender, EventArgs e)
@@ -2347,7 +2546,34 @@ namespace BDProject
         // --------------------------------------------------------------------------------------------------- //
         // Users
 
-        
+        private int selectedUser = -1;
+        private int lastSelectedUser = -1;
+
+        private String FilterUserUsername = "";
+        private String FilterUserSex = "";
+        private DateTime FilterBirthday;
+        private DateTime FilterCreatedAfter;
+        private DateTime FilterCreatedBefore;
+        private int FilterUserOffset = 1;
+
+        // details
+        private String userDetailsName = "";
+        private String userDetailsSex = "";
+        private DateTime userDetailsDOB;
+        private String userDetailsLocation = "";
+
+        private int userDetailsSelectedAnimeID = -1;
+        private int userDetailsAddNewAnimeID = -1;
+        private float userDetailsExistingRating = -1;
+        private float userDetailsNewRating = -1;
+
+        private String userCreateUsername = "";
+        private String userCreateSex = "";
+        private DateTime userCreateDOB;
+        private String userCreateLocation = "";
+        private String userIsadmin = "";
+        // create
+
         private void UserBtn_Click(object sender, EventArgs e)
         {
             AnimeTab.Visible = false;
@@ -2355,8 +2581,687 @@ namespace BDProject
             StudioTab.Visible = false;
             StaffTab.Visible = false;
             UsersTab.Visible = true;
+            FilterUserOffset = 1;
+            UserList.Items.Clear();
+            resetUserVar();
+            requestUserList();
+        }
+
+        private void UsersTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (UsersTab.SelectedIndex == 0)
+            {
+                UserList.Items.Clear();
+                requestUserList();
+            }
+            else if (UsersTab.SelectedIndex == 1)
+            {
+                requestUserDetails();
+            }
+            else if (UsersTab.SelectedIndex == 2)
+            {
+                resetUserCreate();
+            }
+        }
+
+        private void resetUserVar()
+        {
+            UserNameFilter.Text = "";
+            UserMaleFilter.Checked = false;
+            UserFemaleFilter.Checked = false;
+            UserBirthdayFilter.Value = DateTime.Now;
+            UserCreatedAfterFilter.Value = DateTime.Now;
+            UserCreatedBeforeFilter.Value = DateTime.Now;
+
+            FilterUserSex = "";
+            FilterUserUsername = "";
+            FilterBirthday = DefaultDate;
+            FilterCreatedAfter = DefaultDate;
+            FilterCreatedBefore = DefaultDate;
+        }
+
+        private void requestUserList()
+        {
+            String commnad = $@"EXEC FilterUser @Name = {(FilterUserUsername == "" ? "NULL" : $"'{FilterUserUsername}'")}, @Sex = {(FilterUserSex == "" ? "NULL" : $"'{FilterUserSex}'")}, @Birthday = {(FilterBirthday == DefaultDate ? "NULL" : $"'{FilterBirthday.ToString("yyyy-MM-dd")}'")}, @CreatedAfter = {(FilterCreatedAfter == DefaultDate ? "NULL" : $"'{FilterCreatedAfter.ToString("yyyy-MM-dd")}'")}, @CreatedBefore = {(FilterCreatedBefore == DefaultDate ? "NULL" : $"'{FilterCreatedBefore.ToString("yyyy-MM-dd")}'")}, @Offset = {(FilterUserOffset-1)*20}";
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Filter Query -> " + commnad);
+            }
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(commnad, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    UserList.Items.Add(reader["ID"].ToString());
+                    UserList.Items[UserList.Items.Count - 1].SubItems.Add(reader["Name"].ToString());
+                    UserList.Items[UserList.Items.Count - 1].SubItems.Add(reader["Sex"].ToString());
+                    UserList.Items[UserList.Items.Count - 1].SubItems.Add(((DateTime)reader["Created_Date"]).ToString("yyyy-MM-dd"));
+                    UserList.Items[UserList.Items.Count - 1].SubItems.Add(((DateTime)reader["Birthday"]).ToString("MM-dd"));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void resetUserCreate()
+        {
+            UserCreateName.Text = "";
+            UserCreateMaleCheckbox.Checked = false;
+            UserCreateFemaleCheckbox.Checked = false;
+            UserCreateBirthday.Value = DateTime.Now;
+            UserCreateLocation.Text = "";
+            UserCreateIsAdmin.Checked = false;
+            CreationStatus.Text = "";
+        }
+
+        private void UserList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (!e.IsSelected)
+            {
+                return;
+            }
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Selected User ID -> " + e.Item.Text);
+            }
+            selectedUser = int.Parse(e.Item.Text);
+        }
+
+        private void UserNameFilter_TextChanged(object sender, EventArgs e)
+        {
+            FilterUserUsername = UserNameFilter.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Filter Name -> " + FilterUserUsername);
+            }
+        }
+
+        private void UserMaleFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserFemaleFilter.Checked && UserMaleFilter.Checked)
+            {
+                UserFemaleFilter.Checked = false;
+            }
+            FilterUserSex = UserMaleFilter.Checked ? "M" : "";
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Sex -> " + FilterUserSex);
+            }
+        }
+
+        private void UserFemaleFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserFemaleFilter.Checked && UserMaleFilter.Checked)
+            {
+                UserMaleFilter.Checked = false;
+            }
+            FilterUserSex = UserFemaleFilter.Checked ? "F" : "";
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Sex -> " + FilterUserSex);
+            }
+        }
+
+        private void UserBirthdayFilter_ValueChanged(object sender, EventArgs e)
+        {
+            FilterBirthday = UserBirthdayFilter.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Birthday -> " + FilterBirthday.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void UserCreatedAfterFilter_ValueChanged(object sender, EventArgs e)
+        {
+            FilterCreatedAfter = UserCreatedAfterFilter.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Created After -> " + FilterCreatedAfter.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void UserCreatedBeforeFilter_ValueChanged(object sender, EventArgs e)
+        {
+            FilterCreatedBefore = UserCreatedBeforeFilter.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Created Before -> " + FilterCreatedBefore.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private void UsersApplyFilterBtn_Click(object sender, EventArgs e)
+        {
+            UserList.Items.Clear();
+            requestUserList();
+        }
+
+        private void UserClearFilter_Click(object sender, EventArgs e)
+        {
+            resetUserVar();
+            UserList.Items.Clear();
+            requestUserList();
+        }
+
+        private void UserListPage_ValueChanged(object sender, EventArgs e)
+        {
+            FilterUserOffset = (int)UserListPage.Value;
+            UserList.Items.Clear();
+            requestUserList();
+        }
+
+        private void requestUserDetails()
+        {
+            if (selectedUser == -1 || selectedUser == lastSelectedUser)
+            {
+                return;
+            }
+
+            resetUserDetails();
+            
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM Users WHERE ID = {selectedUser}", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (debug)
+                {               
+                    Console.WriteLine("DEBUG: User Details Query -> " + cmd.CommandText);
+                }
+
+                if (reader.Read())
+                {
+                    UserDetailsID.Text = reader["ID"].ToString();
+                    UserDetailsName.Text = reader["Name"].ToString();
+                    if (reader["Sex"].ToString() == "M")
+                    {
+                        UserDetailsMale.Checked = true;
+                    }
+                    else
+                    {
+                        UserDetailsFemale.Checked = true;
+                    }
+
+                    UserDetailsBirthday.Value = (DateTime)reader["Birthday"];
+                    UserDetailsCreatedDate.Text = ((DateTime)reader["Created_Date"]).ToString("yyyy-MM-dd");
+                    UserDetailsLocation.Text = reader["Location"].ToString();
+                    Console.WriteLine(reader["is_admin"].ToString());
+                    if (reader["is_admin"].ToString() == "1")
+                    {
+                        UserDetailsIsAdmin.Checked = true;
+                    }
+                    else
+                    {
+                        UserDetailsIsAdmin.Checked = false;
+                    }
+                                lastSelectedUser = selectedUser;
+
+                }
+
+                reader.Close();
+                
+                getWatchedAnime();
+
+                lastSelectedUser = selectedUser;
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+        }
+
+        private void getWatchedAnime()
+        {
+            SqlCommand cmd = new SqlCommand($"EXEC GetWatchedAnimes @UserID = {selectedUser}", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                UserDetailsAnimeList.Items.Add(new ScoreItem { ID = (int)reader["AnimeID"], Score = reader["Given_score"].ToString(), DisplayName = reader["AnimeName"].ToString() });
+            }
+        }
+        private void resetUserDetails()
+        {
+            UserDetailsID.Text = "";
+            UserDetailsName.Text = "";
+            UserDetailsMale.Checked = false;
+            UserDetailsFemale.Checked = false;
+            UserDetailsBirthday.Value = DateTime.Now;
+            UserDetailsCreatedDate.Text = "";
+            UserDetailsLocation.Text = "";
+            UserDetailsAnimeList.Items.Clear();
+            UserDetailsAnimeRating.Value = 0;
+            userDetailsExistingRating = 0;
+            userDetailsSelectedAnimeID = -1;
+            userDetailsSex = "";
+            RatingStatus.Text = "";
+            UserUpdateStatus.Text = "";
+        }
+
+        private void UserDetailsAnimeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (UserDetailsAnimeList.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+            ScoreItem sc = UserDetailsAnimeList.SelectedItem as ScoreItem;
+
+            UserDetailsAnimeRating.Value = decimal.Parse(sc.Score);
+            userDetailsSelectedAnimeID = sc.ID;
+            UserDetailsSelAnime.Text = sc.DisplayName;
+        }
+
+        private void UserDetailsAnimeRating_ValueChanged(object sender, EventArgs e)
+        {
+            userDetailsExistingRating = (float)UserDetailsAnimeRating.Value;
+
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Details Anime Rating -> " + userDetailsExistingRating);
+            }
+        }
+
+        private void UserDetailsMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserDetailsFemale.Checked && UserDetailsMale.Checked)
+            {
+                UserDetailsFemale.Checked = false;
+            }
+
+            userDetailsSex = UserDetailsMale.Checked ? "M" : "";
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Details Sex -> " + userDetailsSex);
+            }
+        }
+
+        private void UserDetailsFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserDetailsFemale.Checked && UserDetailsMale.Checked)
+            {
+                UserDetailsMale.Checked = false;
+            }
+
+            userDetailsSex = UserDetailsFemale.Checked ? "F" : "";
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Details Sex -> " + userDetailsSex);
+            }
+        }
+
+        private void UserDetailsName_TextChanged(object sender, EventArgs e)
+        {
+            userDetailsName = UserDetailsName.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Details Name -> " + userDetailsName);
+            }
+        }
+
+        private void UserDetailsLocation_TextChanged(object sender, EventArgs e)
+        {
+            userDetailsLocation = UserDetailsLocation.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Details Location -> " + userDetailsLocation);
+            }
         }
 
 
+        private void UserDetailsBirthday_ValueChanged(object sender, EventArgs e)
+        {
+            userDetailsDOB = UserDetailsBirthday.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Details Birthday -> " + userDetailsDOB.ToString("MM-dd"));
+            }
+        }
+
+        private void UserDetailsUpdateInfoBtn_Click(object sender, EventArgs e)
+        {
+            bool isChanged = false;
+            if (selectedUser == -1)
+            {
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                String cmd = $"EXEC UpdateUser @UserID = {selectedUser}, @Name = '{userDetailsName}', @Sex = '{userDetailsSex}', @Birthday = '{userDetailsDOB.ToString("yyyy-MM-dd")}', @Location = '{userDetailsLocation}'";
+                SqlCommand sqlCmd = new SqlCommand(cmd, conn);
+                sqlCmd.ExecuteNonQuery();
+                UserUpdateStatus.Text = "User details updated successfully";
+                isChanged = true;
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            if (isChanged)
+            {
+                updateUsers();
+            }
+        }
+
+        private void UserDetailsUpdateScoreBtn_Click(object sender, EventArgs e)
+        {
+            if (userDetailsSelectedAnimeID == -1)
+            {
+                RatingStatus.Text = "Please select an anime to update";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                String cmd = $"UPDATE Has_Watched SET Given_score = {userDetailsExistingRating} WHERE FK_UserID = {selectedUser} AND FK_AnimeID = {userDetailsSelectedAnimeID}";
+                SqlCommand sqlCmd = new SqlCommand(cmd, conn);
+                sqlCmd.ExecuteNonQuery();
+                RatingStatus.Text = "Anime rating updated successfully";
+                UserDetailsAnimeList.Items.Clear();
+                getWatchedAnime();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                RatingStatus.Text = "Error updating anime rating";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void UserSelectNewAnimeRating_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            userDetailsAddNewAnimeID = animeDict[UserSelectNewAnimeRating.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: Anime Studio ID -> " + userDetailsAddNewAnimeID);
+            }
+
+        }
+
+ 
+
+        private void UserDetailsAddScoreBtn_Click(object sender, EventArgs e)
+        {
+            if (userDetailsAddNewAnimeID == -1)
+            {
+                RatingStatus.Text = "Please select an anime to add";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                String cmd = $"INSERT INTO Has_Watched (FK_UserID, FK_AnimeID, Given_score) VALUES ({selectedUser}, {userDetailsAddNewAnimeID}, {userDetailsNewRating})";
+                SqlCommand sqlCmd = new SqlCommand(cmd, conn);
+                sqlCmd.ExecuteNonQuery();
+                RatingStatus.Text = "Anime rating added successfully";
+                UserDetailsAnimeList.Items.Clear();
+                getWatchedAnime();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                RatingStatus.Text = "Error adding anime rating";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void RemoveWatchedBtn_Click(object sender, EventArgs e)
+        {
+            if (userDetailsSelectedAnimeID == -1)
+            {
+                RatingStatus.Text = "Please select an anime to remove";
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                String cmd = $"DELETE FROM Has_Watched WHERE FK_UserID = {selectedUser} AND FK_AnimeID = {userDetailsSelectedAnimeID}";
+                SqlCommand sqlCmd = new SqlCommand(cmd, conn);
+                sqlCmd.ExecuteNonQuery();
+                RatingStatus.Text = "Anime rating removed successfully";
+                UserDetailsAnimeList.Items.Clear();
+                getWatchedAnime();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                RatingStatus.Text = "Error removing anime rating";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        private void addRating_ValueChanged(object sender, EventArgs e)
+        {
+            userDetailsNewRating = (float)addRating.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Details New Rating -> " + userDetailsNewRating);
+            }
+        }
+
+        private void UserCreateName_TextChanged(object sender, EventArgs e)
+        {
+            userCreateUsername = UserCreateName.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Create Username -> " + userCreateUsername);
+            }
+        }
+
+        private void UserCreateLocation_TextChanged(object sender, EventArgs e)
+        {
+            userCreateLocation = UserCreateLocation.Text;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Create Location -> " + userCreateLocation);
+            }
+        }
+
+        private void UserCreateMaleCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserCreateMaleCheckbox.Checked && UserCreateFemaleCheckbox.Checked)
+            {
+                UserCreateFemaleCheckbox.Checked = false;
+            }
+
+            userCreateSex = UserCreateMaleCheckbox.Checked ? "M" : "";
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Sex ->" + userCreateSex);
+            }
+
+        }
+
+        private void UserCreateFemaleCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserCreateMaleCheckbox.Checked && UserCreateFemaleCheckbox.Checked)
+            {
+                UserCreateMaleCheckbox.Checked = false;
+            }
+
+            userCreateSex = UserCreateFemaleCheckbox.Checked ? "F" : "";
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Sex -> " + userCreateSex);
+            }
+                
+        }
+
+        private void UserCreateBirthday_ValueChanged(object sender, EventArgs e)
+        {
+            userCreateDOB = UserCreateBirthday.Value;
+
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User DOB -> " + userCreateDOB);
+            }
+        }
+
+        private void UserCreateIsAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserCreateIsAdmin.Checked)
+            {
+                userIsadmin = "1";
+            } else
+            {
+                userIsadmin = "0";
+            }
+            
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Is Admin -> " + userIsadmin);
+            }
+        }
+
+        private void CreateUserBtn_Click(object sender, EventArgs e)
+        {
+            if (userCreateUsername == "" || userCreateLocation == "" || userCreateSex == "" || userCreateDOB == null)
+            {
+                CreationStatus.Text = "Please fill out all fields";
+                return;
+            }
+
+            String command = $"EXEC CreateUser @Name = '{userCreateUsername}', @Location = '{userCreateLocation}', @Sex  = '{userCreateSex}', @Birthday = '{userCreateDOB.ToString("yyyy-MM-dd")}', @IsAdmin = '{userIsadmin}'";
+
+            try
+            {
+                conn.Open();
+                SqlCommand sqlCmd = new SqlCommand(command, conn);
+                sqlCmd.ExecuteNonQuery();
+                CreationStatus.Text = "User created successfully";
+                resetUserCreate();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                CreationStatus.Text = "Error creating user";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            updateUsers();
+        }
+         
+        private int UserRemoveAsID = -1;
+        private void UserRemoveBtn_Click(object sender, EventArgs e)
+        {
+            if (UserRemoveAsID == -1 || selectedUser == -1)
+            {
+                UserRemoveStatus.Text = "Please select a user to remove and a user to remove as";
+                return;
+            }
+
+            String command = $"EXEC RemoveUser @UserID = {selectedUser}, @AdminID = {UserRemoveAsID}";
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Remove Command -> " + command);
+            }
+            try
+            {
+                conn.Open();
+                SqlCommand sqlCmd = new SqlCommand(command, conn);
+                sqlCmd.ExecuteNonQuery();
+                UserRemoveStatus.Text = "User removed successfully";
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                UserRemoveStatus.Text = "Error removing user";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            updateUsers();
+            UserList.Items.Clear();
+            requestUserList();
+            selectedUser = -1;
+        }
+
+        private void UserRemoveAs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UserRemoveAsID = userDict[UserRemoveAs.SelectedItem.ToString()];
+            if (debug)
+            {
+                Console.WriteLine("DEBUG: User Remove As -> " + UserRemoveAsID);
+            }
+        }
+    }
+}
+
+public class ScoreItem
+{
+    public int ID { get; set; }
+    public String Score { get; set; }
+    public string DisplayName { get; set; }
+
+    public override string ToString()
+    {
+        return DisplayName;
     }
 }

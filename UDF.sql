@@ -20,6 +20,7 @@ BEGIN
     FROM [Users]
     WHERE ID = @UserID
 
+    
     RETURN @IsAdmin
 END;
 GO

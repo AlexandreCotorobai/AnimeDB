@@ -213,7 +213,7 @@ BEGIN
         RETURN;
     END;
 
-    -- Get the next available Staff ID
+    -- Get the next available User ID
     SELECT @UserID = ISNULL(MAX(ID), 0) + 1
     FROM Users;
 

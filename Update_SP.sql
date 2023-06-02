@@ -155,6 +155,7 @@ BEGIN
         RAISERROR ('Access denied. User is not an admin.', 11,1);
         RETURN;
     END;
+    
     -- Check if the provided Studio name already exists in the Studios table
     IF EXISTS (SELECT 1
     FROM Studio

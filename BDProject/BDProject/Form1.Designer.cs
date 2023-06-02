@@ -36,6 +36,10 @@
             this.AnimeBtn = new System.Windows.Forms.Button();
             this.StaffTab = new System.Windows.Forms.TabControl();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.RemoveStaffStatus = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.StaffRemoveAs = new System.Windows.Forms.ComboBox();
+            this.RemoveStaff = new System.Windows.Forms.Button();
             this.label76 = new System.Windows.Forms.Label();
             this.StaffListPage = new System.Windows.Forms.NumericUpDown();
             this.StaffApplyFilterBtn = new System.Windows.Forms.Button();
@@ -76,6 +80,10 @@
             this.StaffCreateName = new System.Windows.Forms.TextBox();
             this.StudioTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.RemoveStudioStatus = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.RemoveStudioAs = new System.Windows.Forms.ComboBox();
+            this.RemoveStudioBtn = new System.Windows.Forms.Button();
             this.label69 = new System.Windows.Forms.Label();
             this.StudioPage = new System.Windows.Forms.NumericUpDown();
             this.StudioApplyFilterBtn = new System.Windows.Forms.Button();
@@ -107,6 +115,7 @@
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.CreateStudioStatus = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.StudioCreateName = new System.Windows.Forms.TextBox();
             this.StudioCreateAs = new System.Windows.Forms.ComboBox();
@@ -120,6 +129,10 @@
             this.StudioCreateAltName = new System.Windows.Forms.TextBox();
             this.CharactersTab = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.CharRemoveStatus = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.CharRemoveAs = new System.Windows.Forms.ComboBox();
+            this.CharRemoveBtn = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.CharacterListPage = new System.Windows.Forms.NumericUpDown();
             this.CharacterApplyFilterBtn = new System.Windows.Forms.Button();
@@ -168,6 +181,10 @@
             this.CharacterCreateEntry = new System.Windows.Forms.Button();
             this.AnimeTab = new System.Windows.Forms.TabControl();
             this.AnimeList = new System.Windows.Forms.TabPage();
+            this.AnimeRemoveStatus = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.AnimeRemoveAs = new System.Windows.Forms.ComboBox();
+            this.AnimeRemoveBtn = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.AnimeListPage = new System.Windows.Forms.NumericUpDown();
             this.AnimeApplyFilterbtn = new System.Windows.Forms.Button();
@@ -267,9 +284,13 @@
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UsersTab = new System.Windows.Forms.TabControl();
             this.UserListTab = new System.Windows.Forms.TabPage();
+            this.UserRemoveStatus = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.UserRemoveAs = new System.Windows.Forms.ComboBox();
+            this.UserRemoveBtn = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.UserListPage = new System.Windows.Forms.NumericUpDown();
+            this.UsersApplyFilterBtn = new System.Windows.Forms.Button();
             this.label93 = new System.Windows.Forms.Label();
             this.UserBirthdayFilter = new System.Windows.Forms.DateTimePicker();
             this.UserFemaleFilter = new System.Windows.Forms.CheckBox();
@@ -285,19 +306,23 @@
             this.label96 = new System.Windows.Forms.Label();
             this.UserList = new System.Windows.Forms.ListView();
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UserDetailsTab = new System.Windows.Forms.TabPage();
+            this.UserUpdateStatus = new System.Windows.Forms.Label();
+            this.RatingStatus = new System.Windows.Forms.Label();
+            this.RemoveWatchedBtn = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
+            this.UserDetailsAddScoreBtn = new System.Windows.Forms.Button();
+            this.UserSelectNewAnimeRating = new System.Windows.Forms.ComboBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.addRating = new System.Windows.Forms.NumericUpDown();
             this.UserDetailsIsAdmin = new System.Windows.Forms.CheckBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.UserDetailsBirthday = new System.Windows.Forms.DateTimePicker();
             this.UserDetailsUpdateScoreBtn = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.UserDetailsAnimeRating = new System.Windows.Forms.NumericUpDown();
@@ -305,9 +330,6 @@
             this.UserDetailsSelAnime = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.UserDetailsAnimeList = new System.Windows.Forms.ListBox();
-            this.UserDetailsImageURL = new System.Windows.Forms.TextBox();
-            this.label103 = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
             this.UserDetailsLocation = new System.Windows.Forms.TextBox();
             this.label101 = new System.Windows.Forms.Label();
             this.UserDetailsFemale = new System.Windows.Forms.CheckBox();
@@ -320,8 +342,8 @@
             this.label109 = new System.Windows.Forms.Label();
             this.UserDetailsID = new System.Windows.Forms.TextBox();
             this.label110 = new System.Windows.Forms.Label();
-            this.UserDetailsImage = new System.Windows.Forms.PictureBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.CreationStatus = new System.Windows.Forms.Label();
             this.UserCreateIsAdmin = new System.Windows.Forms.CheckBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
@@ -333,14 +355,9 @@
             this.label36 = new System.Windows.Forms.Label();
             this.UserCreateName = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.label111 = new System.Windows.Forms.Label();
-            this.UserCreateImagePreview = new System.Windows.Forms.PictureBox();
-            this.UserCreateImageURL = new System.Windows.Forms.TextBox();
-            this.label112 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
+            this.CreateUserBtn = new System.Windows.Forms.Button();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.CreateStudioStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.StaffTab.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -368,12 +385,11 @@
             this.AnimeComments.SuspendLayout();
             this.UsersTab.SuspendLayout();
             this.UserListTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserListPage)).BeginInit();
             this.UserDetailsTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserDetailsAnimeRating)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserDetailsImage)).BeginInit();
             this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserCreateImagePreview)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -454,6 +470,10 @@
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.RemoveStaffStatus);
+            this.tabPage14.Controls.Add(this.label61);
+            this.tabPage14.Controls.Add(this.StaffRemoveAs);
+            this.tabPage14.Controls.Add(this.RemoveStaff);
             this.tabPage14.Controls.Add(this.label76);
             this.tabPage14.Controls.Add(this.StaffListPage);
             this.tabPage14.Controls.Add(this.StaffApplyFilterBtn);
@@ -471,6 +491,44 @@
             this.tabPage14.TabIndex = 0;
             this.tabPage14.Text = "List";
             this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // RemoveStaffStatus
+            // 
+            this.RemoveStaffStatus.AutoSize = true;
+            this.RemoveStaffStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.RemoveStaffStatus.Location = new System.Drawing.Point(892, 394);
+            this.RemoveStaffStatus.Name = "RemoveStaffStatus";
+            this.RemoveStaffStatus.Size = new System.Drawing.Size(0, 20);
+            this.RemoveStaffStatus.TabIndex = 66;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label61.Location = new System.Drawing.Point(901, 291);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(81, 20);
+            this.label61.TabIndex = 65;
+            this.label61.Text = "Remove as";
+            // 
+            // StaffRemoveAs
+            // 
+            this.StaffRemoveAs.FormattingEnabled = true;
+            this.StaffRemoveAs.Location = new System.Drawing.Point(896, 311);
+            this.StaffRemoveAs.Name = "StaffRemoveAs";
+            this.StaffRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.StaffRemoveAs.TabIndex = 64;
+            this.StaffRemoveAs.SelectedIndexChanged += new System.EventHandler(this.StaffRemoveAs_SelectedIndexChanged);
+            // 
+            // RemoveStaff
+            // 
+            this.RemoveStaff.Location = new System.Drawing.Point(896, 349);
+            this.RemoveStaff.Name = "RemoveStaff";
+            this.RemoveStaff.Size = new System.Drawing.Size(212, 37);
+            this.RemoveStaff.TabIndex = 63;
+            this.RemoveStaff.Text = "Remove Entry";
+            this.RemoveStaff.UseVisualStyleBackColor = true;
+            this.RemoveStaff.Click += new System.EventHandler(this.RemoveStaff_Click);
             // 
             // label76
             // 
@@ -872,6 +930,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.RemoveStudioStatus);
+            this.tabPage1.Controls.Add(this.label77);
+            this.tabPage1.Controls.Add(this.RemoveStudioAs);
+            this.tabPage1.Controls.Add(this.RemoveStudioBtn);
             this.tabPage1.Controls.Add(this.label69);
             this.tabPage1.Controls.Add(this.StudioPage);
             this.tabPage1.Controls.Add(this.StudioApplyFilterBtn);
@@ -890,6 +952,44 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "List";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // RemoveStudioStatus
+            // 
+            this.RemoveStudioStatus.AutoSize = true;
+            this.RemoveStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.RemoveStudioStatus.Location = new System.Drawing.Point(901, 405);
+            this.RemoveStudioStatus.Name = "RemoveStudioStatus";
+            this.RemoveStudioStatus.Size = new System.Drawing.Size(0, 20);
+            this.RemoveStudioStatus.TabIndex = 70;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label77.Location = new System.Drawing.Point(912, 313);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(81, 20);
+            this.label77.TabIndex = 69;
+            this.label77.Text = "Remove as";
+            // 
+            // RemoveStudioAs
+            // 
+            this.RemoveStudioAs.FormattingEnabled = true;
+            this.RemoveStudioAs.Location = new System.Drawing.Point(907, 333);
+            this.RemoveStudioAs.Name = "RemoveStudioAs";
+            this.RemoveStudioAs.Size = new System.Drawing.Size(212, 21);
+            this.RemoveStudioAs.TabIndex = 68;
+            this.RemoveStudioAs.SelectedIndexChanged += new System.EventHandler(this.RemoveStudioAs_SelectedIndexChanged);
+            // 
+            // RemoveStudioBtn
+            // 
+            this.RemoveStudioBtn.Location = new System.Drawing.Point(905, 360);
+            this.RemoveStudioBtn.Name = "RemoveStudioBtn";
+            this.RemoveStudioBtn.Size = new System.Drawing.Size(214, 37);
+            this.RemoveStudioBtn.TabIndex = 67;
+            this.RemoveStudioBtn.Text = "Remove Entry";
+            this.RemoveStudioBtn.UseVisualStyleBackColor = true;
+            this.RemoveStudioBtn.Click += new System.EventHandler(this.RemoveStudioBtn_Click);
             // 
             // label69
             // 
@@ -1208,6 +1308,15 @@
             this.tabPage3.Text = "Create";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // CreateStudioStatus
+            // 
+            this.CreateStudioStatus.AutoSize = true;
+            this.CreateStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CreateStudioStatus.Location = new System.Drawing.Point(897, 149);
+            this.CreateStudioStatus.Name = "CreateStudioStatus";
+            this.CreateStudioStatus.Size = new System.Drawing.Size(0, 20);
+            this.CreateStudioStatus.TabIndex = 77;
+            // 
             // label59
             // 
             this.label59.AutoSize = true;
@@ -1325,6 +1434,10 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.CharRemoveStatus);
+            this.tabPage7.Controls.Add(this.label78);
+            this.tabPage7.Controls.Add(this.CharRemoveAs);
+            this.tabPage7.Controls.Add(this.CharRemoveBtn);
             this.tabPage7.Controls.Add(this.label24);
             this.tabPage7.Controls.Add(this.CharacterListPage);
             this.tabPage7.Controls.Add(this.CharacterApplyFilterBtn);
@@ -1344,6 +1457,44 @@
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "List";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // CharRemoveStatus
+            // 
+            this.CharRemoveStatus.AutoSize = true;
+            this.CharRemoveStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CharRemoveStatus.Location = new System.Drawing.Point(907, 405);
+            this.CharRemoveStatus.Name = "CharRemoveStatus";
+            this.CharRemoveStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharRemoveStatus.TabIndex = 74;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label78.Location = new System.Drawing.Point(918, 313);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(81, 20);
+            this.label78.TabIndex = 73;
+            this.label78.Text = "Remove as";
+            // 
+            // CharRemoveAs
+            // 
+            this.CharRemoveAs.FormattingEnabled = true;
+            this.CharRemoveAs.Location = new System.Drawing.Point(913, 333);
+            this.CharRemoveAs.Name = "CharRemoveAs";
+            this.CharRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.CharRemoveAs.TabIndex = 72;
+            this.CharRemoveAs.SelectedIndexChanged += new System.EventHandler(this.CharRemoveAs_SelectedIndexChanged);
+            // 
+            // CharRemoveBtn
+            // 
+            this.CharRemoveBtn.Location = new System.Drawing.Point(911, 360);
+            this.CharRemoveBtn.Name = "CharRemoveBtn";
+            this.CharRemoveBtn.Size = new System.Drawing.Size(214, 37);
+            this.CharRemoveBtn.TabIndex = 71;
+            this.CharRemoveBtn.Text = "Remove Entry";
+            this.CharRemoveBtn.UseVisualStyleBackColor = true;
+            this.CharRemoveBtn.Click += new System.EventHandler(this.CharRemoveBtn_Click);
             // 
             // label24
             // 
@@ -1830,6 +1981,10 @@
             // 
             // AnimeList
             // 
+            this.AnimeList.Controls.Add(this.AnimeRemoveStatus);
+            this.AnimeList.Controls.Add(this.label79);
+            this.AnimeList.Controls.Add(this.AnimeRemoveAs);
+            this.AnimeList.Controls.Add(this.AnimeRemoveBtn);
             this.AnimeList.Controls.Add(this.label18);
             this.AnimeList.Controls.Add(this.AnimeListPage);
             this.AnimeList.Controls.Add(this.AnimeApplyFilterbtn);
@@ -1851,6 +2006,44 @@
             this.AnimeList.TabIndex = 0;
             this.AnimeList.Text = "List";
             this.AnimeList.UseVisualStyleBackColor = true;
+            // 
+            // AnimeRemoveStatus
+            // 
+            this.AnimeRemoveStatus.AutoSize = true;
+            this.AnimeRemoveStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.AnimeRemoveStatus.Location = new System.Drawing.Point(909, 397);
+            this.AnimeRemoveStatus.Name = "AnimeRemoveStatus";
+            this.AnimeRemoveStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeRemoveStatus.TabIndex = 70;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label79.Location = new System.Drawing.Point(915, 309);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(81, 20);
+            this.label79.TabIndex = 69;
+            this.label79.Text = "Remove as";
+            // 
+            // AnimeRemoveAs
+            // 
+            this.AnimeRemoveAs.FormattingEnabled = true;
+            this.AnimeRemoveAs.Location = new System.Drawing.Point(910, 329);
+            this.AnimeRemoveAs.Name = "AnimeRemoveAs";
+            this.AnimeRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.AnimeRemoveAs.TabIndex = 68;
+            this.AnimeRemoveAs.SelectedIndexChanged += new System.EventHandler(this.AnimeRemoveAs_SelectedIndexChanged);
+            // 
+            // AnimeRemoveBtn
+            // 
+            this.AnimeRemoveBtn.Location = new System.Drawing.Point(910, 354);
+            this.AnimeRemoveBtn.Name = "AnimeRemoveBtn";
+            this.AnimeRemoveBtn.Size = new System.Drawing.Size(212, 37);
+            this.AnimeRemoveBtn.TabIndex = 67;
+            this.AnimeRemoveBtn.Text = "Remove Entry";
+            this.AnimeRemoveBtn.UseVisualStyleBackColor = true;
+            this.AnimeRemoveBtn.Click += new System.EventHandler(this.AnimeRemoveBtn_Click);
             // 
             // label18
             // 
@@ -1882,7 +2075,7 @@
             // 
             // AnimeApplyFilterbtn
             // 
-            this.AnimeApplyFilterbtn.Location = new System.Drawing.Point(913, 289);
+            this.AnimeApplyFilterbtn.Location = new System.Drawing.Point(911, 248);
             this.AnimeApplyFilterbtn.Name = "AnimeApplyFilterbtn";
             this.AnimeApplyFilterbtn.Size = new System.Drawing.Size(99, 50);
             this.AnimeApplyFilterbtn.TabIndex = 18;
@@ -1893,20 +2086,20 @@
             // AnimeFilterScore
             // 
             this.AnimeFilterScore.DecimalPlaces = 1;
-            this.AnimeFilterScore.Location = new System.Drawing.Point(909, 113);
+            this.AnimeFilterScore.Location = new System.Drawing.Point(914, 99);
             this.AnimeFilterScore.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.AnimeFilterScore.Name = "AnimeFilterScore";
-            this.AnimeFilterScore.Size = new System.Drawing.Size(215, 20);
+            this.AnimeFilterScore.Size = new System.Drawing.Size(211, 20);
             this.AnimeFilterScore.TabIndex = 17;
             this.AnimeFilterScore.ValueChanged += new System.EventHandler(this.AnimeFilterScore_ValueChanged);
             // 
             // ClearFilterButton
             // 
-            this.ClearFilterButton.Location = new System.Drawing.Point(1018, 289);
+            this.ClearFilterButton.Location = new System.Drawing.Point(1016, 248);
             this.ClearFilterButton.Name = "ClearFilterButton";
             this.ClearFilterButton.Size = new System.Drawing.Size(95, 50);
             this.ClearFilterButton.TabIndex = 16;
@@ -1918,7 +2111,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label20.Location = new System.Drawing.Point(908, 157);
+            this.label20.Location = new System.Drawing.Point(908, 132);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 20);
             this.label20.TabIndex = 15;
@@ -1927,9 +2120,9 @@
             // AnimeFilterAfterDate
             // 
             this.AnimeFilterAfterDate.CustomFormat = "dd-MM-yyyy";
-            this.AnimeFilterAfterDate.Location = new System.Drawing.Point(908, 177);
+            this.AnimeFilterAfterDate.Location = new System.Drawing.Point(913, 152);
             this.AnimeFilterAfterDate.Name = "AnimeFilterAfterDate";
-            this.AnimeFilterAfterDate.Size = new System.Drawing.Size(216, 20);
+            this.AnimeFilterAfterDate.Size = new System.Drawing.Size(211, 20);
             this.AnimeFilterAfterDate.TabIndex = 14;
             this.AnimeFilterAfterDate.ValueChanged += new System.EventHandler(this.AnimeFilterAfterDate_ValueChanged);
             // 
@@ -1937,7 +2130,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label19.Location = new System.Drawing.Point(908, 228);
+            this.label19.Location = new System.Drawing.Point(906, 187);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(93, 20);
             this.label19.TabIndex = 13;
@@ -1946,9 +2139,9 @@
             // AnimeFilterBeforeDate
             // 
             this.AnimeFilterBeforeDate.CustomFormat = "dd-MM-yyyy";
-            this.AnimeFilterBeforeDate.Location = new System.Drawing.Point(909, 251);
+            this.AnimeFilterBeforeDate.Location = new System.Drawing.Point(912, 210);
             this.AnimeFilterBeforeDate.Name = "AnimeFilterBeforeDate";
-            this.AnimeFilterBeforeDate.Size = new System.Drawing.Size(216, 20);
+            this.AnimeFilterBeforeDate.Size = new System.Drawing.Size(211, 20);
             this.AnimeFilterBeforeDate.TabIndex = 12;
             this.AnimeFilterBeforeDate.ValueChanged += new System.EventHandler(this.AnimeFilterBeforeDate_ValueChanged);
             // 
@@ -1956,7 +2149,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label17.Location = new System.Drawing.Point(909, 93);
+            this.label17.Location = new System.Drawing.Point(910, 79);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(75, 20);
             this.label17.TabIndex = 8;
@@ -2836,12 +3029,17 @@
             this.UsersTab.Size = new System.Drawing.Size(1152, 456);
             this.UsersTab.TabIndex = 11;
             this.UsersTab.Visible = false;
+            this.UsersTab.SelectedIndexChanged += new System.EventHandler(this.UsersTab_SelectedIndexChanged);
             // 
             // UserListTab
             // 
+            this.UserListTab.Controls.Add(this.UserRemoveStatus);
+            this.UserListTab.Controls.Add(this.label80);
+            this.UserListTab.Controls.Add(this.UserRemoveAs);
+            this.UserListTab.Controls.Add(this.UserRemoveBtn);
             this.UserListTab.Controls.Add(this.label66);
-            this.UserListTab.Controls.Add(this.numericUpDown1);
-            this.UserListTab.Controls.Add(this.button1);
+            this.UserListTab.Controls.Add(this.UserListPage);
+            this.UserListTab.Controls.Add(this.UsersApplyFilterBtn);
             this.UserListTab.Controls.Add(this.label93);
             this.UserListTab.Controls.Add(this.UserBirthdayFilter);
             this.UserListTab.Controls.Add(this.UserFemaleFilter);
@@ -2864,6 +3062,44 @@
             this.UserListTab.Text = "List";
             this.UserListTab.UseVisualStyleBackColor = true;
             // 
+            // UserRemoveStatus
+            // 
+            this.UserRemoveStatus.AutoSize = true;
+            this.UserRemoveStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.UserRemoveStatus.Location = new System.Drawing.Point(907, 403);
+            this.UserRemoveStatus.Name = "UserRemoveStatus";
+            this.UserRemoveStatus.Size = new System.Drawing.Size(0, 20);
+            this.UserRemoveStatus.TabIndex = 74;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label80.Location = new System.Drawing.Point(913, 315);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(81, 20);
+            this.label80.TabIndex = 73;
+            this.label80.Text = "Remove as";
+            // 
+            // UserRemoveAs
+            // 
+            this.UserRemoveAs.FormattingEnabled = true;
+            this.UserRemoveAs.Location = new System.Drawing.Point(908, 335);
+            this.UserRemoveAs.Name = "UserRemoveAs";
+            this.UserRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.UserRemoveAs.TabIndex = 72;
+            this.UserRemoveAs.SelectedIndexChanged += new System.EventHandler(this.UserRemoveAs_SelectedIndexChanged);
+            // 
+            // UserRemoveBtn
+            // 
+            this.UserRemoveBtn.Location = new System.Drawing.Point(908, 360);
+            this.UserRemoveBtn.Name = "UserRemoveBtn";
+            this.UserRemoveBtn.Size = new System.Drawing.Size(212, 37);
+            this.UserRemoveBtn.TabIndex = 71;
+            this.UserRemoveBtn.Text = "Remove Entry";
+            this.UserRemoveBtn.UseVisualStyleBackColor = true;
+            this.UserRemoveBtn.Click += new System.EventHandler(this.UserRemoveBtn_Click);
+            // 
             // label66
             // 
             this.label66.AutoSize = true;
@@ -2874,37 +3110,39 @@
             this.label66.TabIndex = 25;
             this.label66.Text = "Page";
             // 
-            // numericUpDown1
+            // UserListPage
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(757, 407);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.UserListPage.Location = new System.Drawing.Point(757, 407);
+            this.UserListPage.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 24;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.UserListPage.Name = "UserListPage";
+            this.UserListPage.Size = new System.Drawing.Size(120, 20);
+            this.UserListPage.TabIndex = 24;
+            this.UserListPage.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.UserListPage.ValueChanged += new System.EventHandler(this.UserListPage_ValueChanged);
             // 
-            // button1
+            // UsersApplyFilterBtn
             // 
-            this.button1.Location = new System.Drawing.Point(905, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 50);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Clear Filter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.UsersApplyFilterBtn.Location = new System.Drawing.Point(906, 261);
+            this.UsersApplyFilterBtn.Name = "UsersApplyFilterBtn";
+            this.UsersApplyFilterBtn.Size = new System.Drawing.Size(107, 50);
+            this.UsersApplyFilterBtn.TabIndex = 21;
+            this.UsersApplyFilterBtn.Text = "Apply Filter";
+            this.UsersApplyFilterBtn.UseVisualStyleBackColor = true;
+            this.UsersApplyFilterBtn.Click += new System.EventHandler(this.UsersApplyFilterBtn_Click);
             // 
             // label93
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label93.Location = new System.Drawing.Point(912, 141);
+            this.label93.Location = new System.Drawing.Point(910, 119);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(87, 20);
             this.label93.TabIndex = 20;
@@ -2914,45 +3152,49 @@
             // 
             this.UserBirthdayFilter.CustomFormat = "dd/MM";
             this.UserBirthdayFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.UserBirthdayFilter.Location = new System.Drawing.Point(909, 159);
+            this.UserBirthdayFilter.Location = new System.Drawing.Point(906, 142);
             this.UserBirthdayFilter.Name = "UserBirthdayFilter";
             this.UserBirthdayFilter.Size = new System.Drawing.Size(216, 20);
             this.UserBirthdayFilter.TabIndex = 19;
+            this.UserBirthdayFilter.ValueChanged += new System.EventHandler(this.UserBirthdayFilter_ValueChanged);
             // 
             // UserFemaleFilter
             // 
             this.UserFemaleFilter.AutoSize = true;
-            this.UserFemaleFilter.Location = new System.Drawing.Point(1053, 114);
+            this.UserFemaleFilter.Location = new System.Drawing.Point(1053, 93);
             this.UserFemaleFilter.Name = "UserFemaleFilter";
             this.UserFemaleFilter.Size = new System.Drawing.Size(60, 17);
             this.UserFemaleFilter.TabIndex = 18;
             this.UserFemaleFilter.Text = "Female";
             this.UserFemaleFilter.UseVisualStyleBackColor = true;
+            this.UserFemaleFilter.CheckedChanged += new System.EventHandler(this.UserFemaleFilter_CheckedChanged);
             // 
             // UserMaleFilter
             // 
             this.UserMaleFilter.AutoSize = true;
-            this.UserMaleFilter.Location = new System.Drawing.Point(909, 116);
+            this.UserMaleFilter.Location = new System.Drawing.Point(909, 95);
             this.UserMaleFilter.Name = "UserMaleFilter";
             this.UserMaleFilter.Size = new System.Drawing.Size(49, 17);
             this.UserMaleFilter.TabIndex = 17;
             this.UserMaleFilter.Text = "Male";
             this.UserMaleFilter.UseVisualStyleBackColor = true;
+            this.UserMaleFilter.CheckedChanged += new System.EventHandler(this.UserMaleFilter_CheckedChanged);
             // 
             // UserClearFilter
             // 
-            this.UserClearFilter.Location = new System.Drawing.Point(1018, 310);
+            this.UserClearFilter.Location = new System.Drawing.Point(1019, 261);
             this.UserClearFilter.Name = "UserClearFilter";
             this.UserClearFilter.Size = new System.Drawing.Size(108, 50);
             this.UserClearFilter.TabIndex = 16;
             this.UserClearFilter.Text = "Clear Filter";
             this.UserClearFilter.UseVisualStyleBackColor = true;
+            this.UserClearFilter.Click += new System.EventHandler(this.UserClearFilter_Click);
             // 
             // label91
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label91.Location = new System.Drawing.Point(912, 199);
+            this.label91.Location = new System.Drawing.Point(908, 164);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(98, 20);
             this.label91.TabIndex = 15;
@@ -2960,16 +3202,17 @@
             // 
             // UserCreatedAfterFilter
             // 
-            this.UserCreatedAfterFilter.Location = new System.Drawing.Point(909, 216);
+            this.UserCreatedAfterFilter.Location = new System.Drawing.Point(904, 187);
             this.UserCreatedAfterFilter.Name = "UserCreatedAfterFilter";
             this.UserCreatedAfterFilter.Size = new System.Drawing.Size(216, 20);
             this.UserCreatedAfterFilter.TabIndex = 14;
+            this.UserCreatedAfterFilter.ValueChanged += new System.EventHandler(this.UserCreatedAfterFilter_ValueChanged);
             // 
             // label92
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label92.Location = new System.Drawing.Point(912, 260);
+            this.label92.Location = new System.Drawing.Point(908, 214);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(109, 20);
             this.label92.TabIndex = 13;
@@ -2977,16 +3220,17 @@
             // 
             // UserCreatedBeforeFilter
             // 
-            this.UserCreatedBeforeFilter.Location = new System.Drawing.Point(909, 277);
+            this.UserCreatedBeforeFilter.Location = new System.Drawing.Point(905, 236);
             this.UserCreatedBeforeFilter.Name = "UserCreatedBeforeFilter";
             this.UserCreatedBeforeFilter.Size = new System.Drawing.Size(216, 20);
             this.UserCreatedBeforeFilter.TabIndex = 12;
+            this.UserCreatedBeforeFilter.ValueChanged += new System.EventHandler(this.UserCreatedBeforeFilter_ValueChanged);
             // 
             // label94
             // 
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label94.Location = new System.Drawing.Point(909, 95);
+            this.label94.Location = new System.Drawing.Point(909, 74);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(32, 20);
             this.label94.TabIndex = 8;
@@ -3008,6 +3252,7 @@
             this.UserNameFilter.Name = "UserNameFilter";
             this.UserNameFilter.Size = new System.Drawing.Size(216, 20);
             this.UserNameFilter.TabIndex = 6;
+            this.UserNameFilter.TextChanged += new System.EventHandler(this.UserNameFilter_TextChanged);
             // 
             // label96
             // 
@@ -3023,32 +3268,25 @@
             // 
             this.UserList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader29,
-            this.columnHeader30,
             this.columnHeader31,
             this.columnHeader32,
             this.columnHeader33,
-            this.columnHeader34,
-            this.columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37});
+            this.columnHeader34});
+            this.UserList.FullRowSelect = true;
             this.UserList.HideSelection = false;
             this.UserList.Location = new System.Drawing.Point(5, 5);
+            this.UserList.MultiSelect = false;
             this.UserList.Name = "UserList";
             this.UserList.Size = new System.Drawing.Size(872, 399);
             this.UserList.TabIndex = 0;
             this.UserList.UseCompatibleStateImageBehavior = false;
             this.UserList.View = System.Windows.Forms.View.Details;
+            this.UserList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.UserList_ItemSelectionChanged);
             // 
             // columnHeader29
             // 
             this.columnHeader29.Text = "";
             this.columnHeader29.Width = 0;
-            // 
-            // columnHeader30
-            // 
-            this.columnHeader30.Text = "Image";
-            this.columnHeader30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader30.Width = 150;
             // 
             // columnHeader31
             // 
@@ -3060,44 +3298,34 @@
             // 
             this.columnHeader32.Text = "Sex";
             this.columnHeader32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader32.Width = 100;
+            this.columnHeader32.Width = 213;
             // 
             // columnHeader33
             // 
             this.columnHeader33.Text = "Created At";
             this.columnHeader33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader33.Width = 100;
+            this.columnHeader33.Width = 219;
             // 
             // columnHeader34
             // 
             this.columnHeader34.Text = "Birthday";
             this.columnHeader34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader34.Width = 100;
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Text = "Location";
-            this.columnHeader35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader35.Width = 104;
-            // 
-            // columnHeader36
-            // 
-            this.columnHeader36.Text = "Is Admin";
-            this.columnHeader36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader36.Width = 130;
-            // 
-            // columnHeader37
-            // 
-            this.columnHeader37.Text = "Password";
-            this.columnHeader37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader37.Width = 130;
+            this.columnHeader34.Width = 213;
             // 
             // UserDetailsTab
             // 
+            this.UserDetailsTab.Controls.Add(this.UserUpdateStatus);
+            this.UserDetailsTab.Controls.Add(this.RatingStatus);
+            this.UserDetailsTab.Controls.Add(this.RemoveWatchedBtn);
+            this.UserDetailsTab.Controls.Add(this.label54);
+            this.UserDetailsTab.Controls.Add(this.UserDetailsAddScoreBtn);
+            this.UserDetailsTab.Controls.Add(this.UserSelectNewAnimeRating);
+            this.UserDetailsTab.Controls.Add(this.label53);
+            this.UserDetailsTab.Controls.Add(this.addRating);
             this.UserDetailsTab.Controls.Add(this.UserDetailsIsAdmin);
             this.UserDetailsTab.Controls.Add(this.label39);
             this.UserDetailsTab.Controls.Add(this.label34);
-            this.UserDetailsTab.Controls.Add(this.dateTimePicker1);
+            this.UserDetailsTab.Controls.Add(this.UserDetailsBirthday);
             this.UserDetailsTab.Controls.Add(this.UserDetailsUpdateScoreBtn);
             this.UserDetailsTab.Controls.Add(this.label33);
             this.UserDetailsTab.Controls.Add(this.UserDetailsAnimeRating);
@@ -3105,9 +3333,6 @@
             this.UserDetailsTab.Controls.Add(this.UserDetailsSelAnime);
             this.UserDetailsTab.Controls.Add(this.label31);
             this.UserDetailsTab.Controls.Add(this.UserDetailsAnimeList);
-            this.UserDetailsTab.Controls.Add(this.UserDetailsImageURL);
-            this.UserDetailsTab.Controls.Add(this.label103);
-            this.UserDetailsTab.Controls.Add(this.label102);
             this.UserDetailsTab.Controls.Add(this.UserDetailsLocation);
             this.UserDetailsTab.Controls.Add(this.label101);
             this.UserDetailsTab.Controls.Add(this.UserDetailsFemale);
@@ -3120,7 +3345,6 @@
             this.UserDetailsTab.Controls.Add(this.label109);
             this.UserDetailsTab.Controls.Add(this.UserDetailsID);
             this.UserDetailsTab.Controls.Add(this.label110);
-            this.UserDetailsTab.Controls.Add(this.UserDetailsImage);
             this.UserDetailsTab.Location = new System.Drawing.Point(4, 22);
             this.UserDetailsTab.Name = "UserDetailsTab";
             this.UserDetailsTab.Padding = new System.Windows.Forms.Padding(3);
@@ -3129,11 +3353,92 @@
             this.UserDetailsTab.Text = "Details";
             this.UserDetailsTab.UseVisualStyleBackColor = true;
             // 
+            // UserUpdateStatus
+            // 
+            this.UserUpdateStatus.AutoSize = true;
+            this.UserUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.UserUpdateStatus.Location = new System.Drawing.Point(879, 109);
+            this.UserUpdateStatus.Name = "UserUpdateStatus";
+            this.UserUpdateStatus.Size = new System.Drawing.Size(0, 20);
+            this.UserUpdateStatus.TabIndex = 59;
+            // 
+            // RatingStatus
+            // 
+            this.RatingStatus.AutoSize = true;
+            this.RatingStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.RatingStatus.Location = new System.Drawing.Point(520, 391);
+            this.RatingStatus.Name = "RatingStatus";
+            this.RatingStatus.Size = new System.Drawing.Size(0, 20);
+            this.RatingStatus.TabIndex = 58;
+            // 
+            // RemoveWatchedBtn
+            // 
+            this.RemoveWatchedBtn.Location = new System.Drawing.Point(419, 246);
+            this.RemoveWatchedBtn.Name = "RemoveWatchedBtn";
+            this.RemoveWatchedBtn.Size = new System.Drawing.Size(76, 37);
+            this.RemoveWatchedBtn.TabIndex = 57;
+            this.RemoveWatchedBtn.Text = "Remove Rating";
+            this.RemoveWatchedBtn.UseVisualStyleBackColor = true;
+            this.RemoveWatchedBtn.Click += new System.EventHandler(this.RemoveWatchedBtn_Click);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label54.Location = new System.Drawing.Point(234, 327);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(131, 20);
+            this.label54.TabIndex = 56;
+            this.label54.Text = "Add Anime Rating";
+            // 
+            // UserDetailsAddScoreBtn
+            // 
+            this.UserDetailsAddScoreBtn.Location = new System.Drawing.Point(347, 377);
+            this.UserDetailsAddScoreBtn.Name = "UserDetailsAddScoreBtn";
+            this.UserDetailsAddScoreBtn.Size = new System.Drawing.Size(148, 37);
+            this.UserDetailsAddScoreBtn.TabIndex = 55;
+            this.UserDetailsAddScoreBtn.Text = "Add Rating";
+            this.UserDetailsAddScoreBtn.UseVisualStyleBackColor = true;
+            this.UserDetailsAddScoreBtn.Click += new System.EventHandler(this.UserDetailsAddScoreBtn_Click);
+            // 
+            // UserSelectNewAnimeRating
+            // 
+            this.UserSelectNewAnimeRating.FormattingEnabled = true;
+            this.UserSelectNewAnimeRating.Location = new System.Drawing.Point(234, 350);
+            this.UserSelectNewAnimeRating.Name = "UserSelectNewAnimeRating";
+            this.UserSelectNewAnimeRating.Size = new System.Drawing.Size(261, 21);
+            this.UserSelectNewAnimeRating.TabIndex = 54;
+            this.UserSelectNewAnimeRating.SelectedIndexChanged += new System.EventHandler(this.UserSelectNewAnimeRating_SelectedIndexChanged);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label53.Location = new System.Drawing.Point(234, 374);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(85, 20);
+            this.label53.TabIndex = 53;
+            this.label53.Text = "Your Rating";
+            // 
+            // addRating
+            // 
+            this.addRating.DecimalPlaces = 1;
+            this.addRating.Location = new System.Drawing.Point(234, 394);
+            this.addRating.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.addRating.Name = "addRating";
+            this.addRating.Size = new System.Drawing.Size(85, 20);
+            this.addRating.TabIndex = 52;
+            this.addRating.ValueChanged += new System.EventHandler(this.addRating_ValueChanged);
+            // 
             // UserDetailsIsAdmin
             // 
             this.UserDetailsIsAdmin.AutoSize = true;
             this.UserDetailsIsAdmin.Enabled = false;
-            this.UserDetailsIsAdmin.Location = new System.Drawing.Point(573, 134);
+            this.UserDetailsIsAdmin.Location = new System.Drawing.Point(510, 140);
             this.UserDetailsIsAdmin.Name = "UserDetailsIsAdmin";
             this.UserDetailsIsAdmin.Size = new System.Drawing.Size(44, 17);
             this.UserDetailsIsAdmin.TabIndex = 51;
@@ -3144,7 +3449,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label39.Location = new System.Drawing.Point(573, 111);
+            this.label39.Location = new System.Drawing.Point(510, 117);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(67, 20);
             this.label39.TabIndex = 50;
@@ -3154,35 +3459,37 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label34.Location = new System.Drawing.Point(573, 58);
+            this.label34.Location = new System.Drawing.Point(510, 58);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(64, 20);
             this.label34.TabIndex = 49;
             this.label34.Text = "Birthday";
             // 
-            // dateTimePicker1
+            // UserDetailsBirthday
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(571, 75);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
-            this.dateTimePicker1.TabIndex = 48;
+            this.UserDetailsBirthday.CustomFormat = "dd/MM";
+            this.UserDetailsBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.UserDetailsBirthday.Location = new System.Drawing.Point(508, 81);
+            this.UserDetailsBirthday.Name = "UserDetailsBirthday";
+            this.UserDetailsBirthday.Size = new System.Drawing.Size(216, 20);
+            this.UserDetailsBirthday.TabIndex = 48;
+            this.UserDetailsBirthday.ValueChanged += new System.EventHandler(this.UserDetailsBirthday_ValueChanged);
             // 
             // UserDetailsUpdateScoreBtn
             // 
-            this.UserDetailsUpdateScoreBtn.Location = new System.Drawing.Point(231, 376);
+            this.UserDetailsUpdateScoreBtn.Location = new System.Drawing.Point(337, 246);
             this.UserDetailsUpdateScoreBtn.Name = "UserDetailsUpdateScoreBtn";
-            this.UserDetailsUpdateScoreBtn.Size = new System.Drawing.Size(261, 37);
+            this.UserDetailsUpdateScoreBtn.Size = new System.Drawing.Size(76, 37);
             this.UserDetailsUpdateScoreBtn.TabIndex = 47;
             this.UserDetailsUpdateScoreBtn.Text = "Update Rating";
             this.UserDetailsUpdateScoreBtn.UseVisualStyleBackColor = true;
+            this.UserDetailsUpdateScoreBtn.Click += new System.EventHandler(this.UserDetailsUpdateScoreBtn_Click);
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label33.Location = new System.Drawing.Point(231, 321);
+            this.label33.Location = new System.Drawing.Point(234, 243);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(85, 20);
             this.label33.TabIndex = 46;
@@ -3191,21 +3498,22 @@
             // UserDetailsAnimeRating
             // 
             this.UserDetailsAnimeRating.DecimalPlaces = 1;
-            this.UserDetailsAnimeRating.Location = new System.Drawing.Point(231, 341);
+            this.UserDetailsAnimeRating.Location = new System.Drawing.Point(234, 263);
             this.UserDetailsAnimeRating.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.UserDetailsAnimeRating.Name = "UserDetailsAnimeRating";
-            this.UserDetailsAnimeRating.Size = new System.Drawing.Size(73, 20);
+            this.UserDetailsAnimeRating.Size = new System.Drawing.Size(85, 20);
             this.UserDetailsAnimeRating.TabIndex = 45;
+            this.UserDetailsAnimeRating.ValueChanged += new System.EventHandler(this.UserDetailsAnimeRating_ValueChanged);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label32.Location = new System.Drawing.Point(231, 189);
+            this.label32.Location = new System.Drawing.Point(233, 201);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(113, 20);
             this.label32.TabIndex = 44;
@@ -3213,7 +3521,7 @@
             // 
             // UserDetailsSelAnime
             // 
-            this.UserDetailsSelAnime.Location = new System.Drawing.Point(231, 211);
+            this.UserDetailsSelAnime.Location = new System.Drawing.Point(233, 220);
             this.UserDetailsSelAnime.Name = "UserDetailsSelAnime";
             this.UserDetailsSelAnime.ReadOnly = true;
             this.UserDetailsSelAnime.Size = new System.Drawing.Size(262, 20);
@@ -3236,46 +3544,21 @@
             this.UserDetailsAnimeList.Name = "UserDetailsAnimeList";
             this.UserDetailsAnimeList.Size = new System.Drawing.Size(205, 225);
             this.UserDetailsAnimeList.TabIndex = 41;
-            // 
-            // UserDetailsImageURL
-            // 
-            this.UserDetailsImageURL.Location = new System.Drawing.Point(155, 133);
-            this.UserDetailsImageURL.Name = "UserDetailsImageURL";
-            this.UserDetailsImageURL.Size = new System.Drawing.Size(337, 20);
-            this.UserDetailsImageURL.TabIndex = 40;
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label103.Location = new System.Drawing.Point(158, 115);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(81, 20);
-            this.label103.TabIndex = 39;
-            this.label103.Text = "Image URL";
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label102.Location = new System.Drawing.Point(12, 5);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(106, 20);
-            this.label102.TabIndex = 38;
-            this.label102.Text = "Image Preview";
+            this.UserDetailsAnimeList.SelectedIndexChanged += new System.EventHandler(this.UserDetailsAnimeList_SelectedIndexChanged);
             // 
             // UserDetailsLocation
             // 
-            this.UserDetailsLocation.Location = new System.Drawing.Point(277, 78);
+            this.UserDetailsLocation.Location = new System.Drawing.Point(207, 81);
             this.UserDetailsLocation.Name = "UserDetailsLocation";
             this.UserDetailsLocation.Size = new System.Drawing.Size(216, 20);
             this.UserDetailsLocation.TabIndex = 37;
+            this.UserDetailsLocation.TextChanged += new System.EventHandler(this.UserDetailsLocation_TextChanged);
             // 
             // label101
             // 
             this.label101.AutoSize = true;
             this.label101.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label101.Location = new System.Drawing.Point(279, 61);
+            this.label101.Location = new System.Drawing.Point(209, 64);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(66, 20);
             this.label101.TabIndex = 36;
@@ -3284,28 +3567,30 @@
             // UserDetailsFemale
             // 
             this.UserDetailsFemale.AutoSize = true;
-            this.UserDetailsFemale.Location = new System.Drawing.Point(207, 78);
+            this.UserDetailsFemale.Location = new System.Drawing.Point(73, 81);
             this.UserDetailsFemale.Name = "UserDetailsFemale";
             this.UserDetailsFemale.Size = new System.Drawing.Size(60, 17);
             this.UserDetailsFemale.TabIndex = 35;
             this.UserDetailsFemale.Text = "Female";
             this.UserDetailsFemale.UseVisualStyleBackColor = true;
+            this.UserDetailsFemale.CheckedChanged += new System.EventHandler(this.UserDetailsFemale_CheckedChanged);
             // 
             // UserDetailsMale
             // 
             this.UserDetailsMale.AutoSize = true;
-            this.UserDetailsMale.Location = new System.Drawing.Point(158, 78);
+            this.UserDetailsMale.Location = new System.Drawing.Point(24, 81);
             this.UserDetailsMale.Name = "UserDetailsMale";
             this.UserDetailsMale.Size = new System.Drawing.Size(49, 17);
             this.UserDetailsMale.TabIndex = 34;
             this.UserDetailsMale.Text = "Male";
             this.UserDetailsMale.UseVisualStyleBackColor = true;
+            this.UserDetailsMale.CheckedChanged += new System.EventHandler(this.UserDetailsMale_CheckedChanged);
             // 
             // label108
             // 
             this.label108.AutoSize = true;
             this.label108.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label108.Location = new System.Drawing.Point(158, 58);
+            this.label108.Location = new System.Drawing.Point(24, 61);
             this.label108.Name = "label108";
             this.label108.Size = new System.Drawing.Size(32, 20);
             this.label108.TabIndex = 33;
@@ -3314,25 +3599,26 @@
             // UserDetailsCreatedDate
             // 
             this.UserDetailsCreatedDate.Enabled = false;
-            this.UserDetailsCreatedDate.Location = new System.Drawing.Point(571, 29);
+            this.UserDetailsCreatedDate.Location = new System.Drawing.Point(508, 35);
             this.UserDetailsCreatedDate.Name = "UserDetailsCreatedDate";
             this.UserDetailsCreatedDate.Size = new System.Drawing.Size(216, 20);
             this.UserDetailsCreatedDate.TabIndex = 13;
             // 
             // UserDetailsUpdateInfoBtn
             // 
-            this.UserDetailsUpdateInfoBtn.Location = new System.Drawing.Point(874, 22);
+            this.UserDetailsUpdateInfoBtn.Location = new System.Drawing.Point(883, 61);
             this.UserDetailsUpdateInfoBtn.Name = "UserDetailsUpdateInfoBtn";
             this.UserDetailsUpdateInfoBtn.Size = new System.Drawing.Size(212, 37);
             this.UserDetailsUpdateInfoBtn.TabIndex = 30;
             this.UserDetailsUpdateInfoBtn.Text = "Update Information";
             this.UserDetailsUpdateInfoBtn.UseVisualStyleBackColor = true;
+            this.UserDetailsUpdateInfoBtn.Click += new System.EventHandler(this.UserDetailsUpdateInfoBtn_Click);
             // 
             // label104
             // 
             this.label104.AutoSize = true;
             this.label104.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label104.Location = new System.Drawing.Point(573, 11);
+            this.label104.Location = new System.Drawing.Point(510, 12);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(97, 20);
             this.label104.TabIndex = 13;
@@ -3340,16 +3626,17 @@
             // 
             // UserDetailsName
             // 
-            this.UserDetailsName.Location = new System.Drawing.Point(277, 29);
+            this.UserDetailsName.Location = new System.Drawing.Point(207, 32);
             this.UserDetailsName.Name = "UserDetailsName";
             this.UserDetailsName.Size = new System.Drawing.Size(216, 20);
             this.UserDetailsName.TabIndex = 4;
+            this.UserDetailsName.TextChanged += new System.EventHandler(this.UserDetailsName_TextChanged);
             // 
             // label109
             // 
             this.label109.AutoSize = true;
             this.label109.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label109.Location = new System.Drawing.Point(279, 11);
+            this.label109.Location = new System.Drawing.Point(209, 14);
             this.label109.Name = "label109";
             this.label109.Size = new System.Drawing.Size(49, 20);
             this.label109.TabIndex = 3;
@@ -3357,7 +3644,7 @@
             // 
             // UserDetailsID
             // 
-            this.UserDetailsID.Location = new System.Drawing.Point(158, 29);
+            this.UserDetailsID.Location = new System.Drawing.Point(24, 32);
             this.UserDetailsID.Name = "UserDetailsID";
             this.UserDetailsID.ReadOnly = true;
             this.UserDetailsID.Size = new System.Drawing.Size(59, 20);
@@ -3367,22 +3654,15 @@
             // 
             this.label110.AutoSize = true;
             this.label110.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label110.Location = new System.Drawing.Point(160, 11);
+            this.label110.Location = new System.Drawing.Point(26, 14);
             this.label110.Name = "label110";
             this.label110.Size = new System.Drawing.Size(24, 20);
             this.label110.TabIndex = 1;
             this.label110.Text = "ID";
             // 
-            // UserDetailsImage
-            // 
-            this.UserDetailsImage.Location = new System.Drawing.Point(12, 26);
-            this.UserDetailsImage.Name = "UserDetailsImage";
-            this.UserDetailsImage.Size = new System.Drawing.Size(121, 135);
-            this.UserDetailsImage.TabIndex = 0;
-            this.UserDetailsImage.TabStop = false;
-            // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.CreationStatus);
             this.tabPage9.Controls.Add(this.UserCreateIsAdmin);
             this.tabPage9.Controls.Add(this.label40);
             this.tabPage9.Controls.Add(this.label38);
@@ -3394,17 +3674,22 @@
             this.tabPage9.Controls.Add(this.label36);
             this.tabPage9.Controls.Add(this.UserCreateName);
             this.tabPage9.Controls.Add(this.label37);
-            this.tabPage9.Controls.Add(this.label111);
-            this.tabPage9.Controls.Add(this.UserCreateImagePreview);
-            this.tabPage9.Controls.Add(this.UserCreateImageURL);
-            this.tabPage9.Controls.Add(this.label112);
-            this.tabPage9.Controls.Add(this.button12);
+            this.tabPage9.Controls.Add(this.CreateUserBtn);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Size = new System.Drawing.Size(1144, 430);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "Create";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // CreationStatus
+            // 
+            this.CreationStatus.AutoSize = true;
+            this.CreationStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.CreationStatus.Location = new System.Drawing.Point(44, 371);
+            this.CreationStatus.Name = "CreationStatus";
+            this.CreationStatus.Size = new System.Drawing.Size(0, 20);
+            this.CreationStatus.TabIndex = 67;
             // 
             // UserCreateIsAdmin
             // 
@@ -3415,6 +3700,7 @@
             this.UserCreateIsAdmin.TabIndex = 66;
             this.UserCreateIsAdmin.Text = "Yes";
             this.UserCreateIsAdmin.UseVisualStyleBackColor = true;
+            this.UserCreateIsAdmin.CheckedChanged += new System.EventHandler(this.UserCreateIsAdmin_CheckedChanged);
             // 
             // label40
             // 
@@ -3444,6 +3730,7 @@
             this.UserCreateBirthday.Name = "UserCreateBirthday";
             this.UserCreateBirthday.Size = new System.Drawing.Size(216, 20);
             this.UserCreateBirthday.TabIndex = 63;
+            this.UserCreateBirthday.ValueChanged += new System.EventHandler(this.UserCreateBirthday_ValueChanged);
             // 
             // UserCreateLocation
             // 
@@ -3451,6 +3738,7 @@
             this.UserCreateLocation.Name = "UserCreateLocation";
             this.UserCreateLocation.Size = new System.Drawing.Size(216, 20);
             this.UserCreateLocation.TabIndex = 62;
+            this.UserCreateLocation.TextChanged += new System.EventHandler(this.UserCreateLocation_TextChanged);
             // 
             // label35
             // 
@@ -3471,6 +3759,7 @@
             this.UserCreateFemaleCheckbox.TabIndex = 60;
             this.UserCreateFemaleCheckbox.Text = "Female";
             this.UserCreateFemaleCheckbox.UseVisualStyleBackColor = true;
+            this.UserCreateFemaleCheckbox.CheckedChanged += new System.EventHandler(this.UserCreateFemaleCheckbox_CheckedChanged);
             // 
             // UserCreateMaleCheckbox
             // 
@@ -3481,6 +3770,7 @@
             this.UserCreateMaleCheckbox.TabIndex = 59;
             this.UserCreateMaleCheckbox.Text = "Male";
             this.UserCreateMaleCheckbox.UseVisualStyleBackColor = true;
+            this.UserCreateMaleCheckbox.CheckedChanged += new System.EventHandler(this.UserCreateMaleCheckbox_CheckedChanged);
             // 
             // label36
             // 
@@ -3498,6 +3788,7 @@
             this.UserCreateName.Name = "UserCreateName";
             this.UserCreateName.Size = new System.Drawing.Size(216, 20);
             this.UserCreateName.TabIndex = 57;
+            this.UserCreateName.TextChanged += new System.EventHandler(this.UserCreateName_TextChanged);
             // 
             // label37
             // 
@@ -3509,58 +3800,23 @@
             this.label37.TabIndex = 56;
             this.label37.Text = "Name";
             // 
-            // label111
+            // CreateUserBtn
             // 
-            this.label111.AutoSize = true;
-            this.label111.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label111.Location = new System.Drawing.Point(325, 93);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(106, 20);
-            this.label111.TabIndex = 55;
-            this.label111.Text = "Image Preview";
-            // 
-            // UserCreateImagePreview
-            // 
-            this.UserCreateImagePreview.Location = new System.Drawing.Point(325, 113);
-            this.UserCreateImagePreview.Name = "UserCreateImagePreview";
-            this.UserCreateImagePreview.Size = new System.Drawing.Size(215, 175);
-            this.UserCreateImagePreview.TabIndex = 54;
-            this.UserCreateImagePreview.TabStop = false;
-            // 
-            // UserCreateImageURL
-            // 
-            this.UserCreateImageURL.Location = new System.Drawing.Point(325, 53);
-            this.UserCreateImageURL.Name = "UserCreateImageURL";
-            this.UserCreateImageURL.Size = new System.Drawing.Size(216, 20);
-            this.UserCreateImageURL.TabIndex = 53;
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label112.Location = new System.Drawing.Point(325, 33);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(81, 20);
-            this.label112.TabIndex = 52;
-            this.label112.Text = "Image URL";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(325, 341);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(215, 37);
-            this.button12.TabIndex = 43;
-            this.button12.Text = "Create Entry";
-            this.button12.UseVisualStyleBackColor = true;
+            this.CreateUserBtn.Location = new System.Drawing.Point(48, 314);
+            this.CreateUserBtn.Name = "CreateUserBtn";
+            this.CreateUserBtn.Size = new System.Drawing.Size(215, 37);
+            this.CreateUserBtn.TabIndex = 43;
+            this.CreateUserBtn.Text = "Create Entry";
+            this.CreateUserBtn.UseVisualStyleBackColor = true;
+            this.CreateUserBtn.Click += new System.EventHandler(this.CreateUserBtn_Click);
             // 
             // ConnectionStatus
             // 
             this.ConnectionStatus.AutoSize = true;
             this.ConnectionStatus.Location = new System.Drawing.Point(473, 18);
             this.ConnectionStatus.Name = "ConnectionStatus";
-            this.ConnectionStatus.Size = new System.Drawing.Size(41, 13);
+            this.ConnectionStatus.Size = new System.Drawing.Size(0, 13);
             this.ConnectionStatus.TabIndex = 18;
-            this.ConnectionStatus.Text = "label70";
             // 
             // label68
             // 
@@ -3571,15 +3827,6 @@
             this.label68.TabIndex = 17;
             this.label68.Text = "Connection Status:";
             // 
-            // CreateStudioStatus
-            // 
-            this.CreateStudioStatus.AutoSize = true;
-            this.CreateStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CreateStudioStatus.Location = new System.Drawing.Point(897, 149);
-            this.CreateStudioStatus.Name = "CreateStudioStatus";
-            this.CreateStudioStatus.Size = new System.Drawing.Size(0, 20);
-            this.CreateStudioStatus.TabIndex = 77;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3588,11 +3835,11 @@
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.UsersTab);
+            this.Controls.Add(this.StaffTab);
             this.Controls.Add(this.StudioTab);
             this.Controls.Add(this.CharactersTab);
             this.Controls.Add(this.AnimeTab);
-            this.Controls.Add(this.UsersTab);
-            this.Controls.Add(this.StaffTab);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -3636,14 +3883,13 @@
             this.UsersTab.ResumeLayout(false);
             this.UserListTab.ResumeLayout(false);
             this.UserListTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserListPage)).EndInit();
             this.UserDetailsTab.ResumeLayout(false);
             this.UserDetailsTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addRating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserDetailsAnimeRating)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserDetailsImage)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserCreateImagePreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3847,19 +4093,15 @@
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.ListView UserList;
         private System.Windows.Forms.ColumnHeader columnHeader29;
-        private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.ColumnHeader columnHeader31;
         private System.Windows.Forms.ColumnHeader columnHeader32;
         private System.Windows.Forms.ColumnHeader columnHeader33;
         private System.Windows.Forms.ColumnHeader columnHeader34;
-        private System.Windows.Forms.ColumnHeader columnHeader35;
-        private System.Windows.Forms.ColumnHeader columnHeader36;
-        private System.Windows.Forms.ColumnHeader columnHeader37;
         private System.Windows.Forms.TabPage UserDetailsTab;
         private System.Windows.Forms.CheckBox UserDetailsIsAdmin;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker UserDetailsBirthday;
         private System.Windows.Forms.Button UserDetailsUpdateScoreBtn;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.NumericUpDown UserDetailsAnimeRating;
@@ -3867,9 +4109,6 @@
         private System.Windows.Forms.TextBox UserDetailsSelAnime;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ListBox UserDetailsAnimeList;
-        private System.Windows.Forms.TextBox UserDetailsImageURL;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.Label label102;
         private System.Windows.Forms.TextBox UserDetailsLocation;
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.CheckBox UserDetailsFemale;
@@ -3882,7 +4121,6 @@
         private System.Windows.Forms.Label label109;
         private System.Windows.Forms.TextBox UserDetailsID;
         private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.PictureBox UserDetailsImage;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.CheckBox UserCreateIsAdmin;
         private System.Windows.Forms.Label label40;
@@ -3895,11 +4133,7 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox UserCreateName;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.PictureBox UserCreateImagePreview;
-        private System.Windows.Forms.TextBox UserCreateImageURL;
-        private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button CreateUserBtn;
         private System.Windows.Forms.Button AnimeApplyFilterbtn;
         private System.Windows.Forms.Label ConnectionStatus;
         private System.Windows.Forms.Label label68;
@@ -3960,10 +4194,39 @@
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.NumericUpDown StudioPage;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown UserListPage;
+        private System.Windows.Forms.Button UsersApplyFilterBtn;
         private System.Windows.Forms.Label UpdateStudioStatus;
         private System.Windows.Forms.Label CreateStudioStatus;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.NumericUpDown addRating;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Button UserDetailsAddScoreBtn;
+        private System.Windows.Forms.ComboBox UserSelectNewAnimeRating;
+        private System.Windows.Forms.Button RemoveWatchedBtn;
+        private System.Windows.Forms.Label UserUpdateStatus;
+        private System.Windows.Forms.Label RatingStatus;
+        private System.Windows.Forms.Label CreationStatus;
+        private System.Windows.Forms.Label RemoveStaffStatus;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.ComboBox StaffRemoveAs;
+        private System.Windows.Forms.Button RemoveStaff;
+        private System.Windows.Forms.Label RemoveStudioStatus;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.ComboBox RemoveStudioAs;
+        private System.Windows.Forms.Button RemoveStudioBtn;
+        private System.Windows.Forms.Label CharRemoveStatus;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.ComboBox CharRemoveAs;
+        private System.Windows.Forms.Button CharRemoveBtn;
+        private System.Windows.Forms.Label AnimeRemoveStatus;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.ComboBox AnimeRemoveAs;
+        private System.Windows.Forms.Button AnimeRemoveBtn;
+        private System.Windows.Forms.Label UserRemoveStatus;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.ComboBox UserRemoveAs;
+        private System.Windows.Forms.Button UserRemoveBtn;
     }
 }
 

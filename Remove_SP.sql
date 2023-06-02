@@ -1,31 +1,19 @@
 
 CREATE PROCEDURE RemoveAnime
-    @AnimeID INT
+    @AnimeID INT,
+    @UserID INT
 AS
 BEGIN
-    -- Delete rows from Has_watched table
-    DELETE FROM Has_watched
-    WHERE FK_AnimeID = @AnimeID;
+    DECLARE @IsAdmin BIT
 
-    -- Delete rows from Related_animes table
-    DELETE FROM Related_animes
-    WHERE FK_AnimeID = @AnimeID OR FK_AnimeID2 = @AnimeID;
+    -- Check if the user is an admin
+    SELECT @IsAdmin = dbo.IsAdmin(@UserID)
 
-    -- Delete rows from Comment table
-    DELETE FROM Comment
-    WHERE FK_AnimeID = @AnimeID;
-
-    -- Delete rows from Worked_on table
-    DELETE FROM Worked_on
-    WHERE FK_AnimeID = @AnimeID;
-
-    -- Delete rows from Appears_in table
-    DELETE FROM Appears_in
-    WHERE FK_AnimeID = @AnimeID;
-
-    -- Delete rows from Is_genre table
-    DELETE FROM Is_genre
-    WHERE FK_AnimeID = @AnimeID;
+    IF @IsAdmin != 1
+        BEGIN
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+        RETURN;
+    END
 
     -- Delete the anime from the Anime table
     DELETE FROM Anime
@@ -36,12 +24,21 @@ END;
 GO
 
 CREATE PROCEDURE RemoveCharacter
-    @CharacterID INT
+    @CharacterID INT,
+    @UserID INT
 AS
 BEGIN
-    -- Delete rows from Appears_in table
-    DELETE FROM Appears_in
-    WHERE FK_CharacterID = @CharacterID;
+    DECLARE @IsAdmin BIT
+
+    -- Check if the user is an admin
+    SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+    IF @IsAdmin != 1
+        BEGIN
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+        RETURN;
+    END
+
 
     -- Delete the character from the Characters table
     DELETE FROM Characters
@@ -52,13 +49,20 @@ END;
 GO
 
 CREATE PROCEDURE RemoveStudio
-    @StudioID INT
+    @StudioID INT,
+    @UserID INT
 AS
 BEGIN
-    -- Set FK_Studio_ID to NULL for the associated anime records
-    UPDATE Anime
-    SET FK_Studio_ID = NULL
-    WHERE FK_Studio_ID = @StudioID;
+    DECLARE @IsAdmin BIT
+
+    -- Check if the user is an admin
+    SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+    IF @IsAdmin != 1
+        BEGIN
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+        RETURN;
+    END
 
     -- Delete the studio from the Studios table
     DELETE FROM Studio
@@ -69,17 +73,20 @@ END;
 GO
 
 CREATE PROCEDURE RemoveStaff
-    @StaffID INT
+    @StaffID INT,
+    @UserID INT
 AS
 BEGIN
-    -- Remove entries from Worked_On table for the specified StaffID
-    DELETE FROM Worked_On
-    WHERE FK_StaffID = @StaffID;
+    DECLARE @IsAdmin BIT
 
-    -- Set Character FK_Voice_actor to NULL for the associated staff member
-    UPDATE Characters
-    SET FK_Voice_actor = NULL
-    WHERE FK_Voice_actor = @StaffID;
+    -- Check if the user is an admin
+    SELECT @IsAdmin = dbo.IsAdmin(@UserID)
+
+    IF @IsAdmin != 1
+        BEGIN
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+        RETURN;
+    END
 
     -- Delete the staff member from the Staff table
     DELETE FROM Staff
@@ -90,20 +97,20 @@ END;
 GO
 
 CREATE PROCEDURE RemoveUser
-    @UserID INT
+    @UserID INT,
+    @AdminID INT
 AS
 BEGIN
-    -- Delete entries from Is_friend table for the specified UserID
-    DELETE FROM Is_friend
-    WHERE UserID1 = @UserID OR UserID2 = @UserID;
+    DECLARE @IsAdmin BIT
 
-    -- Delete comment entries for the specified UserID
-    DELETE FROM Comment
-    WHERE FK_UserID = @UserID;
+    -- Check if the user is an admin
+    SELECT @IsAdmin = dbo.IsAdmin(@AdminID)
 
-    -- Delete Has_watched entries for the specified UserID
-    DELETE FROM Has_watched
-    WHERE FK_UserID = @UserID;
+    IF @IsAdmin != 1
+        BEGIN
+        RAISERROR ('Access denied. User is not an admin.', 11,1);
+        RETURN;
+    END
 
     -- Delete the user from the Users table
     DELETE FROM Users
