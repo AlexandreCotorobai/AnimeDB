@@ -126,7 +126,7 @@ BEGIN
             SET
                 Name = ISNULL(@Name, Name),
                 Description = ISNULL(@Description, Description),
-                FK_Voice_actor = @VoiceActorID
+                FK_Voice_actor = @VoiceActor
             WHERE ID = @CharacterID;
 
     PRINT 'Character updated successfully.'
@@ -437,7 +437,7 @@ BEGIN
 
     -- Check if the provided Character ID and Anime ID already exists in the Appears_in table
     IF EXISTS (SELECT 1
-    FROM Appears_in
+    FROM Apears_in
     WHERE FK_CharacterID = @CharacterID AND FK_AnimeID = @AnimeID)
         BEGIN
         RAISERROR ('Character and Anime already exist. Rolling back transaction.', 11,1);
@@ -445,7 +445,7 @@ BEGIN
     END;
 
     -- Insert Appears_in table based on the provided Character ID and Anime ID
-    INSERT INTO Appears_in
+    INSERT INTO Apears_in
         (FK_CharacterID, FK_AnimeID)
     VALUES
         (@CharacterID, @AnimeID);
@@ -473,7 +473,7 @@ BEGIN
     END
 
     -- Delete Appears_in table based on the provided Character ID and Anime ID
-    DELETE FROM Appears_in
+    DELETE FROM Apears_in
         WHERE FK_CharacterID = @CharacterID AND FK_AnimeID = @AnimeID;
     PRINT 'Appears_in updated successfully.'
 END;

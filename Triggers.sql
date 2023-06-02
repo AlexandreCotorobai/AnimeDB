@@ -1,9 +1,23 @@
 
+
 CREATE TRIGGER CalculateAnimeScore
     ON Has_Watched
     AFTER INSERT, UPDATE, DELETE
     AS
-        DECLARE ID_CURSOR CURSOR FOR SELECT DISTINCT FK_AnimeID FROM INSERTED;
+        IF EXISTS (SELECT * FROM DELETED)
+        BEGIN
+            DECLARE ID_CURSOR CURSOR FOR SELECT DISTINCT FK_AnimeID FROM DELETED;
+        END
+        ELSE IF EXISTS (SELECT * FROM INSERTED)
+        BEGIN
+            DECLARE ID_CURSOR CURSOR FOR SELECT DISTINCT FK_AnimeID FROM INSERTED;
+        END;
+        ELSE
+        BEGIN
+            ROLLBACK;
+            RETURN;
+        END;
+
         DECLARE @FK_AnimeID INT;
         DECLARE @avg_score DECIMAL(3, 1)
         OPEN ID_CURSOR;
@@ -31,8 +45,7 @@ CREATE TRIGGER CalculateAnimeScore
         END;
         CLOSE ID_CURSOR;
 
-GO 
-
+GO
 
 CREATE TRIGGER AddSeason
     ON Anime
