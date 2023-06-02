@@ -16,7 +16,7 @@ CREATE PROCEDURE GetComments
     AS
     BEGIN
         -- Retrieve the comments associated with the given AnimeID
-        SELECT c.CommentID, c.Comment, u.Name
+        SELECT c.CommentID, u.Name, c.Comment
         FROM Comment AS c
         INNER JOIN Users AS u ON c.FK_UserID = u.ID
         WHERE c.FK_AnimeID = @AnimeID;
