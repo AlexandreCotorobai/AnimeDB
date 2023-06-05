@@ -150,7 +150,7 @@ BEGIN
     -- Check if the user is an admin
     SELECT @IsAdmin = dbo.IsAdmin(@UserID)
 
-    IF @IsAdmin = 1
+    IF @IsAdmin != 1
     BEGIN
         RAISERROR ('Access denied. User is not an admin.', 11,1);
         RETURN;
