@@ -311,6 +311,13 @@
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UserDetailsTab = new System.Windows.Forms.TabPage();
+            this.UserFriendStatus = new System.Windows.Forms.Label();
+            this.UserRemoveFriend = new System.Windows.Forms.Button();
+            this.label81 = new System.Windows.Forms.Label();
+            this.UserAddFriend = new System.Windows.Forms.Button();
+            this.UserSelectNewFriend = new System.Windows.Forms.ComboBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.UserFriendsList = new System.Windows.Forms.ListBox();
             this.UserUpdateStatus = new System.Windows.Forms.Label();
             this.RatingStatus = new System.Windows.Forms.Label();
             this.RemoveWatchedBtn = new System.Windows.Forms.Button();
@@ -358,13 +365,6 @@
             this.CreateUserBtn = new System.Windows.Forms.Button();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.UserFriendsList = new System.Windows.Forms.ListBox();
-            this.label81 = new System.Windows.Forms.Label();
-            this.UserAddFriend = new System.Windows.Forms.Button();
-            this.UserSelectNewFriend = new System.Windows.Forms.ComboBox();
-            this.UserRemoveFriend = new System.Windows.Forms.Button();
-            this.UserFriendStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.StaffTab.SuspendLayout();
             this.tabPage14.SuspendLayout();
@@ -406,16 +406,18 @@
             this.panel1.Controls.Add(this.StudiosBtn);
             this.panel1.Controls.Add(this.CharactersBtn);
             this.panel1.Controls.Add(this.AnimeBtn);
-            this.panel1.Location = new System.Drawing.Point(7, 8);
+            this.panel1.Location = new System.Drawing.Point(9, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(351, 26);
+            this.panel1.Size = new System.Drawing.Size(468, 32);
             this.panel1.TabIndex = 9;
             // 
             // UserBtn
             // 
-            this.UserBtn.Location = new System.Drawing.Point(280, 3);
+            this.UserBtn.Location = new System.Drawing.Point(373, 4);
+            this.UserBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserBtn.Name = "UserBtn";
-            this.UserBtn.Size = new System.Drawing.Size(64, 20);
+            this.UserBtn.Size = new System.Drawing.Size(85, 25);
             this.UserBtn.TabIndex = 3;
             this.UserBtn.Text = "Users";
             this.UserBtn.UseVisualStyleBackColor = true;
@@ -423,9 +425,10 @@
             // 
             // StaffBtn
             // 
-            this.StaffBtn.Location = new System.Drawing.Point(211, 3);
+            this.StaffBtn.Location = new System.Drawing.Point(281, 4);
+            this.StaffBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffBtn.Name = "StaffBtn";
-            this.StaffBtn.Size = new System.Drawing.Size(64, 20);
+            this.StaffBtn.Size = new System.Drawing.Size(85, 25);
             this.StaffBtn.TabIndex = 2;
             this.StaffBtn.Text = "Staff";
             this.StaffBtn.UseVisualStyleBackColor = true;
@@ -433,9 +436,10 @@
             // 
             // StudiosBtn
             // 
-            this.StudiosBtn.Location = new System.Drawing.Point(141, 3);
+            this.StudiosBtn.Location = new System.Drawing.Point(188, 4);
+            this.StudiosBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudiosBtn.Name = "StudiosBtn";
-            this.StudiosBtn.Size = new System.Drawing.Size(64, 20);
+            this.StudiosBtn.Size = new System.Drawing.Size(85, 25);
             this.StudiosBtn.TabIndex = 2;
             this.StudiosBtn.Text = "Studios";
             this.StudiosBtn.UseVisualStyleBackColor = true;
@@ -443,9 +447,10 @@
             // 
             // CharactersBtn
             // 
-            this.CharactersBtn.Location = new System.Drawing.Point(73, 3);
+            this.CharactersBtn.Location = new System.Drawing.Point(97, 4);
+            this.CharactersBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharactersBtn.Name = "CharactersBtn";
-            this.CharactersBtn.Size = new System.Drawing.Size(64, 20);
+            this.CharactersBtn.Size = new System.Drawing.Size(85, 25);
             this.CharactersBtn.TabIndex = 1;
             this.CharactersBtn.Text = "Charaters";
             this.CharactersBtn.UseVisualStyleBackColor = true;
@@ -453,9 +458,10 @@
             // 
             // AnimeBtn
             // 
-            this.AnimeBtn.Location = new System.Drawing.Point(3, 3);
+            this.AnimeBtn.Location = new System.Drawing.Point(4, 4);
+            this.AnimeBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeBtn.Name = "AnimeBtn";
-            this.AnimeBtn.Size = new System.Drawing.Size(64, 20);
+            this.AnimeBtn.Size = new System.Drawing.Size(85, 25);
             this.AnimeBtn.TabIndex = 0;
             this.AnimeBtn.Text = "Anime";
             this.AnimeBtn.UseVisualStyleBackColor = true;
@@ -467,10 +473,11 @@
             this.StaffTab.Controls.Add(this.tabPage15);
             this.StaffTab.Controls.Add(this.tabPage16);
             this.StaffTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StaffTab.Location = new System.Drawing.Point(7, 59);
+            this.StaffTab.Location = new System.Drawing.Point(9, 73);
+            this.StaffTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffTab.Name = "StaffTab";
             this.StaffTab.SelectedIndex = 0;
-            this.StaffTab.Size = new System.Drawing.Size(1152, 456);
+            this.StaffTab.Size = new System.Drawing.Size(1536, 561);
             this.StaffTab.TabIndex = 14;
             this.StaffTab.Visible = false;
             this.StaffTab.SelectedIndexChanged += new System.EventHandler(this.StaffTab_SelectedIndexChanged);
@@ -491,10 +498,11 @@
             this.tabPage14.Controls.Add(this.StaffTabFilterName);
             this.tabPage14.Controls.Add(this.label167);
             this.tabPage14.Controls.Add(this.StaffList);
-            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Location = new System.Drawing.Point(4, 25);
+            this.tabPage14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage14.Size = new System.Drawing.Size(1528, 532);
             this.tabPage14.TabIndex = 0;
             this.tabPage14.Text = "List";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -503,35 +511,39 @@
             // 
             this.RemoveStaffStatus.AutoSize = true;
             this.RemoveStaffStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.RemoveStaffStatus.Location = new System.Drawing.Point(892, 394);
+            this.RemoveStaffStatus.Location = new System.Drawing.Point(1189, 485);
+            this.RemoveStaffStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RemoveStaffStatus.Name = "RemoveStaffStatus";
-            this.RemoveStaffStatus.Size = new System.Drawing.Size(0, 20);
+            this.RemoveStaffStatus.Size = new System.Drawing.Size(0, 25);
             this.RemoveStaffStatus.TabIndex = 66;
             // 
             // label61
             // 
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label61.Location = new System.Drawing.Point(901, 291);
+            this.label61.Location = new System.Drawing.Point(1201, 358);
+            this.label61.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(81, 20);
+            this.label61.Size = new System.Drawing.Size(101, 25);
             this.label61.TabIndex = 65;
             this.label61.Text = "Remove as";
             // 
             // StaffRemoveAs
             // 
             this.StaffRemoveAs.FormattingEnabled = true;
-            this.StaffRemoveAs.Location = new System.Drawing.Point(896, 311);
+            this.StaffRemoveAs.Location = new System.Drawing.Point(1195, 383);
+            this.StaffRemoveAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffRemoveAs.Name = "StaffRemoveAs";
-            this.StaffRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.StaffRemoveAs.Size = new System.Drawing.Size(281, 24);
             this.StaffRemoveAs.TabIndex = 64;
             this.StaffRemoveAs.SelectedIndexChanged += new System.EventHandler(this.StaffRemoveAs_SelectedIndexChanged);
             // 
             // RemoveStaff
             // 
-            this.RemoveStaff.Location = new System.Drawing.Point(896, 349);
+            this.RemoveStaff.Location = new System.Drawing.Point(1195, 430);
+            this.RemoveStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveStaff.Name = "RemoveStaff";
-            this.RemoveStaff.Size = new System.Drawing.Size(212, 37);
+            this.RemoveStaff.Size = new System.Drawing.Size(283, 46);
             this.RemoveStaff.TabIndex = 63;
             this.RemoveStaff.Text = "Remove Entry";
             this.RemoveStaff.UseVisualStyleBackColor = true;
@@ -541,22 +553,24 @@
             // 
             this.label76.AutoSize = true;
             this.label76.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label76.Location = new System.Drawing.Point(700, 400);
+            this.label76.Location = new System.Drawing.Point(933, 492);
+            this.label76.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(41, 20);
+            this.label76.Size = new System.Drawing.Size(53, 25);
             this.label76.TabIndex = 25;
             this.label76.Text = "Page";
             // 
             // StaffListPage
             // 
-            this.StaffListPage.Location = new System.Drawing.Point(758, 400);
+            this.StaffListPage.Location = new System.Drawing.Point(1011, 492);
+            this.StaffListPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffListPage.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.StaffListPage.Name = "StaffListPage";
-            this.StaffListPage.Size = new System.Drawing.Size(120, 20);
+            this.StaffListPage.Size = new System.Drawing.Size(160, 22);
             this.StaffListPage.TabIndex = 24;
             this.StaffListPage.Value = new decimal(new int[] {
             1,
@@ -567,9 +581,10 @@
             // 
             // StaffApplyFilterBtn
             // 
-            this.StaffApplyFilterBtn.Location = new System.Drawing.Point(901, 228);
+            this.StaffApplyFilterBtn.Location = new System.Drawing.Point(1201, 281);
+            this.StaffApplyFilterBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffApplyFilterBtn.Name = "StaffApplyFilterBtn";
-            this.StaffApplyFilterBtn.Size = new System.Drawing.Size(98, 50);
+            this.StaffApplyFilterBtn.Size = new System.Drawing.Size(131, 62);
             this.StaffApplyFilterBtn.TabIndex = 19;
             this.StaffApplyFilterBtn.Text = "Apply Filter";
             this.StaffApplyFilterBtn.UseVisualStyleBackColor = true;
@@ -578,9 +593,10 @@
             // StaffFilterType
             // 
             this.StaffFilterType.FormattingEnabled = true;
-            this.StaffFilterType.Location = new System.Drawing.Point(901, 160);
+            this.StaffFilterType.Location = new System.Drawing.Point(1201, 197);
+            this.StaffFilterType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffFilterType.Name = "StaffFilterType";
-            this.StaffFilterType.Size = new System.Drawing.Size(213, 21);
+            this.StaffFilterType.Size = new System.Drawing.Size(283, 24);
             this.StaffFilterType.TabIndex = 18;
             this.StaffFilterType.SelectedIndexChanged += new System.EventHandler(this.StaffFilterType_SelectedIndexChanged);
             // 
@@ -588,17 +604,19 @@
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label63.Location = new System.Drawing.Point(909, 129);
+            this.label63.Location = new System.Drawing.Point(1212, 159);
+            this.label63.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(40, 20);
+            this.label63.Size = new System.Drawing.Size(51, 25);
             this.label63.TabIndex = 17;
             this.label63.Text = "Type";
             // 
             // StaffClearFilter
             // 
-            this.StaffClearFilter.Location = new System.Drawing.Point(1016, 228);
+            this.StaffClearFilter.Location = new System.Drawing.Point(1355, 281);
+            this.StaffClearFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffClearFilter.Name = "StaffClearFilter";
-            this.StaffClearFilter.Size = new System.Drawing.Size(100, 50);
+            this.StaffClearFilter.Size = new System.Drawing.Size(133, 62);
             this.StaffClearFilter.TabIndex = 16;
             this.StaffClearFilter.Text = "Clear Filter";
             this.StaffClearFilter.UseVisualStyleBackColor = true;
@@ -608,17 +626,19 @@
             // 
             this.label166.AutoSize = true;
             this.label166.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label166.Location = new System.Drawing.Point(994, 20);
+            this.label166.Location = new System.Drawing.Point(1325, 25);
+            this.label166.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label166.Name = "label166";
-            this.label166.Size = new System.Drawing.Size(42, 20);
+            this.label166.Size = new System.Drawing.Size(54, 25);
             this.label166.TabIndex = 7;
             this.label166.Text = "Filter";
             // 
             // StaffTabFilterName
             // 
-            this.StaffTabFilterName.Location = new System.Drawing.Point(901, 72);
+            this.StaffTabFilterName.Location = new System.Drawing.Point(1201, 89);
+            this.StaffTabFilterName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffTabFilterName.Name = "StaffTabFilterName";
-            this.StaffTabFilterName.Size = new System.Drawing.Size(218, 20);
+            this.StaffTabFilterName.Size = new System.Drawing.Size(289, 22);
             this.StaffTabFilterName.TabIndex = 6;
             this.StaffTabFilterName.TextChanged += new System.EventHandler(this.StaffTabFilterName_TextChanged);
             // 
@@ -626,9 +646,10 @@
             // 
             this.label167.AutoSize = true;
             this.label167.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label167.Location = new System.Drawing.Point(909, 47);
+            this.label167.Location = new System.Drawing.Point(1212, 58);
+            this.label167.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label167.Name = "label167";
-            this.label167.Size = new System.Drawing.Size(49, 20);
+            this.label167.Size = new System.Drawing.Size(62, 25);
             this.label167.TabIndex = 5;
             this.label167.Text = "Name";
             // 
@@ -641,10 +662,11 @@
             this.columnHeader58});
             this.StaffList.FullRowSelect = true;
             this.StaffList.HideSelection = false;
-            this.StaffList.Location = new System.Drawing.Point(5, 5);
+            this.StaffList.Location = new System.Drawing.Point(7, 6);
+            this.StaffList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffList.MultiSelect = false;
             this.StaffList.Name = "StaffList";
-            this.StaffList.Size = new System.Drawing.Size(872, 389);
+            this.StaffList.Size = new System.Drawing.Size(1161, 478);
             this.StaffList.TabIndex = 0;
             this.StaffList.UseCompatibleStateImageBehavior = false;
             this.StaffList.View = System.Windows.Forms.View.Details;
@@ -687,10 +709,11 @@
             this.tabPage15.Controls.Add(this.StaffDetailsName);
             this.tabPage15.Controls.Add(this.label174);
             this.tabPage15.Controls.Add(this.label175);
-            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Location = new System.Drawing.Point(4, 25);
+            this.tabPage15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage15.Size = new System.Drawing.Size(1528, 532);
             this.tabPage15.TabIndex = 1;
             this.tabPage15.Text = "Details";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -699,17 +722,19 @@
             // 
             this.StaffUpdateStatus.AutoSize = true;
             this.StaffUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.StaffUpdateStatus.Location = new System.Drawing.Point(512, 116);
+            this.StaffUpdateStatus.Location = new System.Drawing.Point(683, 143);
+            this.StaffUpdateStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StaffUpdateStatus.Name = "StaffUpdateStatus";
-            this.StaffUpdateStatus.Size = new System.Drawing.Size(0, 20);
+            this.StaffUpdateStatus.Size = new System.Drawing.Size(0, 25);
             this.StaffUpdateStatus.TabIndex = 62;
             // 
             // StaffDetailsType
             // 
             this.StaffDetailsType.FormattingEnabled = true;
-            this.StaffDetailsType.Location = new System.Drawing.Point(276, 33);
+            this.StaffDetailsType.Location = new System.Drawing.Point(368, 41);
+            this.StaffDetailsType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffDetailsType.Name = "StaffDetailsType";
-            this.StaffDetailsType.Size = new System.Drawing.Size(216, 21);
+            this.StaffDetailsType.Size = new System.Drawing.Size(287, 24);
             this.StaffDetailsType.TabIndex = 61;
             this.StaffDetailsType.SelectedIndexChanged += new System.EventHandler(this.StaffDetailsType_SelectedIndexChanged);
             // 
@@ -717,9 +742,10 @@
             // 
             this.StaffDetailsBirthday.CustomFormat = "dd/MM";
             this.StaffDetailsBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.StaffDetailsBirthday.Location = new System.Drawing.Point(276, 80);
+            this.StaffDetailsBirthday.Location = new System.Drawing.Point(368, 98);
+            this.StaffDetailsBirthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffDetailsBirthday.Name = "StaffDetailsBirthday";
-            this.StaffDetailsBirthday.Size = new System.Drawing.Size(216, 20);
+            this.StaffDetailsBirthday.Size = new System.Drawing.Size(287, 22);
             this.StaffDetailsBirthday.TabIndex = 59;
             this.StaffDetailsBirthday.ValueChanged += new System.EventHandler(this.StaffDetailsBirthday_ValueChanged);
             // 
@@ -727,9 +753,10 @@
             // 
             this.label168.AutoSize = true;
             this.label168.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label168.Location = new System.Drawing.Point(279, 60);
+            this.label168.Location = new System.Drawing.Point(372, 74);
+            this.label168.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label168.Name = "label168";
-            this.label168.Size = new System.Drawing.Size(64, 20);
+            this.label168.Size = new System.Drawing.Size(82, 25);
             this.label168.TabIndex = 58;
             this.label168.Text = "Birthday";
             // 
@@ -737,44 +764,49 @@
             // 
             this.label169.AutoSize = true;
             this.label169.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label169.Location = new System.Drawing.Point(281, 9);
+            this.label169.Location = new System.Drawing.Point(375, 11);
+            this.label169.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label169.Name = "label169";
-            this.label169.Size = new System.Drawing.Size(40, 20);
+            this.label169.Size = new System.Drawing.Size(51, 25);
             this.label169.TabIndex = 56;
             this.label169.Text = "Type";
             // 
             // StaffDetailsID
             // 
-            this.StaffDetailsID.Location = new System.Drawing.Point(12, 29);
+            this.StaffDetailsID.Location = new System.Drawing.Point(16, 36);
+            this.StaffDetailsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffDetailsID.Name = "StaffDetailsID";
             this.StaffDetailsID.ReadOnly = true;
-            this.StaffDetailsID.Size = new System.Drawing.Size(59, 20);
+            this.StaffDetailsID.Size = new System.Drawing.Size(77, 22);
             this.StaffDetailsID.TabIndex = 55;
             // 
             // label170
             // 
             this.label170.AutoSize = true;
             this.label170.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label170.Location = new System.Drawing.Point(521, 13);
+            this.label170.Location = new System.Drawing.Point(695, 16);
+            this.label170.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label170.Name = "label170";
-            this.label170.Size = new System.Drawing.Size(76, 20);
+            this.label170.Size = new System.Drawing.Size(96, 25);
             this.label170.TabIndex = 52;
             this.label170.Text = "Update as";
             // 
             // StaffDetailsUpdateAs
             // 
             this.StaffDetailsUpdateAs.FormattingEnabled = true;
-            this.StaffDetailsUpdateAs.Location = new System.Drawing.Point(516, 33);
+            this.StaffDetailsUpdateAs.Location = new System.Drawing.Point(688, 41);
+            this.StaffDetailsUpdateAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffDetailsUpdateAs.Name = "StaffDetailsUpdateAs";
-            this.StaffDetailsUpdateAs.Size = new System.Drawing.Size(212, 21);
+            this.StaffDetailsUpdateAs.Size = new System.Drawing.Size(281, 24);
             this.StaffDetailsUpdateAs.TabIndex = 51;
             this.StaffDetailsUpdateAs.SelectedIndexChanged += new System.EventHandler(this.StaffDetailsUpdateAs_SelectedIndexChanged);
             // 
             // StaffDetailsUpdateBtn
             // 
-            this.StaffDetailsUpdateBtn.Location = new System.Drawing.Point(516, 71);
+            this.StaffDetailsUpdateBtn.Location = new System.Drawing.Point(688, 87);
+            this.StaffDetailsUpdateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffDetailsUpdateBtn.Name = "StaffDetailsUpdateBtn";
-            this.StaffDetailsUpdateBtn.Size = new System.Drawing.Size(212, 37);
+            this.StaffDetailsUpdateBtn.Size = new System.Drawing.Size(283, 46);
             this.StaffDetailsUpdateBtn.TabIndex = 30;
             this.StaffDetailsUpdateBtn.Text = "Update Information";
             this.StaffDetailsUpdateBtn.UseVisualStyleBackColor = true;
@@ -782,9 +814,10 @@
             // 
             // StaffDetailsName
             // 
-            this.StaffDetailsName.Location = new System.Drawing.Point(12, 80);
+            this.StaffDetailsName.Location = new System.Drawing.Point(16, 98);
+            this.StaffDetailsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffDetailsName.Name = "StaffDetailsName";
-            this.StaffDetailsName.Size = new System.Drawing.Size(216, 20);
+            this.StaffDetailsName.Size = new System.Drawing.Size(287, 22);
             this.StaffDetailsName.TabIndex = 4;
             this.StaffDetailsName.TextChanged += new System.EventHandler(this.StaffDetailsName_TextChanged);
             // 
@@ -792,9 +825,10 @@
             // 
             this.label174.AutoSize = true;
             this.label174.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label174.Location = new System.Drawing.Point(15, 62);
+            this.label174.Location = new System.Drawing.Point(20, 76);
+            this.label174.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label174.Name = "label174";
-            this.label174.Size = new System.Drawing.Size(49, 20);
+            this.label174.Size = new System.Drawing.Size(62, 25);
             this.label174.TabIndex = 3;
             this.label174.Text = "Name";
             // 
@@ -802,9 +836,10 @@
             // 
             this.label175.AutoSize = true;
             this.label175.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label175.Location = new System.Drawing.Point(23, 12);
+            this.label175.Location = new System.Drawing.Point(31, 15);
+            this.label175.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label175.Name = "label175";
-            this.label175.Size = new System.Drawing.Size(24, 20);
+            this.label175.Size = new System.Drawing.Size(30, 25);
             this.label175.TabIndex = 1;
             this.label175.Text = "ID";
             // 
@@ -820,9 +855,10 @@
             this.tabPage16.Controls.Add(this.label65);
             this.tabPage16.Controls.Add(this.label67);
             this.tabPage16.Controls.Add(this.StaffCreateName);
-            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Location = new System.Drawing.Point(4, 25);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage16.Size = new System.Drawing.Size(1528, 532);
             this.tabPage16.TabIndex = 2;
             this.tabPage16.Text = "Create";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -831,17 +867,19 @@
             // 
             this.StaffCreateStatus.AutoSize = true;
             this.StaffCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.StaffCreateStatus.Location = new System.Drawing.Point(291, 116);
+            this.StaffCreateStatus.Location = new System.Drawing.Point(388, 143);
+            this.StaffCreateStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StaffCreateStatus.Name = "StaffCreateStatus";
-            this.StaffCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.StaffCreateStatus.Size = new System.Drawing.Size(0, 25);
             this.StaffCreateStatus.TabIndex = 76;
             // 
             // StaffCreateType
             // 
             this.StaffCreateType.FormattingEnabled = true;
-            this.StaffCreateType.Location = new System.Drawing.Point(28, 91);
+            this.StaffCreateType.Location = new System.Drawing.Point(37, 112);
+            this.StaffCreateType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffCreateType.Name = "StaffCreateType";
-            this.StaffCreateType.Size = new System.Drawing.Size(216, 21);
+            this.StaffCreateType.Size = new System.Drawing.Size(287, 24);
             this.StaffCreateType.TabIndex = 75;
             this.StaffCreateType.SelectedIndexChanged += new System.EventHandler(this.StaffCreateType_SelectedIndexChanged);
             // 
@@ -849,18 +887,20 @@
             // 
             this.StaffCreateBirthday.CustomFormat = "dd/MM";
             this.StaffCreateBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.StaffCreateBirthday.Location = new System.Drawing.Point(28, 150);
+            this.StaffCreateBirthday.Location = new System.Drawing.Point(37, 185);
+            this.StaffCreateBirthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffCreateBirthday.Name = "StaffCreateBirthday";
-            this.StaffCreateBirthday.Size = new System.Drawing.Size(216, 20);
+            this.StaffCreateBirthday.Size = new System.Drawing.Size(287, 22);
             this.StaffCreateBirthday.TabIndex = 72;
             this.StaffCreateBirthday.ValueChanged += new System.EventHandler(this.StaffCreateBirthday_ValueChanged);
             // 
             // StaffCreateAs
             // 
             this.StaffCreateAs.FormattingEnabled = true;
-            this.StaffCreateAs.Location = new System.Drawing.Point(291, 35);
+            this.StaffCreateAs.Location = new System.Drawing.Point(388, 43);
+            this.StaffCreateAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffCreateAs.Name = "StaffCreateAs";
-            this.StaffCreateAs.Size = new System.Drawing.Size(212, 21);
+            this.StaffCreateAs.Size = new System.Drawing.Size(281, 24);
             this.StaffCreateAs.TabIndex = 70;
             this.StaffCreateAs.SelectedIndexChanged += new System.EventHandler(this.StaffCreateAs_SelectedIndexChanged);
             // 
@@ -868,9 +908,10 @@
             // 
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label64.Location = new System.Drawing.Point(31, 130);
+            this.label64.Location = new System.Drawing.Point(41, 160);
+            this.label64.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(64, 20);
+            this.label64.Size = new System.Drawing.Size(82, 25);
             this.label64.TabIndex = 71;
             this.label64.Text = "Birthday";
             // 
@@ -878,17 +919,19 @@
             // 
             this.label179.AutoSize = true;
             this.label179.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label179.Location = new System.Drawing.Point(291, 12);
+            this.label179.Location = new System.Drawing.Point(388, 15);
+            this.label179.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label179.Name = "label179";
-            this.label179.Size = new System.Drawing.Size(72, 20);
+            this.label179.Size = new System.Drawing.Size(92, 25);
             this.label179.TabIndex = 71;
             this.label179.Text = "Create As";
             // 
             // StaffCreateBtn
             // 
-            this.StaffCreateBtn.Location = new System.Drawing.Point(291, 73);
+            this.StaffCreateBtn.Location = new System.Drawing.Point(388, 90);
+            this.StaffCreateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffCreateBtn.Name = "StaffCreateBtn";
-            this.StaffCreateBtn.Size = new System.Drawing.Size(212, 37);
+            this.StaffCreateBtn.Size = new System.Drawing.Size(283, 46);
             this.StaffCreateBtn.TabIndex = 64;
             this.StaffCreateBtn.Text = "Create Entry";
             this.StaffCreateBtn.UseVisualStyleBackColor = true;
@@ -898,9 +941,10 @@
             // 
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label65.Location = new System.Drawing.Point(32, 62);
+            this.label65.Location = new System.Drawing.Point(43, 76);
+            this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(40, 20);
+            this.label65.Size = new System.Drawing.Size(51, 25);
             this.label65.TabIndex = 69;
             this.label65.Text = "Type";
             // 
@@ -908,17 +952,19 @@
             // 
             this.label67.AutoSize = true;
             this.label67.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label67.Location = new System.Drawing.Point(28, 12);
+            this.label67.Location = new System.Drawing.Point(37, 15);
+            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(49, 20);
+            this.label67.Size = new System.Drawing.Size(62, 25);
             this.label67.TabIndex = 62;
             this.label67.Text = "Name";
             // 
             // StaffCreateName
             // 
-            this.StaffCreateName.Location = new System.Drawing.Point(28, 35);
+            this.StaffCreateName.Location = new System.Drawing.Point(37, 43);
+            this.StaffCreateName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StaffCreateName.Name = "StaffCreateName";
-            this.StaffCreateName.Size = new System.Drawing.Size(216, 20);
+            this.StaffCreateName.Size = new System.Drawing.Size(287, 22);
             this.StaffCreateName.TabIndex = 63;
             this.StaffCreateName.TextChanged += new System.EventHandler(this.StaffCreateName_TextChanged);
             // 
@@ -927,10 +973,11 @@
             this.StudioTab.Controls.Add(this.tabPage1);
             this.StudioTab.Controls.Add(this.tabPage2);
             this.StudioTab.Controls.Add(this.tabPage3);
-            this.StudioTab.Location = new System.Drawing.Point(7, 59);
+            this.StudioTab.Location = new System.Drawing.Point(9, 73);
+            this.StudioTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioTab.Name = "StudioTab";
             this.StudioTab.SelectedIndex = 0;
-            this.StudioTab.Size = new System.Drawing.Size(1152, 456);
+            this.StudioTab.Size = new System.Drawing.Size(1536, 561);
             this.StudioTab.TabIndex = 13;
             this.StudioTab.Visible = false;
             this.StudioTab.SelectedIndexChanged += new System.EventHandler(this.StudioTab_SelectedIndexChanged);
@@ -952,10 +999,11 @@
             this.tabPage1.Controls.Add(this.StudioFilterName);
             this.tabPage1.Controls.Add(this.label48);
             this.tabPage1.Controls.Add(this.StudiosList);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1528, 532);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -964,35 +1012,39 @@
             // 
             this.RemoveStudioStatus.AutoSize = true;
             this.RemoveStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.RemoveStudioStatus.Location = new System.Drawing.Point(901, 405);
+            this.RemoveStudioStatus.Location = new System.Drawing.Point(1201, 498);
+            this.RemoveStudioStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RemoveStudioStatus.Name = "RemoveStudioStatus";
-            this.RemoveStudioStatus.Size = new System.Drawing.Size(0, 20);
+            this.RemoveStudioStatus.Size = new System.Drawing.Size(0, 25);
             this.RemoveStudioStatus.TabIndex = 70;
             // 
             // label77
             // 
             this.label77.AutoSize = true;
             this.label77.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label77.Location = new System.Drawing.Point(912, 313);
+            this.label77.Location = new System.Drawing.Point(1216, 385);
+            this.label77.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(81, 20);
+            this.label77.Size = new System.Drawing.Size(101, 25);
             this.label77.TabIndex = 69;
             this.label77.Text = "Remove as";
             // 
             // RemoveStudioAs
             // 
             this.RemoveStudioAs.FormattingEnabled = true;
-            this.RemoveStudioAs.Location = new System.Drawing.Point(907, 333);
+            this.RemoveStudioAs.Location = new System.Drawing.Point(1209, 410);
+            this.RemoveStudioAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveStudioAs.Name = "RemoveStudioAs";
-            this.RemoveStudioAs.Size = new System.Drawing.Size(212, 21);
+            this.RemoveStudioAs.Size = new System.Drawing.Size(281, 24);
             this.RemoveStudioAs.TabIndex = 68;
             this.RemoveStudioAs.SelectedIndexChanged += new System.EventHandler(this.RemoveStudioAs_SelectedIndexChanged);
             // 
             // RemoveStudioBtn
             // 
-            this.RemoveStudioBtn.Location = new System.Drawing.Point(905, 360);
+            this.RemoveStudioBtn.Location = new System.Drawing.Point(1207, 443);
+            this.RemoveStudioBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveStudioBtn.Name = "RemoveStudioBtn";
-            this.RemoveStudioBtn.Size = new System.Drawing.Size(214, 37);
+            this.RemoveStudioBtn.Size = new System.Drawing.Size(285, 46);
             this.RemoveStudioBtn.TabIndex = 67;
             this.RemoveStudioBtn.Text = "Remove Entry";
             this.RemoveStudioBtn.UseVisualStyleBackColor = true;
@@ -1002,22 +1054,24 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label69.Location = new System.Drawing.Point(710, 403);
+            this.label69.Location = new System.Drawing.Point(947, 496);
+            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(41, 20);
+            this.label69.Size = new System.Drawing.Size(53, 25);
             this.label69.TabIndex = 25;
             this.label69.Text = "Page";
             // 
             // StudioPage
             // 
-            this.StudioPage.Location = new System.Drawing.Point(757, 403);
+            this.StudioPage.Location = new System.Drawing.Point(1009, 496);
+            this.StudioPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioPage.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.StudioPage.Name = "StudioPage";
-            this.StudioPage.Size = new System.Drawing.Size(120, 20);
+            this.StudioPage.Size = new System.Drawing.Size(160, 22);
             this.StudioPage.TabIndex = 24;
             this.StudioPage.Value = new decimal(new int[] {
             1,
@@ -1028,9 +1082,10 @@
             // 
             // StudioApplyFilterBtn
             // 
-            this.StudioApplyFilterBtn.Location = new System.Drawing.Point(904, 254);
+            this.StudioApplyFilterBtn.Location = new System.Drawing.Point(1205, 313);
+            this.StudioApplyFilterBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioApplyFilterBtn.Name = "StudioApplyFilterBtn";
-            this.StudioApplyFilterBtn.Size = new System.Drawing.Size(106, 50);
+            this.StudioApplyFilterBtn.Size = new System.Drawing.Size(141, 62);
             this.StudioApplyFilterBtn.TabIndex = 20;
             this.StudioApplyFilterBtn.Text = "Apply Filter";
             this.StudioApplyFilterBtn.UseVisualStyleBackColor = true;
@@ -1038,17 +1093,19 @@
             // 
             // StudioFilterBefore
             // 
-            this.StudioFilterBefore.Location = new System.Drawing.Point(911, 205);
+            this.StudioFilterBefore.Location = new System.Drawing.Point(1215, 252);
+            this.StudioFilterBefore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioFilterBefore.Name = "StudioFilterBefore";
-            this.StudioFilterBefore.Size = new System.Drawing.Size(213, 20);
+            this.StudioFilterBefore.Size = new System.Drawing.Size(283, 22);
             this.StudioFilterBefore.TabIndex = 19;
             this.StudioFilterBefore.ValueChanged += new System.EventHandler(this.StudioFilterBefore_ValueChanged);
             // 
             // StudioFilterAfter
             // 
-            this.StudioFilterAfter.Location = new System.Drawing.Point(911, 140);
+            this.StudioFilterAfter.Location = new System.Drawing.Point(1215, 172);
+            this.StudioFilterAfter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioFilterAfter.Name = "StudioFilterAfter";
-            this.StudioFilterAfter.Size = new System.Drawing.Size(216, 20);
+            this.StudioFilterAfter.Size = new System.Drawing.Size(287, 22);
             this.StudioFilterAfter.TabIndex = 18;
             this.StudioFilterAfter.ValueChanged += new System.EventHandler(this.StudioFilterAfter_ValueChanged);
             // 
@@ -1056,17 +1113,19 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label45.Location = new System.Drawing.Point(911, 105);
+            this.label45.Location = new System.Drawing.Point(1215, 129);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(133, 20);
+            this.label45.Size = new System.Drawing.Size(170, 25);
             this.label45.TabIndex = 17;
             this.label45.Text = "Established During";
             // 
             // StudioFilterClear
             // 
-            this.StudioFilterClear.Location = new System.Drawing.Point(1018, 254);
+            this.StudioFilterClear.Location = new System.Drawing.Point(1357, 313);
+            this.StudioFilterClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioFilterClear.Name = "StudioFilterClear";
-            this.StudioFilterClear.Size = new System.Drawing.Size(106, 50);
+            this.StudioFilterClear.Size = new System.Drawing.Size(141, 62);
             this.StudioFilterClear.TabIndex = 16;
             this.StudioFilterClear.Text = "Clear Filter";
             this.StudioFilterClear.UseVisualStyleBackColor = true;
@@ -1076,17 +1135,19 @@
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label47.Location = new System.Drawing.Point(1002, 13);
+            this.label47.Location = new System.Drawing.Point(1336, 16);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(42, 20);
+            this.label47.Size = new System.Drawing.Size(54, 25);
             this.label47.TabIndex = 7;
             this.label47.Text = "Filter";
             // 
             // StudioFilterName
             // 
-            this.StudioFilterName.Location = new System.Drawing.Point(912, 61);
+            this.StudioFilterName.Location = new System.Drawing.Point(1216, 75);
+            this.StudioFilterName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioFilterName.Name = "StudioFilterName";
-            this.StudioFilterName.Size = new System.Drawing.Size(216, 20);
+            this.StudioFilterName.Size = new System.Drawing.Size(287, 22);
             this.StudioFilterName.TabIndex = 6;
             this.StudioFilterName.TextChanged += new System.EventHandler(this.StudioFilterName_TextChanged);
             // 
@@ -1094,9 +1155,10 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label48.Location = new System.Drawing.Point(917, 41);
+            this.label48.Location = new System.Drawing.Point(1223, 50);
+            this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(49, 20);
+            this.label48.Size = new System.Drawing.Size(62, 25);
             this.label48.TabIndex = 5;
             this.label48.Text = "Name";
             // 
@@ -1109,10 +1171,11 @@
             this.columnHeader8});
             this.StudiosList.FullRowSelect = true;
             this.StudiosList.HideSelection = false;
-            this.StudiosList.Location = new System.Drawing.Point(5, 5);
+            this.StudiosList.Location = new System.Drawing.Point(7, 6);
+            this.StudiosList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudiosList.MultiSelect = false;
             this.StudiosList.Name = "StudiosList";
-            this.StudiosList.Size = new System.Drawing.Size(873, 392);
+            this.StudiosList.Size = new System.Drawing.Size(1163, 482);
             this.StudiosList.TabIndex = 0;
             this.StudiosList.UseCompatibleStateImageBehavior = false;
             this.StudiosList.View = System.Windows.Forms.View.Details;
@@ -1157,10 +1220,11 @@
             this.tabPage2.Controls.Add(this.StudioDetailsName);
             this.tabPage2.Controls.Add(this.label55);
             this.tabPage2.Controls.Add(this.label56);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1528, 532);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1169,16 +1233,18 @@
             // 
             this.UpdateStudioStatus.AutoSize = true;
             this.UpdateStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.UpdateStudioStatus.Location = new System.Drawing.Point(893, 109);
+            this.UpdateStudioStatus.Location = new System.Drawing.Point(1191, 134);
+            this.UpdateStudioStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudioStatus.Name = "UpdateStudioStatus";
-            this.UpdateStudioStatus.Size = new System.Drawing.Size(0, 20);
+            this.UpdateStudioStatus.Size = new System.Drawing.Size(0, 25);
             this.UpdateStudioStatus.TabIndex = 60;
             // 
             // StudioDetailsEstablishedAt
             // 
-            this.StudioDetailsEstablishedAt.Location = new System.Drawing.Point(396, 78);
+            this.StudioDetailsEstablishedAt.Location = new System.Drawing.Point(528, 96);
+            this.StudioDetailsEstablishedAt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioDetailsEstablishedAt.Name = "StudioDetailsEstablishedAt";
-            this.StudioDetailsEstablishedAt.Size = new System.Drawing.Size(213, 20);
+            this.StudioDetailsEstablishedAt.Size = new System.Drawing.Size(283, 22);
             this.StudioDetailsEstablishedAt.TabIndex = 59;
             this.StudioDetailsEstablishedAt.ValueChanged += new System.EventHandler(this.StudioDetailsEstablishedAt_ValueChanged);
             // 
@@ -1186,17 +1252,19 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label50.Location = new System.Drawing.Point(396, 55);
+            this.label50.Location = new System.Drawing.Point(528, 68);
+            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(103, 20);
+            this.label50.Size = new System.Drawing.Size(130, 25);
             this.label50.TabIndex = 58;
             this.label50.Text = "Established At";
             // 
             // StudioDetailsAltName
             // 
-            this.StudioDetailsAltName.Location = new System.Drawing.Point(396, 30);
+            this.StudioDetailsAltName.Location = new System.Drawing.Point(528, 37);
+            this.StudioDetailsAltName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioDetailsAltName.Name = "StudioDetailsAltName";
-            this.StudioDetailsAltName.Size = new System.Drawing.Size(216, 20);
+            this.StudioDetailsAltName.Size = new System.Drawing.Size(287, 22);
             this.StudioDetailsAltName.TabIndex = 57;
             this.StudioDetailsAltName.TextChanged += new System.EventHandler(this.StudioDetailsAltName_TextChanged);
             // 
@@ -1204,36 +1272,40 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label46.Location = new System.Drawing.Point(401, 10);
+            this.label46.Location = new System.Drawing.Point(535, 12);
+            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(72, 20);
+            this.label46.Size = new System.Drawing.Size(90, 25);
             this.label46.TabIndex = 56;
             this.label46.Text = "Alt Name";
             // 
             // StudioDetailsID
             // 
-            this.StudioDetailsID.Location = new System.Drawing.Point(48, 30);
+            this.StudioDetailsID.Location = new System.Drawing.Point(64, 37);
+            this.StudioDetailsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioDetailsID.Name = "StudioDetailsID";
             this.StudioDetailsID.ReadOnly = true;
-            this.StudioDetailsID.Size = new System.Drawing.Size(59, 20);
+            this.StudioDetailsID.Size = new System.Drawing.Size(77, 22);
             this.StudioDetailsID.TabIndex = 55;
             // 
             // label49
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label49.Location = new System.Drawing.Point(899, 8);
+            this.label49.Location = new System.Drawing.Point(1199, 10);
+            this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(76, 20);
+            this.label49.Size = new System.Drawing.Size(96, 25);
             this.label49.TabIndex = 52;
             this.label49.Text = "Update as";
             // 
             // StudioDetailsUpdateAs
             // 
             this.StudioDetailsUpdateAs.FormattingEnabled = true;
-            this.StudioDetailsUpdateAs.Location = new System.Drawing.Point(897, 31);
+            this.StudioDetailsUpdateAs.Location = new System.Drawing.Point(1196, 38);
+            this.StudioDetailsUpdateAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioDetailsUpdateAs.Name = "StudioDetailsUpdateAs";
-            this.StudioDetailsUpdateAs.Size = new System.Drawing.Size(212, 21);
+            this.StudioDetailsUpdateAs.Size = new System.Drawing.Size(281, 24);
             this.StudioDetailsUpdateAs.TabIndex = 51;
             this.StudioDetailsUpdateAs.SelectedIndexChanged += new System.EventHandler(this.StudioDetailsUpdateAs_SelectedIndexChanged);
             // 
@@ -1241,26 +1313,29 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label52.Location = new System.Drawing.Point(56, 55);
+            this.label52.Location = new System.Drawing.Point(75, 68);
+            this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(85, 20);
+            this.label52.Size = new System.Drawing.Size(108, 25);
             this.label52.TabIndex = 42;
             this.label52.Text = "Description";
             // 
             // StudioDetailsDescription
             // 
-            this.StudioDetailsDescription.Location = new System.Drawing.Point(45, 77);
+            this.StudioDetailsDescription.Location = new System.Drawing.Point(60, 95);
+            this.StudioDetailsDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioDetailsDescription.Multiline = true;
             this.StudioDetailsDescription.Name = "StudioDetailsDescription";
-            this.StudioDetailsDescription.Size = new System.Drawing.Size(332, 116);
+            this.StudioDetailsDescription.Size = new System.Drawing.Size(441, 142);
             this.StudioDetailsDescription.TabIndex = 41;
             this.StudioDetailsDescription.TextChanged += new System.EventHandler(this.StudioDetailsDescription_TextChanged);
             // 
             // StudioDetailsUpdateBtn
             // 
-            this.StudioDetailsUpdateBtn.Location = new System.Drawing.Point(897, 68);
+            this.StudioDetailsUpdateBtn.Location = new System.Drawing.Point(1196, 84);
+            this.StudioDetailsUpdateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioDetailsUpdateBtn.Name = "StudioDetailsUpdateBtn";
-            this.StudioDetailsUpdateBtn.Size = new System.Drawing.Size(212, 37);
+            this.StudioDetailsUpdateBtn.Size = new System.Drawing.Size(283, 46);
             this.StudioDetailsUpdateBtn.TabIndex = 30;
             this.StudioDetailsUpdateBtn.Text = "Update Information";
             this.StudioDetailsUpdateBtn.UseVisualStyleBackColor = true;
@@ -1268,9 +1343,10 @@
             // 
             // StudioDetailsName
             // 
-            this.StudioDetailsName.Location = new System.Drawing.Point(161, 30);
+            this.StudioDetailsName.Location = new System.Drawing.Point(215, 37);
+            this.StudioDetailsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioDetailsName.Name = "StudioDetailsName";
-            this.StudioDetailsName.Size = new System.Drawing.Size(216, 20);
+            this.StudioDetailsName.Size = new System.Drawing.Size(287, 22);
             this.StudioDetailsName.TabIndex = 4;
             this.StudioDetailsName.TextChanged += new System.EventHandler(this.StudioDetailsName_TextChanged);
             // 
@@ -1278,9 +1354,10 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label55.Location = new System.Drawing.Point(169, 10);
+            this.label55.Location = new System.Drawing.Point(225, 12);
+            this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(49, 20);
+            this.label55.Size = new System.Drawing.Size(62, 25);
             this.label55.TabIndex = 3;
             this.label55.Text = "Name";
             // 
@@ -1288,9 +1365,10 @@
             // 
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label56.Location = new System.Drawing.Point(56, 10);
+            this.label56.Location = new System.Drawing.Point(75, 12);
+            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(24, 20);
+            this.label56.Size = new System.Drawing.Size(30, 25);
             this.label56.TabIndex = 1;
             this.label56.Text = "ID";
             // 
@@ -1308,9 +1386,10 @@
             this.tabPage3.Controls.Add(this.label51);
             this.tabPage3.Controls.Add(this.label57);
             this.tabPage3.Controls.Add(this.StudioCreateAltName);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage3.Size = new System.Drawing.Size(1528, 532);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1319,35 +1398,39 @@
             // 
             this.CreateStudioStatus.AutoSize = true;
             this.CreateStudioStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CreateStudioStatus.Location = new System.Drawing.Point(897, 149);
+            this.CreateStudioStatus.Location = new System.Drawing.Point(1196, 183);
+            this.CreateStudioStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CreateStudioStatus.Name = "CreateStudioStatus";
-            this.CreateStudioStatus.Size = new System.Drawing.Size(0, 20);
+            this.CreateStudioStatus.Size = new System.Drawing.Size(0, 25);
             this.CreateStudioStatus.TabIndex = 77;
             // 
             // label59
             // 
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label59.Location = new System.Drawing.Point(20, 82);
+            this.label59.Location = new System.Drawing.Point(27, 101);
+            this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(85, 20);
+            this.label59.Size = new System.Drawing.Size(108, 25);
             this.label59.TabIndex = 69;
             this.label59.Text = "Description";
             // 
             // StudioCreateName
             // 
-            this.StudioCreateName.Location = new System.Drawing.Point(22, 53);
+            this.StudioCreateName.Location = new System.Drawing.Point(29, 65);
+            this.StudioCreateName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioCreateName.Name = "StudioCreateName";
-            this.StudioCreateName.Size = new System.Drawing.Size(325, 20);
+            this.StudioCreateName.Size = new System.Drawing.Size(432, 22);
             this.StudioCreateName.TabIndex = 63;
             this.StudioCreateName.TextChanged += new System.EventHandler(this.StudioCreateName_TextChanged);
             // 
             // StudioCreateAs
             // 
             this.StudioCreateAs.FormattingEnabled = true;
-            this.StudioCreateAs.Location = new System.Drawing.Point(906, 58);
+            this.StudioCreateAs.Location = new System.Drawing.Point(1208, 71);
+            this.StudioCreateAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioCreateAs.Name = "StudioCreateAs";
-            this.StudioCreateAs.Size = new System.Drawing.Size(212, 21);
+            this.StudioCreateAs.Size = new System.Drawing.Size(281, 24);
             this.StudioCreateAs.TabIndex = 70;
             this.StudioCreateAs.SelectedIndexChanged += new System.EventHandler(this.StudioCreateAs_SelectedIndexChanged);
             // 
@@ -1355,34 +1438,38 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label58.Location = new System.Drawing.Point(902, 36);
+            this.label58.Location = new System.Drawing.Point(1203, 44);
+            this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(72, 20);
+            this.label58.Size = new System.Drawing.Size(92, 25);
             this.label58.TabIndex = 71;
             this.label58.Text = "Create As";
             // 
             // StudioCreateEstablishedAt
             // 
-            this.StudioCreateEstablishedAt.Location = new System.Drawing.Point(364, 102);
+            this.StudioCreateEstablishedAt.Location = new System.Drawing.Point(485, 126);
+            this.StudioCreateEstablishedAt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioCreateEstablishedAt.Name = "StudioCreateEstablishedAt";
-            this.StudioCreateEstablishedAt.Size = new System.Drawing.Size(213, 20);
+            this.StudioCreateEstablishedAt.Size = new System.Drawing.Size(283, 22);
             this.StudioCreateEstablishedAt.TabIndex = 76;
             this.StudioCreateEstablishedAt.ValueChanged += new System.EventHandler(this.StudioCreateEstablishedAt_ValueChanged);
             // 
             // StudioCreateDescription
             // 
-            this.StudioCreateDescription.Location = new System.Drawing.Point(20, 102);
+            this.StudioCreateDescription.Location = new System.Drawing.Point(27, 126);
+            this.StudioCreateDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioCreateDescription.Multiline = true;
             this.StudioCreateDescription.Name = "StudioCreateDescription";
-            this.StudioCreateDescription.Size = new System.Drawing.Size(332, 116);
+            this.StudioCreateDescription.Size = new System.Drawing.Size(441, 142);
             this.StudioCreateDescription.TabIndex = 68;
             this.StudioCreateDescription.TextChanged += new System.EventHandler(this.StudioCreateDescription_TextChanged);
             // 
             // StudioCreateBtn
             // 
-            this.StudioCreateBtn.Location = new System.Drawing.Point(906, 102);
+            this.StudioCreateBtn.Location = new System.Drawing.Point(1208, 126);
+            this.StudioCreateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioCreateBtn.Name = "StudioCreateBtn";
-            this.StudioCreateBtn.Size = new System.Drawing.Size(212, 37);
+            this.StudioCreateBtn.Size = new System.Drawing.Size(283, 46);
             this.StudioCreateBtn.TabIndex = 64;
             this.StudioCreateBtn.Text = "Create Entry";
             this.StudioCreateBtn.UseVisualStyleBackColor = true;
@@ -1392,9 +1479,10 @@
             // 
             this.label62.AutoSize = true;
             this.label62.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label62.Location = new System.Drawing.Point(20, 29);
+            this.label62.Location = new System.Drawing.Point(27, 36);
+            this.label62.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(49, 20);
+            this.label62.Size = new System.Drawing.Size(62, 25);
             this.label62.TabIndex = 62;
             this.label62.Text = "Name";
             // 
@@ -1402,9 +1490,10 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label51.Location = new System.Drawing.Point(367, 82);
+            this.label51.Location = new System.Drawing.Point(489, 101);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(103, 20);
+            this.label51.Size = new System.Drawing.Size(130, 25);
             this.label51.TabIndex = 75;
             this.label51.Text = "Established At";
             // 
@@ -1412,17 +1501,19 @@
             // 
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label57.Location = new System.Drawing.Point(367, 29);
+            this.label57.Location = new System.Drawing.Point(489, 36);
+            this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(72, 20);
+            this.label57.Size = new System.Drawing.Size(90, 25);
             this.label57.TabIndex = 73;
             this.label57.Text = "Alt Name";
             // 
             // StudioCreateAltName
             // 
-            this.StudioCreateAltName.Location = new System.Drawing.Point(364, 52);
+            this.StudioCreateAltName.Location = new System.Drawing.Point(485, 64);
+            this.StudioCreateAltName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudioCreateAltName.Name = "StudioCreateAltName";
-            this.StudioCreateAltName.Size = new System.Drawing.Size(216, 20);
+            this.StudioCreateAltName.Size = new System.Drawing.Size(287, 22);
             this.StudioCreateAltName.TabIndex = 74;
             this.StudioCreateAltName.TextChanged += new System.EventHandler(this.StudioCreateAltName_TextChanged);
             // 
@@ -1431,10 +1522,11 @@
             this.CharactersTab.Controls.Add(this.tabPage7);
             this.CharactersTab.Controls.Add(this.tabPage8);
             this.CharactersTab.Controls.Add(this.tabPage13);
-            this.CharactersTab.Location = new System.Drawing.Point(7, 59);
+            this.CharactersTab.Location = new System.Drawing.Point(9, 73);
+            this.CharactersTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharactersTab.Name = "CharactersTab";
             this.CharactersTab.SelectedIndex = 0;
-            this.CharactersTab.Size = new System.Drawing.Size(1152, 456);
+            this.CharactersTab.Size = new System.Drawing.Size(1536, 561);
             this.CharactersTab.TabIndex = 12;
             this.CharactersTab.Visible = false;
             this.CharactersTab.SelectedIndexChanged += new System.EventHandler(this.CharactersTab_SelectedIndexChanged);
@@ -1457,10 +1549,11 @@
             this.tabPage7.Controls.Add(this.CharacterNameFilter);
             this.tabPage7.Controls.Add(this.label116);
             this.tabPage7.Controls.Add(this.CharactersList);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Size = new System.Drawing.Size(1528, 532);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "List";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1469,35 +1562,39 @@
             // 
             this.CharRemoveStatus.AutoSize = true;
             this.CharRemoveStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CharRemoveStatus.Location = new System.Drawing.Point(907, 405);
+            this.CharRemoveStatus.Location = new System.Drawing.Point(1209, 498);
+            this.CharRemoveStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CharRemoveStatus.Name = "CharRemoveStatus";
-            this.CharRemoveStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharRemoveStatus.Size = new System.Drawing.Size(0, 25);
             this.CharRemoveStatus.TabIndex = 74;
             // 
             // label78
             // 
             this.label78.AutoSize = true;
             this.label78.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label78.Location = new System.Drawing.Point(918, 313);
+            this.label78.Location = new System.Drawing.Point(1224, 385);
+            this.label78.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(81, 20);
+            this.label78.Size = new System.Drawing.Size(101, 25);
             this.label78.TabIndex = 73;
             this.label78.Text = "Remove as";
             // 
             // CharRemoveAs
             // 
             this.CharRemoveAs.FormattingEnabled = true;
-            this.CharRemoveAs.Location = new System.Drawing.Point(913, 333);
+            this.CharRemoveAs.Location = new System.Drawing.Point(1217, 410);
+            this.CharRemoveAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharRemoveAs.Name = "CharRemoveAs";
-            this.CharRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.CharRemoveAs.Size = new System.Drawing.Size(281, 24);
             this.CharRemoveAs.TabIndex = 72;
             this.CharRemoveAs.SelectedIndexChanged += new System.EventHandler(this.CharRemoveAs_SelectedIndexChanged);
             // 
             // CharRemoveBtn
             // 
-            this.CharRemoveBtn.Location = new System.Drawing.Point(911, 360);
+            this.CharRemoveBtn.Location = new System.Drawing.Point(1215, 443);
+            this.CharRemoveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharRemoveBtn.Name = "CharRemoveBtn";
-            this.CharRemoveBtn.Size = new System.Drawing.Size(214, 37);
+            this.CharRemoveBtn.Size = new System.Drawing.Size(285, 46);
             this.CharRemoveBtn.TabIndex = 71;
             this.CharRemoveBtn.Text = "Remove Entry";
             this.CharRemoveBtn.UseVisualStyleBackColor = true;
@@ -1507,22 +1604,24 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label24.Location = new System.Drawing.Point(711, 407);
+            this.label24.Location = new System.Drawing.Point(948, 501);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 20);
+            this.label24.Size = new System.Drawing.Size(53, 25);
             this.label24.TabIndex = 23;
             this.label24.Text = "Page";
             // 
             // CharacterListPage
             // 
-            this.CharacterListPage.Location = new System.Drawing.Point(758, 407);
+            this.CharacterListPage.Location = new System.Drawing.Point(1011, 501);
+            this.CharacterListPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterListPage.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.CharacterListPage.Name = "CharacterListPage";
-            this.CharacterListPage.Size = new System.Drawing.Size(120, 20);
+            this.CharacterListPage.Size = new System.Drawing.Size(160, 22);
             this.CharacterListPage.TabIndex = 22;
             this.CharacterListPage.Value = new decimal(new int[] {
             1,
@@ -1533,9 +1632,10 @@
             // 
             // CharacterApplyFilterBtn
             // 
-            this.CharacterApplyFilterBtn.Location = new System.Drawing.Point(913, 261);
+            this.CharacterApplyFilterBtn.Location = new System.Drawing.Point(1217, 321);
+            this.CharacterApplyFilterBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterApplyFilterBtn.Name = "CharacterApplyFilterBtn";
-            this.CharacterApplyFilterBtn.Size = new System.Drawing.Size(97, 50);
+            this.CharacterApplyFilterBtn.Size = new System.Drawing.Size(129, 62);
             this.CharacterApplyFilterBtn.TabIndex = 21;
             this.CharacterApplyFilterBtn.Text = "Apply Filter";
             this.CharacterApplyFilterBtn.UseVisualStyleBackColor = true;
@@ -1545,18 +1645,20 @@
             // 
             this.label105.AutoSize = true;
             this.label105.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label105.Location = new System.Drawing.Point(916, 194);
+            this.label105.Location = new System.Drawing.Point(1221, 239);
+            this.label105.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(74, 20);
+            this.label105.Size = new System.Drawing.Size(94, 25);
             this.label105.TabIndex = 20;
             this.label105.Text = "Voiced by";
             // 
             // CharacterFilterVoicedby
             // 
             this.CharacterFilterVoicedby.FormattingEnabled = true;
-            this.CharacterFilterVoicedby.Location = new System.Drawing.Point(910, 214);
+            this.CharacterFilterVoicedby.Location = new System.Drawing.Point(1213, 263);
+            this.CharacterFilterVoicedby.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterFilterVoicedby.Name = "CharacterFilterVoicedby";
-            this.CharacterFilterVoicedby.Size = new System.Drawing.Size(216, 21);
+            this.CharacterFilterVoicedby.Size = new System.Drawing.Size(287, 24);
             this.CharacterFilterVoicedby.TabIndex = 19;
             this.CharacterFilterVoicedby.SelectedIndexChanged += new System.EventHandler(this.CharacterFilterVoicedby_SelectedIndexChanged);
             // 
@@ -1564,26 +1666,29 @@
             // 
             this.label97.AutoSize = true;
             this.label97.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label97.Location = new System.Drawing.Point(916, 109);
+            this.label97.Location = new System.Drawing.Point(1221, 134);
+            this.label97.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(90, 20);
+            this.label97.Size = new System.Drawing.Size(114, 25);
             this.label97.TabIndex = 18;
             this.label97.Text = "From Anime";
             // 
             // CharacterFilterFromAnime
             // 
             this.CharacterFilterFromAnime.FormattingEnabled = true;
-            this.CharacterFilterFromAnime.Location = new System.Drawing.Point(910, 129);
+            this.CharacterFilterFromAnime.Location = new System.Drawing.Point(1213, 159);
+            this.CharacterFilterFromAnime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterFilterFromAnime.Name = "CharacterFilterFromAnime";
-            this.CharacterFilterFromAnime.Size = new System.Drawing.Size(216, 21);
+            this.CharacterFilterFromAnime.Size = new System.Drawing.Size(287, 24);
             this.CharacterFilterFromAnime.TabIndex = 17;
             this.CharacterFilterFromAnime.SelectedIndexChanged += new System.EventHandler(this.CharacterFilterFromAnime_SelectedIndexChanged);
             // 
             // CharacterClearFilterBtn
             // 
-            this.CharacterClearFilterBtn.Location = new System.Drawing.Point(1028, 261);
+            this.CharacterClearFilterBtn.Location = new System.Drawing.Point(1371, 321);
+            this.CharacterClearFilterBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterClearFilterBtn.Name = "CharacterClearFilterBtn";
-            this.CharacterClearFilterBtn.Size = new System.Drawing.Size(97, 50);
+            this.CharacterClearFilterBtn.Size = new System.Drawing.Size(129, 62);
             this.CharacterClearFilterBtn.TabIndex = 16;
             this.CharacterClearFilterBtn.Text = "Clear Filter";
             this.CharacterClearFilterBtn.UseVisualStyleBackColor = true;
@@ -1593,17 +1698,19 @@
             // 
             this.label115.AutoSize = true;
             this.label115.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label115.Location = new System.Drawing.Point(997, 16);
+            this.label115.Location = new System.Drawing.Point(1329, 20);
+            this.label115.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(42, 20);
+            this.label115.Size = new System.Drawing.Size(54, 25);
             this.label115.TabIndex = 7;
             this.label115.Text = "Filter";
             // 
             // CharacterNameFilter
             // 
-            this.CharacterNameFilter.Location = new System.Drawing.Point(910, 64);
+            this.CharacterNameFilter.Location = new System.Drawing.Point(1213, 79);
+            this.CharacterNameFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterNameFilter.Name = "CharacterNameFilter";
-            this.CharacterNameFilter.Size = new System.Drawing.Size(216, 20);
+            this.CharacterNameFilter.Size = new System.Drawing.Size(287, 22);
             this.CharacterNameFilter.TabIndex = 6;
             this.CharacterNameFilter.TextChanged += new System.EventHandler(this.CharacterNameFilter_TextChanged);
             // 
@@ -1611,9 +1718,10 @@
             // 
             this.label116.AutoSize = true;
             this.label116.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label116.Location = new System.Drawing.Point(913, 44);
+            this.label116.Location = new System.Drawing.Point(1217, 54);
+            this.label116.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(49, 20);
+            this.label116.Size = new System.Drawing.Size(62, 25);
             this.label116.TabIndex = 5;
             this.label116.Text = "Name";
             // 
@@ -1626,10 +1734,11 @@
             this.columnHeader57});
             this.CharactersList.FullRowSelect = true;
             this.CharactersList.HideSelection = false;
-            this.CharactersList.Location = new System.Drawing.Point(6, 8);
+            this.CharactersList.Location = new System.Drawing.Point(8, 10);
+            this.CharactersList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharactersList.MultiSelect = false;
             this.CharactersList.Name = "CharactersList";
-            this.CharactersList.Size = new System.Drawing.Size(872, 396);
+            this.CharactersList.Size = new System.Drawing.Size(1161, 486);
             this.CharactersList.TabIndex = 0;
             this.CharactersList.UseCompatibleStateImageBehavior = false;
             this.CharactersList.View = System.Windows.Forms.View.Details;
@@ -1678,10 +1787,11 @@
             this.tabPage8.Controls.Add(this.CharacterDetailsName);
             this.tabPage8.Controls.Add(this.label157);
             this.tabPage8.Controls.Add(this.label158);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Size = new System.Drawing.Size(1528, 532);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Details";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1690,18 +1800,20 @@
             // 
             this.CharDetailStatus.AutoSize = true;
             this.CharDetailStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CharDetailStatus.Location = new System.Drawing.Point(630, 141);
+            this.CharDetailStatus.Location = new System.Drawing.Point(840, 174);
+            this.CharDetailStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CharDetailStatus.Name = "CharDetailStatus";
-            this.CharDetailStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharDetailStatus.Size = new System.Drawing.Size(0, 25);
             this.CharDetailStatus.TabIndex = 62;
             // 
             // CharDetailsAppearsInlst
             // 
             this.CharDetailsAppearsInlst.HideSelection = false;
-            this.CharDetailsAppearsInlst.Location = new System.Drawing.Point(15, 248);
+            this.CharDetailsAppearsInlst.Location = new System.Drawing.Point(20, 305);
+            this.CharDetailsAppearsInlst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharDetailsAppearsInlst.MultiSelect = false;
             this.CharDetailsAppearsInlst.Name = "CharDetailsAppearsInlst";
-            this.CharDetailsAppearsInlst.Size = new System.Drawing.Size(488, 175);
+            this.CharDetailsAppearsInlst.Size = new System.Drawing.Size(649, 214);
             this.CharDetailsAppearsInlst.TabIndex = 61;
             this.CharDetailsAppearsInlst.UseCompatibleStateImageBehavior = false;
             this.CharDetailsAppearsInlst.View = System.Windows.Forms.View.List;
@@ -1709,9 +1821,10 @@
             // 
             // CharDetailsRemoveAppearsInBtn
             // 
-            this.CharDetailsRemoveAppearsInBtn.Location = new System.Drawing.Point(514, 341);
+            this.CharDetailsRemoveAppearsInBtn.Location = new System.Drawing.Point(685, 420);
+            this.CharDetailsRemoveAppearsInBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharDetailsRemoveAppearsInBtn.Name = "CharDetailsRemoveAppearsInBtn";
-            this.CharDetailsRemoveAppearsInBtn.Size = new System.Drawing.Size(147, 37);
+            this.CharDetailsRemoveAppearsInBtn.Size = new System.Drawing.Size(196, 46);
             this.CharDetailsRemoveAppearsInBtn.TabIndex = 60;
             this.CharDetailsRemoveAppearsInBtn.Text = "Remove Appears In";
             this.CharDetailsRemoveAppearsInBtn.UseVisualStyleBackColor = true;
@@ -1719,9 +1832,10 @@
             // 
             // CharDetailsAddAppearsInBtn
             // 
-            this.CharDetailsAddAppearsInBtn.Location = new System.Drawing.Point(514, 296);
+            this.CharDetailsAddAppearsInBtn.Location = new System.Drawing.Point(685, 364);
+            this.CharDetailsAddAppearsInBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharDetailsAddAppearsInBtn.Name = "CharDetailsAddAppearsInBtn";
-            this.CharDetailsAddAppearsInBtn.Size = new System.Drawing.Size(147, 37);
+            this.CharDetailsAddAppearsInBtn.Size = new System.Drawing.Size(196, 46);
             this.CharDetailsAddAppearsInBtn.TabIndex = 59;
             this.CharDetailsAddAppearsInBtn.Text = "Add Appears In";
             this.CharDetailsAddAppearsInBtn.UseVisualStyleBackColor = true;
@@ -1731,35 +1845,39 @@
             // 
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label75.Location = new System.Drawing.Point(516, 246);
+            this.label75.Location = new System.Drawing.Point(688, 303);
+            this.label75.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(130, 20);
+            this.label75.Size = new System.Drawing.Size(164, 25);
             this.label75.TabIndex = 58;
             this.label75.Text = "Select New Anime";
             // 
             // CharDetailsAddAnimeAppearsIn
             // 
             this.CharDetailsAddAnimeAppearsIn.FormattingEnabled = true;
-            this.CharDetailsAddAnimeAppearsIn.Location = new System.Drawing.Point(514, 269);
+            this.CharDetailsAddAnimeAppearsIn.Location = new System.Drawing.Point(685, 331);
+            this.CharDetailsAddAnimeAppearsIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharDetailsAddAnimeAppearsIn.Name = "CharDetailsAddAnimeAppearsIn";
-            this.CharDetailsAddAnimeAppearsIn.Size = new System.Drawing.Size(147, 21);
+            this.CharDetailsAddAnimeAppearsIn.Size = new System.Drawing.Size(195, 24);
             this.CharDetailsAddAnimeAppearsIn.TabIndex = 57;
             this.CharDetailsAddAnimeAppearsIn.SelectedIndexChanged += new System.EventHandler(this.CharDetailsAddAnimeAppearsIn_SelectedIndexChanged);
             // 
             // CharacterDetailsID
             // 
-            this.CharacterDetailsID.Location = new System.Drawing.Point(15, 50);
+            this.CharacterDetailsID.Location = new System.Drawing.Point(20, 62);
+            this.CharacterDetailsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterDetailsID.Name = "CharacterDetailsID";
             this.CharacterDetailsID.ReadOnly = true;
-            this.CharacterDetailsID.Size = new System.Drawing.Size(59, 20);
+            this.CharacterDetailsID.Size = new System.Drawing.Size(77, 22);
             this.CharacterDetailsID.TabIndex = 55;
             // 
             // CharacterDetailsVA
             // 
             this.CharacterDetailsVA.FormattingEnabled = true;
-            this.CharacterDetailsVA.Location = new System.Drawing.Point(367, 53);
+            this.CharacterDetailsVA.Location = new System.Drawing.Point(489, 65);
+            this.CharacterDetailsVA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterDetailsVA.Name = "CharacterDetailsVA";
-            this.CharacterDetailsVA.Size = new System.Drawing.Size(223, 21);
+            this.CharacterDetailsVA.Size = new System.Drawing.Size(296, 24);
             this.CharacterDetailsVA.TabIndex = 54;
             this.CharacterDetailsVA.SelectedIndexChanged += new System.EventHandler(this.CharacterDetailsVA_SelectedIndexChanged);
             // 
@@ -1767,18 +1885,20 @@
             // 
             this.label106.AutoSize = true;
             this.label106.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label106.Location = new System.Drawing.Point(628, 30);
+            this.label106.Location = new System.Drawing.Point(837, 37);
+            this.label106.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(76, 20);
+            this.label106.Size = new System.Drawing.Size(96, 25);
             this.label106.TabIndex = 52;
             this.label106.Text = "Update as";
             // 
             // CharacterUpdateAs
             // 
             this.CharacterUpdateAs.FormattingEnabled = true;
-            this.CharacterUpdateAs.Location = new System.Drawing.Point(628, 50);
+            this.CharacterUpdateAs.Location = new System.Drawing.Point(837, 62);
+            this.CharacterUpdateAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterUpdateAs.Name = "CharacterUpdateAs";
-            this.CharacterUpdateAs.Size = new System.Drawing.Size(212, 21);
+            this.CharacterUpdateAs.Size = new System.Drawing.Size(281, 24);
             this.CharacterUpdateAs.TabIndex = 51;
             this.CharacterUpdateAs.SelectedIndexChanged += new System.EventHandler(this.CharacterUpdateAs_SelectedIndexChanged);
             // 
@@ -1786,9 +1906,10 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label44.Location = new System.Drawing.Point(369, 30);
+            this.label44.Location = new System.Drawing.Point(492, 37);
+            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(85, 20);
+            this.label44.Size = new System.Drawing.Size(108, 25);
             this.label44.TabIndex = 47;
             this.label44.Text = "Voice Actor";
             // 
@@ -1796,9 +1917,10 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label42.Location = new System.Drawing.Point(17, 225);
+            this.label42.Location = new System.Drawing.Point(23, 277);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(80, 20);
+            this.label42.Size = new System.Drawing.Size(102, 25);
             this.label42.TabIndex = 43;
             this.label42.Text = "Appears in";
             // 
@@ -1806,26 +1928,29 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label41.Location = new System.Drawing.Point(20, 77);
+            this.label41.Location = new System.Drawing.Point(27, 95);
+            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(85, 20);
+            this.label41.Size = new System.Drawing.Size(108, 25);
             this.label41.TabIndex = 42;
             this.label41.Text = "Description";
             // 
             // CharacterDetailsDescription
             // 
-            this.CharacterDetailsDescription.Location = new System.Drawing.Point(15, 97);
+            this.CharacterDetailsDescription.Location = new System.Drawing.Point(20, 119);
+            this.CharacterDetailsDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterDetailsDescription.Multiline = true;
             this.CharacterDetailsDescription.Name = "CharacterDetailsDescription";
-            this.CharacterDetailsDescription.Size = new System.Drawing.Size(332, 116);
+            this.CharacterDetailsDescription.Size = new System.Drawing.Size(441, 142);
             this.CharacterDetailsDescription.TabIndex = 41;
             this.CharacterDetailsDescription.TextChanged += new System.EventHandler(this.CharacterDetailsDescription_TextChanged);
             // 
             // CharacterUpdateBtn
             // 
-            this.CharacterUpdateBtn.Location = new System.Drawing.Point(628, 93);
+            this.CharacterUpdateBtn.Location = new System.Drawing.Point(837, 114);
+            this.CharacterUpdateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterUpdateBtn.Name = "CharacterUpdateBtn";
-            this.CharacterUpdateBtn.Size = new System.Drawing.Size(212, 37);
+            this.CharacterUpdateBtn.Size = new System.Drawing.Size(283, 46);
             this.CharacterUpdateBtn.TabIndex = 30;
             this.CharacterUpdateBtn.Text = "Update Information";
             this.CharacterUpdateBtn.UseVisualStyleBackColor = true;
@@ -1833,9 +1958,10 @@
             // 
             // CharacterDetailsName
             // 
-            this.CharacterDetailsName.Location = new System.Drawing.Point(128, 51);
+            this.CharacterDetailsName.Location = new System.Drawing.Point(171, 63);
+            this.CharacterDetailsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterDetailsName.Name = "CharacterDetailsName";
-            this.CharacterDetailsName.Size = new System.Drawing.Size(216, 20);
+            this.CharacterDetailsName.Size = new System.Drawing.Size(287, 22);
             this.CharacterDetailsName.TabIndex = 4;
             this.CharacterDetailsName.TextChanged += new System.EventHandler(this.CharacterDetailsName_TextChanged);
             // 
@@ -1843,9 +1969,10 @@
             // 
             this.label157.AutoSize = true;
             this.label157.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label157.Location = new System.Drawing.Point(133, 27);
+            this.label157.Location = new System.Drawing.Point(177, 33);
+            this.label157.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(49, 20);
+            this.label157.Size = new System.Drawing.Size(62, 25);
             this.label157.TabIndex = 3;
             this.label157.Text = "Name";
             // 
@@ -1853,9 +1980,10 @@
             // 
             this.label158.AutoSize = true;
             this.label158.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label158.Location = new System.Drawing.Point(20, 27);
+            this.label158.Location = new System.Drawing.Point(27, 33);
+            this.label158.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(24, 20);
+            this.label158.Size = new System.Drawing.Size(30, 25);
             this.label158.TabIndex = 1;
             this.label158.Text = "ID";
             // 
@@ -1871,9 +1999,10 @@
             this.tabPage13.Controls.Add(this.CharacterCreateName);
             this.tabPage13.Controls.Add(this.label163);
             this.tabPage13.Controls.Add(this.CharacterCreateEntry);
-            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Location = new System.Drawing.Point(4, 25);
+            this.tabPage13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage13.Size = new System.Drawing.Size(1528, 532);
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "Create";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -1882,36 +2011,40 @@
             // 
             this.CharCreateStatus.AutoSize = true;
             this.CharCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CharCreateStatus.Location = new System.Drawing.Point(877, 116);
+            this.CharCreateStatus.Location = new System.Drawing.Point(1169, 143);
+            this.CharCreateStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CharCreateStatus.Name = "CharCreateStatus";
-            this.CharCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.CharCreateStatus.Size = new System.Drawing.Size(0, 25);
             this.CharCreateStatus.TabIndex = 66;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label43.Location = new System.Drawing.Point(881, 23);
+            this.label43.Location = new System.Drawing.Point(1175, 28);
+            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(70, 20);
+            this.label43.Size = new System.Drawing.Size(90, 25);
             this.label43.TabIndex = 65;
             this.label43.Text = "Create as";
             // 
             // CharacterCreateAs
             // 
             this.CharacterCreateAs.FormattingEnabled = true;
-            this.CharacterCreateAs.Location = new System.Drawing.Point(881, 43);
+            this.CharacterCreateAs.Location = new System.Drawing.Point(1175, 53);
+            this.CharacterCreateAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterCreateAs.Name = "CharacterCreateAs";
-            this.CharacterCreateAs.Size = new System.Drawing.Size(223, 21);
+            this.CharacterCreateAs.Size = new System.Drawing.Size(296, 24);
             this.CharacterCreateAs.TabIndex = 64;
             this.CharacterCreateAs.SelectedIndexChanged += new System.EventHandler(this.CharacterCreateAs_SelectedIndexChanged);
             // 
             // CharacterCreateVA
             // 
             this.CharacterCreateVA.FormattingEnabled = true;
-            this.CharacterCreateVA.Location = new System.Drawing.Point(394, 51);
+            this.CharacterCreateVA.Location = new System.Drawing.Point(525, 63);
+            this.CharacterCreateVA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterCreateVA.Name = "CharacterCreateVA";
-            this.CharacterCreateVA.Size = new System.Drawing.Size(223, 21);
+            this.CharacterCreateVA.Size = new System.Drawing.Size(296, 24);
             this.CharacterCreateVA.TabIndex = 63;
             this.CharacterCreateVA.SelectedIndexChanged += new System.EventHandler(this.CharacterCreateVA_SelectedIndexChanged);
             // 
@@ -1919,9 +2052,10 @@
             // 
             this.label159.AutoSize = true;
             this.label159.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label159.Location = new System.Drawing.Point(394, 31);
+            this.label159.Location = new System.Drawing.Point(525, 38);
+            this.label159.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label159.Name = "label159";
-            this.label159.Size = new System.Drawing.Size(85, 20);
+            this.label159.Size = new System.Drawing.Size(108, 25);
             this.label159.TabIndex = 61;
             this.label159.Text = "Voice Actor";
             // 
@@ -1929,26 +2063,29 @@
             // 
             this.label113.AutoSize = true;
             this.label113.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label113.Location = new System.Drawing.Point(53, 92);
+            this.label113.Location = new System.Drawing.Point(71, 113);
+            this.label113.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(85, 20);
+            this.label113.Size = new System.Drawing.Size(108, 25);
             this.label113.TabIndex = 59;
             this.label113.Text = "Description";
             // 
             // CharacterCreateDescription
             // 
-            this.CharacterCreateDescription.Location = new System.Drawing.Point(48, 112);
+            this.CharacterCreateDescription.Location = new System.Drawing.Point(64, 138);
+            this.CharacterCreateDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterCreateDescription.Multiline = true;
             this.CharacterCreateDescription.Name = "CharacterCreateDescription";
-            this.CharacterCreateDescription.Size = new System.Drawing.Size(569, 267);
+            this.CharacterCreateDescription.Size = new System.Drawing.Size(757, 328);
             this.CharacterCreateDescription.TabIndex = 58;
             this.CharacterCreateDescription.TextChanged += new System.EventHandler(this.CharacterCreateDescription_TextChanged);
             // 
             // CharacterCreateName
             // 
-            this.CharacterCreateName.Location = new System.Drawing.Point(48, 53);
+            this.CharacterCreateName.Location = new System.Drawing.Point(64, 65);
+            this.CharacterCreateName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterCreateName.Name = "CharacterCreateName";
-            this.CharacterCreateName.Size = new System.Drawing.Size(216, 20);
+            this.CharacterCreateName.Size = new System.Drawing.Size(287, 22);
             this.CharacterCreateName.TabIndex = 57;
             this.CharacterCreateName.TextChanged += new System.EventHandler(this.CharacterCreateName_TextChanged);
             // 
@@ -1956,17 +2093,19 @@
             // 
             this.label163.AutoSize = true;
             this.label163.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label163.Location = new System.Drawing.Point(51, 36);
+            this.label163.Location = new System.Drawing.Point(68, 44);
+            this.label163.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label163.Name = "label163";
-            this.label163.Size = new System.Drawing.Size(49, 20);
+            this.label163.Size = new System.Drawing.Size(62, 25);
             this.label163.TabIndex = 56;
             this.label163.Text = "Name";
             // 
             // CharacterCreateEntry
             // 
-            this.CharacterCreateEntry.Location = new System.Drawing.Point(881, 71);
+            this.CharacterCreateEntry.Location = new System.Drawing.Point(1175, 87);
+            this.CharacterCreateEntry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CharacterCreateEntry.Name = "CharacterCreateEntry";
-            this.CharacterCreateEntry.Size = new System.Drawing.Size(223, 37);
+            this.CharacterCreateEntry.Size = new System.Drawing.Size(297, 46);
             this.CharacterCreateEntry.TabIndex = 43;
             this.CharacterCreateEntry.Text = "Create Entry";
             this.CharacterCreateEntry.UseVisualStyleBackColor = true;
@@ -1978,10 +2117,11 @@
             this.AnimeTab.Controls.Add(this.AnimeDetails);
             this.AnimeTab.Controls.Add(this.AnimeCreate);
             this.AnimeTab.Controls.Add(this.AnimeComments);
-            this.AnimeTab.Location = new System.Drawing.Point(7, 59);
+            this.AnimeTab.Location = new System.Drawing.Point(9, 73);
+            this.AnimeTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeTab.Name = "AnimeTab";
             this.AnimeTab.SelectedIndex = 0;
-            this.AnimeTab.Size = new System.Drawing.Size(1152, 456);
+            this.AnimeTab.Size = new System.Drawing.Size(1536, 561);
             this.AnimeTab.TabIndex = 10;
             this.AnimeTab.Visible = false;
             this.AnimeTab.SelectedIndexChanged += new System.EventHandler(this.AnimeTab_SelectedIndexChanged);
@@ -2006,10 +2146,11 @@
             this.AnimeList.Controls.Add(this.AnimeFilterName);
             this.AnimeList.Controls.Add(this.label15);
             this.AnimeList.Controls.Add(this.animeListView);
-            this.AnimeList.Location = new System.Drawing.Point(4, 22);
+            this.AnimeList.Location = new System.Drawing.Point(4, 25);
+            this.AnimeList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeList.Name = "AnimeList";
-            this.AnimeList.Padding = new System.Windows.Forms.Padding(3);
-            this.AnimeList.Size = new System.Drawing.Size(1144, 430);
+            this.AnimeList.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AnimeList.Size = new System.Drawing.Size(1528, 532);
             this.AnimeList.TabIndex = 0;
             this.AnimeList.Text = "List";
             this.AnimeList.UseVisualStyleBackColor = true;
@@ -2018,35 +2159,39 @@
             // 
             this.AnimeRemoveStatus.AutoSize = true;
             this.AnimeRemoveStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.AnimeRemoveStatus.Location = new System.Drawing.Point(909, 397);
+            this.AnimeRemoveStatus.Location = new System.Drawing.Point(1212, 489);
+            this.AnimeRemoveStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AnimeRemoveStatus.Name = "AnimeRemoveStatus";
-            this.AnimeRemoveStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeRemoveStatus.Size = new System.Drawing.Size(0, 25);
             this.AnimeRemoveStatus.TabIndex = 70;
             // 
             // label79
             // 
             this.label79.AutoSize = true;
             this.label79.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label79.Location = new System.Drawing.Point(915, 309);
+            this.label79.Location = new System.Drawing.Point(1220, 380);
+            this.label79.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(81, 20);
+            this.label79.Size = new System.Drawing.Size(101, 25);
             this.label79.TabIndex = 69;
             this.label79.Text = "Remove as";
             // 
             // AnimeRemoveAs
             // 
             this.AnimeRemoveAs.FormattingEnabled = true;
-            this.AnimeRemoveAs.Location = new System.Drawing.Point(910, 329);
+            this.AnimeRemoveAs.Location = new System.Drawing.Point(1213, 405);
+            this.AnimeRemoveAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeRemoveAs.Name = "AnimeRemoveAs";
-            this.AnimeRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.AnimeRemoveAs.Size = new System.Drawing.Size(281, 24);
             this.AnimeRemoveAs.TabIndex = 68;
             this.AnimeRemoveAs.SelectedIndexChanged += new System.EventHandler(this.AnimeRemoveAs_SelectedIndexChanged);
             // 
             // AnimeRemoveBtn
             // 
-            this.AnimeRemoveBtn.Location = new System.Drawing.Point(910, 354);
+            this.AnimeRemoveBtn.Location = new System.Drawing.Point(1213, 436);
+            this.AnimeRemoveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeRemoveBtn.Name = "AnimeRemoveBtn";
-            this.AnimeRemoveBtn.Size = new System.Drawing.Size(212, 37);
+            this.AnimeRemoveBtn.Size = new System.Drawing.Size(283, 46);
             this.AnimeRemoveBtn.TabIndex = 67;
             this.AnimeRemoveBtn.Text = "Remove Entry";
             this.AnimeRemoveBtn.UseVisualStyleBackColor = true;
@@ -2056,22 +2201,24 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label18.Location = new System.Drawing.Point(710, 397);
+            this.label18.Location = new System.Drawing.Point(947, 489);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 20);
+            this.label18.Size = new System.Drawing.Size(53, 25);
             this.label18.TabIndex = 21;
             this.label18.Text = "Page";
             // 
             // AnimeListPage
             // 
-            this.AnimeListPage.Location = new System.Drawing.Point(757, 397);
+            this.AnimeListPage.Location = new System.Drawing.Point(1009, 489);
+            this.AnimeListPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeListPage.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.AnimeListPage.Name = "AnimeListPage";
-            this.AnimeListPage.Size = new System.Drawing.Size(120, 20);
+            this.AnimeListPage.Size = new System.Drawing.Size(160, 22);
             this.AnimeListPage.TabIndex = 20;
             this.AnimeListPage.Value = new decimal(new int[] {
             1,
@@ -2082,9 +2229,10 @@
             // 
             // AnimeApplyFilterbtn
             // 
-            this.AnimeApplyFilterbtn.Location = new System.Drawing.Point(911, 248);
+            this.AnimeApplyFilterbtn.Location = new System.Drawing.Point(1215, 305);
+            this.AnimeApplyFilterbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeApplyFilterbtn.Name = "AnimeApplyFilterbtn";
-            this.AnimeApplyFilterbtn.Size = new System.Drawing.Size(99, 50);
+            this.AnimeApplyFilterbtn.Size = new System.Drawing.Size(132, 62);
             this.AnimeApplyFilterbtn.TabIndex = 18;
             this.AnimeApplyFilterbtn.Text = "Apply Filter";
             this.AnimeApplyFilterbtn.UseVisualStyleBackColor = true;
@@ -2093,22 +2241,24 @@
             // AnimeFilterScore
             // 
             this.AnimeFilterScore.DecimalPlaces = 1;
-            this.AnimeFilterScore.Location = new System.Drawing.Point(914, 99);
+            this.AnimeFilterScore.Location = new System.Drawing.Point(1219, 122);
+            this.AnimeFilterScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeFilterScore.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.AnimeFilterScore.Name = "AnimeFilterScore";
-            this.AnimeFilterScore.Size = new System.Drawing.Size(211, 20);
+            this.AnimeFilterScore.Size = new System.Drawing.Size(281, 22);
             this.AnimeFilterScore.TabIndex = 17;
             this.AnimeFilterScore.ValueChanged += new System.EventHandler(this.AnimeFilterScore_ValueChanged);
             // 
             // ClearFilterButton
             // 
-            this.ClearFilterButton.Location = new System.Drawing.Point(1016, 248);
+            this.ClearFilterButton.Location = new System.Drawing.Point(1355, 305);
+            this.ClearFilterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClearFilterButton.Name = "ClearFilterButton";
-            this.ClearFilterButton.Size = new System.Drawing.Size(95, 50);
+            this.ClearFilterButton.Size = new System.Drawing.Size(127, 62);
             this.ClearFilterButton.TabIndex = 16;
             this.ClearFilterButton.Text = "Clear Filter";
             this.ClearFilterButton.UseVisualStyleBackColor = true;
@@ -2118,18 +2268,20 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label20.Location = new System.Drawing.Point(908, 132);
+            this.label20.Location = new System.Drawing.Point(1211, 162);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(82, 20);
+            this.label20.Size = new System.Drawing.Size(103, 25);
             this.label20.TabIndex = 15;
             this.label20.Text = "Aired After";
             // 
             // AnimeFilterAfterDate
             // 
             this.AnimeFilterAfterDate.CustomFormat = "dd-MM-yyyy";
-            this.AnimeFilterAfterDate.Location = new System.Drawing.Point(913, 152);
+            this.AnimeFilterAfterDate.Location = new System.Drawing.Point(1217, 187);
+            this.AnimeFilterAfterDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeFilterAfterDate.Name = "AnimeFilterAfterDate";
-            this.AnimeFilterAfterDate.Size = new System.Drawing.Size(211, 20);
+            this.AnimeFilterAfterDate.Size = new System.Drawing.Size(280, 22);
             this.AnimeFilterAfterDate.TabIndex = 14;
             this.AnimeFilterAfterDate.ValueChanged += new System.EventHandler(this.AnimeFilterAfterDate_ValueChanged);
             // 
@@ -2137,18 +2289,20 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label19.Location = new System.Drawing.Point(906, 187);
+            this.label19.Location = new System.Drawing.Point(1208, 230);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 20);
+            this.label19.Size = new System.Drawing.Size(117, 25);
             this.label19.TabIndex = 13;
             this.label19.Text = "Aired Before";
             // 
             // AnimeFilterBeforeDate
             // 
             this.AnimeFilterBeforeDate.CustomFormat = "dd-MM-yyyy";
-            this.AnimeFilterBeforeDate.Location = new System.Drawing.Point(912, 210);
+            this.AnimeFilterBeforeDate.Location = new System.Drawing.Point(1216, 258);
+            this.AnimeFilterBeforeDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeFilterBeforeDate.Name = "AnimeFilterBeforeDate";
-            this.AnimeFilterBeforeDate.Size = new System.Drawing.Size(211, 20);
+            this.AnimeFilterBeforeDate.Size = new System.Drawing.Size(280, 22);
             this.AnimeFilterBeforeDate.TabIndex = 12;
             this.AnimeFilterBeforeDate.ValueChanged += new System.EventHandler(this.AnimeFilterBeforeDate_ValueChanged);
             // 
@@ -2156,9 +2310,10 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label17.Location = new System.Drawing.Point(910, 79);
+            this.label17.Location = new System.Drawing.Point(1213, 97);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 20);
+            this.label17.Size = new System.Drawing.Size(97, 25);
             this.label17.TabIndex = 8;
             this.label17.Text = "Min Score";
             // 
@@ -2166,17 +2321,19 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label16.Location = new System.Drawing.Point(994, 5);
+            this.label16.Location = new System.Drawing.Point(1325, 6);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 20);
+            this.label16.Size = new System.Drawing.Size(54, 25);
             this.label16.TabIndex = 7;
             this.label16.Text = "Filter";
             // 
             // AnimeFilterName
             // 
-            this.AnimeFilterName.Location = new System.Drawing.Point(909, 53);
+            this.AnimeFilterName.Location = new System.Drawing.Point(1212, 65);
+            this.AnimeFilterName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeFilterName.Name = "AnimeFilterName";
-            this.AnimeFilterName.Size = new System.Drawing.Size(216, 20);
+            this.AnimeFilterName.Size = new System.Drawing.Size(287, 22);
             this.AnimeFilterName.TabIndex = 6;
             this.AnimeFilterName.TextChanged += new System.EventHandler(this.AnimeFilterName_TextChanged);
             // 
@@ -2184,9 +2341,10 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label15.Location = new System.Drawing.Point(909, 33);
+            this.label15.Location = new System.Drawing.Point(1212, 41);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 20);
+            this.label15.Size = new System.Drawing.Size(62, 25);
             this.label15.TabIndex = 5;
             this.label15.Text = "Name";
             // 
@@ -2202,10 +2360,11 @@
             this.AnimeStudio});
             this.animeListView.FullRowSelect = true;
             this.animeListView.HideSelection = false;
-            this.animeListView.Location = new System.Drawing.Point(5, 5);
+            this.animeListView.Location = new System.Drawing.Point(7, 6);
+            this.animeListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.animeListView.MultiSelect = false;
             this.animeListView.Name = "animeListView";
-            this.animeListView.Size = new System.Drawing.Size(872, 386);
+            this.animeListView.Size = new System.Drawing.Size(1161, 474);
             this.animeListView.TabIndex = 0;
             this.animeListView.UseCompatibleStateImageBehavior = false;
             this.animeListView.View = System.Windows.Forms.View.Details;
@@ -2292,10 +2451,11 @@
             this.AnimeDetails.Controls.Add(this.label2);
             this.AnimeDetails.Controls.Add(this.AnimeDetailsID);
             this.AnimeDetails.Controls.Add(this.label1);
-            this.AnimeDetails.Location = new System.Drawing.Point(4, 22);
+            this.AnimeDetails.Location = new System.Drawing.Point(4, 25);
+            this.AnimeDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetails.Name = "AnimeDetails";
-            this.AnimeDetails.Padding = new System.Windows.Forms.Padding(3);
-            this.AnimeDetails.Size = new System.Drawing.Size(1144, 430);
+            this.AnimeDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AnimeDetails.Size = new System.Drawing.Size(1528, 532);
             this.AnimeDetails.TabIndex = 1;
             this.AnimeDetails.Text = "Details";
             this.AnimeDetails.UseVisualStyleBackColor = true;
@@ -2304,19 +2464,21 @@
             // 
             this.AnimeUpdateStatus.AutoSize = true;
             this.AnimeUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.AnimeUpdateStatus.Location = new System.Drawing.Point(877, 118);
+            this.AnimeUpdateStatus.Location = new System.Drawing.Point(1169, 145);
+            this.AnimeUpdateStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AnimeUpdateStatus.Name = "AnimeUpdateStatus";
             this.AnimeUpdateStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AnimeUpdateStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeUpdateStatus.Size = new System.Drawing.Size(0, 25);
             this.AnimeUpdateStatus.TabIndex = 49;
             // 
             // AnimeDetailsGenres
             // 
             this.AnimeDetailsGenres.HideSelection = false;
-            this.AnimeDetailsGenres.Location = new System.Drawing.Point(586, 29);
+            this.AnimeDetailsGenres.Location = new System.Drawing.Point(781, 36);
+            this.AnimeDetailsGenres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsGenres.MultiSelect = false;
             this.AnimeDetailsGenres.Name = "AnimeDetailsGenres";
-            this.AnimeDetailsGenres.Size = new System.Drawing.Size(120, 109);
+            this.AnimeDetailsGenres.Size = new System.Drawing.Size(159, 133);
             this.AnimeDetailsGenres.TabIndex = 48;
             this.AnimeDetailsGenres.UseCompatibleStateImageBehavior = false;
             this.AnimeDetailsGenres.View = System.Windows.Forms.View.List;
@@ -2324,9 +2486,10 @@
             // 
             // AnimeRemoveRelBtn
             // 
-            this.AnimeRemoveRelBtn.Location = new System.Drawing.Point(712, 368);
+            this.AnimeRemoveRelBtn.Location = new System.Drawing.Point(949, 453);
+            this.AnimeRemoveRelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeRemoveRelBtn.Name = "AnimeRemoveRelBtn";
-            this.AnimeRemoveRelBtn.Size = new System.Drawing.Size(175, 37);
+            this.AnimeRemoveRelBtn.Size = new System.Drawing.Size(233, 46);
             this.AnimeRemoveRelBtn.TabIndex = 47;
             this.AnimeRemoveRelBtn.Text = "Remove Relation";
             this.AnimeRemoveRelBtn.UseVisualStyleBackColor = true;
@@ -2334,9 +2497,10 @@
             // 
             // AnimeAddRelationBtn
             // 
-            this.AnimeAddRelationBtn.Location = new System.Drawing.Point(912, 368);
+            this.AnimeAddRelationBtn.Location = new System.Drawing.Point(1216, 453);
+            this.AnimeAddRelationBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeAddRelationBtn.Name = "AnimeAddRelationBtn";
-            this.AnimeAddRelationBtn.Size = new System.Drawing.Size(175, 37);
+            this.AnimeAddRelationBtn.Size = new System.Drawing.Size(233, 46);
             this.AnimeAddRelationBtn.TabIndex = 46;
             this.AnimeAddRelationBtn.Text = "Add Relation";
             this.AnimeAddRelationBtn.UseVisualStyleBackColor = true;
@@ -2344,9 +2508,10 @@
             // 
             // AnimeDetailsRelation
             // 
-            this.AnimeDetailsRelation.Location = new System.Drawing.Point(912, 305);
+            this.AnimeDetailsRelation.Location = new System.Drawing.Point(1216, 375);
+            this.AnimeDetailsRelation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsRelation.Name = "AnimeDetailsRelation";
-            this.AnimeDetailsRelation.Size = new System.Drawing.Size(175, 20);
+            this.AnimeDetailsRelation.Size = new System.Drawing.Size(232, 22);
             this.AnimeDetailsRelation.TabIndex = 45;
             this.AnimeDetailsRelation.TextChanged += new System.EventHandler(this.AnimeDetailsRelation_TextChanged);
             // 
@@ -2354,18 +2519,20 @@
             // 
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label74.Location = new System.Drawing.Point(913, 279);
+            this.label74.Location = new System.Drawing.Point(1217, 343);
+            this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(64, 20);
+            this.label74.Size = new System.Drawing.Size(80, 25);
             this.label74.TabIndex = 44;
             this.label74.Text = "Relation";
             // 
             // AnimeDetailsSelAnimeRel
             // 
             this.AnimeDetailsSelAnimeRel.FormattingEnabled = true;
-            this.AnimeDetailsSelAnimeRel.Location = new System.Drawing.Point(909, 214);
+            this.AnimeDetailsSelAnimeRel.Location = new System.Drawing.Point(1212, 263);
+            this.AnimeDetailsSelAnimeRel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsSelAnimeRel.Name = "AnimeDetailsSelAnimeRel";
-            this.AnimeDetailsSelAnimeRel.Size = new System.Drawing.Size(170, 21);
+            this.AnimeDetailsSelAnimeRel.Size = new System.Drawing.Size(225, 24);
             this.AnimeDetailsSelAnimeRel.TabIndex = 43;
             this.AnimeDetailsSelAnimeRel.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsSelAnimeRel_SelectedIndexChanged);
             // 
@@ -2373,9 +2540,10 @@
             // 
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label73.Location = new System.Drawing.Point(910, 194);
+            this.label73.Location = new System.Drawing.Point(1213, 239);
+            this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(96, 20);
+            this.label73.Size = new System.Drawing.Size(121, 25);
             this.label73.TabIndex = 42;
             this.label73.Text = "Select Anime";
             // 
@@ -2383,9 +2551,10 @@
             // 
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label72.Location = new System.Drawing.Point(260, 156);
+            this.label72.Location = new System.Drawing.Point(347, 192);
+            this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(113, 20);
+            this.label72.Size = new System.Drawing.Size(141, 25);
             this.label72.TabIndex = 41;
             this.label72.Text = "Related Animes";
             // 
@@ -2397,9 +2566,10 @@
             this.columnHeader16});
             this.AnimeDetailsRelated.FullRowSelect = true;
             this.AnimeDetailsRelated.HideSelection = false;
-            this.AnimeDetailsRelated.Location = new System.Drawing.Point(253, 180);
+            this.AnimeDetailsRelated.Location = new System.Drawing.Point(337, 222);
+            this.AnimeDetailsRelated.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsRelated.Name = "AnimeDetailsRelated";
-            this.AnimeDetailsRelated.Size = new System.Drawing.Size(441, 243);
+            this.AnimeDetailsRelated.Size = new System.Drawing.Size(587, 298);
             this.AnimeDetailsRelated.TabIndex = 40;
             this.AnimeDetailsRelated.UseCompatibleStateImageBehavior = false;
             this.AnimeDetailsRelated.View = System.Windows.Forms.View.Details;
@@ -2424,9 +2594,10 @@
             // 
             // animeDetailsRemoveGenre
             // 
-            this.animeDetailsRemoveGenre.Location = new System.Drawing.Point(712, 101);
+            this.animeDetailsRemoveGenre.Location = new System.Drawing.Point(949, 124);
+            this.animeDetailsRemoveGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.animeDetailsRemoveGenre.Name = "animeDetailsRemoveGenre";
-            this.animeDetailsRemoveGenre.Size = new System.Drawing.Size(122, 37);
+            this.animeDetailsRemoveGenre.Size = new System.Drawing.Size(163, 46);
             this.animeDetailsRemoveGenre.TabIndex = 39;
             this.animeDetailsRemoveGenre.Text = "Remove Genre";
             this.animeDetailsRemoveGenre.UseVisualStyleBackColor = true;
@@ -2434,9 +2605,10 @@
             // 
             // animeDetailsAddGenre
             // 
-            this.animeDetailsAddGenre.Location = new System.Drawing.Point(712, 56);
+            this.animeDetailsAddGenre.Location = new System.Drawing.Point(949, 69);
+            this.animeDetailsAddGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.animeDetailsAddGenre.Name = "animeDetailsAddGenre";
-            this.animeDetailsAddGenre.Size = new System.Drawing.Size(122, 37);
+            this.animeDetailsAddGenre.Size = new System.Drawing.Size(163, 46);
             this.animeDetailsAddGenre.TabIndex = 38;
             this.animeDetailsAddGenre.Text = "Add Genre";
             this.animeDetailsAddGenre.UseVisualStyleBackColor = true;
@@ -2446,18 +2618,20 @@
             // 
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label71.Location = new System.Drawing.Point(708, 5);
+            this.label71.Location = new System.Drawing.Point(944, 6);
+            this.label71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(126, 20);
+            this.label71.Size = new System.Drawing.Size(161, 25);
             this.label71.TabIndex = 37;
             this.label71.Text = "Select New Genre";
             // 
             // AnimeDetailsSelectGenre
             // 
             this.AnimeDetailsSelectGenre.FormattingEnabled = true;
-            this.AnimeDetailsSelectGenre.Location = new System.Drawing.Point(712, 29);
+            this.AnimeDetailsSelectGenre.Location = new System.Drawing.Point(949, 36);
+            this.AnimeDetailsSelectGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsSelectGenre.Name = "AnimeDetailsSelectGenre";
-            this.AnimeDetailsSelectGenre.Size = new System.Drawing.Size(121, 21);
+            this.AnimeDetailsSelectGenre.Size = new System.Drawing.Size(160, 24);
             this.AnimeDetailsSelectGenre.TabIndex = 36;
             this.AnimeDetailsSelectGenre.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsSelectGenre_SelectedIndexChanged);
             // 
@@ -2465,50 +2639,56 @@
             // 
             this.label70.AutoSize = true;
             this.label70.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label70.Location = new System.Drawing.Point(582, 5);
+            this.label70.Location = new System.Drawing.Point(776, 6);
+            this.label70.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(54, 20);
+            this.label70.Size = new System.Drawing.Size(71, 25);
             this.label70.TabIndex = 34;
             this.label70.Text = "Genres";
             // 
             // AnimeDetailsStudio
             // 
             this.AnimeDetailsStudio.FormattingEnabled = true;
-            this.AnimeDetailsStudio.Location = new System.Drawing.Point(105, 117);
+            this.AnimeDetailsStudio.Location = new System.Drawing.Point(140, 144);
+            this.AnimeDetailsStudio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsStudio.Name = "AnimeDetailsStudio";
-            this.AnimeDetailsStudio.Size = new System.Drawing.Size(212, 21);
+            this.AnimeDetailsStudio.Size = new System.Drawing.Size(281, 24);
             this.AnimeDetailsStudio.TabIndex = 33;
             this.AnimeDetailsStudio.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsStudio_SelectedIndexChanged);
             // 
             // AnimeDetailsEpisodes
             // 
-            this.AnimeDetailsEpisodes.Location = new System.Drawing.Point(15, 72);
+            this.AnimeDetailsEpisodes.Location = new System.Drawing.Point(20, 89);
+            this.AnimeDetailsEpisodes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsEpisodes.Name = "AnimeDetailsEpisodes";
-            this.AnimeDetailsEpisodes.Size = new System.Drawing.Size(58, 20);
+            this.AnimeDetailsEpisodes.Size = new System.Drawing.Size(77, 22);
             this.AnimeDetailsEpisodes.TabIndex = 32;
             this.AnimeDetailsEpisodes.ValueChanged += new System.EventHandler(this.AnimeDetailsEpisodes_ValueChanged);
             // 
             // AnimeDetailsFinishedDate
             // 
-            this.AnimeDetailsFinishedDate.Location = new System.Drawing.Point(349, 72);
+            this.AnimeDetailsFinishedDate.Location = new System.Drawing.Point(465, 89);
+            this.AnimeDetailsFinishedDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsFinishedDate.Name = "AnimeDetailsFinishedDate";
-            this.AnimeDetailsFinishedDate.Size = new System.Drawing.Size(216, 20);
+            this.AnimeDetailsFinishedDate.Size = new System.Drawing.Size(287, 22);
             this.AnimeDetailsFinishedDate.TabIndex = 31;
             this.AnimeDetailsFinishedDate.ValueChanged += new System.EventHandler(this.AnimeDetailsFinishedDate_ValueChanged);
             // 
             // AnimeDetailsAirDate
             // 
-            this.AnimeDetailsAirDate.Location = new System.Drawing.Point(349, 30);
+            this.AnimeDetailsAirDate.Location = new System.Drawing.Point(465, 37);
+            this.AnimeDetailsAirDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsAirDate.Name = "AnimeDetailsAirDate";
-            this.AnimeDetailsAirDate.Size = new System.Drawing.Size(216, 20);
+            this.AnimeDetailsAirDate.Size = new System.Drawing.Size(287, 22);
             this.AnimeDetailsAirDate.TabIndex = 13;
             this.AnimeDetailsAirDate.ValueChanged += new System.EventHandler(this.AnimeDetailsAirDate_ValueChanged);
             // 
             // AnimeDetailsUpdateButton
             // 
-            this.AnimeDetailsUpdateButton.Location = new System.Drawing.Point(870, 78);
+            this.AnimeDetailsUpdateButton.Location = new System.Drawing.Point(1160, 96);
+            this.AnimeDetailsUpdateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsUpdateButton.Name = "AnimeDetailsUpdateButton";
-            this.AnimeDetailsUpdateButton.Size = new System.Drawing.Size(212, 37);
+            this.AnimeDetailsUpdateButton.Size = new System.Drawing.Size(283, 46);
             this.AnimeDetailsUpdateButton.TabIndex = 30;
             this.AnimeDetailsUpdateButton.Text = "Update Information";
             this.AnimeDetailsUpdateButton.UseVisualStyleBackColor = true;
@@ -2518,18 +2698,20 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label14.Location = new System.Drawing.Point(870, 9);
+            this.label14.Location = new System.Drawing.Point(1160, 11);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 20);
+            this.label14.Size = new System.Drawing.Size(96, 25);
             this.label14.TabIndex = 29;
             this.label14.Text = "Update as";
             // 
             // AnimeDetailsUpdateAs
             // 
             this.AnimeDetailsUpdateAs.FormattingEnabled = true;
-            this.AnimeDetailsUpdateAs.Location = new System.Drawing.Point(870, 29);
+            this.AnimeDetailsUpdateAs.Location = new System.Drawing.Point(1160, 36);
+            this.AnimeDetailsUpdateAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsUpdateAs.Name = "AnimeDetailsUpdateAs";
-            this.AnimeDetailsUpdateAs.Size = new System.Drawing.Size(212, 21);
+            this.AnimeDetailsUpdateAs.Size = new System.Drawing.Size(281, 24);
             this.AnimeDetailsUpdateAs.TabIndex = 28;
             this.AnimeDetailsUpdateAs.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsUpdateAs_SelectedIndexChanged);
             // 
@@ -2537,27 +2719,30 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label10.Location = new System.Drawing.Point(105, 95);
+            this.label10.Location = new System.Drawing.Point(140, 117);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 20);
+            this.label10.Size = new System.Drawing.Size(65, 25);
             this.label10.TabIndex = 19;
             this.label10.Text = "Studio";
             // 
             // AnimeDetailsSeason
             // 
-            this.AnimeDetailsSeason.Location = new System.Drawing.Point(349, 115);
+            this.AnimeDetailsSeason.Location = new System.Drawing.Point(465, 142);
+            this.AnimeDetailsSeason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsSeason.Name = "AnimeDetailsSeason";
             this.AnimeDetailsSeason.ReadOnly = true;
-            this.AnimeDetailsSeason.Size = new System.Drawing.Size(216, 20);
+            this.AnimeDetailsSeason.Size = new System.Drawing.Size(287, 22);
             this.AnimeDetailsSeason.TabIndex = 18;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label9.Location = new System.Drawing.Point(349, 95);
+            this.label9.Location = new System.Drawing.Point(465, 117);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.Size = new System.Drawing.Size(72, 25);
             this.label9.TabIndex = 17;
             this.label9.Text = "Season";
             // 
@@ -2565,9 +2750,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label7.Location = new System.Drawing.Point(349, 52);
+            this.label7.Location = new System.Drawing.Point(465, 64);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 20);
+            this.label7.Size = new System.Drawing.Size(126, 25);
             this.label7.TabIndex = 15;
             this.label7.Text = "Finished Date";
             // 
@@ -2575,27 +2761,30 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label8.Location = new System.Drawing.Point(349, 10);
+            this.label8.Location = new System.Drawing.Point(465, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 20);
+            this.label8.Size = new System.Drawing.Size(101, 25);
             this.label8.TabIndex = 13;
             this.label8.Text = "Aired Date";
             // 
             // AnimeDetailsScore
             // 
-            this.AnimeDetailsScore.Location = new System.Drawing.Point(15, 115);
+            this.AnimeDetailsScore.Location = new System.Drawing.Point(20, 142);
+            this.AnimeDetailsScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsScore.Name = "AnimeDetailsScore";
             this.AnimeDetailsScore.ReadOnly = true;
-            this.AnimeDetailsScore.Size = new System.Drawing.Size(59, 20);
+            this.AnimeDetailsScore.Size = new System.Drawing.Size(77, 22);
             this.AnimeDetailsScore.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label6.Location = new System.Drawing.Point(15, 95);
+            this.label6.Location = new System.Drawing.Point(20, 117);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 20);
+            this.label6.Size = new System.Drawing.Size(59, 25);
             this.label6.TabIndex = 11;
             this.label6.Text = "Score";
             // 
@@ -2603,18 +2792,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label5.Location = new System.Drawing.Point(15, 52);
+            this.label5.Location = new System.Drawing.Point(20, 64);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.Size = new System.Drawing.Size(86, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "Episodes";
             // 
             // AnimeDetailsSynopsis
             // 
-            this.AnimeDetailsSynopsis.Location = new System.Drawing.Point(8, 180);
+            this.AnimeDetailsSynopsis.Location = new System.Drawing.Point(11, 222);
+            this.AnimeDetailsSynopsis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsSynopsis.Multiline = true;
             this.AnimeDetailsSynopsis.Name = "AnimeDetailsSynopsis";
-            this.AnimeDetailsSynopsis.Size = new System.Drawing.Size(236, 244);
+            this.AnimeDetailsSynopsis.Size = new System.Drawing.Size(313, 299);
             this.AnimeDetailsSynopsis.TabIndex = 8;
             this.AnimeDetailsSynopsis.TextChanged += new System.EventHandler(this.AnimeDetailsSynopsis_TextChanged);
             // 
@@ -2622,17 +2813,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label4.Location = new System.Drawing.Point(8, 160);
+            this.label4.Location = new System.Drawing.Point(11, 197);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.Size = new System.Drawing.Size(84, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Synopsis";
             // 
             // AnimeDetailsAltName
             // 
-            this.AnimeDetailsAltName.Location = new System.Drawing.Point(105, 72);
+            this.AnimeDetailsAltName.Location = new System.Drawing.Point(140, 89);
+            this.AnimeDetailsAltName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsAltName.Name = "AnimeDetailsAltName";
-            this.AnimeDetailsAltName.Size = new System.Drawing.Size(216, 20);
+            this.AnimeDetailsAltName.Size = new System.Drawing.Size(287, 22);
             this.AnimeDetailsAltName.TabIndex = 6;
             this.AnimeDetailsAltName.TextChanged += new System.EventHandler(this.AnimeDetailsAltName_TextChanged);
             // 
@@ -2640,17 +2833,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label3.Location = new System.Drawing.Point(105, 52);
+            this.label3.Location = new System.Drawing.Point(140, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 20);
+            this.label3.Size = new System.Drawing.Size(158, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Alternative Name";
             // 
             // AnimeDetailsName
             // 
-            this.AnimeDetailsName.Location = new System.Drawing.Point(105, 30);
+            this.AnimeDetailsName.Location = new System.Drawing.Point(140, 37);
+            this.AnimeDetailsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsName.Name = "AnimeDetailsName";
-            this.AnimeDetailsName.Size = new System.Drawing.Size(216, 20);
+            this.AnimeDetailsName.Size = new System.Drawing.Size(287, 22);
             this.AnimeDetailsName.TabIndex = 4;
             this.AnimeDetailsName.TextChanged += new System.EventHandler(this.AnimeDetailsName_TextChanged);
             // 
@@ -2658,27 +2853,30 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label2.Location = new System.Drawing.Point(105, 10);
+            this.label2.Location = new System.Drawing.Point(140, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Name";
             // 
             // AnimeDetailsID
             // 
-            this.AnimeDetailsID.Location = new System.Drawing.Point(15, 30);
+            this.AnimeDetailsID.Location = new System.Drawing.Point(20, 37);
+            this.AnimeDetailsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsID.Name = "AnimeDetailsID";
             this.AnimeDetailsID.ReadOnly = true;
-            this.AnimeDetailsID.Size = new System.Drawing.Size(59, 20);
+            this.AnimeDetailsID.Size = new System.Drawing.Size(77, 22);
             this.AnimeDetailsID.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label1.Location = new System.Drawing.Point(15, 10);
+            this.label1.Location = new System.Drawing.Point(20, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 20);
+            this.label1.Size = new System.Drawing.Size(30, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
             // 
@@ -2702,9 +2900,10 @@
             this.AnimeCreate.Controls.Add(this.label25);
             this.AnimeCreate.Controls.Add(this.AnimeCreateAltName);
             this.AnimeCreate.Controls.Add(this.label26);
-            this.AnimeCreate.Location = new System.Drawing.Point(4, 22);
+            this.AnimeCreate.Location = new System.Drawing.Point(4, 25);
+            this.AnimeCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreate.Name = "AnimeCreate";
-            this.AnimeCreate.Size = new System.Drawing.Size(1144, 430);
+            this.AnimeCreate.Size = new System.Drawing.Size(1528, 532);
             this.AnimeCreate.TabIndex = 2;
             this.AnimeCreate.Text = "Create";
             this.AnimeCreate.UseVisualStyleBackColor = true;
@@ -2713,50 +2912,56 @@
             // 
             this.AnimeCreateStatus.AutoSize = true;
             this.AnimeCreateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.AnimeCreateStatus.Location = new System.Drawing.Point(870, 381);
+            this.AnimeCreateStatus.Location = new System.Drawing.Point(1160, 469);
+            this.AnimeCreateStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AnimeCreateStatus.Name = "AnimeCreateStatus";
-            this.AnimeCreateStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeCreateStatus.Size = new System.Drawing.Size(0, 25);
             this.AnimeCreateStatus.TabIndex = 60;
             // 
             // AnimeCreateStudio
             // 
             this.AnimeCreateStudio.FormattingEnabled = true;
-            this.AnimeCreateStudio.Location = new System.Drawing.Point(329, 58);
+            this.AnimeCreateStudio.Location = new System.Drawing.Point(439, 71);
+            this.AnimeCreateStudio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateStudio.Name = "AnimeCreateStudio";
-            this.AnimeCreateStudio.Size = new System.Drawing.Size(216, 21);
+            this.AnimeCreateStudio.Size = new System.Drawing.Size(287, 24);
             this.AnimeCreateStudio.TabIndex = 59;
             this.AnimeCreateStudio.SelectedIndexChanged += new System.EventHandler(this.AnimeCreateStudio_SelectedIndexChanged);
             // 
             // AnimeCreateEp
             // 
-            this.AnimeCreateEp.Location = new System.Drawing.Point(329, 119);
+            this.AnimeCreateEp.Location = new System.Drawing.Point(439, 146);
+            this.AnimeCreateEp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateEp.Name = "AnimeCreateEp";
-            this.AnimeCreateEp.Size = new System.Drawing.Size(215, 20);
+            this.AnimeCreateEp.Size = new System.Drawing.Size(287, 22);
             this.AnimeCreateEp.TabIndex = 58;
             this.AnimeCreateEp.ValueChanged += new System.EventHandler(this.AnimeCreateEp_ValueChanged);
             // 
             // AnimeCreateFinishDate
             // 
-            this.AnimeCreateFinishDate.Location = new System.Drawing.Point(588, 119);
+            this.AnimeCreateFinishDate.Location = new System.Drawing.Point(784, 146);
+            this.AnimeCreateFinishDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateFinishDate.Name = "AnimeCreateFinishDate";
-            this.AnimeCreateFinishDate.Size = new System.Drawing.Size(216, 20);
+            this.AnimeCreateFinishDate.Size = new System.Drawing.Size(287, 22);
             this.AnimeCreateFinishDate.TabIndex = 57;
             this.AnimeCreateFinishDate.ValueChanged += new System.EventHandler(this.AnimeCreateFinishDate_ValueChanged);
             // 
             // AnimeCreateAirDate
             // 
-            this.AnimeCreateAirDate.Location = new System.Drawing.Point(588, 58);
+            this.AnimeCreateAirDate.Location = new System.Drawing.Point(784, 71);
+            this.AnimeCreateAirDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateAirDate.Name = "AnimeCreateAirDate";
-            this.AnimeCreateAirDate.Size = new System.Drawing.Size(216, 20);
+            this.AnimeCreateAirDate.Size = new System.Drawing.Size(287, 22);
             this.AnimeCreateAirDate.TabIndex = 56;
             this.AnimeCreateAirDate.ValueChanged += new System.EventHandler(this.AnimeCreateAirDate_ValueChanged);
             // 
             // AnimeCreateSynopsis
             // 
-            this.AnimeCreateSynopsis.Location = new System.Drawing.Point(69, 179);
+            this.AnimeCreateSynopsis.Location = new System.Drawing.Point(92, 220);
+            this.AnimeCreateSynopsis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateSynopsis.Multiline = true;
             this.AnimeCreateSynopsis.Name = "AnimeCreateSynopsis";
-            this.AnimeCreateSynopsis.Size = new System.Drawing.Size(735, 233);
+            this.AnimeCreateSynopsis.Size = new System.Drawing.Size(979, 286);
             this.AnimeCreateSynopsis.TabIndex = 51;
             this.AnimeCreateSynopsis.TextChanged += new System.EventHandler(this.AnimeCreateSynopsis_TextChanged);
             // 
@@ -2764,9 +2969,10 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label30.Location = new System.Drawing.Point(69, 159);
+            this.label30.Location = new System.Drawing.Point(92, 196);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(66, 20);
+            this.label30.Size = new System.Drawing.Size(84, 25);
             this.label30.TabIndex = 50;
             this.label30.Text = "Synopsis";
             // 
@@ -2774,18 +2980,20 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label27.Location = new System.Drawing.Point(874, 282);
+            this.label27.Location = new System.Drawing.Point(1165, 347);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(70, 20);
+            this.label27.Size = new System.Drawing.Size(90, 25);
             this.label27.TabIndex = 49;
             this.label27.Text = "Create as";
             // 
             // AnimeCreateAsSelect
             // 
             this.AnimeCreateAsSelect.FormattingEnabled = true;
-            this.AnimeCreateAsSelect.Location = new System.Drawing.Point(874, 302);
+            this.AnimeCreateAsSelect.Location = new System.Drawing.Point(1165, 372);
+            this.AnimeCreateAsSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateAsSelect.Name = "AnimeCreateAsSelect";
-            this.AnimeCreateAsSelect.Size = new System.Drawing.Size(216, 21);
+            this.AnimeCreateAsSelect.Size = new System.Drawing.Size(287, 24);
             this.AnimeCreateAsSelect.TabIndex = 48;
             this.AnimeCreateAsSelect.SelectedIndexChanged += new System.EventHandler(this.AnimeCreateAsSelect_SelectedIndexChanged);
             // 
@@ -2793,17 +3001,19 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label28.Location = new System.Drawing.Point(588, 38);
+            this.label28.Location = new System.Drawing.Point(784, 47);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(81, 20);
+            this.label28.Size = new System.Drawing.Size(101, 25);
             this.label28.TabIndex = 46;
             this.label28.Text = "Aired Date";
             // 
             // AnimeCreateName
             // 
-            this.AnimeCreateName.Location = new System.Drawing.Point(69, 58);
+            this.AnimeCreateName.Location = new System.Drawing.Point(92, 71);
+            this.AnimeCreateName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateName.Name = "AnimeCreateName";
-            this.AnimeCreateName.Size = new System.Drawing.Size(216, 20);
+            this.AnimeCreateName.Size = new System.Drawing.Size(287, 22);
             this.AnimeCreateName.TabIndex = 45;
             this.AnimeCreateName.TextChanged += new System.EventHandler(this.AnimeCreateName_TextChanged);
             // 
@@ -2811,17 +3021,19 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label29.Location = new System.Drawing.Point(69, 38);
+            this.label29.Location = new System.Drawing.Point(92, 47);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(49, 20);
+            this.label29.Size = new System.Drawing.Size(62, 25);
             this.label29.TabIndex = 44;
             this.label29.Text = "Name";
             // 
             // AnimeCreateButton
             // 
-            this.AnimeCreateButton.Location = new System.Drawing.Point(874, 341);
+            this.AnimeCreateButton.Location = new System.Drawing.Point(1165, 420);
+            this.AnimeCreateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateButton.Name = "AnimeCreateButton";
-            this.AnimeCreateButton.Size = new System.Drawing.Size(215, 37);
+            this.AnimeCreateButton.Size = new System.Drawing.Size(287, 46);
             this.AnimeCreateButton.TabIndex = 43;
             this.AnimeCreateButton.Text = "Create Entry";
             this.AnimeCreateButton.UseVisualStyleBackColor = true;
@@ -2831,9 +3043,10 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label21.Location = new System.Drawing.Point(329, 38);
+            this.label21.Location = new System.Drawing.Point(439, 47);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(52, 20);
+            this.label21.Size = new System.Drawing.Size(65, 25);
             this.label21.TabIndex = 41;
             this.label21.Text = "Studio";
             // 
@@ -2841,9 +3054,10 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label23.Location = new System.Drawing.Point(588, 98);
+            this.label23.Location = new System.Drawing.Point(784, 121);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(99, 20);
+            this.label23.Size = new System.Drawing.Size(126, 25);
             this.label23.TabIndex = 37;
             this.label23.Text = "Finished Date";
             // 
@@ -2851,17 +3065,19 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label25.Location = new System.Drawing.Point(329, 98);
+            this.label25.Location = new System.Drawing.Point(439, 121);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(68, 20);
+            this.label25.Size = new System.Drawing.Size(86, 25);
             this.label25.TabIndex = 33;
             this.label25.Text = "Episodes";
             // 
             // AnimeCreateAltName
             // 
-            this.AnimeCreateAltName.Location = new System.Drawing.Point(69, 118);
+            this.AnimeCreateAltName.Location = new System.Drawing.Point(92, 145);
+            this.AnimeCreateAltName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCreateAltName.Name = "AnimeCreateAltName";
-            this.AnimeCreateAltName.Size = new System.Drawing.Size(216, 20);
+            this.AnimeCreateAltName.Size = new System.Drawing.Size(287, 22);
             this.AnimeCreateAltName.TabIndex = 32;
             this.AnimeCreateAltName.TextChanged += new System.EventHandler(this.AnimeCreateAltName_TextChanged);
             // 
@@ -2869,9 +3085,10 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label26.Location = new System.Drawing.Point(69, 98);
+            this.label26.Location = new System.Drawing.Point(92, 121);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(125, 20);
+            this.label26.Size = new System.Drawing.Size(158, 25);
             this.label26.TabIndex = 31;
             this.label26.Text = "Alternative Name";
             // 
@@ -2888,9 +3105,10 @@
             this.AnimeComments.Controls.Add(this.AnimeDetailsCommentTxt);
             this.AnimeComments.Controls.Add(this.label11);
             this.AnimeComments.Controls.Add(this.AnimeDetailsComments);
-            this.AnimeComments.Location = new System.Drawing.Point(4, 22);
+            this.AnimeComments.Location = new System.Drawing.Point(4, 25);
+            this.AnimeComments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeComments.Name = "AnimeComments";
-            this.AnimeComments.Size = new System.Drawing.Size(1144, 430);
+            this.AnimeComments.Size = new System.Drawing.Size(1528, 532);
             this.AnimeComments.TabIndex = 3;
             this.AnimeComments.Text = "Comments";
             this.AnimeComments.UseVisualStyleBackColor = true;
@@ -2899,35 +3117,39 @@
             // 
             this.AnimeDetailsCommentStatus.AutoSize = true;
             this.AnimeDetailsCommentStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.AnimeDetailsCommentStatus.Location = new System.Drawing.Point(786, 407);
+            this.AnimeDetailsCommentStatus.Location = new System.Drawing.Point(1048, 501);
+            this.AnimeDetailsCommentStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AnimeDetailsCommentStatus.Name = "AnimeDetailsCommentStatus";
-            this.AnimeDetailsCommentStatus.Size = new System.Drawing.Size(0, 20);
+            this.AnimeDetailsCommentStatus.Size = new System.Drawing.Size(0, 25);
             this.AnimeDetailsCommentStatus.TabIndex = 38;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label22.Location = new System.Drawing.Point(786, 310);
+            this.label22.Location = new System.Drawing.Point(1048, 382);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(152, 20);
+            this.label22.Size = new System.Drawing.Size(190, 25);
             this.label22.TabIndex = 37;
             this.label22.Text = "Remove Comment As";
             // 
             // AnimeCommentsRemoveAs
             // 
             this.AnimeCommentsRemoveAs.FormattingEnabled = true;
-            this.AnimeCommentsRemoveAs.Location = new System.Drawing.Point(785, 333);
+            this.AnimeCommentsRemoveAs.Location = new System.Drawing.Point(1047, 410);
+            this.AnimeCommentsRemoveAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeCommentsRemoveAs.Name = "AnimeCommentsRemoveAs";
-            this.AnimeCommentsRemoveAs.Size = new System.Drawing.Size(161, 21);
+            this.AnimeCommentsRemoveAs.Size = new System.Drawing.Size(213, 24);
             this.AnimeCommentsRemoveAs.TabIndex = 36;
             this.AnimeCommentsRemoveAs.SelectedIndexChanged += new System.EventHandler(this.AnimeCommentsRemoveAs_SelectedIndexChanged);
             // 
             // RemoveCommentBtn
             // 
-            this.RemoveCommentBtn.Location = new System.Drawing.Point(785, 359);
+            this.RemoveCommentBtn.Location = new System.Drawing.Point(1047, 442);
+            this.RemoveCommentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveCommentBtn.Name = "RemoveCommentBtn";
-            this.RemoveCommentBtn.Size = new System.Drawing.Size(161, 47);
+            this.RemoveCommentBtn.Size = new System.Drawing.Size(215, 58);
             this.RemoveCommentBtn.TabIndex = 35;
             this.RemoveCommentBtn.Text = "Remove Comment";
             this.RemoveCommentBtn.UseVisualStyleBackColor = true;
@@ -2937,26 +3159,29 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label13.Location = new System.Drawing.Point(953, 310);
+            this.label13.Location = new System.Drawing.Point(1271, 382);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 20);
+            this.label13.Size = new System.Drawing.Size(119, 25);
             this.label13.TabIndex = 34;
             this.label13.Text = "Comment As";
             // 
             // AnimeDetailsCommentAs
             // 
             this.AnimeDetailsCommentAs.FormattingEnabled = true;
-            this.AnimeDetailsCommentAs.Location = new System.Drawing.Point(952, 333);
+            this.AnimeDetailsCommentAs.Location = new System.Drawing.Point(1269, 410);
+            this.AnimeDetailsCommentAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsCommentAs.Name = "AnimeDetailsCommentAs";
-            this.AnimeDetailsCommentAs.Size = new System.Drawing.Size(161, 21);
+            this.AnimeDetailsCommentAs.Size = new System.Drawing.Size(213, 24);
             this.AnimeDetailsCommentAs.TabIndex = 33;
             this.AnimeDetailsCommentAs.SelectedIndexChanged += new System.EventHandler(this.AnimeDetailsCommentAs_SelectedIndexChanged);
             // 
             // AnimeDetailsAddComment
             // 
-            this.AnimeDetailsAddComment.Location = new System.Drawing.Point(952, 359);
+            this.AnimeDetailsAddComment.Location = new System.Drawing.Point(1269, 442);
+            this.AnimeDetailsAddComment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsAddComment.Name = "AnimeDetailsAddComment";
-            this.AnimeDetailsAddComment.Size = new System.Drawing.Size(161, 47);
+            this.AnimeDetailsAddComment.Size = new System.Drawing.Size(215, 58);
             this.AnimeDetailsAddComment.TabIndex = 32;
             this.AnimeDetailsAddComment.Text = "Comment";
             this.AnimeDetailsAddComment.UseVisualStyleBackColor = true;
@@ -2966,18 +3191,20 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label12.Location = new System.Drawing.Point(771, 22);
+            this.label12.Location = new System.Drawing.Point(1028, 27);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 20);
+            this.label12.Size = new System.Drawing.Size(133, 25);
             this.label12.TabIndex = 31;
             this.label12.Text = "Add Comment";
             // 
             // AnimeDetailsCommentTxt
             // 
-            this.AnimeDetailsCommentTxt.Location = new System.Drawing.Point(769, 45);
+            this.AnimeDetailsCommentTxt.Location = new System.Drawing.Point(1025, 55);
+            this.AnimeDetailsCommentTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsCommentTxt.Multiline = true;
             this.AnimeDetailsCommentTxt.Name = "AnimeDetailsCommentTxt";
-            this.AnimeDetailsCommentTxt.Size = new System.Drawing.Size(344, 264);
+            this.AnimeDetailsCommentTxt.Size = new System.Drawing.Size(457, 324);
             this.AnimeDetailsCommentTxt.TabIndex = 30;
             this.AnimeDetailsCommentTxt.TextChanged += new System.EventHandler(this.AnimeDetailsCommentTxt_TextChanged);
             // 
@@ -2985,9 +3212,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label11.Location = new System.Drawing.Point(2, 7);
+            this.label11.Location = new System.Drawing.Point(3, 9);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 20);
+            this.label11.Size = new System.Drawing.Size(102, 25);
             this.label11.TabIndex = 29;
             this.label11.Text = "Comments";
             // 
@@ -2999,10 +3227,11 @@
             this.columnHeader11});
             this.AnimeDetailsComments.FullRowSelect = true;
             this.AnimeDetailsComments.HideSelection = false;
-            this.AnimeDetailsComments.Location = new System.Drawing.Point(6, 30);
+            this.AnimeDetailsComments.Location = new System.Drawing.Point(8, 37);
+            this.AnimeDetailsComments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnimeDetailsComments.MultiSelect = false;
             this.AnimeDetailsComments.Name = "AnimeDetailsComments";
-            this.AnimeDetailsComments.Size = new System.Drawing.Size(757, 376);
+            this.AnimeDetailsComments.Size = new System.Drawing.Size(1008, 462);
             this.AnimeDetailsComments.TabIndex = 28;
             this.AnimeDetailsComments.UseCompatibleStateImageBehavior = false;
             this.AnimeDetailsComments.View = System.Windows.Forms.View.Details;
@@ -3030,10 +3259,11 @@
             this.UsersTab.Controls.Add(this.UserListTab);
             this.UsersTab.Controls.Add(this.UserDetailsTab);
             this.UsersTab.Controls.Add(this.tabPage9);
-            this.UsersTab.Location = new System.Drawing.Point(7, 59);
+            this.UsersTab.Location = new System.Drawing.Point(9, 73);
+            this.UsersTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UsersTab.Name = "UsersTab";
             this.UsersTab.SelectedIndex = 0;
-            this.UsersTab.Size = new System.Drawing.Size(1152, 456);
+            this.UsersTab.Size = new System.Drawing.Size(1536, 561);
             this.UsersTab.TabIndex = 11;
             this.UsersTab.Visible = false;
             this.UsersTab.SelectedIndexChanged += new System.EventHandler(this.UsersTab_SelectedIndexChanged);
@@ -3061,10 +3291,11 @@
             this.UserListTab.Controls.Add(this.UserNameFilter);
             this.UserListTab.Controls.Add(this.label96);
             this.UserListTab.Controls.Add(this.UserList);
-            this.UserListTab.Location = new System.Drawing.Point(4, 22);
+            this.UserListTab.Location = new System.Drawing.Point(4, 25);
+            this.UserListTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserListTab.Name = "UserListTab";
-            this.UserListTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UserListTab.Size = new System.Drawing.Size(1144, 430);
+            this.UserListTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserListTab.Size = new System.Drawing.Size(1528, 532);
             this.UserListTab.TabIndex = 0;
             this.UserListTab.Text = "List";
             this.UserListTab.UseVisualStyleBackColor = true;
@@ -3073,35 +3304,39 @@
             // 
             this.UserRemoveStatus.AutoSize = true;
             this.UserRemoveStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.UserRemoveStatus.Location = new System.Drawing.Point(907, 403);
+            this.UserRemoveStatus.Location = new System.Drawing.Point(1209, 496);
+            this.UserRemoveStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UserRemoveStatus.Name = "UserRemoveStatus";
-            this.UserRemoveStatus.Size = new System.Drawing.Size(0, 20);
+            this.UserRemoveStatus.Size = new System.Drawing.Size(0, 25);
             this.UserRemoveStatus.TabIndex = 74;
             // 
             // label80
             // 
             this.label80.AutoSize = true;
             this.label80.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label80.Location = new System.Drawing.Point(913, 315);
+            this.label80.Location = new System.Drawing.Point(1217, 388);
+            this.label80.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(81, 20);
+            this.label80.Size = new System.Drawing.Size(101, 25);
             this.label80.TabIndex = 73;
             this.label80.Text = "Remove as";
             // 
             // UserRemoveAs
             // 
             this.UserRemoveAs.FormattingEnabled = true;
-            this.UserRemoveAs.Location = new System.Drawing.Point(908, 335);
+            this.UserRemoveAs.Location = new System.Drawing.Point(1211, 412);
+            this.UserRemoveAs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserRemoveAs.Name = "UserRemoveAs";
-            this.UserRemoveAs.Size = new System.Drawing.Size(212, 21);
+            this.UserRemoveAs.Size = new System.Drawing.Size(281, 24);
             this.UserRemoveAs.TabIndex = 72;
             this.UserRemoveAs.SelectedIndexChanged += new System.EventHandler(this.UserRemoveAs_SelectedIndexChanged);
             // 
             // UserRemoveBtn
             // 
-            this.UserRemoveBtn.Location = new System.Drawing.Point(908, 360);
+            this.UserRemoveBtn.Location = new System.Drawing.Point(1211, 443);
+            this.UserRemoveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserRemoveBtn.Name = "UserRemoveBtn";
-            this.UserRemoveBtn.Size = new System.Drawing.Size(212, 37);
+            this.UserRemoveBtn.Size = new System.Drawing.Size(283, 46);
             this.UserRemoveBtn.TabIndex = 71;
             this.UserRemoveBtn.Text = "Remove Entry";
             this.UserRemoveBtn.UseVisualStyleBackColor = true;
@@ -3111,22 +3346,24 @@
             // 
             this.label66.AutoSize = true;
             this.label66.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label66.Location = new System.Drawing.Point(710, 407);
+            this.label66.Location = new System.Drawing.Point(947, 501);
+            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(41, 20);
+            this.label66.Size = new System.Drawing.Size(53, 25);
             this.label66.TabIndex = 25;
             this.label66.Text = "Page";
             // 
             // UserListPage
             // 
-            this.UserListPage.Location = new System.Drawing.Point(757, 407);
+            this.UserListPage.Location = new System.Drawing.Point(1009, 501);
+            this.UserListPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserListPage.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.UserListPage.Name = "UserListPage";
-            this.UserListPage.Size = new System.Drawing.Size(120, 20);
+            this.UserListPage.Size = new System.Drawing.Size(160, 22);
             this.UserListPage.TabIndex = 24;
             this.UserListPage.Value = new decimal(new int[] {
             1,
@@ -3137,9 +3374,10 @@
             // 
             // UsersApplyFilterBtn
             // 
-            this.UsersApplyFilterBtn.Location = new System.Drawing.Point(906, 261);
+            this.UsersApplyFilterBtn.Location = new System.Drawing.Point(1208, 321);
+            this.UsersApplyFilterBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UsersApplyFilterBtn.Name = "UsersApplyFilterBtn";
-            this.UsersApplyFilterBtn.Size = new System.Drawing.Size(107, 50);
+            this.UsersApplyFilterBtn.Size = new System.Drawing.Size(143, 62);
             this.UsersApplyFilterBtn.TabIndex = 21;
             this.UsersApplyFilterBtn.Text = "Apply Filter";
             this.UsersApplyFilterBtn.UseVisualStyleBackColor = true;
@@ -3149,9 +3387,10 @@
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label93.Location = new System.Drawing.Point(910, 119);
+            this.label93.Location = new System.Drawing.Point(1213, 146);
+            this.label93.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(87, 20);
+            this.label93.Size = new System.Drawing.Size(112, 25);
             this.label93.TabIndex = 20;
             this.label93.Text = "Birthday On";
             // 
@@ -3159,18 +3398,20 @@
             // 
             this.UserBirthdayFilter.CustomFormat = "dd/MM";
             this.UserBirthdayFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.UserBirthdayFilter.Location = new System.Drawing.Point(906, 142);
+            this.UserBirthdayFilter.Location = new System.Drawing.Point(1208, 175);
+            this.UserBirthdayFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserBirthdayFilter.Name = "UserBirthdayFilter";
-            this.UserBirthdayFilter.Size = new System.Drawing.Size(216, 20);
+            this.UserBirthdayFilter.Size = new System.Drawing.Size(287, 22);
             this.UserBirthdayFilter.TabIndex = 19;
             this.UserBirthdayFilter.ValueChanged += new System.EventHandler(this.UserBirthdayFilter_ValueChanged);
             // 
             // UserFemaleFilter
             // 
             this.UserFemaleFilter.AutoSize = true;
-            this.UserFemaleFilter.Location = new System.Drawing.Point(1053, 93);
+            this.UserFemaleFilter.Location = new System.Drawing.Point(1404, 114);
+            this.UserFemaleFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserFemaleFilter.Name = "UserFemaleFilter";
-            this.UserFemaleFilter.Size = new System.Drawing.Size(60, 17);
+            this.UserFemaleFilter.Size = new System.Drawing.Size(75, 20);
             this.UserFemaleFilter.TabIndex = 18;
             this.UserFemaleFilter.Text = "Female";
             this.UserFemaleFilter.UseVisualStyleBackColor = true;
@@ -3179,9 +3420,10 @@
             // UserMaleFilter
             // 
             this.UserMaleFilter.AutoSize = true;
-            this.UserMaleFilter.Location = new System.Drawing.Point(909, 95);
+            this.UserMaleFilter.Location = new System.Drawing.Point(1212, 117);
+            this.UserMaleFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserMaleFilter.Name = "UserMaleFilter";
-            this.UserMaleFilter.Size = new System.Drawing.Size(49, 17);
+            this.UserMaleFilter.Size = new System.Drawing.Size(59, 20);
             this.UserMaleFilter.TabIndex = 17;
             this.UserMaleFilter.Text = "Male";
             this.UserMaleFilter.UseVisualStyleBackColor = true;
@@ -3189,9 +3431,10 @@
             // 
             // UserClearFilter
             // 
-            this.UserClearFilter.Location = new System.Drawing.Point(1019, 261);
+            this.UserClearFilter.Location = new System.Drawing.Point(1359, 321);
+            this.UserClearFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserClearFilter.Name = "UserClearFilter";
-            this.UserClearFilter.Size = new System.Drawing.Size(108, 50);
+            this.UserClearFilter.Size = new System.Drawing.Size(144, 62);
             this.UserClearFilter.TabIndex = 16;
             this.UserClearFilter.Text = "Clear Filter";
             this.UserClearFilter.UseVisualStyleBackColor = true;
@@ -3201,17 +3444,19 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label91.Location = new System.Drawing.Point(908, 164);
+            this.label91.Location = new System.Drawing.Point(1211, 202);
+            this.label91.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(98, 20);
+            this.label91.Size = new System.Drawing.Size(124, 25);
             this.label91.TabIndex = 15;
             this.label91.Text = "Created After";
             // 
             // UserCreatedAfterFilter
             // 
-            this.UserCreatedAfterFilter.Location = new System.Drawing.Point(904, 187);
+            this.UserCreatedAfterFilter.Location = new System.Drawing.Point(1205, 230);
+            this.UserCreatedAfterFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreatedAfterFilter.Name = "UserCreatedAfterFilter";
-            this.UserCreatedAfterFilter.Size = new System.Drawing.Size(216, 20);
+            this.UserCreatedAfterFilter.Size = new System.Drawing.Size(287, 22);
             this.UserCreatedAfterFilter.TabIndex = 14;
             this.UserCreatedAfterFilter.ValueChanged += new System.EventHandler(this.UserCreatedAfterFilter_ValueChanged);
             // 
@@ -3219,17 +3464,19 @@
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label92.Location = new System.Drawing.Point(908, 214);
+            this.label92.Location = new System.Drawing.Point(1211, 263);
+            this.label92.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(109, 20);
+            this.label92.Size = new System.Drawing.Size(138, 25);
             this.label92.TabIndex = 13;
             this.label92.Text = "Created Before";
             // 
             // UserCreatedBeforeFilter
             // 
-            this.UserCreatedBeforeFilter.Location = new System.Drawing.Point(905, 236);
+            this.UserCreatedBeforeFilter.Location = new System.Drawing.Point(1207, 290);
+            this.UserCreatedBeforeFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreatedBeforeFilter.Name = "UserCreatedBeforeFilter";
-            this.UserCreatedBeforeFilter.Size = new System.Drawing.Size(216, 20);
+            this.UserCreatedBeforeFilter.Size = new System.Drawing.Size(287, 22);
             this.UserCreatedBeforeFilter.TabIndex = 12;
             this.UserCreatedBeforeFilter.ValueChanged += new System.EventHandler(this.UserCreatedBeforeFilter_ValueChanged);
             // 
@@ -3237,9 +3484,10 @@
             // 
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label94.Location = new System.Drawing.Point(909, 74);
+            this.label94.Location = new System.Drawing.Point(1212, 91);
+            this.label94.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(32, 20);
+            this.label94.Size = new System.Drawing.Size(41, 25);
             this.label94.TabIndex = 8;
             this.label94.Text = "Sex";
             // 
@@ -3247,17 +3495,19 @@
             // 
             this.label95.AutoSize = true;
             this.label95.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label95.Location = new System.Drawing.Point(997, 8);
+            this.label95.Location = new System.Drawing.Point(1329, 10);
+            this.label95.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(42, 20);
+            this.label95.Size = new System.Drawing.Size(54, 25);
             this.label95.TabIndex = 7;
             this.label95.Text = "Filter";
             // 
             // UserNameFilter
             // 
-            this.UserNameFilter.Location = new System.Drawing.Point(909, 53);
+            this.UserNameFilter.Location = new System.Drawing.Point(1212, 65);
+            this.UserNameFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserNameFilter.Name = "UserNameFilter";
-            this.UserNameFilter.Size = new System.Drawing.Size(216, 20);
+            this.UserNameFilter.Size = new System.Drawing.Size(287, 22);
             this.UserNameFilter.TabIndex = 6;
             this.UserNameFilter.TextChanged += new System.EventHandler(this.UserNameFilter_TextChanged);
             // 
@@ -3265,9 +3515,10 @@
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label96.Location = new System.Drawing.Point(912, 36);
+            this.label96.Location = new System.Drawing.Point(1216, 44);
+            this.label96.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(49, 20);
+            this.label96.Size = new System.Drawing.Size(62, 25);
             this.label96.TabIndex = 5;
             this.label96.Text = "Name";
             // 
@@ -3281,10 +3532,11 @@
             this.columnHeader34});
             this.UserList.FullRowSelect = true;
             this.UserList.HideSelection = false;
-            this.UserList.Location = new System.Drawing.Point(5, 5);
+            this.UserList.Location = new System.Drawing.Point(7, 6);
+            this.UserList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserList.MultiSelect = false;
             this.UserList.Name = "UserList";
-            this.UserList.Size = new System.Drawing.Size(872, 399);
+            this.UserList.Size = new System.Drawing.Size(1161, 490);
             this.UserList.TabIndex = 0;
             this.UserList.UseCompatibleStateImageBehavior = false;
             this.UserList.View = System.Windows.Forms.View.Details;
@@ -3359,37 +3611,116 @@
             this.UserDetailsTab.Controls.Add(this.label109);
             this.UserDetailsTab.Controls.Add(this.UserDetailsID);
             this.UserDetailsTab.Controls.Add(this.label110);
-            this.UserDetailsTab.Location = new System.Drawing.Point(4, 22);
+            this.UserDetailsTab.Location = new System.Drawing.Point(4, 25);
+            this.UserDetailsTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsTab.Name = "UserDetailsTab";
-            this.UserDetailsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UserDetailsTab.Size = new System.Drawing.Size(1144, 430);
+            this.UserDetailsTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserDetailsTab.Size = new System.Drawing.Size(1528, 532);
             this.UserDetailsTab.TabIndex = 1;
             this.UserDetailsTab.Text = "Details";
             this.UserDetailsTab.UseVisualStyleBackColor = true;
+            // 
+            // UserFriendStatus
+            // 
+            this.UserFriendStatus.AutoSize = true;
+            this.UserFriendStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.UserFriendStatus.Location = new System.Drawing.Point(996, 426);
+            this.UserFriendStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UserFriendStatus.Name = "UserFriendStatus";
+            this.UserFriendStatus.Size = new System.Drawing.Size(0, 25);
+            this.UserFriendStatus.TabIndex = 66;
+            // 
+            // UserRemoveFriend
+            // 
+            this.UserRemoveFriend.Location = new System.Drawing.Point(997, 359);
+            this.UserRemoveFriend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserRemoveFriend.Name = "UserRemoveFriend";
+            this.UserRemoveFriend.Size = new System.Drawing.Size(347, 46);
+            this.UserRemoveFriend.TabIndex = 65;
+            this.UserRemoveFriend.Text = "Remove Friend";
+            this.UserRemoveFriend.UseVisualStyleBackColor = true;
+            this.UserRemoveFriend.Click += new System.EventHandler(this.UserRemoveFriend_Click);
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label81.Location = new System.Drawing.Point(996, 231);
+            this.label81.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(104, 25);
+            this.label81.TabIndex = 64;
+            this.label81.Text = "Add Friend";
+            // 
+            // UserAddFriend
+            // 
+            this.UserAddFriend.Location = new System.Drawing.Point(996, 293);
+            this.UserAddFriend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserAddFriend.Name = "UserAddFriend";
+            this.UserAddFriend.Size = new System.Drawing.Size(347, 46);
+            this.UserAddFriend.TabIndex = 63;
+            this.UserAddFriend.Text = "Add Friend";
+            this.UserAddFriend.UseVisualStyleBackColor = true;
+            this.UserAddFriend.Click += new System.EventHandler(this.UserAddFriend_Click);
+            // 
+            // UserSelectNewFriend
+            // 
+            this.UserSelectNewFriend.FormattingEnabled = true;
+            this.UserSelectNewFriend.Location = new System.Drawing.Point(996, 260);
+            this.UserSelectNewFriend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserSelectNewFriend.Name = "UserSelectNewFriend";
+            this.UserSelectNewFriend.Size = new System.Drawing.Size(347, 24);
+            this.UserSelectNewFriend.TabIndex = 62;
+            this.UserSelectNewFriend.SelectedIndexChanged += new System.EventHandler(this.UserSelectNewFriend_SelectedIndexChanged);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label60.Location = new System.Drawing.Point(715, 208);
+            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(106, 25);
+            this.label60.TabIndex = 61;
+            this.label60.Text = "Friends List";
+            // 
+            // UserFriendsList
+            // 
+            this.UserFriendsList.FormattingEnabled = true;
+            this.UserFriendsList.ItemHeight = 16;
+            this.UserFriendsList.Location = new System.Drawing.Point(715, 233);
+            this.UserFriendsList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserFriendsList.Name = "UserFriendsList";
+            this.UserFriendsList.Size = new System.Drawing.Size(272, 276);
+            this.UserFriendsList.TabIndex = 60;
+            this.UserFriendsList.SelectedIndexChanged += new System.EventHandler(this.UserFriendsList_SelectedIndexChanged);
             // 
             // UserUpdateStatus
             // 
             this.UserUpdateStatus.AutoSize = true;
             this.UserUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.UserUpdateStatus.Location = new System.Drawing.Point(879, 109);
+            this.UserUpdateStatus.Location = new System.Drawing.Point(1172, 134);
+            this.UserUpdateStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UserUpdateStatus.Name = "UserUpdateStatus";
-            this.UserUpdateStatus.Size = new System.Drawing.Size(0, 20);
+            this.UserUpdateStatus.Size = new System.Drawing.Size(0, 25);
             this.UserUpdateStatus.TabIndex = 59;
             // 
             // RatingStatus
             // 
             this.RatingStatus.AutoSize = true;
             this.RatingStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.RatingStatus.Location = new System.Drawing.Point(234, 400);
+            this.RatingStatus.Location = new System.Drawing.Point(312, 492);
+            this.RatingStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RatingStatus.Name = "RatingStatus";
-            this.RatingStatus.Size = new System.Drawing.Size(0, 20);
+            this.RatingStatus.Size = new System.Drawing.Size(0, 25);
             this.RatingStatus.TabIndex = 58;
             // 
             // RemoveWatchedBtn
             // 
-            this.RemoveWatchedBtn.Location = new System.Drawing.Point(419, 246);
+            this.RemoveWatchedBtn.Location = new System.Drawing.Point(559, 303);
+            this.RemoveWatchedBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveWatchedBtn.Name = "RemoveWatchedBtn";
-            this.RemoveWatchedBtn.Size = new System.Drawing.Size(76, 37);
+            this.RemoveWatchedBtn.Size = new System.Drawing.Size(101, 46);
             this.RemoveWatchedBtn.TabIndex = 57;
             this.RemoveWatchedBtn.Text = "Remove Rating";
             this.RemoveWatchedBtn.UseVisualStyleBackColor = true;
@@ -3399,17 +3730,19 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label54.Location = new System.Drawing.Point(234, 299);
+            this.label54.Location = new System.Drawing.Point(312, 368);
+            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(131, 20);
+            this.label54.Size = new System.Drawing.Size(164, 25);
             this.label54.TabIndex = 56;
             this.label54.Text = "Add Anime Rating";
             // 
             // UserDetailsAddScoreBtn
             // 
-            this.UserDetailsAddScoreBtn.Location = new System.Drawing.Point(347, 349);
+            this.UserDetailsAddScoreBtn.Location = new System.Drawing.Point(463, 430);
+            this.UserDetailsAddScoreBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsAddScoreBtn.Name = "UserDetailsAddScoreBtn";
-            this.UserDetailsAddScoreBtn.Size = new System.Drawing.Size(148, 37);
+            this.UserDetailsAddScoreBtn.Size = new System.Drawing.Size(197, 46);
             this.UserDetailsAddScoreBtn.TabIndex = 55;
             this.UserDetailsAddScoreBtn.Text = "Add Rating";
             this.UserDetailsAddScoreBtn.UseVisualStyleBackColor = true;
@@ -3418,9 +3751,10 @@
             // UserSelectNewAnimeRating
             // 
             this.UserSelectNewAnimeRating.FormattingEnabled = true;
-            this.UserSelectNewAnimeRating.Location = new System.Drawing.Point(234, 322);
+            this.UserSelectNewAnimeRating.Location = new System.Drawing.Point(312, 396);
+            this.UserSelectNewAnimeRating.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserSelectNewAnimeRating.Name = "UserSelectNewAnimeRating";
-            this.UserSelectNewAnimeRating.Size = new System.Drawing.Size(261, 21);
+            this.UserSelectNewAnimeRating.Size = new System.Drawing.Size(347, 24);
             this.UserSelectNewAnimeRating.TabIndex = 54;
             this.UserSelectNewAnimeRating.SelectedIndexChanged += new System.EventHandler(this.UserSelectNewAnimeRating_SelectedIndexChanged);
             // 
@@ -3428,23 +3762,25 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label53.Location = new System.Drawing.Point(234, 346);
+            this.label53.Location = new System.Drawing.Point(312, 426);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(85, 20);
+            this.label53.Size = new System.Drawing.Size(109, 25);
             this.label53.TabIndex = 53;
             this.label53.Text = "Your Rating";
             // 
             // addRating
             // 
             this.addRating.DecimalPlaces = 1;
-            this.addRating.Location = new System.Drawing.Point(234, 366);
+            this.addRating.Location = new System.Drawing.Point(312, 450);
+            this.addRating.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addRating.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.addRating.Name = "addRating";
-            this.addRating.Size = new System.Drawing.Size(85, 20);
+            this.addRating.Size = new System.Drawing.Size(113, 22);
             this.addRating.TabIndex = 52;
             this.addRating.ValueChanged += new System.EventHandler(this.addRating_ValueChanged);
             // 
@@ -3452,9 +3788,10 @@
             // 
             this.UserDetailsIsAdmin.AutoSize = true;
             this.UserDetailsIsAdmin.Enabled = false;
-            this.UserDetailsIsAdmin.Location = new System.Drawing.Point(510, 140);
+            this.UserDetailsIsAdmin.Location = new System.Drawing.Point(680, 172);
+            this.UserDetailsIsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsIsAdmin.Name = "UserDetailsIsAdmin";
-            this.UserDetailsIsAdmin.Size = new System.Drawing.Size(44, 17);
+            this.UserDetailsIsAdmin.Size = new System.Drawing.Size(53, 20);
             this.UserDetailsIsAdmin.TabIndex = 51;
             this.UserDetailsIsAdmin.Text = "Yes";
             this.UserDetailsIsAdmin.UseVisualStyleBackColor = true;
@@ -3463,9 +3800,10 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label39.Location = new System.Drawing.Point(510, 117);
+            this.label39.Location = new System.Drawing.Point(680, 144);
+            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(67, 20);
+            this.label39.Size = new System.Drawing.Size(85, 25);
             this.label39.TabIndex = 50;
             this.label39.Text = "Is Admin";
             // 
@@ -3473,9 +3811,10 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label34.Location = new System.Drawing.Point(510, 58);
+            this.label34.Location = new System.Drawing.Point(680, 71);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(64, 20);
+            this.label34.Size = new System.Drawing.Size(82, 25);
             this.label34.TabIndex = 49;
             this.label34.Text = "Birthday";
             // 
@@ -3483,17 +3822,19 @@
             // 
             this.UserDetailsBirthday.CustomFormat = "dd/MM";
             this.UserDetailsBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.UserDetailsBirthday.Location = new System.Drawing.Point(508, 81);
+            this.UserDetailsBirthday.Location = new System.Drawing.Point(677, 100);
+            this.UserDetailsBirthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsBirthday.Name = "UserDetailsBirthday";
-            this.UserDetailsBirthday.Size = new System.Drawing.Size(216, 20);
+            this.UserDetailsBirthday.Size = new System.Drawing.Size(287, 22);
             this.UserDetailsBirthday.TabIndex = 48;
             this.UserDetailsBirthday.ValueChanged += new System.EventHandler(this.UserDetailsBirthday_ValueChanged);
             // 
             // UserDetailsUpdateScoreBtn
             // 
-            this.UserDetailsUpdateScoreBtn.Location = new System.Drawing.Point(337, 246);
+            this.UserDetailsUpdateScoreBtn.Location = new System.Drawing.Point(449, 303);
+            this.UserDetailsUpdateScoreBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsUpdateScoreBtn.Name = "UserDetailsUpdateScoreBtn";
-            this.UserDetailsUpdateScoreBtn.Size = new System.Drawing.Size(76, 37);
+            this.UserDetailsUpdateScoreBtn.Size = new System.Drawing.Size(101, 46);
             this.UserDetailsUpdateScoreBtn.TabIndex = 47;
             this.UserDetailsUpdateScoreBtn.Text = "Update Rating";
             this.UserDetailsUpdateScoreBtn.UseVisualStyleBackColor = true;
@@ -3503,23 +3844,25 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label33.Location = new System.Drawing.Point(234, 243);
+            this.label33.Location = new System.Drawing.Point(312, 299);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(85, 20);
+            this.label33.Size = new System.Drawing.Size(109, 25);
             this.label33.TabIndex = 46;
             this.label33.Text = "Your Rating";
             // 
             // UserDetailsAnimeRating
             // 
             this.UserDetailsAnimeRating.DecimalPlaces = 1;
-            this.UserDetailsAnimeRating.Location = new System.Drawing.Point(234, 263);
+            this.UserDetailsAnimeRating.Location = new System.Drawing.Point(312, 324);
+            this.UserDetailsAnimeRating.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsAnimeRating.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.UserDetailsAnimeRating.Name = "UserDetailsAnimeRating";
-            this.UserDetailsAnimeRating.Size = new System.Drawing.Size(85, 20);
+            this.UserDetailsAnimeRating.Size = new System.Drawing.Size(113, 22);
             this.UserDetailsAnimeRating.TabIndex = 45;
             this.UserDetailsAnimeRating.ValueChanged += new System.EventHandler(this.UserDetailsAnimeRating_ValueChanged);
             // 
@@ -3527,44 +3870,50 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label32.Location = new System.Drawing.Point(233, 201);
+            this.label32.Location = new System.Drawing.Point(311, 247);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(113, 20);
+            this.label32.Size = new System.Drawing.Size(142, 25);
             this.label32.TabIndex = 44;
             this.label32.Text = "Selected Anime";
             // 
             // UserDetailsSelAnime
             // 
-            this.UserDetailsSelAnime.Location = new System.Drawing.Point(233, 220);
+            this.UserDetailsSelAnime.Location = new System.Drawing.Point(311, 271);
+            this.UserDetailsSelAnime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsSelAnime.Name = "UserDetailsSelAnime";
             this.UserDetailsSelAnime.ReadOnly = true;
-            this.UserDetailsSelAnime.Size = new System.Drawing.Size(262, 20);
+            this.UserDetailsSelAnime.Size = new System.Drawing.Size(348, 22);
             this.UserDetailsSelAnime.TabIndex = 43;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label31.Location = new System.Drawing.Point(12, 169);
+            this.label31.Location = new System.Drawing.Point(16, 208);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(78, 20);
+            this.label31.Size = new System.Drawing.Size(99, 25);
             this.label31.TabIndex = 42;
             this.label31.Text = "Anime List";
             // 
             // UserDetailsAnimeList
             // 
             this.UserDetailsAnimeList.FormattingEnabled = true;
-            this.UserDetailsAnimeList.Location = new System.Drawing.Point(12, 189);
+            this.UserDetailsAnimeList.ItemHeight = 16;
+            this.UserDetailsAnimeList.Location = new System.Drawing.Point(16, 233);
+            this.UserDetailsAnimeList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsAnimeList.Name = "UserDetailsAnimeList";
-            this.UserDetailsAnimeList.Size = new System.Drawing.Size(205, 225);
+            this.UserDetailsAnimeList.Size = new System.Drawing.Size(272, 276);
             this.UserDetailsAnimeList.TabIndex = 41;
             this.UserDetailsAnimeList.SelectedIndexChanged += new System.EventHandler(this.UserDetailsAnimeList_SelectedIndexChanged);
             // 
             // UserDetailsLocation
             // 
-            this.UserDetailsLocation.Location = new System.Drawing.Point(207, 81);
+            this.UserDetailsLocation.Location = new System.Drawing.Point(276, 100);
+            this.UserDetailsLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsLocation.Name = "UserDetailsLocation";
-            this.UserDetailsLocation.Size = new System.Drawing.Size(216, 20);
+            this.UserDetailsLocation.Size = new System.Drawing.Size(287, 22);
             this.UserDetailsLocation.TabIndex = 37;
             this.UserDetailsLocation.TextChanged += new System.EventHandler(this.UserDetailsLocation_TextChanged);
             // 
@@ -3572,18 +3921,20 @@
             // 
             this.label101.AutoSize = true;
             this.label101.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label101.Location = new System.Drawing.Point(209, 64);
+            this.label101.Location = new System.Drawing.Point(279, 79);
+            this.label101.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(66, 20);
+            this.label101.Size = new System.Drawing.Size(84, 25);
             this.label101.TabIndex = 36;
             this.label101.Text = "Location";
             // 
             // UserDetailsFemale
             // 
             this.UserDetailsFemale.AutoSize = true;
-            this.UserDetailsFemale.Location = new System.Drawing.Point(73, 81);
+            this.UserDetailsFemale.Location = new System.Drawing.Point(97, 100);
+            this.UserDetailsFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsFemale.Name = "UserDetailsFemale";
-            this.UserDetailsFemale.Size = new System.Drawing.Size(60, 17);
+            this.UserDetailsFemale.Size = new System.Drawing.Size(75, 20);
             this.UserDetailsFemale.TabIndex = 35;
             this.UserDetailsFemale.Text = "Female";
             this.UserDetailsFemale.UseVisualStyleBackColor = true;
@@ -3592,9 +3943,10 @@
             // UserDetailsMale
             // 
             this.UserDetailsMale.AutoSize = true;
-            this.UserDetailsMale.Location = new System.Drawing.Point(24, 81);
+            this.UserDetailsMale.Location = new System.Drawing.Point(32, 100);
+            this.UserDetailsMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsMale.Name = "UserDetailsMale";
-            this.UserDetailsMale.Size = new System.Drawing.Size(49, 17);
+            this.UserDetailsMale.Size = new System.Drawing.Size(59, 20);
             this.UserDetailsMale.TabIndex = 34;
             this.UserDetailsMale.Text = "Male";
             this.UserDetailsMale.UseVisualStyleBackColor = true;
@@ -3604,25 +3956,28 @@
             // 
             this.label108.AutoSize = true;
             this.label108.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label108.Location = new System.Drawing.Point(24, 61);
+            this.label108.Location = new System.Drawing.Point(32, 75);
+            this.label108.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(32, 20);
+            this.label108.Size = new System.Drawing.Size(41, 25);
             this.label108.TabIndex = 33;
             this.label108.Text = "Sex";
             // 
             // UserDetailsCreatedDate
             // 
             this.UserDetailsCreatedDate.Enabled = false;
-            this.UserDetailsCreatedDate.Location = new System.Drawing.Point(508, 35);
+            this.UserDetailsCreatedDate.Location = new System.Drawing.Point(677, 43);
+            this.UserDetailsCreatedDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsCreatedDate.Name = "UserDetailsCreatedDate";
-            this.UserDetailsCreatedDate.Size = new System.Drawing.Size(216, 20);
+            this.UserDetailsCreatedDate.Size = new System.Drawing.Size(287, 22);
             this.UserDetailsCreatedDate.TabIndex = 13;
             // 
             // UserDetailsUpdateInfoBtn
             // 
-            this.UserDetailsUpdateInfoBtn.Location = new System.Drawing.Point(883, 61);
+            this.UserDetailsUpdateInfoBtn.Location = new System.Drawing.Point(1177, 75);
+            this.UserDetailsUpdateInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsUpdateInfoBtn.Name = "UserDetailsUpdateInfoBtn";
-            this.UserDetailsUpdateInfoBtn.Size = new System.Drawing.Size(212, 37);
+            this.UserDetailsUpdateInfoBtn.Size = new System.Drawing.Size(283, 46);
             this.UserDetailsUpdateInfoBtn.TabIndex = 30;
             this.UserDetailsUpdateInfoBtn.Text = "Update Information";
             this.UserDetailsUpdateInfoBtn.UseVisualStyleBackColor = true;
@@ -3632,17 +3987,19 @@
             // 
             this.label104.AutoSize = true;
             this.label104.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label104.Location = new System.Drawing.Point(510, 12);
+            this.label104.Location = new System.Drawing.Point(680, 15);
+            this.label104.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(97, 20);
+            this.label104.Size = new System.Drawing.Size(122, 25);
             this.label104.TabIndex = 13;
             this.label104.Text = "Created Date";
             // 
             // UserDetailsName
             // 
-            this.UserDetailsName.Location = new System.Drawing.Point(207, 32);
+            this.UserDetailsName.Location = new System.Drawing.Point(276, 39);
+            this.UserDetailsName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsName.Name = "UserDetailsName";
-            this.UserDetailsName.Size = new System.Drawing.Size(216, 20);
+            this.UserDetailsName.Size = new System.Drawing.Size(287, 22);
             this.UserDetailsName.TabIndex = 4;
             this.UserDetailsName.TextChanged += new System.EventHandler(this.UserDetailsName_TextChanged);
             // 
@@ -3650,27 +4007,30 @@
             // 
             this.label109.AutoSize = true;
             this.label109.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label109.Location = new System.Drawing.Point(209, 14);
+            this.label109.Location = new System.Drawing.Point(279, 17);
+            this.label109.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(49, 20);
+            this.label109.Size = new System.Drawing.Size(62, 25);
             this.label109.TabIndex = 3;
             this.label109.Text = "Name";
             // 
             // UserDetailsID
             // 
-            this.UserDetailsID.Location = new System.Drawing.Point(24, 32);
+            this.UserDetailsID.Location = new System.Drawing.Point(32, 39);
+            this.UserDetailsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserDetailsID.Name = "UserDetailsID";
             this.UserDetailsID.ReadOnly = true;
-            this.UserDetailsID.Size = new System.Drawing.Size(59, 20);
+            this.UserDetailsID.Size = new System.Drawing.Size(77, 22);
             this.UserDetailsID.TabIndex = 2;
             // 
             // label110
             // 
             this.label110.AutoSize = true;
             this.label110.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label110.Location = new System.Drawing.Point(26, 14);
+            this.label110.Location = new System.Drawing.Point(35, 17);
+            this.label110.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(24, 20);
+            this.label110.Size = new System.Drawing.Size(30, 25);
             this.label110.TabIndex = 1;
             this.label110.Text = "ID";
             // 
@@ -3689,9 +4049,10 @@
             this.tabPage9.Controls.Add(this.UserCreateName);
             this.tabPage9.Controls.Add(this.label37);
             this.tabPage9.Controls.Add(this.CreateUserBtn);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1144, 430);
+            this.tabPage9.Size = new System.Drawing.Size(1528, 532);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "Create";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -3700,17 +4061,19 @@
             // 
             this.CreationStatus.AutoSize = true;
             this.CreationStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CreationStatus.Location = new System.Drawing.Point(44, 371);
+            this.CreationStatus.Location = new System.Drawing.Point(59, 457);
+            this.CreationStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CreationStatus.Name = "CreationStatus";
-            this.CreationStatus.Size = new System.Drawing.Size(0, 20);
+            this.CreationStatus.Size = new System.Drawing.Size(0, 25);
             this.CreationStatus.TabIndex = 67;
             // 
             // UserCreateIsAdmin
             // 
             this.UserCreateIsAdmin.AutoSize = true;
-            this.UserCreateIsAdmin.Location = new System.Drawing.Point(48, 281);
+            this.UserCreateIsAdmin.Location = new System.Drawing.Point(64, 346);
+            this.UserCreateIsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreateIsAdmin.Name = "UserCreateIsAdmin";
-            this.UserCreateIsAdmin.Size = new System.Drawing.Size(44, 17);
+            this.UserCreateIsAdmin.Size = new System.Drawing.Size(53, 20);
             this.UserCreateIsAdmin.TabIndex = 66;
             this.UserCreateIsAdmin.Text = "Yes";
             this.UserCreateIsAdmin.UseVisualStyleBackColor = true;
@@ -3720,9 +4083,10 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label40.Location = new System.Drawing.Point(48, 257);
+            this.label40.Location = new System.Drawing.Point(64, 316);
+            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 20);
+            this.label40.Size = new System.Drawing.Size(85, 25);
             this.label40.TabIndex = 65;
             this.label40.Text = "Is Admin";
             // 
@@ -3730,9 +4094,10 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label38.Location = new System.Drawing.Point(53, 198);
+            this.label38.Location = new System.Drawing.Point(71, 244);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(64, 20);
+            this.label38.Size = new System.Drawing.Size(82, 25);
             this.label38.TabIndex = 64;
             this.label38.Text = "Birthday";
             // 
@@ -3740,17 +4105,19 @@
             // 
             this.UserCreateBirthday.CustomFormat = "dd/MM";
             this.UserCreateBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.UserCreateBirthday.Location = new System.Drawing.Point(51, 216);
+            this.UserCreateBirthday.Location = new System.Drawing.Point(68, 266);
+            this.UserCreateBirthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreateBirthday.Name = "UserCreateBirthday";
-            this.UserCreateBirthday.Size = new System.Drawing.Size(216, 20);
+            this.UserCreateBirthday.Size = new System.Drawing.Size(287, 22);
             this.UserCreateBirthday.TabIndex = 63;
             this.UserCreateBirthday.ValueChanged += new System.EventHandler(this.UserCreateBirthday_ValueChanged);
             // 
             // UserCreateLocation
             // 
-            this.UserCreateLocation.Location = new System.Drawing.Point(48, 102);
+            this.UserCreateLocation.Location = new System.Drawing.Point(64, 126);
+            this.UserCreateLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreateLocation.Name = "UserCreateLocation";
-            this.UserCreateLocation.Size = new System.Drawing.Size(216, 20);
+            this.UserCreateLocation.Size = new System.Drawing.Size(287, 22);
             this.UserCreateLocation.TabIndex = 62;
             this.UserCreateLocation.TextChanged += new System.EventHandler(this.UserCreateLocation_TextChanged);
             // 
@@ -3758,18 +4125,20 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label35.Location = new System.Drawing.Point(51, 85);
+            this.label35.Location = new System.Drawing.Point(68, 105);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(66, 20);
+            this.label35.Size = new System.Drawing.Size(84, 25);
             this.label35.TabIndex = 61;
             this.label35.Text = "Location";
             // 
             // UserCreateFemaleCheckbox
             // 
             this.UserCreateFemaleCheckbox.AutoSize = true;
-            this.UserCreateFemaleCheckbox.Location = new System.Drawing.Point(100, 168);
+            this.UserCreateFemaleCheckbox.Location = new System.Drawing.Point(133, 207);
+            this.UserCreateFemaleCheckbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreateFemaleCheckbox.Name = "UserCreateFemaleCheckbox";
-            this.UserCreateFemaleCheckbox.Size = new System.Drawing.Size(60, 17);
+            this.UserCreateFemaleCheckbox.Size = new System.Drawing.Size(75, 20);
             this.UserCreateFemaleCheckbox.TabIndex = 60;
             this.UserCreateFemaleCheckbox.Text = "Female";
             this.UserCreateFemaleCheckbox.UseVisualStyleBackColor = true;
@@ -3778,9 +4147,10 @@
             // UserCreateMaleCheckbox
             // 
             this.UserCreateMaleCheckbox.AutoSize = true;
-            this.UserCreateMaleCheckbox.Location = new System.Drawing.Point(51, 168);
+            this.UserCreateMaleCheckbox.Location = new System.Drawing.Point(68, 207);
+            this.UserCreateMaleCheckbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreateMaleCheckbox.Name = "UserCreateMaleCheckbox";
-            this.UserCreateMaleCheckbox.Size = new System.Drawing.Size(49, 17);
+            this.UserCreateMaleCheckbox.Size = new System.Drawing.Size(59, 20);
             this.UserCreateMaleCheckbox.TabIndex = 59;
             this.UserCreateMaleCheckbox.Text = "Male";
             this.UserCreateMaleCheckbox.UseVisualStyleBackColor = true;
@@ -3790,17 +4160,19 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label36.Location = new System.Drawing.Point(51, 148);
+            this.label36.Location = new System.Drawing.Point(68, 182);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(32, 20);
+            this.label36.Size = new System.Drawing.Size(41, 25);
             this.label36.TabIndex = 58;
             this.label36.Text = "Sex";
             // 
             // UserCreateName
             // 
-            this.UserCreateName.Location = new System.Drawing.Point(48, 53);
+            this.UserCreateName.Location = new System.Drawing.Point(64, 65);
+            this.UserCreateName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCreateName.Name = "UserCreateName";
-            this.UserCreateName.Size = new System.Drawing.Size(216, 20);
+            this.UserCreateName.Size = new System.Drawing.Size(287, 22);
             this.UserCreateName.TabIndex = 57;
             this.UserCreateName.TextChanged += new System.EventHandler(this.UserCreateName_TextChanged);
             // 
@@ -3808,17 +4180,19 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label37.Location = new System.Drawing.Point(51, 36);
+            this.label37.Location = new System.Drawing.Point(68, 44);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(49, 20);
+            this.label37.Size = new System.Drawing.Size(62, 25);
             this.label37.TabIndex = 56;
             this.label37.Text = "Name";
             // 
             // CreateUserBtn
             // 
-            this.CreateUserBtn.Location = new System.Drawing.Point(48, 314);
+            this.CreateUserBtn.Location = new System.Drawing.Point(64, 386);
+            this.CreateUserBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateUserBtn.Name = "CreateUserBtn";
-            this.CreateUserBtn.Size = new System.Drawing.Size(215, 37);
+            this.CreateUserBtn.Size = new System.Drawing.Size(287, 46);
             this.CreateUserBtn.TabIndex = 43;
             this.CreateUserBtn.Text = "Create Entry";
             this.CreateUserBtn.UseVisualStyleBackColor = true;
@@ -3827,100 +4201,36 @@
             // ConnectionStatus
             // 
             this.ConnectionStatus.AutoSize = true;
-            this.ConnectionStatus.Location = new System.Drawing.Point(473, 18);
+            this.ConnectionStatus.Location = new System.Drawing.Point(631, 22);
+            this.ConnectionStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ConnectionStatus.Name = "ConnectionStatus";
-            this.ConnectionStatus.Size = new System.Drawing.Size(0, 13);
+            this.ConnectionStatus.Size = new System.Drawing.Size(0, 16);
             this.ConnectionStatus.TabIndex = 18;
             // 
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(375, 18);
+            this.label68.Location = new System.Drawing.Point(500, 22);
+            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(97, 13);
+            this.label68.Size = new System.Drawing.Size(117, 16);
             this.label68.TabIndex = 17;
             this.label68.Text = "Connection Status:";
             // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label60.Location = new System.Drawing.Point(536, 169);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(82, 20);
-            this.label60.TabIndex = 61;
-            this.label60.Text = "Friends List";
-            // 
-            // UserFriendsList
-            // 
-            this.UserFriendsList.FormattingEnabled = true;
-            this.UserFriendsList.Location = new System.Drawing.Point(536, 189);
-            this.UserFriendsList.Name = "UserFriendsList";
-            this.UserFriendsList.Size = new System.Drawing.Size(205, 225);
-            this.UserFriendsList.TabIndex = 60;
-            this.UserFriendsList.SelectedIndexChanged += new System.EventHandler(this.UserFriendsList_SelectedIndexChanged);
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label81.Location = new System.Drawing.Point(747, 188);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(82, 20);
-            this.label81.TabIndex = 64;
-            this.label81.Text = "Add Friend";
-            // 
-            // UserAddFriend
-            // 
-            this.UserAddFriend.Location = new System.Drawing.Point(747, 238);
-            this.UserAddFriend.Name = "UserAddFriend";
-            this.UserAddFriend.Size = new System.Drawing.Size(260, 37);
-            this.UserAddFriend.TabIndex = 63;
-            this.UserAddFriend.Text = "Add Friend";
-            this.UserAddFriend.UseVisualStyleBackColor = true;
-            this.UserAddFriend.Click += new System.EventHandler(this.UserAddFriend_Click);
-            // 
-            // UserSelectNewFriend
-            // 
-            this.UserSelectNewFriend.FormattingEnabled = true;
-            this.UserSelectNewFriend.Location = new System.Drawing.Point(747, 211);
-            this.UserSelectNewFriend.Name = "UserSelectNewFriend";
-            this.UserSelectNewFriend.Size = new System.Drawing.Size(261, 21);
-            this.UserSelectNewFriend.TabIndex = 62;
-            this.UserSelectNewFriend.SelectedIndexChanged += new System.EventHandler(this.UserSelectNewFriend_SelectedIndexChanged);
-            // 
-            // UserRemoveFriend
-            // 
-            this.UserRemoveFriend.Location = new System.Drawing.Point(748, 292);
-            this.UserRemoveFriend.Name = "UserRemoveFriend";
-            this.UserRemoveFriend.Size = new System.Drawing.Size(260, 37);
-            this.UserRemoveFriend.TabIndex = 65;
-            this.UserRemoveFriend.Text = "Remove Friend";
-            this.UserRemoveFriend.UseVisualStyleBackColor = true;
-            this.UserRemoveFriend.Click += new System.EventHandler(this.UserRemoveFriend_Click);
-            // 
-            // UserFriendStatus
-            // 
-            this.UserFriendStatus.AutoSize = true;
-            this.UserFriendStatus.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.UserFriendStatus.Location = new System.Drawing.Point(747, 346);
-            this.UserFriendStatus.Name = "UserFriendStatus";
-            this.UserFriendStatus.Size = new System.Drawing.Size(0, 20);
-            this.UserFriendStatus.TabIndex = 66;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 520);
+            this.ClientSize = new System.Drawing.Size(1548, 640);
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.label68);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.AnimeTab);
             this.Controls.Add(this.UsersTab);
             this.Controls.Add(this.StaffTab);
             this.Controls.Add(this.StudioTab);
             this.Controls.Add(this.CharactersTab);
-            this.Controls.Add(this.AnimeTab);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

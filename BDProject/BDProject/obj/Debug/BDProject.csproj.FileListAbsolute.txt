@@ -31,3 +31,14 @@ C:\UA\BD\Project_code\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.csproj.Gen
 C:\UA\BD\Project_code\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.csproj.CoreCompileInputs.cache
 C:\UA\BD\Project_code\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.exe
 C:\UA\BD\Project_code\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.pdb
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\bin\Debug\BDProject.exe.config
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\bin\Debug\BDProject.exe
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\bin\Debug\BDProject.pdb
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.csproj.AssemblyReference.cache
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.Form1.resources
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.Properties.Resources.resources
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.csproj.GenerateResource.cache
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.csproj.CoreCompileInputs.cache
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.exe
+C:\Users\Alexandre\Documents\Universidade\2º Ano\DB\Guioes\AnimeDB\BDProject\BDProject\obj\Debug\BDProject.pdb

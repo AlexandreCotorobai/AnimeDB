@@ -29,7 +29,7 @@ namespace BDProject
 
         private void TestDBConnection()
         {
-            conn = new SqlConnection("Data Source=DESKTOP-K89T2FB;Initial Catalog=AnimeDB;Integrated Security=True");
+            conn = new SqlConnection("Data Source=DESKTOP-K5KEIMH;Initial Catalog=AnimeDB;Integrated Security=True");
 
             try
             {
@@ -454,17 +454,58 @@ namespace BDProject
                 while (reader.Read())
                 {
 
-                    animeListView.Items.Add(reader[0].ToString());
-                    for (int i = 1; i < reader.FieldCount; i++)
-                    {
-                        if (reader[i].ToString() == "")
+                    animeListView.Items.Add(reader["ID"].ToString());
+                    if (reader["Name"].ToString() == "")
                         {
                             animeListView.Items[animeListView.Items.Count - 1].SubItems.Add("N/A");
-                        }
-                        else
+                        } else
                         {
-                            animeListView.Items[animeListView.Items.Count - 1].SubItems.Add(reader[i].ToString());
+                            animeListView.Items[animeListView.Items.Count - 1].SubItems.Add(reader["Name"].ToString());
                         }
+
+                    if (reader["Score"].ToString() == "")
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                    else
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add(reader["Score"].ToString());
+                    }
+
+                    if (reader["Episodes"].ToString() == "")
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                    else
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add(reader["Episodes"].ToString());
+                    }
+
+                    if (reader["Aired_Date"].ToString() == "")
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                    else
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add(((DateTime)reader["Aired_Date"]).ToString("yyyy-MM-dd"));
+                    }
+
+                    if (reader["Finished_Date"].ToString() == "")
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                    else
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add(((DateTime)reader["Finished_Date"]).ToString("yyyy-MM-dd"));
+                    }
+
+                    if (reader["StudioName"].ToString() == "")
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add("N/A");
+                    }
+                    else
+                    {
+                        animeListView.Items[animeListView.Items.Count - 1].SubItems.Add(reader["StudioName"].ToString());
                     }
                 }
             }
@@ -3332,7 +3373,7 @@ namespace BDProject
 
         private void UserAddFriend_Click(object sender, EventArgs e)
         {
-            if (selectedNewFriend == -1 || selectedUser == -1 && selectedNewFriend != selectedUser) 
+            if (selectedNewFriend == -1 || selectedUser == -1 || selectedNewFriend == selectedUser) 
             {
                 UserFriendStatus.Text = "Please select a user and a friend to add";
                 return;
