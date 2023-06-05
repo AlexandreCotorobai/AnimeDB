@@ -91,7 +91,7 @@
         WHERE FK_AnimeID IN (SELECT ID FROM deleted);
 
         -- Delete rows from Appears_in table
-        DELETE FROM Apears_in
+        DELETE FROM Appears_in
         WHERE FK_AnimeID IN (SELECT ID FROM deleted);
 
         -- Delete rows from Is_genre table
@@ -114,7 +114,7 @@
         SET NOCOUNT ON;
 
         -- Delete rows from Appears_in table
-        DELETE FROM Apears_in
+        DELETE FROM Appears_in
         WHERE FK_CharacterID IN (SELECT ID FROM deleted);
 
         -- Delete the character from the Characters table

@@ -1535,7 +1535,7 @@ namespace BDProject
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand($"EXEC UpdateCharacter @CharacterID = {SelectedCharacterID}, @Name = '{characterName}', @Description = '{characterDescription}', @VoiceActor = {characterVAID}, @UserID = {characterUpdateAs}", conn);
+                SqlCommand cmd = new SqlCommand($"EXEC UpdateCharacter @CharacterID = {SelectedCharacterID}, @Name = '{characterName}', @Description = '{characterDescription}', @VoiceActorID = {characterVAID}, @UserID = {characterUpdateAs}", conn);
                 if (debug)
                 {
                     Console.WriteLine("DEBUG: Update Character Query -> " + cmd.CommandText);
@@ -1669,7 +1669,7 @@ namespace BDProject
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand($"EXEC CreateCharacter @Name = '{characterCreateName}', @Description = '{characterCreateDescription}', @VoiceActor = {characterCreateVAID}, @UserID = {characterCreateAs}", conn);
+                SqlCommand cmd = new SqlCommand($"EXEC CreateCharacter @Name = '{characterCreateName}', @Description = '{characterCreateDescription}', @VoiceActorID = {characterCreateVAID}, @UserID = {characterCreateAs}", conn);
                 if (debug)
                 {
                     Console.WriteLine("DEBUG: Create Character Query -> " + cmd.CommandText);

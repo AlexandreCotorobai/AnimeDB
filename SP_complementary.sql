@@ -43,7 +43,7 @@ CREATE PROCEDURE GetCharacterAnimes
 AS
 BEGIN
     SELECT A.FK_CharacterID AS CharacterID, A.FK_AnimeID AS AnimeID, AN.Name AS AnimeName
-    FROM Apears_In A
+    FROM Appears_In A
     JOIN Anime AN ON A.FK_AnimeID = AN.ID
     WHERE A.FK_CharacterID = @CharacterID;
 END;

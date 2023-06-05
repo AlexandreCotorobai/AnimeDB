@@ -197,7 +197,7 @@ VALUES
 
 GO
 
-INSERT INTO Apears_In (FK_CharacterID, FK_AnimeID)
+INSERT INTO Appears_In (FK_CharacterID, FK_AnimeID)
 VALUES
 (1, 1),
 (2, 2),

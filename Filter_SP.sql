@@ -21,7 +21,7 @@ CREATE PROCEDURE FilterAnime
     END;
 GO
 
--- Fazer table the apears_In nos detalhes
+-- Fazer table the appears_In nos detalhes
 -- Confia no ROW NUMBER, Its cool
 CREATE PROCEDURE FilterCharacter
     @Name varchar(50) = NULL,
@@ -34,7 +34,7 @@ CREATE PROCEDURE FilterCharacter
         FROM (
             SELECT c.ID as ID, c.Name as Name, a.Name AS AnimeName, s.Name as VA , ROW_NUMBER() OVER (PARTITION BY c.ID ORDER BY c.ID) AS RowNum
             FROM Characters AS c
-            LEFT JOIN Apears_in AS ai ON c.ID = ai.FK_CharacterID
+            LEFT JOIN Appears_in AS ai ON c.ID = ai.FK_CharacterID
             LEFT JOIN Anime AS a ON ai.FK_AnimeID = a.ID
             LEFT JOIN Staff AS s ON c.FK_Voice_actor = s.ID
             WHERE (@Name IS NULL OR c.Name LIKE '%' + @Name + '%')

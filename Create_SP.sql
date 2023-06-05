@@ -63,7 +63,7 @@ CREATE PROCEDURE CreateCharacter
     @UserID INT,
     @Name VARCHAR(100),
     @Description VARCHAR(MAX),
-    @VoiceActor int
+    @VoiceActorID int
 AS
 BEGIN
     DECLARE @IsAdmin BIT
@@ -96,7 +96,7 @@ BEGIN
     INSERT INTO Characters
         (ID, Name, Description, FK_Voice_actor)
     VALUES
-        (@CharacterID, @Name, @Description, @VoiceActor);
+        (@CharacterID, @Name, @Description, @VoiceActorID);
 
     PRINT 'Character created successfully.'
 END;

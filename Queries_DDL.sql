@@ -130,7 +130,7 @@ CREATE TABLE Characters (
 
 GO
 
-CREATE TABLE Apears_In (
+CREATE TABLE Appears_In (
     FK_AnimeID INT,
     FK_CharacterID INT,
 
