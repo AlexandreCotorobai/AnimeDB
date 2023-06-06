@@ -288,16 +288,22 @@ GO
 INSERT INTO Is_friend (UserID1, UserID2)
 VALUES
 (1, 2),
+(2, 1),
 (2, 7),
+(7, 2),
 (2, 3),
+(3, 2),
 (6, 2),
+(2, 6),
 (5, 7),
+(7, 5),
 (5, 6),
 (6, 5),
 (7, 8),
 (8, 7);
 
 GO
+
 
 INSERT INTO Related_animes (FK_AnimeID, FK_AnimeID2, Relation)
 VALUES
