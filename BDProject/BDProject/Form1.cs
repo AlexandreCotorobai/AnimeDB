@@ -547,7 +547,7 @@ namespace BDProject
         }
         private void requestSingleAnime()
         {
-            if (SelectedAnimeID == -1 || SelectedAnimeID == lastSearchedAnimeID)
+            if (SelectedAnimeID == -1 )
             {
                 return;
             }
@@ -829,6 +829,7 @@ namespace BDProject
                 conn.Close();
             }
             updateAnimes();
+            requestSingleAnime();
         }
         private void animeDetailsRemoveGenre_Click(object sender, EventArgs e)
         {

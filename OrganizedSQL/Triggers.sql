@@ -14,7 +14,6 @@
             END;
             ELSE
             BEGIN
-                ROLLBACK;
                 RETURN;
             END;
 
