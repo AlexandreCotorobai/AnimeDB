@@ -26,7 +26,7 @@
                 
                 SET @avg_score = CAST(
                     (SELECT AVG(Given_score)
-                    FROM Has_watched
+                    FROM Has_Watched
                     WHERE FK_AnimeID = @FK_AnimeID)
                     AS DECIMAL (3, 1)
                     );
@@ -74,7 +74,7 @@
         SET NOCOUNT ON;
 
         -- Delete rows from Has_watched table
-        DELETE FROM Has_watched
+        DELETE FROM Has_Watched
         WHERE FK_AnimeID IN (SELECT ID FROM deleted);
 
         -- Delete rows from Related_animes table
@@ -199,7 +199,7 @@
         WHERE FK_UserID IN (SELECT ID FROM @DeletedUsers);
 
         -- Delete Has_watched entries for the specified UserID
-        DELETE FROM Has_watched
+        DELETE FROM Has_Watched
         WHERE FK_UserID IN (SELECT ID FROM @DeletedUsers);
 
         -- Delete the user from the Users table
